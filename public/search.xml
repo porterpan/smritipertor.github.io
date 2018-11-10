@@ -1,51 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[Hexo 每次写好后deploy博客]]></title>
-    <url>%2F2018%2F11%2F10%2FHexo%20%E6%AF%8F%E6%AC%A1%E5%86%99%E5%A5%BD%E5%90%8Edeploy%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要：github page 结合Hexo-Yelee或者Next主题,搭建个人博客主页，是很不错的一个选择，个人使用情况，感觉Yelee界面布局啥的还是很不错的。 这篇文章中我将介绍每次我们写好的md博文怎么部署到github page 上去。 本文主要使用的命令行如下： 1、直接部署到网站 1hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 也可以本地部署，查看浏览效果 2、部署到本地，查看浏览效果 1hexo clean &amp;&amp; hexo g &amp;&amp; hexo s 我们每次写好的博文如何正确推送至github每次我们写好了博文后，需要上传至我们的github空间中,只需要每次将我们写好的博文放到文件路径：1D:\Github\smritipertor.github.io\source\_posts 如果之前没有安装过 hexo-deployer-git 的话，先执行： 1npm install hexo-deployer-git --save 然后执行如下命令操作： 首先在你之前建好的博文路径：比如我的是 12345hexo generatehexo s //(或者:hexo server)hexo deploy //(或者:hexo d) 至此你的网站上就有了网站数据]]></content>
+<search> 
+  
+    
+    <entry>
+      <title>Hexo 每次写好后deploy博客</title>
+      <link href="/2018/11/10/Hexo%20%E6%AF%8F%E6%AC%A1%E5%86%99%E5%A5%BD%E5%90%8Edeploy%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2018/11/10/Hexo%20%E6%AF%8F%E6%AC%A1%E5%86%99%E5%A5%BD%E5%90%8Edeploy%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<center> Porter Pan </center><h2 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h2><p>github page 结合Hexo-Yelee或者Next主题,搭建个人博客主页，是很不错的一个选择，个人使用情况，感觉Yelee界面布局啥的还是很不错的。</p><p>这篇文章中我将介绍每次我们写好的md博文怎么部署到github page 上去。</p><hr><p>本文主要使用的命令行如下：</p><ul><li>1、直接部署到网站</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure><a id="more"></a><p>也可以本地部署，查看浏览效果</p><ul><li>2、部署到本地，查看浏览效果</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure><h2 id="我们每次写好的博文如何正确推送至github"><a href="#我们每次写好的博文如何正确推送至github" class="headerlink" title="我们每次写好的博文如何正确推送至github"></a>我们每次写好的博文如何正确推送至github</h2><p>每次我们写好了博文后，需要上传至我们的github空间中,只需要每次将我们写好的博文放到文件路径：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\Github\smritipertor.github.io\source\_posts</span><br></pre></td></tr></table></figure></p><p>如果之前没有安装过<br><strong> hexo-deployer-git </strong><br>的话，先执行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>然后执行如下命令操作：</p><ul><li>首先在你之前建好的博文路径：比如我的是</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">hexo s //(或者:hexo server)</span><br><span class="line"></span><br><span class="line">hexo deploy //(或者:hexo d)</span><br></pre></td></tr></table></figure><h3 id="至此你的网站上就有了网站数据"><a href="#至此你的网站上就有了网站数据" class="headerlink" title="至此你的网站上就有了网站数据"></a>至此你的网站上就有了网站数据</h3>]]></content>
+      
+      
       <categories>
-        <category>summary</category>
+          
+          <category> summary </category>
+          
       </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Blogs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F11%2F10%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Blogs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2018/11/10/hello-world/"/>
+      <url>/2018/11/10/hello-world/</url>
+      
+        <content type="html"><![CDATA[<center> Porter Pan </center><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a><hr><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
       <categories>
-        <category>summary</category>
+          
+          <category> summary </category>
+          
       </categories>
-      <tags>
-        <tag>日记</tag>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[第一篇博文]]></title>
-    <url>%2F2018%2F11%2F10%2F%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要欢迎来到我的博文主页，你可以进一步了解我，通过聚水渊主页 Hexo !和我的github 写作目的 为了更好的学习 每天总结 看到自己每天的进步 遇见最优秀的自己，下面是我的其他博客地址 我的博客园 新浪博客 网易博客 说说我之前的英文名和现在的英文名之前我的firstname 是pertor 现在是porter，不是一个人 ？不，是一个人的，因为pertor是西班牙的名字，porter是英文名字。都是一个人。 我的网易云最后我贴下我的网易笔记]]></content>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>第一篇博文</title>
+      <link href="/2018/11/10/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/"/>
+      <url>/2018/11/10/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/</url>
+      
+        <content type="html"><![CDATA[<center> Porter Pan </center><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>欢迎来到我的博文主页，你可以进一步了解我，通过<a href="www.porterpan.tk">聚水渊主页</a> <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> !和我的<a href="https://github.com/smritipertor" target="_blank" rel="noopener">github</a></p><a id="more"></a><h3 id="写作目的"><a href="#写作目的" class="headerlink" title="写作目的"></a>写作目的</h3><ul><li>为了更好的学习</li><li>每天总结</li><li>看到自己每天的进步</li></ul><blockquote><p>遇见最优秀的自己，下面是我的其他博客地址</p></blockquote><p><a href="https://www.cnblogs.com/pertor/" target="_blank" rel="noopener">我的博客园</a></p><p><a href="https://weibo.com/2676810792/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank" rel="noopener">新浪博客</a></p><p><a href="http://blog.163.com/smritipertor/" target="_blank" rel="noopener">网易博客</a></p><h4 id="说说我之前的英文名和现在的英文名"><a href="#说说我之前的英文名和现在的英文名" class="headerlink" title="说说我之前的英文名和现在的英文名"></a>说说我之前的英文名和现在的英文名</h4><p>之前我的firstname 是pertor 现在是porter，不是一个人 ？<br>不，是一个人的，因为pertor是西班牙的名字，porter是英文名字。都是一个人。</p><hr><h5 id="我的网易云"><a href="#我的网易云" class="headerlink" title="我的网易云"></a>我的网易云</h5><p>最后我贴下<a href="http://note.youdao.com/noteshare?id=1368af64f42b8a2ee8df3ddb383ff678&amp;sub=WEB51d16e217f31837dac9a57d393d266b2" target="_blank" rel="noopener">我的网易笔记</a></p>]]></content>
+      
+      
       <categories>
-        <category>summary</category>
+          
+          <category> summary </category>
+          
       </categories>
-      <tags>
-        <tag>日记</tag>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ubuntu18 正确 安装ShadowSocket]]></title>
-    <url>%2F2018%2F11%2F10%2Fubuntu18-%E6%AD%A3%E7%A1%AE-%E5%AE%89%E8%A3%85ShadowSocket%2F</url>
-    <content type="text"><![CDATA[ubuntu18 正确安装shadowsocket 摘要为达到能够自由访问全球学习资料，我可谓是绞尽脑汁莫寻方法，目前能做到的除了付费包月的vpn代理机构的，就只能是自己动手自己干的了，但是自己搞旺旺会出很多问题，本文结合晴子实践的经验，将所遇到的问题都一一列下并解决。 1、正常的安装步骤（ubuntu16版本）1234* Ctrl+Alt+T打开终端，输入以下命令安装好GUI界面shadowsocks-qt5* sudo add-apt-repository ppa:hzwhuang/ss-qt5* sudo apt-get update* sudo apt-get install shadowsocks-qt5 但是Ubuntu18.04在安装shadowsocks-qt5时就会出现错误 1仓库 “http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu bionic Release” 没有 Release 文件 原因： ppa:hzwhuang/ss-qt5 并没有18.04版本的源 解决方法：第一步、修改sources.list.d下文件名修改/etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list文件，将bionic（18.04版本代号）改成xenial（16.04版本代号） 第二步、设置如下图 bash 中打开软件更新器 —&gt; 设置 —&gt; 其他软件 –&gt; 编辑：http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu 将发行版改为xenial ,如上图所示。 然后再执行 sudo apt-get update sudo apt-get install shadowsocks-qt5]]></content>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>git 推送新的文章到github其他分支上</title>
+      <link href="/2018/11/10/git-%E6%8E%A8%E9%80%81%E6%96%B0%E7%9A%84%E6%96%87%E7%AB%A0%E5%88%B0github%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF%E4%B8%8A/"/>
+      <url>/2018/11/10/git-%E6%8E%A8%E9%80%81%E6%96%B0%E7%9A%84%E6%96%87%E7%AB%A0%E5%88%B0github%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF%E4%B8%8A/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Porter-Pan"><a href="#Porter-Pan" class="headerlink" title=" Porter Pan "></a><center> Porter Pan </center></h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>每次编辑博文并通过命令部署网站到github page上时，我们想每天都能将改动后的博文备份到github的一个分支上，实现本地数据同步到云仓库中。</p><ul><li>实现本地博客云同步到github page其他分支上</li><li>实现本地博客部署到github page上的master分支上</li></ul><p><img src="https://s1.ax1x.com/2018/11/10/iqZ6KJ.png" alt="我的博客网站"></p><a id="more"></a><h2 id="网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好"><a href="#网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好" class="headerlink" title="网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好"></a>网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好</h2><h3 id="部署到网上"><a href="#部署到网上" class="headerlink" title="部署到网上"></a>部署到网上</h3><ul><li>直接部署到github page的master上</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 git <span class="built_in">clone</span> -b proworking &lt;我的github网站仓库:proworking&gt;</span><br><span class="line">2 git pull origin proworking  <span class="comment">#从我的工作分支更新最新的博文和站点配置文件</span></span><br><span class="line">3 git checkout master  <span class="comment">#将我们的本地切换到master分支</span></span><br><span class="line">4 <span class="comment">#此处开始加入你的博文.md到站点的：\source\_posts文件夹中</span></span><br><span class="line">5 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure><h3 id="部署到本地"><a href="#部署到本地" class="headerlink" title="部署到本地"></a>部署到本地</h3><ul><li>本地部署，本地浏览效果</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 git <span class="built_in">clone</span> -b proworking &lt;我的github网站仓库:proworking&gt;</span><br><span class="line">2 git checkout master  <span class="comment">#将我们的本地切换到master分支</span></span><br><span class="line">3 <span class="comment">#此处开始加入你的博文.md到站点的：\source\_posts文件夹中</span></span><br><span class="line">4 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure><ul><li>将本地的博文再重新push到我的云仓库（proworking)</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"添加了：file1.md\file2.md"</span></span><br><span class="line">git push origin HEAD:proworking <span class="comment">#一定要添加HEAD 不然会</span></span><br></pre></td></tr></table></figure><hr><h2 id="其他注意事项"><a href="#其他注意事项" class="headerlink" title="其他注意事项"></a>其他注意事项</h2><blockquote><p>下面贴上我遇到的问题</p></blockquote><ul><li>[1] 若果你直接输入命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push proworking</span><br></pre></td></tr></table></figure></li></ul><p>可能会出现如下的不正常信息：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Pertor@Pertor-PC MINGW64 /d/Github/smritipertor.github.io (master)</span><br><span class="line">$ git push proworking</span><br><span class="line"></span><br><span class="line">fatal: <span class="string">'proworking'</span> does not appear to be a git repository</span><br><span class="line">fatal: Could not <span class="built_in">read</span> from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure><p>正确的解决办法是，命令中输入如下代码（加HEAD)</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Pertor@Pertor-PC MINGW64 /d/Github/smritipertor.github.io (master)</span><br><span class="line">$ git push origin HEAD:proworking</span><br></pre></td></tr></table></figure><p>此时会输出正确的提示，具体提示信息如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Enumerating objects: 1498, <span class="keyword">done</span>.</span><br><span class="line">Counting objects: 100% (1480/1480), <span class="keyword">done</span>.</span><br><span class="line">Delta compression using up to 4 threads</span><br><span class="line">Compressing objects: 100% (1219/1219), <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (1461/1461), 1.17 MiB | 390.00 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Total 1461 (delta 187), reused 1300 (delta 139)</span><br><span class="line">remote: Resolving deltas: 100% (187/187), completed with 10 <span class="built_in">local</span> objects.</span><br><span class="line">To https://github.com/smritipertor/smritipertor.github.io.git</span><br><span class="line">   06b21dd..1ff56b7  HEAD -&gt; proworking</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>summary</category>
+          
+          <category> summary </category>
+          
       </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Socket5</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>ubuntu18 正确 安装ShadowSocket</title>
+      <link href="/2018/11/10/ubuntu18-%E6%AD%A3%E7%A1%AE-%E5%AE%89%E8%A3%85ShadowSocket/"/>
+      <url>/2018/11/10/ubuntu18-%E6%AD%A3%E7%A1%AE-%E5%AE%89%E8%A3%85ShadowSocket/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ubuntu18-正确安装shadowsocket"><a href="#ubuntu18-正确安装shadowsocket" class="headerlink" title=" ubuntu18 正确安装shadowsocket "></a><center> ubuntu18 正确安装shadowsocket </center></h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>为达到能够自由访问全球学习资料，我可谓是绞尽脑汁莫寻方法，目前能做到的除了付费包月的vpn代理机构的，就只能是自己动手自己干的了，但是自己搞旺旺会出很多问题，本文结合晴子实践的经验，将所遇到的问题都一一列下并解决。</p><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1541859694666&amp;di=4157a8d46151dfea7b45b6b0e6277d61&amp;imgtype=0&amp;src=http%3A%2F%2Fwenwen.soso.com%2Fp%2F20120619%2F20120619102239-1814974902.jpg" alt="Socket5"></p><a id="more"></a><h2 id="1、正常的安装步骤（ubuntu16版本）"><a href="#1、正常的安装步骤（ubuntu16版本）" class="headerlink" title="1、正常的安装步骤（ubuntu16版本）"></a>1、正常的安装步骤（ubuntu16版本）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* Ctrl+Alt+T打开终端，输入以下命令安装好GUI界面shadowsocks-qt5</span><br><span class="line">* sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">* sudo apt-get update</span><br><span class="line">* sudo apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure><ul><li>但是Ubuntu18.04在安装shadowsocks-qt5时就会出现错误</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">仓库 “http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu bionic Release” 没有 Release 文件</span><br></pre></td></tr></table></figure><h1 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h1><ul><li>ppa:hzwhuang/ss-qt5 并没有18.04版本的源</li></ul><h1 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h1><h3 id="第一步、修改sources-list-d下文件名"><a href="#第一步、修改sources-list-d下文件名" class="headerlink" title="第一步、修改sources.list.d下文件名"></a>第一步、修改sources.list.d下文件名</h3><p>修改/etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list文件，将bionic（18.04版本代号）改成xenial（16.04版本代号）</p><h3 id="第二步、设置如下图"><a href="#第二步、设置如下图" class="headerlink" title="第二步、设置如下图"></a>第二步、设置如下图</h3><blockquote><blockquote><ul><li>bash 中打开<br><strong>软件更新器</strong> —&gt; <strong>设置</strong> —&gt; <strong>其他软件</strong> –&gt;</li></ul></blockquote></blockquote><blockquote><blockquote><ul><li>编辑：<a href="http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu</a></li></ul></blockquote></blockquote><p><img src="https://i.loli.net/2018/10/22/5bcdcb28d4124.png" alt="编辑发行版"></p><p><strong> 将发行版改为xenial </strong>,如上图所示。</p><h2 id="然后再执行"><a href="#然后再执行" class="headerlink" title="然后再执行"></a>然后再执行</h2><ul><li>sudo apt-get update</li><li>sudo apt-get install shadowsocks-qt5 </li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> summary </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Socket5 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
 </search>

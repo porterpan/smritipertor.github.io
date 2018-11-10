@@ -15,18 +15,20 @@
 
 
 
-<meta name="description" content="Porter Pan   摘要：github page 结合Hexo-Yelee或者Next主题,搭建个人博客主页，是很不错的一个选择，个人使用情况，感觉Yelee界面布局啥的还是很不错的。 这篇文章中我将介绍每次我们写好的md博文怎么部署到github page 上去。  本文主要使用的命令行如下：  1、直接部署到网站  1hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;">
-<meta name="keywords" content="Hexo,Blogs">
+<meta name="description" content="Porter Pan 摘要每次编辑博文并通过命令部署网站到github page上时，我们想每天都能将改动后的博文备份到github的一个分支上，实现本地数据同步到云仓库中。  实现本地博客云同步到github page其他分支上 实现本地博客部署到github page上的master分支上">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 每次写好后deploy博客">
-<meta property="og:url" content="http://yoursite.com/2018/11/10/Hexo 每次写好后deploy博客/index.html">
+<meta property="og:title" content="git 推送新的文章到github其他分支上">
+<meta property="og:url" content="http://yoursite.com/2018/11/10/git-推送新的文章到github其他分支上/index.html">
 <meta property="og:site_name" content="聚水渊">
-<meta property="og:description" content="Porter Pan   摘要：github page 结合Hexo-Yelee或者Next主题,搭建个人博客主页，是很不错的一个选择，个人使用情况，感觉Yelee界面布局啥的还是很不错的。 这篇文章中我将介绍每次我们写好的md博文怎么部署到github page 上去。  本文主要使用的命令行如下：  1、直接部署到网站  1hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;">
+<meta property="og:description" content="Porter Pan 摘要每次编辑博文并通过命令部署网站到github page上时，我们想每天都能将改动后的博文备份到github的一个分支上，实现本地数据同步到云仓库中。  实现本地博客云同步到github page其他分支上 实现本地博客部署到github page上的master分支上">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-10T05:15:37.221Z">
+<meta property="og:image" content="https://s1.ax1x.com/2018/11/10/iqZ6KJ.png">
+<meta property="og:updated_time" content="2018-11-10T12:10:50.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 每次写好后deploy博客">
-<meta name="twitter:description" content="Porter Pan   摘要：github page 结合Hexo-Yelee或者Next主题,搭建个人博客主页，是很不错的一个选择，个人使用情况，感觉Yelee界面布局啥的还是很不错的。 这篇文章中我将介绍每次我们写好的md博文怎么部署到github page 上去。  本文主要使用的命令行如下：  1、直接部署到网站  1hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;">
+<meta name="twitter:title" content="git 推送新的文章到github其他分支上">
+<meta name="twitter:description" content="Porter Pan 摘要每次编辑博文并通过命令部署网站到github page上时，我们想每天都能将改动后的博文备份到github的一个分支上，实现本地数据同步到云仓库中。  实现本地博客云同步到github page其他分支上 实现本地博客部署到github page上的master分支上">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/11/10/iqZ6KJ.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hexo 每次写好后deploy博客 | 聚水渊</title>
+<title>git 推送新的文章到github其他分支上 | 聚水渊</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -307,11 +309,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Hexo 每次写好后deploy博客" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-git-推送新的文章到github其他分支上" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/10/Hexo 每次写好后deploy博客/" class="article-date">
-      <time datetime="2018-11-10T14:55:03.000Z" itemprop="datePublished">2018-11-10</time>
+      <a href="/2018/11/10/git-推送新的文章到github其他分支上/" class="article-date">
+      <time datetime="2018-11-10T11:42:28.000Z" itemprop="datePublished">2018-11-10</time>
 </a>
 
 
@@ -326,7 +328,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo 每次写好后deploy博客
+      git 推送新的文章到github其他分支上
     </h1>
   
 
@@ -341,7 +343,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blogs/">Blogs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -351,31 +353,40 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <center> Porter Pan </center>
-
-<h2 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h2><p>github page 结合Hexo-Yelee或者Next主题,搭建个人博客主页，是很不错的一个选择，个人使用情况，感觉Yelee界面布局啥的还是很不错的。</p>
-<p>这篇文章中我将介绍每次我们写好的md博文怎么部署到github page 上去。</p>
-<hr>
-<p>本文主要使用的命令行如下：</p>
+        <h1 id="Porter-Pan"><a href="#Porter-Pan" class="headerlink" title=" Porter Pan "></a><center> Porter Pan </center></h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>每次编辑博文并通过命令部署网站到github page上时，我们想每天都能将改动后的博文备份到github的一个分支上，实现本地数据同步到云仓库中。</p>
 <ul>
-<li>1、直接部署到网站</li>
+<li>实现本地博客云同步到github page其他分支上</li>
+<li>实现本地博客部署到github page上的master分支上</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2018/11/10/iqZ6KJ.png" alt="我的博客网站"></p>
 <a id="more"></a>
-<p>也可以本地部署，查看浏览效果</p>
-<ul>
-<li>2、部署到本地，查看浏览效果</li>
+<h2 id="网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好"><a href="#网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好" class="headerlink" title="网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好"></a>网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好</h2><h3 id="部署到网上"><a href="#部署到网上" class="headerlink" title="部署到网上"></a>部署到网上</h3><ul>
+<li>直接部署到github page的master上</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-<h2 id="我们每次写好的博文如何正确推送至github"><a href="#我们每次写好的博文如何正确推送至github" class="headerlink" title="我们每次写好的博文如何正确推送至github"></a>我们每次写好的博文如何正确推送至github</h2><p>每次我们写好了博文后，需要上传至我们的github空间中,只需要每次将我们写好的博文放到文件路径：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\Github\smritipertor.github.io\source\_posts</span><br></pre></td></tr></table></figure></p>
-<p>如果之前没有安装过<br><strong> hexo-deployer-git </strong><br>的话，先执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>然后执行如下命令操作：</p>
-<ul>
-<li>首先在你之前建好的博文路径：比如我的是</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 git <span class="built_in">clone</span> -b proworking &lt;我的github网站仓库:proworking&gt;</span><br><span class="line">2 git pull origin proworking  <span class="comment">#从我的工作分支更新最新的博文和站点配置文件</span></span><br><span class="line">3 git checkout master  <span class="comment">#将我们的本地切换到master分支</span></span><br><span class="line">4 <span class="comment">#此处开始加入你的博文.md到站点的：\source\_posts文件夹中</span></span><br><span class="line">5 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="部署到本地"><a href="#部署到本地" class="headerlink" title="部署到本地"></a>部署到本地</h3><ul>
+<li>本地部署，本地浏览效果</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">hexo s //(或者:hexo server)</span><br><span class="line"></span><br><span class="line">hexo deploy //(或者:hexo d)</span><br></pre></td></tr></table></figure>
-<h3 id="至此你的网站上就有了网站数据"><a href="#至此你的网站上就有了网站数据" class="headerlink" title="至此你的网站上就有了网站数据"></a>至此你的网站上就有了网站数据</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 git <span class="built_in">clone</span> -b proworking &lt;我的github网站仓库:proworking&gt;</span><br><span class="line">2 git checkout master  <span class="comment">#将我们的本地切换到master分支</span></span><br><span class="line">3 <span class="comment">#此处开始加入你的博文.md到站点的：\source\_posts文件夹中</span></span><br><span class="line">4 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将本地的博文再重新push到我的云仓库（proworking)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"添加了：file1.md\file2.md"</span></span><br><span class="line">git push origin HEAD:proworking <span class="comment">#一定要添加HEAD 不然会</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="其他注意事项"><a href="#其他注意事项" class="headerlink" title="其他注意事项"></a>其他注意事项</h2><blockquote>
+<p>下面贴上我遇到的问题</p>
+</blockquote>
+<ul>
+<li>[1] 若果你直接输入命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push proworking</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>可能会出现如下的不正常信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Pertor@Pertor-PC MINGW64 /d/Github/smritipertor.github.io (master)</span><br><span class="line">$ git push proworking</span><br><span class="line"></span><br><span class="line">fatal: <span class="string">'proworking'</span> does not appear to be a git repository</span><br><span class="line">fatal: Could not <span class="built_in">read</span> from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure>
+<p>正确的解决办法是，命令中输入如下代码（加HEAD)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Pertor@Pertor-PC MINGW64 /d/Github/smritipertor.github.io (master)</span><br><span class="line">$ git push origin HEAD:proworking</span><br></pre></td></tr></table></figure>
+<p>此时会输出正确的提示，具体提示信息如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Enumerating objects: 1498, <span class="keyword">done</span>.</span><br><span class="line">Counting objects: 100% (1480/1480), <span class="keyword">done</span>.</span><br><span class="line">Delta compression using up to 4 threads</span><br><span class="line">Compressing objects: 100% (1219/1219), <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (1461/1461), 1.17 MiB | 390.00 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Total 1461 (delta 187), reused 1300 (delta 139)</span><br><span class="line">remote: Resolving deltas: 100% (187/187), completed with 10 <span class="built_in">local</span> objects.</span><br><span class="line">To https://github.com/smritipertor/smritipertor.github.io.git</span><br><span class="line">   06b21dd..1ff56b7  HEAD -&gt; proworking</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -383,13 +394,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/11/10/Hexo 每次写好后deploy博客/">Hexo 每次写好后deploy博客</a></p>
+        <p><span>本文标题:</span><a href="/2018/11/10/git-推送新的文章到github其他分支上/">git 推送新的文章到github其他分支上</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Porter Pan</a></p>
-        <p><span>发布时间:</span>2018-11-10, 22:55:03</p>
-        <p><span>最后更新:</span>2018-11-10, 13:15:37</p>
+        <p><span>发布时间:</span>2018-11-10, 19:42:28</p>
+        <p><span>最后更新:</span>2018-11-10, 20:10:50</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/11/10/Hexo 每次写好后deploy博客/" title="Hexo 每次写好后deploy博客">http://yoursite.com/2018/11/10/Hexo 每次写好后deploy博客/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/10/Hexo 每次写好后deploy博客/　　作者: Porter Pan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/11/10/git-推送新的文章到github其他分支上/" title="git 推送新的文章到github其他分支上">http://yoursite.com/2018/11/10/git-推送新的文章到github其他分支上/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/10/git-推送新的文章到github其他分支上/　　作者: Porter Pan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -401,10 +412,16 @@
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/11/10/第一篇博文/">
+                    第一篇博文
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/10/hello-world/">
-                    Hello World
+                <a href="/2018/11/10/ubuntu18-正确-安装ShadowSocket/">
+                    ubuntu18 正确 安装ShadowSocket
                 </a>
             </div>
         
@@ -416,7 +433,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要："><span class="toc-number">1.</span> <span class="toc-text">摘要：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我们每次写好的博文如何正确推送至github"><span class="toc-number">2.</span> <span class="toc-text">我们每次写好的博文如何正确推送至github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#至此你的网站上就有了网站数据"><span class="toc-number">2.1.</span> <span class="toc-text">至此你的网站上就有了网站数据</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Porter-Pan"><span class="toc-number">1.</span> <span class="toc-text"> Porter Pan </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-number">1.1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好"><span class="toc-number">1.2.</span> <span class="toc-text">网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署到网上"><span class="toc-number">1.2.1.</span> <span class="toc-text">部署到网上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署到本地"><span class="toc-number">1.2.2.</span> <span class="toc-text">部署到本地</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他注意事项"><span class="toc-number">1.3.</span> <span class="toc-text">其他注意事项</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -452,7 +469,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hexo 每次写好后deploy博客　| 聚水渊　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"git 推送新的文章到github其他分支上　| 聚水渊　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -471,8 +488,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://yoursite.com/2018/11/10/Hexo 每次写好后deploy博客/';
-            this.page.identifier = '2018/11/10/Hexo 每次写好后deploy博客/';
+            this.page.url = 'http://yoursite.com/2018/11/10/git-推送新的文章到github其他分支上/';
+            this.page.identifier = '2018/11/10/git-推送新的文章到github其他分支上/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -494,13 +511,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/11/10/第一篇博文/" title="上一篇: 第一篇博文">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/10/hello-world/" title="下一篇: Hello World">
+            <a href="/2018/11/10/ubuntu18-正确-安装ShadowSocket/" title="下一篇: ubuntu18 正确 安装ShadowSocket">
                 <i class="fa fa-angle-right"></i>
             </a>
         
