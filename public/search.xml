@@ -36,4 +36,16 @@
         <tag>总结</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[ubuntu18 正确 安装ShadowSocket]]></title>
+    <url>%2F2018%2F11%2F10%2Fubuntu18-%E6%AD%A3%E7%A1%AE-%E5%AE%89%E8%A3%85ShadowSocket%2F</url>
+    <content type="text"><![CDATA[ubuntu18 正确安装shadowsocket 摘要为达到能够自由访问全球学习资料，我可谓是绞尽脑汁莫寻方法，目前能做到的除了付费包月的vpn代理机构的，就只能是自己动手自己干的了，但是自己搞旺旺会出很多问题，本文结合晴子实践的经验，将所遇到的问题都一一列下并解决。 1、正常的安装步骤（ubuntu16版本）1234* Ctrl+Alt+T打开终端，输入以下命令安装好GUI界面shadowsocks-qt5* sudo add-apt-repository ppa:hzwhuang/ss-qt5* sudo apt-get update* sudo apt-get install shadowsocks-qt5 但是Ubuntu18.04在安装shadowsocks-qt5时就会出现错误 1仓库 “http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu bionic Release” 没有 Release 文件 原因： ppa:hzwhuang/ss-qt5 并没有18.04版本的源 解决方法：第一步、修改sources.list.d下文件名修改/etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list文件，将bionic（18.04版本代号）改成xenial（16.04版本代号） 第二步、设置如下图 bash 中打开软件更新器 —&gt; 设置 —&gt; 其他软件 –&gt; 编辑：http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu 将发行版改为xenial ,如上图所示。 然后再执行 sudo apt-get update sudo apt-get install shadowsocks-qt5]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Socket5</tag>
+      </tags>
+  </entry>
 </search>
