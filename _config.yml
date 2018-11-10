@@ -4,12 +4,12 @@
 
 # Site
 title: 聚水渊
-subtitle: It's just the beginning
-description: 在不能坚持的时候再坚持一把，或许结果就不一样了
+subtitle: 在不能坚持的时候再坚持一把，或许结果就不一样了
+description: It's just the beginning
 keywords: 坚持
 author: Porter Pan
 language: zh-Hans 
-timezone:
+timezone: Asia/Chongqing
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -73,12 +73,13 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+#theme: next
+theme: yelee
 #landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git 
   repository: https://github.com/smritipertor/smritipertor.github.io.git
   branch: master

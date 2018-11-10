@@ -1,0 +1,119 @@
+---
+title: about
+date: 2018-11-09 16:36:18
+---
+
+# <center> <font color=#3366ff>关于搜索技巧 </font></center>
+<div style="text-align: right">
+    &copy;date:2017年9月1日
+</div>
+
+## 1 百度搜索技巧
+
+### <font color=#ff5050>1.1 高级搜索语法
+</font>
+
+
+* 1.1 英文短语搜索（” ”）
+
+
+> <font color=#0000ff >引号中的关键词将作为一个整体在搜索结果中出现。双引号中的词语（比如"like this"）
+</font>
+
+![baidu](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/3DD7E7CB7BB8425685B6531F8A49F21A/53 "双引号提取关键字搜索")
+----------
+![google](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/FFA16B362FE44361B54FB58E7AF26407/56 "Google 的关键字搜索")
+
+* 1.2 指定网域
+
+> <font color=#0000ff>有一些词后面加上冒号对Google有特殊的含义。其中有一个词是“site:”。要在某个特定的域或站点中进行搜索，可以在Google搜索框“site xxxx.com”。
+</font>
+
+> 例如，要在Google 站点上查找新闻，可以输入：新闻site:www.google.com
+
+
+![baidu](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/49E5F899B87546EE9768ACD0F037229D/63 "百度搜索指定网域")
+-----------
+![google](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/C3943565FFB44666973B8C4AEC2ABB0F/65 "Google 指定网域搜索")
+
+* 1.3 查找特定文件
+
+> <font color=#0000ff>Google已经可以支持13种非HTML文件的搜索:PDF文件、Microsoft Office (doc, ppt, xls, rtf）、Shockwave Flash (swf)PostScript(ps)和其它类型文档。
+
+> 新的文档类型只要与用户的搜索相关，就会自动显示在搜索结果中。例如，如果您只想查找PDF或Flash 文件，而不要一般网页，只需搜索 **“关键词filetype:pdf”** 或 **“关键词filetype:swf”** 就可以了。
+</font>
+![baidu](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/85CF901F8C2D4CEE95A51D3DAB19D1AD/70 "百度的查找特定文件")
+![Google](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/EA5FE51583C349049E3CB558924EC61D/73 "Google查找特定文件")
+
+* 1.4 按链接搜索
+
+> <font color=0x0000ff>例如，“link:www.google.com”将找出所有指向Google主页的网页。不能将link:搜索与普通关键词搜索结合使用。
+![百度](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/60D33CACA2CA47AC9BD594E5BCB81E9D/77 "百度Link搜索")
+![Google](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/2319DD8223EB4FC18021D4EEA84862B5/79 "Google Link搜索")
+
+* 1.5 限定关键词只在标题中
+
+&emsp;&emsp;例如“allintitle：中国苹果”表示“中国”和“苹果”都必须出现在标题中“intitle：中国苹果”表示“中国”必须出现在标题中，“苹果”可以出现在网页的任意位置，可以是标题也可以不是。。
+![baidu](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/49CD61EF67EB4401ACA4EB039970EDD3/82 "百度限定关键词搜索")
+![Google](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/604F3F4D85BC482BA558BCDFAC549319/84 "Google限定关键词搜索")
+
+* 1.6 限定关键词只在URL中
+
+&emsp;&emsp;例如 **“allinURL：koko com”** 表示 **“koko”** 和 **“com“** 都必须出现在URL中 **“inURL：koko com”** 表示 **“koko”** 必须出现在URL中， **“com”** 可以出现在网页的任意位置，可以是URL也可以不是。。
+
+* 1.7 Info用来显示与某链接相关的一系列搜索
+提供cache、link、related和完全包含该链接的网页的功能。
+
+
+* 1.8 Related
+
+
+&emsp;&emsp;用来搜索结构内容方面相似的网页
+例:搜索所有与中文新浪网主页相似的页面(如网易首页，搜狐首页，中华网首页等)，“related:www.sina.com.cn”。.
+9、Cache用来搜索GOOGLE服务器上某页面的缓存
+这个功能同“网页快照”，通常用于查找某些已经被删除的死链接网页，相当于使用普通搜索结果页面中的“网页快照”功能。
+
+
+## 二、百度（baidu）搜索高级语法
+
+#### 2.1 把搜索范围限定在网页标题中——intitle
+网页标题通常是对网页内容提纲挈领式的归纳。把查询内容范围限定在网页标题中，有时能获得良好的效果。使用的方式，是把查询内容中，特别关键的部分，用“intitle:”领起来。
+例如，找林青霞的写真，就可以这样查询：写真intitle:林青霞注意，intitle:和后面的关键词之间，不要有空格。
+
+#### 2.2 把搜索范围限定在特定站点中——site
+有时候，您如果知道某个站点中有自己需要找的东西，就可以把搜索范围限定在这个站点中，提高查询效率。使用的方式，是在查询内容的后面，加上“site:站点域名”。
+例如，天空网下载软件不错，就可以这样查询：msn site:skycn.com 注意，“site:”后面跟的站点域名，不要带“http://”；另外site:和站点名之间，不要带空格。
+
+#### 2.3 把搜索范围限定在url链接中——inurl
+网页url中的某些信息，常常有某种有价值的含义。于是，您如果对搜索结果的url做某种限定，就可以获得良好的效果。实现的方式，是用“inurl:”，后跟需要在url中出现的关键词。
+例如，找关于photoshop的使用技巧，可以这样查询：photoshop inurl:jiqiao 上面这个查询串中的“photoshop”，是可以出现在网页的任何位置，而“jiqiao”则必须出现在网页url中。
+注意，inurl:语法和后面所跟的关键词，不要有空格。
+
+![baidu](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/0ED8B43F57424CC59F20E63A36B2C0E5/95 "百度url搜索")
+
+#### 2.4 精确匹配——双引号和书名号
+
+> **双引号和书名号**
+如果输入的查询词很长，百度在经过分析后，给出的搜索结果中的查询词，可能是拆分的。如果您对这种情况不满意，可以尝试让百度不拆分查询词。给查询词加上双引号，就可以达到这种效果。
+
+&emsp;&emsp;例如，搜索上海科技大学，如果不加双引号，搜索结果被拆分，效果不是很好，但加引号后，“上海科技大学”，获得的结果就全是符合要求的了。
+
+&emsp;&emsp;书名号是百度独有的一个特殊查询语法。在其他搜索引擎中，书名号会被忽略，而在百度，中文书名号是可被查询的。
+
+&emsp;&emsp;加上书名号的查询词，有两层特殊功能，一是书名号会出现在搜索结果中；二是被书名号扩起来的内容，不会被拆分。书名号在某些情况下特别有效果，例如，查名字很通俗和常用的那些电影或者小说。比如，查电影“手机”，如果不加书名号，很多情况下出来的是通讯工具——手机，而加上书名号后，《手机》结果就都是关于电影方面的了。
+
+#### 2.5 要求搜索结果中不含特定查询词
+
+&emsp;&emsp;如果您发现搜索结果中，有某一类网页是您不希望看见的，而且，这些网页都包含特定的关键词，那么用减号语法，就可以去除所有这些含有特定关键词的网页。
+
+&emsp;&emsp;例如，搜神雕侠侣，希望是关于武侠小说方面的内容，却发现很多关于电视剧方面的网页。那么就可以这样查询：神雕侠侣-电视剧。
+
+* <font color=0xff0000>注意，前一个关键词，和减号之间必须有空格，否则，减号会被当成连字符处理，而失去减号语法功能。减号和后一个关键词之间，有无空格均可。
+</font>
+
+
+#### 2.6 专业文档搜索
+
+&emsp;&emsp;很多有价值的资料，在互联网上并非是普通的网页，而是以Word、PowerPoint、PDF等格式存在。百度支持对Office文档（包括Word、 Excel、Powerpoint）、Adobe PDF文档、RTF文档进行了全文搜索。要搜索这类文档，很简单，在普通的查询词后面，加一个“filetype：”文档类型限定。“Filetype:”后可以跟以下文件格式：DOC、XLS、PPT、PDF、RTF、ALL。其中，ALL表示搜索所有这些文件类型。例如，查找张五常关于交易费用方面的经济学论文。“交易费用张五常filetype:doc”，点击结果标题，直接下载该文档，也可以点击标题后的“HTML版”快速查看该文档的网页格式内容。
+
+
