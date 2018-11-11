@@ -39,7 +39,7 @@ side=TOP or BOTTOM or LEFT or RIGHT -  where to add this widget.
 anchor=NSEW,表示设置我们要加的当前部件的位置
 side=TOP or BOTTOM or LEFT or RIGHT  表示在父类容器的什么地方家我们的部件
 ```
-![GUI界面](https://github.com/smritipertor/ImgFile/blob/ImgFbranch/pythontkinter.png)
+![iqo2If.png](https://s1.ax1x.com/2018/11/11/iqo2If.png)
 
 * 上面的界面代码如下
 
@@ -117,7 +117,7 @@ button2 = tkinter.Button(frame3,text="Exit",command=top.destroy).pack(side=TOP, 
 
 top.mainloop()
 ```
-![第二个界面](https://github.com/smritipertor/ImgFile/blob/ImgFbranch/pythontkinter2.png)
+![iqoWi8.png](https://s1.ax1x.com/2018/11/11/iqoWi8.png)
 
 ```python 
 from Tkinter import *

@@ -38,7 +38,8 @@ STM32F10xxx支持三种复位形式，分别为系统复位、上电复位和备
 
 芯片内部的复位信号会在NRST引脚上输出，脉冲发生器保证每一个(外部或内部)复位源都能有至少20μs的脉冲延时；当NRST引脚被拉低产生外部复位时，它将产生复位脉冲。
 
-![Stm32外部复位](https://github.com/smritipertor/ImgFile/blob/ImgFbranch/stm32_1.png)
+![iqofJS.png](https://s1.ax1x.com/2018/11/11/iqofJS.png)
+
 ## 三、备份域复位
 
 > 备份区域拥有两个专门的复位，它们只影响备份区域(见图4)。 当以下事件中之一发生时，产生备份区域复位。
@@ -48,7 +49,7 @@ STM32F10xxx支持三种复位形式，分别为系统复位、上电复位和备
 
 ## 四、复位的标志位
 
-![Stm32复位标志](https://github.com/smritipertor/ImgFile/blob/ImgFbranch/stm32_2.png)
+[![iqohRg.md.png](https://s1.ax1x.com/2018/11/11/iqohRg.md.png)](https://imgchr.com/i/iqohRg)
 
 ## 五、复位标志位检索/判断什么原因导致的复位
 
