@@ -32,20 +32,20 @@
         <category>summary</category>
       </categories>
       <tags>
-        <tag>总结</tag>
         <tag>Python</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F11%2F10%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[ubuntu 中安装sublime_text3]]></title>
+    <url>%2F2018%2F11%2F10%2Fubuntu%20%E4%B8%AD%E5%AE%89%E8%A3%85sublime_text3%2F</url>
+    <content type="text"><![CDATA[摘要Porter PanEnter “Alt+m” will show Markdown Preview 安装 输入注册码 汉化 安装插件 中文输入bug修复 1.1 安装&emsp;&emsp;建议和我一样初学的直接安装，不要直接下载官方的离线包解压了，不然还得自己配置什么dash中显示，什么的环境配置乱七八糟的 123451、 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -2、 sudo apt-get install apt-transport-https3、 echo &quot;deb https://download.sublimetext.com/ apt/stable/&quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list4、 sudo apt-get update5、 sudo apt-get install sublime-text 1.2 输入注册码&emsp;&emsp;在输入注册码之前先更改hosts，ubuntu中hosts位于： vim /etc/hosts或者gedit /etc/hosts,然后加入如下两行 121、 127.0.0.1 www.sublimetext.com2、 127.0.0.1 license.sublimehq.com &emsp;&emsp;然后保存，此时dash中输入sublime，找到我们安装的软件，打开后在界面菜单中选择help–&gt;enter license，然后输入如下注册码12345678910111213----- BEGIN LICENSE -----sgbteamSingle User LicenseEA7E-11532598891CBB9 F1513E4F 1A3405C1 A865D53F115F202E 7B91AB2D 0D2A40ED 352B269B76E84F0B CD69BFC7 59F2DFEF E267328F215652A3 E88F9D8F 4C38E3BA 5B2DAAE4969624E7 DC9CD4D5 717FB40C 1B9738CF20B3C4F1 E917B5B3 87C38D9C ACCE7DD85F7EF854 86B9743C FADC04AA FB0DA5C0F913BE58 42FEA319 F954EFDD AE881E0B------ END LICENSE ------ 点击确定，然后就可以 enjoy it! 在这还没结束，下面开始汉化 1.3 汉化 &emsp;&emsp;打开软件，直接按下“shift+ctrl+p”在弹出的框内输入ip,然后点击”package control：install pakage”,出来后输入”Chinese​Localizations”来安装Chinese​Localizations插件，然后重启，至此汉化结束。 1.4 安装markdown插件 &emsp;&emsp;在软件界面输入“shift+ctrl+p”,然后输入“ip”，然后选择，packageinstall ，然后输入“Markdown Editing“ + ”MarkdownLivePreview”,分别安装上，然后新建md文件，在编辑界面输入“alt+m”,则进入markdown preview实时显示模式。 1.5 解决Markdown不能输入汉字的问题打开终端： 在终端中输入以下代码12git clone https://github.com/lyfeyaj/sublime-text-imfix.gitcd sublime-text-imfix &amp;&amp; ./sublime-imfix 或者直接进入github的这个仓库：直接下载这个zip包，然后解压，然后在终端中cd到这个解压后的文件夹路径中，最后是在终端中输入1./sublime-imfix 此时重启sublimetext3 然后就可以进行汉字的输入了。 参考：https://blog.csdn.net/qq_41590417/article/details/80461075 https://blog.csdn.net/woaidouya123/article/details/81476551 https://www.cnblogs.com/james-lee/p/6847906.html]]></content>
       <categories>
         <category>summary</category>
       </categories>
       <tags>
-        <tag>日记</tag>
-        <tag>总结</tag>
+        <tag>工具</tag>
+        <tag>sublime-text</tag>
       </tags>
   </entry>
   <entry>
@@ -61,18 +61,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[解决Chrome67版本以后不能离线安装插件的情况]]></title>
-    <url>%2F2018%2F11%2F10%2F%E8%A7%A3%E5%86%B3Chrome67%E7%89%88%E6%9C%AC%E4%BB%A5%E5%90%8E%E4%B8%8D%E8%83%BD%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E7%9A%84%E6%83%85%E5%86%B5%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要通过本文安装方法可以快速，解决Chrome67版本以后不能离线安装插件的情况。 一般情况下，我们如果使用的Chrome版本为67以后的版本，安装离线插件会出现如下图信息 但是这样我们就真的没法安装离线插件了吗？特别是对想安装翻墙的插件 Proxy SwitchyOmega 的同学来说是一件噩梦。这篇文章讲会告诉读者，这个问题是可以解决的 解决方法如下： 首代开终端输入以下代码 /opt/google/chrome/google-chrome –enable-easy-off-store-extension-install 将会打开google Chrome 浏览器，然后进入浏览器的扩展插件工具界面，如下图所示： 此时请再次将离线下载的插件拖进去，看看是不是能够安装了。]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[第一篇博文]]></title>
     <url>%2F2018%2F11%2F10%2F%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87%2F</url>
     <content type="text"><![CDATA[Porter Pan 摘要欢迎来到我的博文主页，你可以进一步了解我，通过聚水渊主页 Hexo !和我的github 写作目的 为了更好的学习 每天总结 看到自己每天的进步 遇见最优秀的自己，下面是我的其他博客地址 我的博客园 我的CSDN 新浪博客 网易博客 说说我之前的英文名和现在的英文名之前我的firstname 是pertor 现在是porter，不是一个人 ？不，是一个人的，因为pertor是西班牙的名字，porter是英文名字。都是一个人。 我的网易云最后我贴下我的网易笔记]]></content>
@@ -80,8 +68,20 @@
         <category>summary</category>
       </categories>
       <tags>
-        <tag>日记</tag>
         <tag>总结</tag>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F11%2F10%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Porter Pan 摘要Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>日记</tag>
       </tags>
   </entry>
   <entry>
@@ -97,15 +97,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ubuntu 中安装sublime_text3]]></title>
-    <url>%2F2018%2F11%2F10%2Fubuntu%20%E4%B8%AD%E5%AE%89%E8%A3%85sublime_text3%2F</url>
-    <content type="text"><![CDATA[摘要Porter PanEnter “Alt+m” will show Markdown Preview 安装 输入注册码 汉化 安装插件 中文输入bug修复 1.1 安装&emsp;&emsp;建议和我一样初学的直接安装，不要直接下载官方的离线包解压了，不然还得自己配置什么dash中显示，什么的环境配置乱七八糟的 123451、 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -2、 sudo apt-get install apt-transport-https3、 echo &quot;deb https://download.sublimetext.com/ apt/stable/&quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list4、 sudo apt-get update5、 sudo apt-get install sublime-text 1.2 输入注册码&emsp;&emsp;在输入注册码之前先更改hosts，ubuntu中hosts位于： vim /etc/hosts或者gedit /etc/hosts,然后加入如下两行 121、 127.0.0.1 www.sublimetext.com2、 127.0.0.1 license.sublimehq.com &emsp;&emsp;然后保存，此时dash中输入sublime，找到我们安装的软件，打开后在界面菜单中选择help–&gt;enter license，然后输入如下注册码12345678910111213----- BEGIN LICENSE -----sgbteamSingle User LicenseEA7E-11532598891CBB9 F1513E4F 1A3405C1 A865D53F115F202E 7B91AB2D 0D2A40ED 352B269B76E84F0B CD69BFC7 59F2DFEF E267328F215652A3 E88F9D8F 4C38E3BA 5B2DAAE4969624E7 DC9CD4D5 717FB40C 1B9738CF20B3C4F1 E917B5B3 87C38D9C ACCE7DD85F7EF854 86B9743C FADC04AA FB0DA5C0F913BE58 42FEA319 F954EFDD AE881E0B------ END LICENSE ------ 点击确定，然后就可以 enjoy it! 在这还没结束，下面开始汉化 1.3 汉化 &emsp;&emsp;打开软件，直接按下“shift+ctrl+p”在弹出的框内输入ip,然后点击”package control：install pakage”,出来后输入”Chinese​Localizations”来安装Chinese​Localizations插件，然后重启，至此汉化结束。 1.4 安装markdown插件 &emsp;&emsp;在软件界面输入“shift+ctrl+p”,然后输入“ip”，然后选择，packageinstall ，然后输入“Markdown Editing“ + ”MarkdownLivePreview”,分别安装上，然后新建md文件，在编辑界面输入“alt+m”,则进入markdown preview实时显示模式。 1.5 解决Markdown不能输入汉字的问题打开终端： 在终端中输入以下代码12git clone https://github.com/lyfeyaj/sublime-text-imfix.gitcd sublime-text-imfix &amp;&amp; ./sublime-imfix 或者直接进入github的这个仓库：直接下载这个zip包，然后解压，然后在终端中cd到这个解压后的文件夹路径中，最后是在终端中输入1./sublime-imfix 此时重启sublimetext3 然后就可以进行汉字的输入了。 参考：https://blog.csdn.net/qq_41590417/article/details/80461075 https://blog.csdn.net/woaidouya123/article/details/81476551 https://www.cnblogs.com/james-lee/p/6847906.html]]></content>
+    <title><![CDATA[解决Chrome67版本以后不能离线安装插件的情况]]></title>
+    <url>%2F2018%2F11%2F10%2F%E8%A7%A3%E5%86%B3Chrome67%E7%89%88%E6%9C%AC%E4%BB%A5%E5%90%8E%E4%B8%8D%E8%83%BD%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E7%9A%84%E6%83%85%E5%86%B5%2F</url>
+    <content type="text"><![CDATA[Porter Pan 摘要通过本文安装方法可以快速，解决Chrome67版本以后不能离线安装插件的情况。 一般情况下，我们如果使用的Chrome版本为67以后的版本，安装离线插件会出现如下图信息 但是这样我们就真的没法安装离线插件了吗？特别是对想安装翻墙的插件 Proxy SwitchyOmega 的同学来说是一件噩梦。这篇文章讲会告诉读者，这个问题是可以解决的 解决方法如下： 首代开终端输入以下代码 /opt/google/chrome/google-chrome –enable-easy-off-store-extension-install 将会打开google Chrome 浏览器，然后进入浏览器的扩展插件工具界面，如下图所示： 此时请再次将离线下载的插件拖进去，看看是不是能够安装了。]]></content>
       <categories>
         <category>summary</category>
       </categories>
       <tags>
+        <tag>总结</tag>
         <tag>工具</tag>
-        <tag>sublime-text</tag>
       </tags>
   </entry>
   <entry>

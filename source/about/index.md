@@ -20,9 +20,11 @@ date: 2018-11-09 16:36:18
 > <font color=#0000ff >引号中的关键词将作为一个整体在搜索结果中出现。双引号中的词语（比如"like this"）
 </font>
 
-![baidu](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/3DD7E7CB7BB8425685B6531F8A49F21A/53 "双引号提取关键字搜索")
+[![iqTJSg.md.png](https://s1.ax1x.com/2018/11/11/iqTJSg.md.png)](https://imgchr.com/i/iqTJSg)
+
 ----------
-![google](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/FFA16B362FE44361B54FB58E7AF26407/56 "Google 的关键字搜索")
+
+[![iqTamn.md.png](https://s1.ax1x.com/2018/11/11/iqTamn.md.png)](https://imgchr.com/i/iqTamn)
 
 * 1.2 指定网域
 
@@ -32,9 +34,11 @@ date: 2018-11-09 16:36:18
 > 例如，要在Google 站点上查找新闻，可以输入：新闻site:www.google.com
 
 
-![baidu](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/49E5F899B87546EE9768ACD0F037229D/63 "百度搜索指定网域")
+[![iqTBkV.md.png](https://s1.ax1x.com/2018/11/11/iqTBkV.md.png)](https://imgchr.com/i/iqTBkV)
+
 -----------
-![google](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/C3943565FFB44666973B8C4AEC2ABB0F/65 "Google 指定网域搜索")
+
+![iqTDYT.png](https://s1.ax1x.com/2018/11/11/iqTDYT.png)
 
 * 1.3 查找特定文件
 
@@ -42,20 +46,26 @@ date: 2018-11-09 16:36:18
 
 > 新的文档类型只要与用户的搜索相关，就会自动显示在搜索结果中。例如，如果您只想查找PDF或Flash 文件，而不要一般网页，只需搜索 **“关键词filetype:pdf”** 或 **“关键词filetype:swf”** 就可以了。
 </font>
-![baidu](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/85CF901F8C2D4CEE95A51D3DAB19D1AD/70 "百度的查找特定文件")
-![Google](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/EA5FE51583C349049E3CB558924EC61D/73 "Google查找特定文件")
+
+![iqTrfU.png](https://s1.ax1x.com/2018/11/11/iqTrfU.png)
+
+![iqT6l4.png](https://s1.ax1x.com/2018/11/11/iqT6l4.png)
 
 * 1.4 按链接搜索
 
 > <font color=0x0000ff>例如，“link:www.google.com”将找出所有指向Google主页的网页。不能将link:搜索与普通关键词搜索结合使用。
-![百度](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/60D33CACA2CA47AC9BD594E5BCB81E9D/77 "百度Link搜索")
-![Google](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/2319DD8223EB4FC18021D4EEA84862B5/79 "Google Link搜索")
+> 
+![iqTc6J.png](https://s1.ax1x.com/2018/11/11/iqTc6J.png)
+
+[![iqTgX9.md.png](https://s1.ax1x.com/2018/11/11/iqTgX9.md.png)](https://imgchr.com/i/iqTgX9)
 
 * 1.5 限定关键词只在标题中
 
 &emsp;&emsp;例如“allintitle：中国苹果”表示“中国”和“苹果”都必须出现在标题中“intitle：中国苹果”表示“中国”必须出现在标题中，“苹果”可以出现在网页的任意位置，可以是标题也可以不是。。
-![baidu](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/49CD61EF67EB4401ACA4EB039970EDD3/82 "百度限定关键词搜索")
-![Google](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/604F3F4D85BC482BA558BCDFAC549319/84 "Google限定关键词搜索")
+
+![iqTW01.png](https://s1.ax1x.com/2018/11/11/iqTW01.png)
+
+![iqTfTx.png](https://s1.ax1x.com/2018/11/11/iqTfTx.png)
 
 * 1.6 限定关键词只在URL中
 
@@ -89,7 +99,7 @@ date: 2018-11-09 16:36:18
 例如，找关于photoshop的使用技巧，可以这样查询：photoshop inurl:jiqiao 上面这个查询串中的“photoshop”，是可以出现在网页的任何位置，而“jiqiao”则必须出现在网页url中。
 注意，inurl:语法和后面所跟的关键词，不要有空格。
 
-![baidu](https://note.youdao.com/yws/public/resource/473f7b05dcc3ea3c2017455f990adde9/xmlnote/0ED8B43F57424CC59F20E63A36B2C0E5/95 "百度url搜索")
+[![iqT4k6.md.png](https://s1.ax1x.com/2018/11/11/iqT4k6.md.png)](https://imgchr.com/i/iqT4k6)
 
 #### 2.4 精确匹配——双引号和书名号
 
