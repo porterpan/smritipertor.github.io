@@ -44,6 +44,7 @@ tags:
 3 #此处开始加入你的博文.md到站点的：\source\_posts文件夹中
 4 hexo clean && hexo g && hexo d
 ```
+> 实现从github上获取我仓库中的Proworking分支数据，病拉取到我的本地
 
 * 将本地的博文再重新push到我的云仓库（proworking)
 

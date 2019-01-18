@@ -39,11 +39,15 @@ since: 2017
 ## RSS requires a plugin to take effect | 使用 RSS 需先安装对应插件
 ## https://github.com/hexojs/hexo-generator-feed
 
+# 在/yelee/source/css/_varable.style中配置页面颜色和透明度等信息
+
+# 在/yelee/source/css/_partial/customise/social-icon.style中配置社交账号
 subnav:
-  Email: "porterpan@163.com"
+  Email: "mailto:porterpan@163.com"
   #新浪微博: "sina weibo"
   #GitHub: "#"
-  GitHub: "https://github.com/smritipertor"
+  GitHub: "https://github.com/porterpan"
+  GitBook: "https://porter.gitbook.io"
   #V2EX: "#"
   #RSS: "/atom.xml"
   #知乎: "zhihu"
@@ -215,7 +219,7 @@ open_in_new:
   article_nav: false # 导航
   archives: true # 归档
   mini_archives: true # 迷你归档
-  menu: false # 边栏菜单
+  menu: true # 边栏菜单
   friends: true  # 友情链接
   socail: true # 社交图标
 
@@ -233,8 +237,8 @@ ie_updater:
 # Tab Title Change | 标签页标题切换
 tab_title_change: 
   on: true
-  left_tab_title: '(つェ⊂) 我藏好了哦~ '
-  return_tab_title: '(*´∇｀*) 被你发现啦~ '
+  left_tab_title: 'blog上见~ '
+  return_tab_title: '欢迎欢迎~ '
 
 
 # >>> Vendors | 第三方工具 & 服务 <<<

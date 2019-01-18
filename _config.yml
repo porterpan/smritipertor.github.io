@@ -81,5 +81,5 @@ theme: yelee
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git 
-  repository: https://github.com/smritipertor/smritipertor.github.io.git
+  repository: https://github.com/porterpan/porterpan.github.io.git
   branch: master
