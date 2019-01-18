@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Porter Pan">
+
+
+
+<meta name="description" content="Edit By Porter, 聚水渊，聚少成多，涓涓长流。   摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍马尔科夫相关的性质和几个实例进行论述。 文章同步于: 我的gitbook">
+<meta name="keywords" content="日记,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.1 马尔科夫链">
+<meta property="og:url" content="http://yoursite.com/第二章-深度学习相关基础算法-2-1-马尔科夫链/index.html">
+<meta property="og:site_name" content="聚水渊">
+<meta property="og:description" content="Edit By Porter, 聚水渊，聚少成多，涓涓长流。   摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍马尔科夫相关的性质和几个实例进行论述。 文章同步于: 我的gitbook">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/image2/markovFormula.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovPW.png">
+<meta property="og:image" content="http://yoursite.com/image2/Markov_PWBK.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovSample1_1.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovSample1_2.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovGuShi_1.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovGuShi_2.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovGuShi_3.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovGuShi_4.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovJieceng_3_1_2_1.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovJieceng_3_1_2_2.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovJieceng_3_1_2_3.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovJieceng_3_1_2_4.png">
+<meta property="og:image" content="http://yoursite.com/image2/markovJieceng_3_1_2_5.png">
+<meta property="og:image" content="http://yoursite.com/image2/markov4_1.png">
+<meta property="og:image" content="http://yoursite.com/image2/markov4_2.png">
+<meta property="og:image" content="http://yoursite.com/image2/markov4_3.png">
+<meta property="og:updated_time" content="2019-01-18T10:58:18.407Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2.1 马尔科夫链">
+<meta name="twitter:description" content="Edit By Porter, 聚水渊，聚少成多，涓涓长流。   摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍马尔科夫相关的性质和几个实例进行论述。 文章同步于: 我的gitbook">
+<meta name="twitter:image" content="http://yoursite.com/image2/markovFormula.png">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="聚水渊" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>2.1 马尔科夫链 | 聚水渊</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?d038bb824742b75a947afac92c8e6c17";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/myportrait1.gif" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Porter Pan</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">在不能坚持的时候再坚持一把，或许结果就不一样了</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/diary/">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:porterpan@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/porterpan" title="GitHub"></a>
+                            
+                                <a class="fa GitBook" href="https://porter.gitbook.io" title="GitBook"></a>
+                            
+                                <a class="fa 博客园" href="https://www.cnblogs.com/pertor/" title="博客园"></a>
+                            
+                                <a class="fa bilibili" href="http://space.bilibili.com/240704272/#/" title="bilibili"></a>
+                            
+                                <a class="fa 微信" href="http://note.youdao.com/noteshare?id=0e1026c4540d1606e784d8e8d9fb8344" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/">Blogs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C语言/">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket5/">Socket5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitignore/">gitignore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-text/">sublime-text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安利/">安利</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站/">网站</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://scholar.hezibuluo.com/">盒子部落</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.588230.com/">南瓜网</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.wenkuwenku.com/">皮皮虾</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.wuhouge.com/">武侯阁</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://0e2.cn/">看么电影</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io/zh-cn/docs/commands.html">Hexo指令</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.coding.me/yelee/">Yelee帮助</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://stackoverflow.com/">StackOverflow</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.w3school.com.cn/">Web W3school</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://www.yiibai.com/git/git_checkout.html">Git命令</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://imgchr.com/">路过图床</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://porterpan.tk/">我的主页</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">自信、乐观、帅气、阳光；专注于深度学习、机器学习、视觉图像处理、嵌入式软硬件。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Porter Pan</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/myportrait1.gif" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Porter Pan</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">在不能坚持的时候再坚持一把，或许结果就不一样了</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/diary/">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:porterpan@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/porterpan" title="GitHub"></a>
+                            
+                                <a class="fa GitBook" target="_blank" href="https://porter.gitbook.io" title="GitBook"></a>
+                            
+                                <a class="fa 博客园" target="_blank" href="https://www.cnblogs.com/pertor/" title="博客园"></a>
+                            
+                                <a class="fa bilibili" target="_blank" href="http://space.bilibili.com/240704272/#/" title="bilibili"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="http://note.youdao.com/noteshare?id=0e1026c4540d1606e784d8e8d9fb8344" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+</nav>
+      <div class="body-wrap"><article id="post-第二章-深度学习相关基础算法-2-1-马尔科夫链" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/第二章-深度学习相关基础算法-2-1-马尔科夫链/" class="article-date">
+      <time datetime="2019-01-02T14:55:03.000Z" itemprop="datePublished">2019-01-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2.1 马尔科夫链
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/notes/">notes</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li style="list-style: none"><input type="checkbox" checked> Edit By Porter, 聚水渊，聚少成多，涓涓长流。 </li>
+</ul>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍马尔科夫相关的性质和几个实例进行论述。</p>
+<p>文章同步于: <a href="https://porter.gitbook.io/" target="_blank" rel="noopener">我的gitbook</a></p>
+<a id="more"></a>
+<h1 id="马尔科夫链"><a href="#马尔科夫链" class="headerlink" title="马尔科夫链"></a>马尔科夫链</h1><h2 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h2><p>状态空间中经过从一个状态到另一个状态的转换的随机过程，需要具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。这种特定类型的“无记忆性”称作马尔可夫性质。</p>
+<h2 id="一、常见的马尔可夫过程："><a href="#一、常见的马尔可夫过程：" class="headerlink" title="一、常见的马尔可夫过程："></a>一、常见的马尔可夫过程：</h2><p>(1) 独立随机过程为马尔可夫过程。</p>
+<p>(2) 独立增量过程为马尔可夫过程：没{X(t)，t∈[0，+∞)}为一独立增量过程，且有P(X(0)=x0)=1，x0为常数，则X(t)为马尔可夫过程。</p>
+<p>(3) 泊松过程为马尔可夫过程。</p>
+<p>(4) 维纳过程为马尔可夫过程。</p>
+<p>(5) 质点随机游动过程为马尔可夫过程。</p>
+<h2 id="二、模型的创立条件"><a href="#二、模型的创立条件" class="headerlink" title="二、模型的创立条件"></a>二、模型的创立条件</h2><ul>
+<li>无后效性—只与前一时刻状态相关和其他历史时刻无关。</li>
+</ul>
+<p><img src="/image2/markovFormula.png" alt="markovFormula"></p>
+<p>图2-1 马尔科夫表示式</p>
+<ul>
+<li>系统平稳性—平稳分布（马尔可夫链的）具有某种不变（或者说平稳）性质的概率分布。</li>
+</ul>
+<p><img src="/image2/markovPW.png" alt="马尔科夫平稳性"></p>
+<p>图2-2 马尔科夫平稳分布表示式</p>
+<h3 id="2-1-无后效性"><a href="#2-1-无后效性" class="headerlink" title="2.1 无后效性"></a>2.1 无后效性</h3><p>状态空间中经过从一个状态到另一个状态的转换的随机过程。该过程要求具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。这种特定类型的“无记忆性”称作马尔可夫性质。马尔科夫链作为实际过程的统计模型具有许多应用。</p>
+<p>在马尔可夫链的每一步，系统根据概率分布，可以从一个状态变到另一个状态，也可以保持当前状态。状态的改变叫做转移，与不同的状态改变相关的概率叫做转移概率。随机漫步就是马尔可夫链的例子。随机漫步中每一步的状态是在图形中的点，每一步可以移动到任何一个相邻的点，在这里移动到每一个点的概率都是相同的（无论之前漫步路径是如何的）。</p>
+<hr>
+<p>作者：bitcarmanlee<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/bitcarmanlee/article/details/82819860" target="_blank" rel="noopener">https://blog.csdn.net/bitcarmanlee/article/details/82819860</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
+<h3 id="2-2-平稳分布概念"><a href="#2-2-平稳分布概念" class="headerlink" title="2.2 平稳分布概念"></a>2.2 平稳分布概念</h3><ul>
+<li>平稳分布是一种概率分布。平稳分布（马尔可夫链的）具有某种不变（或者说平稳）性质的概率分布。</li>
+</ul>
+<p><img src="/image2/Markov_PWBK.png" alt="马尔科夫百科"></p>
+<p>图2-3 平稳分布，百度百科解释</p>
+<h2 id="三、马尔科夫相关的例子"><a href="#三、马尔科夫相关的例子" class="headerlink" title="三、马尔科夫相关的例子"></a>三、马尔科夫相关的例子</h2><p>直接看理论是有点头痛的，但是接下来直接上例子，学习致用，在应用中学习。</p>
+<h3 id="3-1-马尔科夫股市模型实例"><a href="#3-1-马尔科夫股市模型实例" class="headerlink" title="3.1 马尔科夫股市模型实例"></a>3.1 马尔科夫股市模型实例</h3><p>假设股市三种状态：牛市（Bull market）, 熊市（Bear market）和横盘（Stagnant market），每一个状态都以一定的概率转化到下一个状态。</p>
+<h4 id="3-1-题设"><a href="#3-1-题设" class="headerlink" title="3.1 题设"></a>3.1 题设</h4><p><img src="/image2/markovSample1_1.png" alt="股市概率转移状态图"></p>
+<p>图3-1 股市概率转移状态图</p>
+<p>比如，牛市以0.025的概率转化到横盘的状态。这个状态概率转化图可以以矩阵的形式表示。如果我们定义矩阵阵P某一位置P(i, j)的值为P(j|i)， <strong>即从状态i变为状态j的概率</strong> 。另外定义牛市、熊市、横盘的状态分别为0、1、2，这样我们得到了马尔科夫链模型的状态转移矩阵为：</p>
+<p><img src="/image2/markovSample1_2.png" alt="马尔科夫状态转移概率矩阵"></p>
+<p>图3-2 马尔科夫状态转移概率矩阵</p>
+<p>当这个状态转移矩阵P确定以后，整个股市模型就已经确定！</p>
+<h4 id="3-1-1-用计算结果说明马尔科夫的性质（无后效性，和系统平稳性）"><a href="#3-1-1-用计算结果说明马尔科夫的性质（无后效性，和系统平稳性）" class="headerlink" title="3.1.1 用计算结果说明马尔科夫的性质（无后效性，和系统平稳性）"></a>3.1.1 用计算结果说明马尔科夫的性质（无后效性，和系统平稳性）</h4><ul>
+<li>步骤一、假设初始状态：t0​=[0.1,0.2,0.7]，然后算之后的状态。</li>
+<li>步骤二、计算方法是用这个初始的状态分布概率向量(t0)点乘我们的马尔科夫状态转移概率矩阵(P)。</li>
+<li>如图2-2 所说的，当P^n –&gt; 会趋向一个稳定的转移概率矩阵。</li>
+</ul>
+<p><a href="./Attachment/markovDemo.py">Python 代码验证</a>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">markov</span><span class="params">()</span>:</span> </span><br><span class="line">    init_array = np.array([<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.7</span>]) </span><br><span class="line">    transfer_matrix = np.array([[<span class="number">0.9</span>, <span class="number">0.075</span>, <span class="number">0.025</span>], </span><br><span class="line">                                [<span class="number">0.15</span>, <span class="number">0.8</span>, <span class="number">0.05</span>], </span><br><span class="line">                                [<span class="number">0.25</span>, <span class="number">0.25</span>, <span class="number">0.5</span>]]) </span><br><span class="line">    restmp = init_array <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">25</span>): </span><br><span class="line">        res = np.dot(restmp, transfer_matrix) </span><br><span class="line">        <span class="keyword">print</span> i, <span class="string">"\t"</span>, </span><br><span class="line">        res restmp = res </span><br><span class="line">markov()</span><br></pre></td></tr></table></figure>
+<p>执行以上代码后，输出结果，如图所示</p>
+<p><img src="/image2/markovGuShi_1.png" alt="马尔科夫股市代码输出"></p>
+<p>图3-3 马尔科夫股市代码输出</p>
+<p>从第18次开始，状态就开始收敛至[0.624,0.312,0.0625]。最终数字上略有不同，只是计算机浮点数运算造成的罢了。</p>
+<p>如果我们换一个初始状态t0​，比如[0.2,0.3.0.5]，继续运行上面的代码，只是将init_array变一下，最后结果为：</p>
+<p><img src="/image2/markovGuShi_2.png" alt="马尔科夫股市代码输出"></p>
+<p>到第18次的时候，又收敛到了[0.624,0.312,0.0625]!<br>这个转移矩阵就厉害了。不管我们的初始状态是什么样子的，只要状态转移矩阵不发生变化，当n→∞时，最终状态始终会收敛到一个固定值。</p>
+<h4 id="3-1-2-后续接着代码验证-图2-2-马尔科夫平稳分布表示式（3点）"><a href="#3-1-2-后续接着代码验证-图2-2-马尔科夫平稳分布表示式（3点）" class="headerlink" title="3.1.2 后续接着代码验证 图2-2 马尔科夫平稳分布表示式（3点）"></a>3.1.2 后续接着代码验证 图2-2 马尔科夫平稳分布表示式（3点）</h4><p>我们也看看这个状态转移矩阵P的25(本是n-&gt;∞幂次方) 幂次方有什么有意思的地方？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">matrixpower</span><span class="params">()</span>:</span> </span><br><span class="line">    transfer_matrix = np.array([[<span class="number">0.9</span>, <span class="number">0.075</span>, <span class="number">0.025</span>], </span><br><span class="line">                                [<span class="number">0.15</span>, <span class="number">0.8</span>, <span class="number">0.05</span>], </span><br><span class="line">                                [<span class="number">0.25</span>, <span class="number">0.25</span>, <span class="number">0.5</span>]]) </span><br><span class="line">    restmp = transfer_matrix </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">25</span>): </span><br><span class="line">        res = np.dot(restmp, transfer_matrix) </span><br><span class="line">        <span class="keyword">print</span> i, <span class="string">"\t"</span>, res </span><br><span class="line">        restmp = res </span><br><span class="line">matrixpower()</span><br></pre></td></tr></table></figure>
+<p>执行以上代码</p>
+<p><img src="/image2/markovGuShi_3.png" alt="马尔科夫股市代码输出"></p>
+<p>发现了，从第20次开始，结果开始收敛，并且每一行都为[0.625,0.312,0.0625]!</p>
+<p>再次验证了图2.2的定理0.4.2的 </p>
+<p><img src="/image2/markovGuShi_4.png" alt="马尔科夫股市代码输出"></p>
+<hr>
+<h3 id="3-2-马尔科夫的人类上中下阶层分布模型"><a href="#3-2-马尔科夫的人类上中下阶层分布模型" class="headerlink" title="3.2 马尔科夫的人类上中下阶层分布模型"></a>3.2 马尔科夫的人类上中下阶层分布模型</h3><p>假设，社会学家把人按其经济状况分为3类：下层，中层，上层，我们用1,2,3表示这三个阶层。社会学家发现决定一个人的收入阶层最重要的因素就是其父母的收入阶层。如果一个人的收入属于下层类别，则它的孩子属于下层收入的概率为0.65，属于中层收入的概率为0.28，属于上层收入的概率为0.07。从父代到子代，收入阶层转移概率如下</p>
+<p><img src="/image2/markovJieceng_3_1_2_1.png" alt="马尔科夫阶层分布模型"></p>
+<ul>
+<li>我们用P表示这个转移矩阵，则</li>
+</ul>
+<p><img src="/image2/markovJieceng_3_1_2_2.png" alt="马尔科夫阶层分布模型"></p>
+<ul>
+<li>假设第1代人的阶层比例为</li>
+</ul>
+<p><img src="/image2/markovJieceng_3_1_2_3.png" alt="马尔科夫阶层分布模型"></p>
+<ul>
+<li>则前10代人的阶层分布如下</li>
+</ul>
+<blockquote>
+<p>第二代人是第一代任PI0，点乘以P（转移概率），<br>第三代人是第二代人点乘以P</p>
+</blockquote>
+<p><img src="/image2/markovJieceng_3_1_2_4.png" alt="马尔科夫阶层分布模型"></p>
+<p>我们可以看到，在相同的转移矩阵作用下，状态变化最终会趋于平稳。对于第n代人的阶层分布，我们有</p>
+<p><img src="/image2/markovJieceng_3_1_2_5.png" alt="马尔科夫阶层分布模型"></p>
+<p>从表达式上我们可以看到，π是一维向量，P是两维矩阵，P进行足够多次自乘后，值趋于<strong>稳定</strong>。</p>
+<h4 id="3-2-1-马尔科夫的人类农村转城市人口分布模型"><a href="#3-2-1-马尔科夫的人类农村转城市人口分布模型" class="headerlink" title="3.2.1 马尔科夫的人类农村转城市人口分布模型"></a>3.2.1 马尔科夫的人类农村转城市人口分布模型</h4><p>假设城市化进程中，农村人转移为城市人的概率为0.5，城市人转移为农村人的概率为0.1。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">人口</th>
+<th style="text-align:center">农村人</th>
+<th style="text-align:center">城市人</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">农村人</td>
+<td style="text-align:center">0.5</td>
+<td style="text-align:center">0.5</td>
+</tr>
+<tr>
+<td style="text-align:center">城市人</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">0.9</td>
+</tr>
+</tbody>
+</table>
+<p>假设一开始有100个农村人，0个城市人，每代转移人数矩阵如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">代数</th>
+<th style="text-align:center">农村人</th>
+<th style="text-align:center">城市人</th>
+<th style="text-align:center">农村人转移为城市人</th>
+<th style="text-align:center">城市人转移为农村人</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">25</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">30</td>
+<td style="text-align:center">70</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">22</td>
+<td style="text-align:center">78</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">81</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">83</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">83</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<p>可以看到，城市化进程中马尔科夫平稳状态就是农村人转移为城市人的速度等于城市人转移为农村人的速度。对于上述转移矩阵P，平稳分布为农村人17%，城市人83%。如果我们可以得到当前中国城市化转移矩阵P，我们就可以算出中国最终城市化率大概为多少（这里不考虑P的变化）。同时如果我们知道了中国城市化人口比例，我们就能知道城市化进程还可以持续多少代人。</p>
+<h3 id="3-3-车站候车人数预测模型"><a href="#3-3-车站候车人数预测模型" class="headerlink" title="3.3 车站候车人数预测模型"></a>3.3 车站候车人数预测模型</h3><p>具体的实例过程请移步 <strong>[2.1.1 马尔科夫简单模型预测实战笔记]</strong> 章节部分</p>
+<hr>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><h3 id="4-1-马尔科夫的平稳随机性"><a href="#4-1-马尔科夫的平稳随机性" class="headerlink" title="4.1 马尔科夫的平稳随机性"></a>4.1 马尔科夫的平稳随机性</h3><ul>
+<li><p>非周期马氏链：马氏链转移要收敛，就一定不能是周期性的。不做特别处理，我们处理的问题基本上都是非周期性的</p>
+</li>
+<li><p>存在概率转移矩阵P，任意两个状态是连通的，如上，例题中的每个不同的阶层人的角色通过某种方式，他们之间是可以相互转化，前后转化的两种状态是联通的可以转化的，底层人士可以转化成中层等。</p>
+</li>
+</ul>
+<blockquote>
+<p>不论初始状态是什么，经过足够多次概率转移后，会存在一个稳定的状态π。<br>概率转移矩阵自乘足够多次后，每行值相等。即</p>
+</blockquote>
+<p><img src="/image2/markov4_1.png" alt="马尔科夫总结"></p>
+<ul>
+<li>显然，由于马氏链稳定后，所有状态转移到状态j的概率之和稳定。</li>
+</ul>
+<p><img src="/image2/markov4_2.png" alt="马尔科夫总结"></p>
+<ul>
+<li>则π为马氏链稳定状态，并且π是方程π=πP的唯一非负解。结合上面结论，很明显。</li>
+</ul>
+<p><img src="/image2/markov4_3.png" alt="马尔科夫总结"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/第二章-深度学习相关基础算法-2-1-马尔科夫链/">2.1 马尔科夫链</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Porter Pan</a></p>
+        <p><span>发布时间:</span>2019-01-02, 22:55:03</p>
+        <p><span>最后更新:</span>2019-01-18, 18:58:18</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/第二章-深度学习相关基础算法-2-1-马尔科夫链/" title="2.1 马尔科夫链">http://yoursite.com/第二章-深度学习相关基础算法-2-1-马尔科夫链/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/第二章-深度学习相关基础算法-2-1-马尔科夫链/　　作者: Porter Pan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/第二章-深度学习相关基础算法-2-1-1-马尔科夫简单模型预测实战笔记/">
+                    2.1.1 马尔科夫简单模型预测实战笔记
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/网页设计基础笔记/">
+                    网页设计基础笔记
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#马尔科夫链"><span class="toc-number">2.</span> <span class="toc-text">马尔科夫链</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要："><span class="toc-number">2.1.</span> <span class="toc-text">摘要：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、常见的马尔可夫过程："><span class="toc-number">2.2.</span> <span class="toc-text">一、常见的马尔可夫过程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、模型的创立条件"><span class="toc-number">2.3.</span> <span class="toc-text">二、模型的创立条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-无后效性"><span class="toc-number">2.3.1.</span> <span class="toc-text">2.1 无后效性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-平稳分布概念"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.2 平稳分布概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、马尔科夫相关的例子"><span class="toc-number">2.4.</span> <span class="toc-text">三、马尔科夫相关的例子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-马尔科夫股市模型实例"><span class="toc-number">2.4.1.</span> <span class="toc-text">3.1 马尔科夫股市模型实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-题设"><span class="toc-number">2.4.1.1.</span> <span class="toc-text">3.1 题设</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-用计算结果说明马尔科夫的性质（无后效性，和系统平稳性）"><span class="toc-number">2.4.1.2.</span> <span class="toc-text">3.1.1 用计算结果说明马尔科夫的性质（无后效性，和系统平稳性）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-后续接着代码验证-图2-2-马尔科夫平稳分布表示式（3点）"><span class="toc-number">2.4.1.3.</span> <span class="toc-text">3.1.2 后续接着代码验证 图2-2 马尔科夫平稳分布表示式（3点）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-马尔科夫的人类上中下阶层分布模型"><span class="toc-number">2.4.2.</span> <span class="toc-text">3.2 马尔科夫的人类上中下阶层分布模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-马尔科夫的人类农村转城市人口分布模型"><span class="toc-number">2.4.2.1.</span> <span class="toc-text">3.2.1 马尔科夫的人类农村转城市人口分布模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-车站候车人数预测模型"><span class="toc-number">2.4.3.</span> <span class="toc-text">3.3 车站候车人数预测模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、总结"><span class="toc-number">2.5.</span> <span class="toc-text">四、总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-马尔科夫的平稳随机性"><span class="toc-number">2.5.1.</span> <span class="toc-text">4.1 马尔科夫的平稳随机性</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"2.1 马尔科夫链　| 聚水渊　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://yoursite.com/第二章-深度学习相关基础算法-2-1-马尔科夫链/';
+            this.page.identifier = '第二章-深度学习相关基础算法-2-1-马尔科夫链/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//porter-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/第二章-深度学习相关基础算法-2-1-1-马尔科夫简单模型预测实战笔记/" title="上一篇: 2.1.1 马尔科夫简单模型预测实战笔记">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/网页设计基础笔记/" title="下一篇: 网页设计基础笔记">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/第一章-Linux学习环境相关配置-1-9-hexo-实现本地图片加载/">1.9 hexo 实现本地图片加载</a></li><li class="post-list-item"><a class="post-list-link" href="/第二章-深度学习相关基础算法-2-1-2-最大熵模型/">2.1.2 最大熵模型</a></li><li class="post-list-item"><a class="post-list-link" href="/第二章-深度学习相关基础算法-2-1-3-隐马尔科夫HMM/">2.1.3 隐马尔科夫HMM</a></li><li class="post-list-item"><a class="post-list-link" href="/第二章-深度学习相关基础算法-2-2-矩阵相关基础知识/">2.1.3 隐马尔科夫HMM</a></li><li class="post-list-item"><a class="post-list-link" href="/第二章-深度学习相关基础算法-2-3-线性回归/">2.3 线性回归</a></li><li class="post-list-item"><a class="post-list-link" href="/第二章-深度学习相关基础算法-2-1-1-马尔科夫简单模型预测实战笔记/">2.1.1 马尔科夫简单模型预测实战笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/第二章-深度学习相关基础算法-2-1-马尔科夫链/">2.1 马尔科夫链</a></li><li class="post-list-item"><a class="post-list-link" href="/网页设计基础笔记/">网页设计基础笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/简单的方法，越过付费获取在线的log设计/">简单的方法，获取在线付费设计log的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/gitignre-配置/">Git中忽略提交项</a></li><li class="post-list-item"><a class="post-list-link" href="/值得收藏的网站/">值得收藏的网站</a></li><li class="post-list-item"><a class="post-list-link" href="/STM32串口通信配置/">STM32串口通信配置（USART1+USART2+USART3+UART4）</a></li><li class="post-list-item"><a class="post-list-link" href="/STM32复位及通过函数判断是何种条件出发的复位/">STM32复位及通过函数判断是何种条件出发的复位</a></li><li class="post-list-item"><a class="post-list-link" href="/python之tkinter入坑Pack/">python之tkinter入坑Pack</a></li><li class="post-list-item"><a class="post-list-link" href="/MFC-Socket-通信/">C++ MFC 界面实现套接字（socket) 通信</a></li><li class="post-list-item"><a class="post-list-link" href="/vultr-freenom实现主机域名的绑定/">vultr+freenom实现主机域名的绑定</a></li><li class="post-list-item"><a class="post-list-link" href="/第二章-深度学习相关基础算法-index/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/第一篇博文/">第一篇博文</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu-中安装sublime-text3/">ubuntu 中安装sublime_text3</a></li><li class="post-list-item"><a class="post-list-link" href="/Hexo-每次写好后deploy博客/">Hexo 每次写好后deploy博客</a></li><li class="post-list-item"><a class="post-list-link" href="/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/解决Chrome67版本以后不能离线安装插件的情况/">解决Chrome67版本以后不能离线安装插件的情况</a></li><li class="post-list-item"><a class="post-list-link" href="/第一章-Linux学习环境相关配置-index/">index</a></li><li class="post-list-item"><a class="post-list-link" href="/git-推送新的文章到github其他分支上/">git 推送新的文章到github其他分支上</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu18-正确-安装ShadowSocket/">ubuntu18 正确 安装ShadowSocket</a></li><li class="post-list-item"><a class="post-list-link" href="/Python-GUI-Socket/">python Tkinter 界面实现套接字（socket) 通信</a></li><li class="post-list-item"><a class="post-list-link" href="/第一章-Linux学习环境相关配置-1-8-深度学习环境搭建/">1.8 深度学习环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/第一章-Linux学习环境相关配置-1-7-gitbook-插件等相关设置/">1.7 gitbook 插件等相关设置</a></li><li class="post-list-item"><a class="post-list-link" href="/第一章-Linux学习环境相关配置-1-6-win10-ubuntu双系统修复ubuntu启动引导/">1.6 win10+ubuntu双系统修复ubuntu启动引导</a></li><li class="post-list-item"><a class="post-list-link" href="/第一章-Linux学习环境相关配置-1-5-Ubuntu下常用工具软件配置安装/">1.5 Ubuntu下常用工具软件配置安装</a></li><li class="post-list-item"><a class="post-list-link" href="/第一章-Linux学习环境相关配置-1-4-Latex-排版使用笔记/">1.4 Latex 排版使用笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/第一章-Linux学习环境相关配置-1-3-Ubuntu18-git命令使用总结/">1.3 Ubuntu18 git命令使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/第一章-Linux学习环境相关配置-1-2-Ubuntu18安装Gitbook/">1.2 Ubuntu18安装Gitbook</a></li><li class="post-list-item"><a class="post-list-link" href="/第一章-Linux学习环境相关配置-1-1-Ubuntu18下有道词典的配置/">1.1 Ubuntu18下有道词典的配置</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2019 Porter Pan
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "blog上见~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "欢迎欢迎~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
