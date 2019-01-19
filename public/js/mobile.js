@@ -82,41 +82,111 @@ define([], function(){
         
         //滑动隐藏
         document.getElementById("viewer-box").addEventListener("webkitTransitionEnd", function(){
-
+	    
             if(_isShow == false){
                 document.getElementById("viewer").className = "hide";
                 _isShow = true;
+		
             }else{
+		
             }
             
         }, false);
-
+	
+	
         //点击展示和隐藏
+	var touchIfShowFlag=false;
         ctn.addEventListener("touchend", function(){
-            show();
+		if(touchIfShowFlag==false){
+			touchIfShowFlag=true;
+			show();
+			}else if(touchIfShowFlag==true){
+				touchIfShowFlag=false;
+				hide();
+			}
         }, false);
 
-        var $right = document.getElementsByClassName("viewer-box-r")[0];
+/*
+	var $right = document.getElementsByClassName("viewer-box-r")[0];
+        right.addEventListener("touchend", function(){
+		if(touchIfShowFlag==false){
+			touchIfShowFlag=true;
+			show();
+			}else if(touchIfShowFlag==true){
+				touchIfShowFlag=false;
+				hide();
+			}
+		hide();
+        }, false);
+
+	var $lift = document.getElementsByClassName("viewer-box-l")[0];
+        lift.addEventListener("touchend", function(){
+		if(touchIfShowFlag==false){
+			touchIfShowFlag=true;
+			show();
+			}else if(touchIfShowFlag==true){
+				touchIfShowFlag=false;
+				hide();
+			}
+		hide();
+        }, false);*/
+
+	//构造的函数有问题
+/*
+        var $right = document.getElementsByClassName("slider-trigger")[0];//"viewer-box-r")[0];
         var touchStartTime;
         var touchEndTime;
+	
         $right.addEventListener("touchstart", function(){
-            touchStartTime = + new Date();
+            touchStartTime = new Date();
         }, false);
+
         $right.addEventListener("touchend", function(){
-            touchEndTime = + new Date();
-            if(touchEndTime - touchStartTime < 300){
-                hide();
+            touchEndTime = new Date();
+	    
+            if(touchEndTime - touchStartTime > 40){
+                //hide();
+		    if(touchIfShowFlag==false){
+			touchIfShowFlag=true;
+			show();
+			}else if(touchIfShowFlag==true){
+				touchIfShowFlag=false;
+				hide();
+			}
             }
+ 	    
+	    //hide();
             touchStartTime = 0;
             touchEndTime = 0;
         }, false);
+*/
+        /*$(".slider-trigger").click(function(){
+            //show();
+	     if(touchIfShowFlag==false){
+		touchIfShowFlag=true;
+		show();
+		}else{
+			touchIfShowFlag=false;
+			hide();
+		}
+        })*/
 
-        $(".slider-trigger").click(function(){
-            show();
-        })
         $(".viewer-box-r").click(function(){
             hide();
-        })
+		touchIfShowFlag=false;
+	    //show();
+        });
+//这个是弹窗弹出的部件div
+	$(".viewer-box-l").click(function(){
+            hide();
+		touchIfShowFlag=false;
+	    //show();
+        });
+	$(".viewer-div").click(function(){
+            hide();
+		touchIfShowFlag=false;
+	    //show();
+        });
 
         //滚动样式
         var $overlay = $("#mobile-nav .overlay");
@@ -133,6 +203,8 @@ define([], function(){
             }else{
                 $header.addClass("hide").removeClass("fixed");
             }
+	//设置一滑动页面，这个窗就自动影藏
+	    hide();
         };
         $header[0].addEventListener("touchstart", function(){
             $('html, body').animate({scrollTop:0}, 'slow');
@@ -142,7 +214,7 @@ define([], function(){
     return{
         init: function(){
             //构造函数需要的参数
-            ctn = document.getElementsByClassName("slider-trigger")[0];
+            ctn = document.getElementsByClassName("slider-trigger")[0];//获取第一个slider-trigger类名的元素
             //构造四步
             reset();
             renderDOM();

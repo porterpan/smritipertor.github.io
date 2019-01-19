@@ -27,15 +27,18 @@
 .overlay{
     .slider-trigger{
         position: absolute;
-        z-index: 101;
+/*设置手机页面滑动图标置于最上层显示*/
+        z-index: 999;
         bottom: 0;
         left: 0;
         width: 42px;
         height: 42px;
         &:hover{
-            background: #444;
+            background: #3399;
+		/*background: #444;*/
         }
         &:before{
+	    /*background: #ff3399;*/
             color: #ddd;
             content: "\f00b";
             font: 16px FontAwesome;
