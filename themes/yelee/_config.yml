@@ -128,8 +128,8 @@ background_image: 5
 base_font_size: 16  #px, 16 - 24
 
 ## General Color Scheme | 主题配色方案 
-## 可用值 Value: yilia
-color_scheme: yilia
+## 可用值 Value: yilia, porter
+color_scheme: porter
 
 highlight_style:
   on: true
@@ -162,7 +162,7 @@ copyright: true
 toc:
   on: true
   list_number: true # 目录序号
-  max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
+  max_depth: 4  # 1 - 6 (h1-h6) 目录最大级数
   nowrap: false # Keep title on same line | 目录标题不换行
 
 # 是否开启主页及加载头像时的动画效果
@@ -185,28 +185,30 @@ limit_article_width:
 tagcloud: true
 
 # Blogroll, Link exchange | 友情链接
-friends:
-  Hexo: https://hexo.io
-  GitHub: https://pages.github.com/
+friends:  
   MOxFIVE: http://moxfive.xyz/
   盒子部落: http://scholar.hezibuluo.com/
   南瓜网: http://www.588230.com/
   皮皮虾: http://www.wenkuwenku.com/
-  武侯阁: http://www.wuhouge.com/
-  看么电影1: http://0e2.cn/
-  看么电影2: http://www.sonimei.cn/qzd.html
-  Hexo指令: https://hexo.io/zh-cn/docs/commands.html
-  Yelee帮助: http://moxfive.coding.me/yelee/
+  武侯阁(账号@我): http://www.wuhouge.com/
+  看么电影: http://0e2.cn/
+  搜你妹视频解析: http://www.sonimei.cn/
+  free-ss: https://free-ss.site/
   StackOverflow: https://stackoverflow.com/  
   Web W3school: http://www.w3school.com.cn/
   Git命令: https://www.yiibai.com/git/git_checkout.html
   路过图床: https://imgchr.com/
   我的主页: http://porterpan.tk/
   图标素材网: https://www.easyicon.net/
+  paper Weekly: http://www.paperweekly.site/rank
+  arXiv.org: https://arxiv.org/
+  小木虫: http://muchong.com/bbs/
+  image-net-ilsvrc: http://image-net.org/
+
 #friends: false
 
 #是否开启“关于我”。
-aboutme: "自信、乐观、帅气、阳光；专注于深度学习、机器学习、视觉图像处理、嵌入式软硬件。"
+aboutme: "自信、乐观、帅气、阳光；专注于深度学习、机器学习、视觉图像处理、嵌入式软、硬件。"
 #aboutme: false
 
 # Open link in a new tab | 是否在新窗口打开链接
@@ -240,7 +242,7 @@ ie_updater:
 tab_title_change: 
   on: true
   left_tab_title: 'blog上见~ '
-  return_tab_title: '欢迎欢迎~ '
+  return_tab_title: '欢迎~ '
 
 
 # >>> Vendors | 第三方工具 & 服务 <<<

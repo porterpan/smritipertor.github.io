@@ -262,7 +262,7 @@ a {
   position: absolute;
   right: 0;
   min-height: 100%;
-  background: rgba(229,242,255,0.6);
+  background: rgba(102,204,255,0.4);
   left: 300px;
   width: auto;
 }
@@ -1257,7 +1257,7 @@ color
   margin: 30px;
   margin-bottom: 5px;
   position: relative;
-  background: rgba(255,255,204,0.45);
+  background: rgba(225,255,102,0.85);
   -webkit-transition: all 0.2s ease-in;
 }
 .article.show {
@@ -2769,46 +2769,46 @@ pre .javascript .function {
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
 }
 .tagcloud a.color0 {
-  background: #ba8f6c;
+  background: #03c;
 }
 .tagcloud a.color0::before {
-  border-right-color: #ba8f6c;
+  border-right-color: #03c;
 }
 .tagcloud a.color1 {
-  background: #ff945c;
+  background: #5b00e6;
 }
 .tagcloud a.color1::before {
-  border-right-color: #ff945c;
+  border-right-color: #5b00e6;
 }
 .tagcloud a.color2 {
-  background: #7b5d5f;
+  background: #93f;
 }
 .tagcloud a.color2::before {
-  border-right-color: #7b5d5f;
+  border-right-color: #93f;
 }
 .tagcloud a.color3 {
-  background: #f5c7b7;
+  background: #f3c;
 }
 .tagcloud a.color3::before {
-  border-right-color: #f5c7b7;
+  border-right-color: #f3c;
 }
 .tagcloud a.color4 {
-  background: #cfb7c4;
+  background: #ff1a1a;
 }
 .tagcloud a.color4::before {
-  border-right-color: #cfb7c4;
+  border-right-color: #ff1a1a;
 }
 .tagcloud a.color5 {
-  background: #918597;
+  background: #ffa31a;
 }
 .tagcloud a.color5::before {
-  border-right-color: #918597;
+  border-right-color: #ffa31a;
 }
 .tagcloud a.color6 {
-  background: #bc8f8f;
+  background: #3c3;
 }
 .tagcloud a.color6::before {
-  border-right-color: #bc8f8f;
+  border-right-color: #3c3;
 }
 .tagcloud a:hover {
   opacity: 1;
@@ -2947,7 +2947,7 @@ pre .javascript .function {
   width: 100%;
   height: 100%;
   position: relative;
-  left: 50px;
+  left: 30px;
   color: #0f0;
   -webkit-transform: translate3d(-100%, 0, 0);
   -webkit-transition: -webkit-transform 0.25s ease-in-out;
@@ -3107,14 +3107,4 @@ p.no-result {
   color: #808080;
   font-family: Times, Georgia serif;
   border-bottom: 2px solid #d3d3d3;
-}
-body {
-  background: #808080;
-}
-.article-header {
-  border-left: 5px solid #666;
-}
-.article-more-link a {
-  background: #4d4d4d;
-  font-size: 0.8em;
 }
