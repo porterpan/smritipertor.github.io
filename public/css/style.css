@@ -2991,7 +2991,7 @@ pre .javascript .function {
 }
 #viewer-box .viewer-box-l .viewer-div:last-child {
   border-bottom: none;
-  background: rgba(255,255,255,0.1);
+  background: rgba(229,229,255,0.01);
 }
 #viewer-box .viewer-box-l .viewer-div .switch-friends-link {
   line-height: 20px;
