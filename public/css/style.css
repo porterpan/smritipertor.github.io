@@ -2976,7 +2976,7 @@ pre .javascript .function {
   content: "";
   width: 6px;
   height: 6px;
-  border: 1px solid #069;
+  border: 1px solid #ff1ab2;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   background: #00c;
@@ -2984,9 +2984,11 @@ pre .javascript .function {
   margin-right: 10px;
 }
 #viewer-box .viewer-box-l .viewer-div {
-  background: rgba(255,255,153,0.85);
+  background: rgba(102,102,102,0.45);
   border-bottom: 1px dotted #00c;
-  padding-bottom: 13px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
   line-height: 20px;
 }
 #viewer-box .viewer-box-l .viewer-div:last-child {
@@ -2994,7 +2996,14 @@ pre .javascript .function {
   background: rgba(229,229,255,0.01);
 }
 #viewer-box .viewer-box-l .viewer-div .switch-friends-link {
-  line-height: 20px;
+  padding: 0px 0 0 0;
+  margin: 0px 10px 10px 0px;
+  color: #00f;
+  border-width: 4px;
+  border-style: ridge;
+  border-color: rgba(102,255,102,0.8);
+  background: rgba(102,255,102,0.8);
+  line-height: 30px;
 }
 #viewer-box .viewer-box-r {
   -webkit-box-flex: 1;
@@ -3005,7 +3014,7 @@ pre .javascript .function {
   flex-grow: 1;
   width: auto;
   height: auto;
-  background: #000;
+  background: rgba(255,255,255,0.1);
 }
 #viewer-box .viewer-box-r:hover {
   cursor: w-resize;
@@ -3014,7 +3023,7 @@ pre .javascript .function {
   -webkit-transform: translate3d(0, 0, 0);
 }
 #viewer-box.anm-swipe .viewer-box-r {
-  background: #000;
+  background: rgba(255,255,255,0.1);
 }
 .hide {
   display: none;

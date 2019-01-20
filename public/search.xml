@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[1.10 hexo网页定制]]></title>
+    <url>%2F%E7%AC%AC%E4%B8%80%E7%AB%A0-Linux%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE-1-10-hexo%E7%BD%91%E9%A1%B5%E5%AE%9A%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[Edit By Porter, 积水成渊,蛟龙生焉。 摘要本文记录了1.10 hexo网页定制，要知道原作官方提供的hexo yeele网站的手机页面和电脑页面css布局和java页面交互的文本进行个性定制。第一部分，设置手机页面的 mobile-slider.styl 等文件， 里面的css文件。 第二部分是java交互界面的文件设置。 文章同步于: 我的gitbook 一、样式定制之css样式文件定制 使用之前删掉里面的注释1.1 mobile-slider.styl 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495#viewer&#123; position: fixed; z-index: 1000000; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden;&#125;//mune bar setting#viewer-box&#123; display: flex; width: 100%; height: 100%; position: relative;//设置浮窗的左边距 left:30px; color: #0f0; -webkit-transform: translate3d(-100%, 0, 0 ); -webkit-transition: -webkit-transform .25s ease-in-out;//设置悬浮的弹窗页面 .viewer-box-l&#123; background: rgba(20,20,20,1); width: 80%; height: auto; flex-grow: 0; min-width: 8em; max-width: 23em; .viewer-box-wrap&#123; //revise the moble menu margin: 20px 10px 10px 0px; &#125; //frends links menu .viewer-title&#123; line-height: 32px; //black background: rgba(0,0,0,1); &amp;:before&#123; content: ""; width: 6px; height: 6px; //border: 1px solid #999; border: 1px solid #006699; -webkit-border-radius: 10px; border-radius: 10px; //background is tabar of list content background: #0000cc; display: inline-block; margin-right: 10px; &#125; &#125; //div Underline, dash .viewer-div&#123; //setting div 黄色背景幕布 background: rgba(255,255,153,0.85); //蓝色圆点 border-bottom: 1px dotted #0000cc; padding-bottom: 13px; line-height: 20px; &amp;:last-child&#123; //设置标签背景白色透明，不继承上面的白色 border-bottom: none; background: rgba(229,229,255,0.01); &#125; .switch-friends-link&#123; line-height: 20px; &#125; &#125; &#125; //black .viewer-box-r&#123; flex-grow: 1 width: auto height: auto background: rgba(0,0,0,1) &amp;:hover &#123; cursor: w-resize &#125; &#125;&#125;#viewer-box.anm-swipe&#123; -webkit-transform: translate3d(0, 0, 0); .viewer-box-r&#123; background: rgba(0,0,0,1); &#125;&#125;.hide&#123; display: none;&#125;#viewer-box .viewer-list&#123; margin: 0; padding: 0; height: 100%; overflow: hidden;&#125; 1.1 mobile.styl123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222223224225226227228229230231232233234235236237238239240241242243244245246247248249250251252253254255256257258259260261262263264265266267268269270271272273274275276277278279280281282283284285286287288289290291292293294295296297298299300301302303304305306307308309310311312313314315316317318319320321322323324325.left-col &#123; display: none;&#125;.mid-col &#123; left: 0;&#125;#header&#123; .header-nav&#123; position: relative; &#125; .header-menu &#123; line-height: 1.3 min-height 3rem &#125;&#125;.header-author&#123; &amp;.fixed&#123; position: fixed; top: -8px; width: 100%; color: #ddd; a &#123; color: white; &#125; &#125;&#125;.overlay&#123; .slider-trigger&#123; position: absolute;/*设置手机页面滑动图标置于最上层显示*/ z-index: 999; bottom: 0; left: 0; width: 42px; height: 42px; &amp;:hover&#123; background: #3399; /*background: #444;*/ &#125; &amp;:before&#123; /*background: #ff3399;*/ color: #ddd; content: "\f00b"; font: 16px FontAwesome; width: 16px; height: 16px; margin-left: 9px; margin-top: 14px; display: block; &#125; &#125;&#125;.article-header&#123; border-left: none; padding: 0; border-bottom: 1px dotted #ddd; h1&#123; margin-bottom: 2px; &#125;&#125;#header .header-subtitle&#123; padding: 0 3em; font-size: 1em;&#125;.article-info-index.article-info&#123; padding-top: 10px; margin: 0; border-top: 1px solid #ddd;&#125;.article-info-post.article-info&#123; margin: 0; padding-top: 10px; border: none;&#125;#viewer-box .viewer-box-l&#123; font-size: 14px;&#125;.article&#123; margin: (10/16)rem 10px; .article-entry&#123; padding-left: 0; padding-right: 0; .highlight &#123; padding .35em .6em &#125; &#125; .article-title&#123; display: block; margin: 0; font-size 1.5rem font-weight bold &#125; .article-meta&#123; display: none; &#125;&#125;.article-inner &#123; padding: 12px;&#125;.archive-article-inner .article-meta &#123; top: 0; margin-top: .5em;&#125;.archives &#123; .archive-article &#123; padding: 0; &#125; .archive-article-date &#123; margin-right: 0; &#125; .article-info &#123; display: none; &#125;&#125;.archive-article-inner .article-meta .archive-article-date.share&#123; padding: 3px 10px;&#125;.duoshuo &#123; padding: 0 13px;&#125;#disqus_thread &#123; padding: 0 13px;&#125;#mobile-nav&#123; display: block;&#125;#page-nav .extend&#123; opacity: 1;&#125;#page-nav &#123; margin-top: 1em; .page-number &#123; margin-bottom: 1.5em; &#125;&#125;.instagram .open-ins&#123; left: 2px; top: -30px; color: #aaa;&#125;.info-on-right&#123; float: initial;&#125;.archives-wrap&#123; margin: 10px 10px 0px; padding: 10px; padding-right: 0; .archive-year-wrap&#123; position: relative; padding: 0 0 0 0; a&#123; padding: 0 0 0 0; &#125; &#125; h1 &#123; font-size: 1.2em; margin-bottom: .3em; &#125;&#125;.archives&#123; .archive-article&#123; padding: 10px 0; margin-left: 0; &#125;&#125;#footer &#123; .footer-left&#123; float: initial; margin-bottom: .5em; &#125; .footer-right&#123; float: initial; margin-bottom: 1em; &#125; .visit &#123; margin: 0; &#125;&#125;.article-category::before&#123; display: none;&#125;.article-tag::before &#123; display: none;&#125;.article-meta time:before &#123; display: none;&#125;.visit &#123; margin-top: 1em;&#125;#tocButton &#123; z-index: 100; position: fixed; left: .5em; top: auto; /*In order to cover style in article.styl*/ bottom: 10px; padding: .2em .4em; border-radius: 6px; border-style : outset; background: rgba(255, 255, 255, .7); font-size: 1em; font-weight: bold; color: gray; &amp;:hover &#123; color: #88acdb; font-size: 1em; &#125;&#125;.toc-article &#123; display: none; z-index: 99 left: 0; top: 38%; bottom: 1em; height: auto; max-height: 58%; width: none; width: auto; min-width: 7em; max-width: 61.8%; overflow: auto; margin-left: 0; padding: 10px; padding-left: 0; border-radius: 2.8%; background: none; font-size: 1em; line-height: 1.25em; .toc-title &#123; display: none; padding: .3em; color: white; background: lightgray; border-radius 3px &#125; .toc &#123; padding: 0.5em; &#125; ol &#123; margin: 0; padding: 0.5em; border-radius: 5px; background: rgba(255, 255, 255, .85); ol &#123; padding: 0.1em 0; padding-left: 1.2em; &#125; &#125; a &#123; color: #767676; &#125;&#125;if toc-nowrap li.toc-item line-height: 1.2.copyright &#123; width: 90%; padding: .5em .8em;&#125;.scroll &#123; right: 1.2em; li &#123; font-size: 1.7em; &#125;&#125;.hide-labels &#123; z-index: 100; position: fixed; left: .5em; top: auto; bottom: 10px; padding: .2em .4em; border-radius: 6px; border-style : outset; opacity: .9; background: rgba(255, 255, 255, .8); font-weight: bold; color: gray;&#125;#post-nav-button &#123; display: none;&#125;.post-list &#123; visibility: hidden;&#125;/*多说 UA*/.ua &#123; display: none !important;&#125;if hexo-config("github_widget") .github-text display none.copyright font-size 16px .copy-path display none// Tags Cloud Page.tags a line-height 45px]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>css</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[1.9 hexo 实现本地图片加载]]></title>
     <url>%2F%E7%AC%AC%E4%B8%80%E7%AB%A0-Linux%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE-1-9-hexo-%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%2F</url>
     <content type="text"><![CDATA[Edit By Porter, 积水成渊,蛟龙生焉。 摘要本文记录了1.9 hexo 实现本地图片加载，要知道原作官方提供的hexo-asset-image，根本不能满足自己的需要，所以这里是基于原作的代码进行修改实现，原作并未其提供的代码做出解释说明，本文将对更改后能实现本地图片加载的代码进行解释，并有针对性的对后来遇到问题的，或者可以给你们提供二次修改说明的解释并提醒。 文章同步于: 我的gitbook hexo-asset-image,这是原作者提供的代码，有一个特别致命的问题，是每次hexo g,后，需要手动将图片一张张对应复制到public文件夹中对应你的博文对应生成的文件夹的路径下才可以实现，本地图片显示。那么问题来了，我如果写了很多博文，需要每次复制如此多的图片到不同博文对应生成的文件夹中去。太麻烦了 若，我是写的书的格式，分章分节，一章我有10几节，那一个文件一个文件复制太麻烦了。 一、要解决的问题 我们要解决既要加载本地图库在我们的站点显示 又不想一个博文一个博文区分开了分别拷贝对应图片到public文件夹中 假设：如果我们能够把每章节的很多文章的不同图片放到该章节的图库文件夹中，这样每章就一个图库文件，我们把图库（image1文件夹）直接复制到（source文件夹下），然后直接hexo clean &amp;&amp; hexo g 就可以，这样不用手动添加文件到问文件夹中。 二、操作2.1 下载原作者的文件，然后修改原文件代码 安装原作者的hexo-asset-image 1npm install hexo-asset-image --save 2,2 原始作者的代码如下（还未经过博主修改前的代码）123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657'use strict';var cheerio = require('cheerio');// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-stringfunction getPosition(str, m, i) &#123; return str.split(m, i).join(m).length;&#125;hexo.extend.filter.register('after_post_render', function(data)&#123; var config = hexo.config; if(config.post_asset_folder)&#123; var link = data.permalink; var beginPos = getPosition(link, '/', 3) + 1; // In hexo 3.1.1, the permalink of "about" page is like ".../about/index.html". var endPos = link.lastIndexOf('/') + 1; link = link.substring(beginPos, endPos); var toprocess = ['excerpt', 'more', 'content']; for(var i = 0; i &lt; toprocess.length; i++)&#123; var key = toprocess[i]; var $ = cheerio.load(data[key], &#123; ignoreWhitespace: false, xmlMode: false, lowerCaseTags: false, decodeEntities: false &#125;); $('img').each(function()&#123; if ($(this).attr('src'))&#123; // For windows style path, we replace '\' to '/'. var src = $(this).attr('src').replace('\\', '/'); if(!/http[s]*.*|\/\/.*/.test(src) &amp;&amp; !/^\s*\//.test(src)) &#123; // For "about" page, the first part of "src" can't be removed. // In addition, to support multi-level local directory. var linkArray = link.split('/').filter(function(elem)&#123; return elem != ''; &#125;); var srcArray = src.split('/').filter(function(elem)&#123; return elem != '' &amp;&amp; elem != '.'; &#125;); if(srcArray.length &gt; 1) srcArray.shift(); src = srcArray.join('/'); $(this).attr('src', config.root + link + src); console.info&amp;&amp;console.info("update link as:--&gt;"+config.root + link + src); &#125; &#125;else&#123; console.info&amp;&amp;console.info("no src attr, skipped..."); console.info&amp;&amp;console.info($(this)); &#125; &#125;); data[key] = $.html(); &#125; &#125;&#125;); 2.3 修改原作代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100'use strict';var cheerio = require('cheerio');// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string//获取对应链接的'/'分开的某部分function getPosition(str, m, i) &#123; return str.split(m, i).join(m).length;&#125;hexo.extend.filter.register('after_post_render', function(data)&#123; var config = hexo.config; if(config.post_asset_folder)&#123; var link = data.permalink; //调用上面的函数，取link链接的第三个'/'位置的数组下标值，做下面取链接的首地址区间。 var beginPos = getPosition(link, '/', 3) + 1; // In hexo 3.1.1, the permalink of "about" page is like ".../about/index.html". //取link链接的最后一个'/'，做下面取链接的尾地址区间。 var endPos = link.lastIndexOf('/') + 1; //取link连接中我们认为有用的地址部分。 link = link.substring(beginPos, endPos); var toprocess = ['excerpt', 'more', 'content']; for(var i = 0; i &lt; toprocess.length; i++)&#123; var key = toprocess[i]; var $ = cheerio.load(data[key], &#123; ignoreWhitespace: false, xmlMode: false, lowerCaseTags: false, decodeEntities: false &#125;); $('img').each(function()&#123; if ($(this).attr('src'))&#123; // For windows style path, we replace '\' to '/'. var src = $(this).attr('src').replace('\\', '/'); if(!/http[s]*.*|\/\/.*/.test(src) &amp;&amp; !/^\s*\//.test(src)) &#123; // For "about" page, the first part of "src" can't be removed. // In addition, to support multi-level local directory. var linkArray = link.split('/').filter(function(elem)&#123; return elem != ''; &#125;); //取图片的名字，比如 x.png var srcArray = src.split('/').filter(function(elem)&#123; return elem != '' &amp;&amp; elem != '.'; &#125;); if(srcArray.length &gt; 1) srcArray.shift(); src = srcArray.join('/'); //$(this).attr('src', config.root + link + src); //notes: src is image name,and config.root is localhost:port,the middle cahr string is my local image Repository //这我们做判断，判断原始link链接的前3个字是不是“第一章”,如果是，我们将link地址写成'image1'，（image1是我们存放第一章所有图片的图库文件夹） if(link.substring(0,3)=="第一章")&#123; //第一章的所有图片放到这个文件夹下 link="image1/"; console.info&amp;&amp;console.info("judement the fist capture!"); &#125; //这我们做判断，判断原始link链接的前3个字是不是“第二章”,如果是，我们将link地址写成'image2'，（image2是我们存放第二章所有图片的图库文件夹） else if(link.substring(0,3)=="第二章")&#123; link="image2/"; console.info&amp;&amp;console.info("judement the second capture!"); &#125; else if(link.substring(0,3)=="第三章")&#123; link="image3/"; console.info&amp;&amp;console.info("judement the third capture!"); &#125; else if(link.substring(0,3)=="第四章")&#123; link="image4/"; console.info&amp;&amp;console.info("judement the fourth capture!"); &#125; else if(link.substring(0,3)=="第五章")&#123; link="image5/"; console.info&amp;&amp;console.info("judement the fifth capture!"); &#125; else if(link.substring(0,3)=="第六章")&#123; link="image6/"; console.info&amp;&amp;console.info("judement the sixth capture!"); &#125; else if(link.substring(0,3)=="第七章")&#123; link="image7/"; console.info&amp;&amp;console.info("judement the seventh capture!"); &#125; //$(this).attr('src', config.root + "image1/" + src); //这里我们做字符串的拼接，将最终输出的图片链接地址改为：config.root + link + src //其中config.root 是'/'表示根目录。link使我们的图库相对根目录的位置。src是图片的名字: x.png或其他格式图片 $(this).attr('src', config.root + link + src); //终端上打印调试信息，供自己调试，是否每个图片输出地址是正确的。 console.info&amp;&amp;console.info("update link as:--&gt;"+config.root + "==" + link + "==" + src); &#125; &#125;else&#123; console.info&amp;&amp;console.info("no src attr, skipped..."); console.info&amp;&amp;console.info($(this)); &#125; &#125;); data[key] = $.html(); &#125; &#125;&#125;); 2.3 修改你站点文件根目录的_config.yml文件的配置信息找到如下条，将默认的false改为true,注意_config.yml不是你的主题文件家中的文件 1post_asset_folder: true # local image to url,revise true 2.4 我的博文目录格式如下图片所示： 2.5 将你的的博文直接放到你站点根目录下的：source-&gt;_post文件夹下，如下图 2.6 将你的所有章节的图库文件夹直接放到source文件夹中即可如图： 三、Hexo手机页面优化文件路径 1站点根目录/themes/yelee/source/css/_partial/mobile-slider.styl 修改mobile-slider.styl文件内容： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879#viewer&#123; position: fixed; z-index: 1000000; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden;&#125;#viewer-box&#123; display: flex; width: 100%; height: 100%; position: relative; color: #ccc; -webkit-transform: translate3d(-100%, 0, 0 ); -webkit-transition: -webkit-transform .25s ease-in-out; .viewer-box-l&#123; background: rgba(20,20,20,1); width: 80%; height: auto; flex-grow: 0; min-width: 8em; max-width: 23em; .viewer-box-wrap&#123; //revise the moble menu margin: 20px 10px 0px 60px; &#125; .viewer-title&#123; line-height: 32px; &amp;:before&#123; content: ""; width: 6px; height: 6px; border: 1px solid #999; -webkit-border-radius: 10px; border-radius: 10px; background: #0000cc; display: inline-block; margin-right: 10px; &#125; &#125; .viewer-div&#123; border-bottom: 1px dotted #666; padding-bottom: 13px; line-height: 20px; &amp;:last-child&#123; border-bottom: none; &#125; .switch-friends-link&#123; line-height: 20px; &#125; &#125; &#125; .viewer-box-r&#123; flex-grow: 1 width: auto height: auto background: rgba(0,0,0,0) &amp;:hover &#123; cursor: w-resize &#125; &#125;&#125;#viewer-box.anm-swipe&#123; -webkit-transform: translate3d(0, 0, 0); .viewer-box-r&#123; background: rgba(0,0,0,0); &#125;&#125;.hide&#123; display: none;&#125;#viewer-box .viewer-list&#123; margin: 0; padding: 0; height: 100%; overflow: hidden;&#125;]]></content>
@@ -22,18 +35,7 @@
       <tags>
         <tag>日记</tag>
         <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[2.1.3 隐马尔科夫HMM]]></title>
-    <url>%2F%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95-2-1-3-%E9%9A%90%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%ABHMM%2F</url>
-    <content type="text"><![CDATA[Edit By Porter, 积水成渊,蛟龙生焉。 摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍隐马尔科夫HMM相关实际应用搞得入门例子，很简单，但是能说明隐马尔科夫HMM的原理相关。 文章同步于: 我的gitbook HMM（隐马尔可夫模型）隐马尔可夫模型是一种统计模型，用来描述一个含有隐含未知参数的马尔可夫过程。其难点是从可观察的参数中确定该过程的隐含参数。然后利用这些参数来作进一步的分析，例如模式识别。 是在被建模的系统被认为是一个马尔可夫过程与未观测到的（隐藏的）的状态的统计马尔可夫模型。 本文简述的是离散情况下的隐马尔可夫模型. 一、贝叶斯公式定义：假设以硬币的例子，从5角和1元的一堆硬币中，随意取出一枚硬币，然后然我们猜这枚硬币是5角还是1元。假设允许我们称这枚硬币的重量x（单位：g），(但是不允许我们直接看硬币，一般1元是比5角重的)。现在应考察在一直这枚硬币的重量x的情况下硬币属于各类（5角还是一元)的概率，分别记$$P(\omega_{1}|x)$$,(知重量为x时，是5角的概率),$$P(\omega_{2}|x)$$, (知重量为x时，是一元的概率)，这种概率成为后验概率（我们需要求的）。这时的决策为：如果$$P(\omega_{1}|x)&gt;P(\omega_{2}|x)$$,则$$x \epsilon \omega_{1} $$; 反之，则$$x \epsilon \omega_{2} $$ 最终我们要的就是这个决策。 概率论中的贝叶斯公式： $$P(\omega_{i}|x)=\frac{p(x,\omega_{i})}{p(\omega_{i})}=\frac{p|\omega_{i}P(\omega_{i})}{p(x)} ,i=1,2$$ 分布 表示 $$x \epsilon \left { \omega_{1},\omega_{2} \right }$$ 类条件概率： $$p(x\mid \omega_{i})$$ 表示得到硬币结果是$$\omega_{i}$$条件下，得到x的概率密度 后验概率： $$P(\omega_{i}\mid x)$$ 在重量为x，的条件下，得到是哪种硬币（5/1）的概率 先验概率： $$P(\omega_{i})$$ 根据之前的经验，得到5角和1元各自取得的概率 硬币重量概率密度函数: $$p(x)$$ 硬币重量的概率密度函数 联合概率密度： $$p(x,\omega_{i})$$ 在重量不同条件下，每种情况对应的取得不同硬币结果的联合概率 $$P(Q_{i}|O)=\frac{P(O,Q_{i})}{P(O)}=\frac{P(O|Q_{i})P(Q)}{P(O)}$$ $$P(Q_{i}|O)=\frac{P(O,Q_{i})}{P(O)}=\frac{P(O|Q_{i})P(Q)}{P(O)}$$ $$P(Q_{i}|O)$$ ,后验概率，$$P(O,Q_{i})$$ ,表示O与Q的联合概率密度；P(O)表示两类所有的概率密度； P(Q_{i})是先验概率；$$P(O|Q_{i})$$是第i类状态随机序列的类条件概率密度 贝叶斯决策：在类条件概率密度和鲜艳概率已知（或可估计）的情况下，通过贝叶斯公式比较样本属于两类的后验概率，将类别决策为后验概率大的一类，这样做的目的是为了使总体错误率最小。 一条隐藏的马尔可夫链生成的 状态随机序列 (State sequence, 图中的白色节点) $$Q=(q_{1},q_{2},…..,q_{T})$$是不可观测的，并记所有可能状态的集合为$$S={S_{1},S_{2},…..,S_{N}}$$;由它们产生一个可观测的观测随机序列（observation sequence，图示的深色节点）$$O=(o_{1},o_{2},……,o_{T})$$, 并记所有可能观测的集合为$$V={v_{1},v_{2},……,v_{M}}$$。 序列的值可以看作是随时刻产生的，每个时刻对应着序列的一个值。所以HMM是个双重随机过程（doubly embedded stochastic process），一个是状态转移，另一个是由状态释放出观测值。在序列标注（Sequence labelling）任务中，模型就是需要对状态序列进行标注。]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-        <tag>总结</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -46,6 +48,20 @@
       <tags>
         <tag>日记</tag>
         <tag>总结</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2.1.3 隐马尔科夫HMM]]></title>
+    <url>%2F%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95-2-1-3-%E9%9A%90%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%ABHMM%2F</url>
+    <content type="text"><![CDATA[Edit By Porter, 积水成渊,蛟龙生焉。 摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍隐马尔科夫HMM相关实际应用搞得入门例子，很简单，但是能说明隐马尔科夫HMM的原理相关。 文章同步于: 我的gitbook HMM（隐马尔可夫模型）隐马尔可夫模型是一种统计模型，用来描述一个含有隐含未知参数的马尔可夫过程。其难点是从可观察的参数中确定该过程的隐含参数。然后利用这些参数来作进一步的分析，例如模式识别。 是在被建模的系统被认为是一个马尔可夫过程与未观测到的（隐藏的）的状态的统计马尔可夫模型。 本文简述的是离散情况下的隐马尔可夫模型. 一、贝叶斯公式定义：假设以硬币的例子，从5角和1元的一堆硬币中，随意取出一枚硬币，然后然我们猜这枚硬币是5角还是1元。假设允许我们称这枚硬币的重量x（单位：g），(但是不允许我们直接看硬币，一般1元是比5角重的)。现在应考察在一直这枚硬币的重量x的情况下硬币属于各类（5角还是一元)的概率，分别记$$P(\omega_{1}|x)$$,(知重量为x时，是5角的概率),$$P(\omega_{2}|x)$$, (知重量为x时，是一元的概率)，这种概率成为后验概率（我们需要求的）。这时的决策为：如果$$P(\omega_{1}|x)&gt;P(\omega_{2}|x)$$,则$$x \epsilon \omega_{1} $$; 反之，则$$x \epsilon \omega_{2} $$ 最终我们要的就是这个决策。 概率论中的贝叶斯公式： $$P(\omega_{i}|x)=\frac{p(x,\omega_{i})}{p(\omega_{i})}=\frac{p|\omega_{i}P(\omega_{i})}{p(x)} ,i=1,2$$ 分布 表示 $$x \epsilon \left { \omega_{1},\omega_{2} \right }$$ 类条件概率： $$p(x\mid \omega_{i})$$ 表示得到硬币结果是$$\omega_{i}$$条件下，得到x的概率密度 后验概率： $$P(\omega_{i}\mid x)$$ 在重量为x，的条件下，得到是哪种硬币（5/1）的概率 先验概率： $$P(\omega_{i})$$ 根据之前的经验，得到5角和1元各自取得的概率 硬币重量概率密度函数: $$p(x)$$ 硬币重量的概率密度函数 联合概率密度： $$p(x,\omega_{i})$$ 在重量不同条件下，每种情况对应的取得不同硬币结果的联合概率 $$P(Q_{i}|O)=\frac{P(O,Q_{i})}{P(O)}=\frac{P(O|Q_{i})P(Q)}{P(O)}$$ $$P(Q_{i}|O)=\frac{P(O,Q_{i})}{P(O)}=\frac{P(O|Q_{i})P(Q)}{P(O)}$$ $$P(Q_{i}|O)$$ ,后验概率，$$P(O,Q_{i})$$ ,表示O与Q的联合概率密度；P(O)表示两类所有的概率密度； P(Q_{i})是先验概率；$$P(O|Q_{i})$$是第i类状态随机序列的类条件概率密度 贝叶斯决策：在类条件概率密度和鲜艳概率已知（或可估计）的情况下，通过贝叶斯公式比较样本属于两类的后验概率，将类别决策为后验概率大的一类，这样做的目的是为了使总体错误率最小。 一条隐藏的马尔可夫链生成的 状态随机序列 (State sequence, 图中的白色节点) $$Q=(q_{1},q_{2},…..,q_{T})$$是不可观测的，并记所有可能状态的集合为$$S={S_{1},S_{2},…..,S_{N}}$$;由它们产生一个可观测的观测随机序列（observation sequence，图示的深色节点）$$O=(o_{1},o_{2},……,o_{T})$$, 并记所有可能观测的集合为$$V={v_{1},v_{2},……,v_{M}}$$。 序列的值可以看作是随时刻产生的，每个时刻对应着序列的一个值。所以HMM是个双重随机过程（doubly embedded stochastic process），一个是状态转移，另一个是由状态释放出观测值。在序列标注（Sequence labelling）任务中，模型就是需要对状态序列进行标注。]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+        <tag>总结</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -58,6 +74,7 @@
       <tags>
         <tag>日记</tag>
         <tag>总结</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -70,6 +87,7 @@
       <tags>
         <tag>日记</tag>
         <tag>总结</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -82,12 +100,13 @@
       <tags>
         <tag>日记</tag>
         <tag>总结</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[网页设计基础笔记]]></title>
-    <url>%2F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要 网页效果图设计，可以Fireworks,也可以Photoshop以及其他的平面设计软件 根据网页效果图进行切图 为什么要切图：提高网站下载速率，规律：能用CSS效果表现出来的就少用图像，也是为了提高下载速率]]></content>
+    <title><![CDATA[简单的方法，获取在线付费设计log的方法]]></title>
+    <url>%2F%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E8%B6%8A%E8%BF%87%E4%BB%98%E8%B4%B9%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BF%E7%9A%84log%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[Porter Pan 摘要有时人穷则需要志坚，花别人返工心情的时间，做别人不愿做的尝试。 今天的目标对象是他：Log设计网 不是我不支持他，而是因为，太穷，没那么多钱钱，用到啥买啥，所以，看能省钱的地方就省了吧。 本文档是教如何免费获取99元套餐的log设计资源。 点击进入Log官网的个人中心 选择你目前编辑的Log 点击页面的分享 在浏览页面中鼠标右键，进入inspect界面 点击Source 查看源码 搜索关键字“jpg” 复制图片链接，下载，好了，这就是你自己的Log了 以上步骤结束，不贴图了，贴图影响不好了]]></content>
       <categories>
         <category>summary</category>
       </categories>
@@ -97,9 +116,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[简单的方法，获取在线付费设计log的方法]]></title>
-    <url>%2F%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E8%B6%8A%E8%BF%87%E4%BB%98%E8%B4%B9%E8%8E%B7%E5%8F%96%E5%9C%A8%E7%BA%BF%E7%9A%84log%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要有时人穷则需要志坚，花别人返工心情的时间，做别人不愿做的尝试。 今天的目标对象是他：Log设计网 不是我不支持他，而是因为，太穷，没那么多钱钱，用到啥买啥，所以，看能省钱的地方就省了吧。 本文档是教如何免费获取99元套餐的log设计资源。 点击进入Log官网的个人中心 选择你目前编辑的Log 点击页面的分享 在浏览页面中鼠标右键，进入inspect界面 点击Source 查看源码 搜索关键字“jpg” 复制图片链接，下载，好了，这就是你自己的Log了 以上步骤结束，不贴图了，贴图影响不好了]]></content>
+    <title><![CDATA[网页设计基础笔记]]></title>
+    <url>%2F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Porter Pan 摘要 网页效果图设计，可以Fireworks,也可以Photoshop以及其他的平面设计软件 根据网页效果图进行切图 为什么要切图：提高网站下载速率，规律：能用CSS效果表现出来的就少用图像，也是为了提高下载速率]]></content>
       <categories>
         <category>summary</category>
       </categories>
@@ -182,30 +201,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[vultr+freenom实现主机域名的绑定]]></title>
-    <url>%2Fvultr-freenom%E5%AE%9E%E7%8E%B0%E4%B8%BB%E6%9C%BA%E5%9F%9F%E5%90%8D%E7%9A%84%E7%BB%91%E5%AE%9A%2F</url>
-    <content type="text"><![CDATA[vultr+freenom实现主机域名的绑定 摘要本文将通过实例进行演示，给大家介绍如何用免费的域名，绑定我们的云主机，只需要登录Freenom注册个账号就可以免费申请免备案域名了，心动请先不要忙行动，点击阅读更多，先看看本文的免费域名申请绑定主机的方法吧。 1、注册freenom域名 进入 freenom 网站,在界面的菜单中选择“Servers”–&gt;”Register a New Domains”，如下图所示: 可能在此之前需要先注册一个账号，具体网站的账号怎么注册，自己摸索下，并不复杂，这里我们只讲怎么注册域名并解析到你的主机。 接下来在“My Domains”页面上的输入框中输入你想注册的免费域名，并搜索下是否已经被注册了，输入框在如下图中的红框所示，例如我输入：smriti 搜索结果显示，好几个是免费的，我们只需要选择一个就行，如下截图所示： 随便选择一个，“Get it now” 即可比如我选择TK域名，然后进入我的购物车，选择免费12个月，如下图： 接下来在USE DNS处选择自己需要解析到的主机IP地址上，也就是把你的云服务器的主机地址填到下图的红框中，Hostname不要动，保持默认（ 一个是yourdot.tk,另一个是www.yourdot.tk ），如下图： 接下来点击“COntinue”即可。 注意如果你现在没有主机IP，你可以先不填，后期再填写，后期填写只需要进入“My Domains” 选择你注册的域名，点击右边的“Manage Domain”，然后选择第四个菜单，”Manage Freenom DNS”,然后添加域名解析到主机，如下图所示： 接下来就是等待，因为域名解析，不会一下子就解析成功的所以你需要等5-30分钟不等，如果一个小时后还是解析不成功，可能就是你的主机IP填写错误 重要的事情再说一遍，就是以上域名解析填写完成后，还需要进行等待，一般5-30分钟。5分钟内访问该网站可能提示解析错误，所以要等待啊。 有的需要主机上面也要填写DNS绑定域名,比如阿里云主机,但是我这是国外的主机和国外的免费域名，好像不要要云主机上面操作，直接在域名服务商网页上绑定主机IP就成功访问了。 2、主机注册 推荐好用的还便宜的云主机：vultr 、 和 搬瓦工 加入你已经购买了云虚拟主机，点击进入主机管理，如下图所示： 添加主机域名绑定 最后一步，主机中绑定域名，如下图：]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95-index%2F</url>
-    <content type="text"><![CDATA[Edit By Porter, 积水成渊,蛟龙生焉。 摘要 基于这章节的想法和具体需要完成的任务如下： 首先是基于深度学习的歌曲分类 基于深度学习的目标检测 基于深度学习的手写字计算速度改进 基于深度学习的人脸识别等例子实现界面设计 优秀学者/资源学者、教授 徐志强副教授(Associate Professor Richard Xu),其 github主页 an AI Professor in Machine Learning at UTS.]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo 每次写好后deploy博客]]></title>
     <url>%2FHexo-%E6%AF%8F%E6%AC%A1%E5%86%99%E5%A5%BD%E5%90%8Edeploy%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[Porter Pan 摘要：github page 结合Hexo-Yelee或者Next主题,搭建个人博客主页，是很不错的一个选择，个人使用情况，感觉Yelee界面布局啥的还是很不错的。 这篇文章中我将介绍每次我们写好的md博文怎么部署到github page 上去。 本文主要使用的命令行如下： 1、直接部署到网站 1hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 也可以本地部署，查看浏览效果 2、部署到本地，查看浏览效果 1hexo clean &amp;&amp; hexo g &amp;&amp; hexo s 我们每次写好的博文如何正确推送至github每次我们写好了博文后，需要上传至我们的github空间中,只需要每次将我们写好的博文放到文件路径：1D:\Github\smritipertor.github.io\source\_posts 如果之前没有安装过 hexo-deployer-git 的话，先执行： 1npm install hexo-deployer-git --save 然后执行如下命令操作： 首先在你之前建好的博文路径：比如我的是 12345hexo generatehexo s //(或者:hexo server)hexo deploy //(或者:hexo d) 说明 一般我们在站点根目录中的“_config.yml”中的文件中设定我们hexo d，的部署文件到那个ID和分支中，设置内容如下： 1234deploy: type: git repository: https://github.com/smritipertor/smritipertor.github.io.git branch: master 以上内容表示，不管我们当前工作在那个分区，只要站点根目录中的“_config.yml”中branch 分区设置好，直接 1hexo d 就可以发布了。 如果你执行：1hexo generate -d 常见错误及解决办法第一种，部署出错出现错误提示，如下：1fatal: in unpopulated submodule '.deploy_git' FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html Error: fatal: in unpopulated submodule '.deploy_git' at ChildProcess.&lt;anonymous&gt; (D:\GitWebsite\smritipertor.github.io\node_modules\hexo-util\lib\spawn.js:37:17) at ChildProcess.emit (events.js:182:13) at ChildProcess.cp.emit (D:\GitWebsite\smritipertor.github.io\node_modules\cross-spawn\lib\enoent.js:40:29) at maybeClose (internal/child_process.js:962:16) at Process.ChildProcess._handle.onexit (internal/child_process.js:251:5) 则你可以直接执行以下命令即可： 12rm -rf .deploy_githexo generate -d 即，删除地电脑本地的.deploy_git文件夹（可能是你上个版本是另一台电脑），然后再生成、部署即可。 至此你的网站上就有了网站数据]]></content>
@@ -221,6 +216,18 @@
     <title><![CDATA[第一篇博文]]></title>
     <url>%2F%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87%2F</url>
     <content type="text"><![CDATA[Porter Pan 摘要欢迎来到我的博文主页，你可以进一步了解我，通过聚水渊主页 Hexo !和我的github 写作目的 为了更好的学习 每天总结 看到自己每天的进步 遇见最优秀的自己，下面是我的其他博客地址 我的博客园 我的CSDN 新浪博客 网易博客 说说我之前的英文名和现在的英文名之前我的firstname 是pertor 现在是porter，不是一个人 ？不，是一个人的，因为pertor是西班牙的名字，porter是英文名字。都是一个人。 我的网易云最后我贴下我的网易笔记]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+        <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95-index%2F</url>
+    <content type="text"><![CDATA[Edit By Porter, 积水成渊,蛟龙生焉。 摘要 基于这章节的想法和具体需要完成的任务如下： 首先是基于深度学习的歌曲分类 基于深度学习的目标检测 基于深度学习的手写字计算速度改进 基于深度学习的人脸识别等例子实现界面设计 优秀学者/资源学者、教授 徐志强副教授(Associate Professor Richard Xu),其 github主页 an AI Professor in Machine Learning at UTS.]]></content>
       <categories>
         <category>summary</category>
       </categories>
@@ -266,9 +273,21 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[vultr+freenom实现主机域名的绑定]]></title>
+    <url>%2Fvultr-freenom%E5%AE%9E%E7%8E%B0%E4%B8%BB%E6%9C%BA%E5%9F%9F%E5%90%8D%E7%9A%84%E7%BB%91%E5%AE%9A%2F</url>
+    <content type="text"><![CDATA[vultr+freenom实现主机域名的绑定 摘要本文将通过实例进行演示，给大家介绍如何用免费的域名，绑定我们的云主机，只需要登录Freenom注册个账号就可以免费申请免备案域名了，心动请先不要忙行动，点击阅读更多，先看看本文的免费域名申请绑定主机的方法吧。 1、注册freenom域名 进入 freenom 网站,在界面的菜单中选择“Servers”–&gt;”Register a New Domains”，如下图所示: 可能在此之前需要先注册一个账号，具体网站的账号怎么注册，自己摸索下，并不复杂，这里我们只讲怎么注册域名并解析到你的主机。 接下来在“My Domains”页面上的输入框中输入你想注册的免费域名，并搜索下是否已经被注册了，输入框在如下图中的红框所示，例如我输入：smriti 搜索结果显示，好几个是免费的，我们只需要选择一个就行，如下截图所示： 随便选择一个，“Get it now” 即可比如我选择TK域名，然后进入我的购物车，选择免费12个月，如下图： 接下来在USE DNS处选择自己需要解析到的主机IP地址上，也就是把你的云服务器的主机地址填到下图的红框中，Hostname不要动，保持默认（ 一个是yourdot.tk,另一个是www.yourdot.tk ），如下图： 接下来点击“COntinue”即可。 注意如果你现在没有主机IP，你可以先不填，后期再填写，后期填写只需要进入“My Domains” 选择你注册的域名，点击右边的“Manage Domain”，然后选择第四个菜单，”Manage Freenom DNS”,然后添加域名解析到主机，如下图所示： 接下来就是等待，因为域名解析，不会一下子就解析成功的所以你需要等5-30分钟不等，如果一个小时后还是解析不成功，可能就是你的主机IP填写错误 重要的事情再说一遍，就是以上域名解析填写完成后，还需要进行等待，一般5-30分钟。5分钟内访问该网站可能提示解析错误，所以要等待啊。 有的需要主机上面也要填写DNS绑定域名,比如阿里云主机,但是我这是国外的主机和国外的免费域名，好像不要要云主机上面操作，直接在域名服务商网页上绑定主机IP就成功访问了。 2、主机注册 推荐好用的还便宜的云主机：vultr 、 和 搬瓦工 加入你已经购买了云虚拟主机，点击进入主机管理，如下图所示： 添加主机域名绑定 最后一步，主机中绑定域名，如下图：]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[index]]></title>
     <url>%2F%E7%AC%AC%E4%B8%80%E7%AB%A0-Linux%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE-index%2F</url>
-    <content type="text"><![CDATA[Edit By Porter, 积水成渊,蛟龙生焉。 摘要Welcome to My site IODT! This is your very first visit. Check home page of book for more info. If you get any problems when reading, you can find the answer in google or you can ask me on :by @zf_pertor. 文章同步于: 我的gitbook 一、 本章主要是Linux下学习环境的相关配置， 包括学习的开发工具， 也包括系统本埠支持的软件替换或者修复的解决方案。本章组织应包括如下内容： Ubuntu18下有道词典的配置 Ubuntu18 安装Gitbook 二、 优秀工具，资源2.1 LaTex 在线帮助教程]]></content>
+    <content type="text"><![CDATA[Edit By Porter, 积水成渊,蛟龙生焉。 摘要Welcome to My site IODT! This is your very first visit. Check home page of book for more info. If you get any problems when reading, you can find the answer in google or you can contact me on :by @zf_pertor. 文章同步于: 我的gitbook 一、 本章主要是Linux下学习环境的相关配置， 包括学习的开发工具， 也包括系统本埠支持的软件替换或者修复的解决方案。本章组织应包括如下内容： Ubuntu18下有道词典的配置 Ubuntu18 安装Gitbook 二、 优秀工具，资源2.1 LaTex 在线帮助教程]]></content>
       <categories>
         <category>summary</category>
       </categories>

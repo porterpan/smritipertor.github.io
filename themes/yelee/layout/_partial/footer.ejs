@@ -6,7 +6,10 @@
                 <% if (theme.since && !isNaN(theme.since) && theme.since < date(new Date(), 'YYYY')) { %><%- theme.since%>-<% } %><%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
             </div>
             <div class="footer-right">
+<!--
                 <a href="http://hexo.io/" target="_blank" title="<%= __('tooltip.Hexo') %>">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="<%= __('tooltip.Yelee') %>  v<%= theme.Yelee %>">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+//-->
+		<a href="https://blog.porterpan.top/" target="_blank" title="<%= __('tooltip.Hexo') %>">This site</a>  is constantly <a href="https://porter.gitbook.io" target="_blank" title="<%= __('tooltip.Yelee') %>  v<%= theme.Yelee %>">being updated</a> by PORTERpan <i class="fa fa-heart animated infinite flash"></i>
             </div>
         </div>
         <% if (theme.visit_counter.on) { %>
