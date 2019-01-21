@@ -2,11 +2,9 @@
 title: Hello World
 categories:      
     summary    
-tags: [日记,总结]
+tags: [Note,总结]
 date: 2018-11-10 22:55:03
 ---
-
-- [x] Edit By Porter, 积水成渊,蛟龙生焉。
 
 ## 摘要
  
@@ -17,6 +15,8 @@ date: 2018-11-10 22:55:03
 * 基于深度学习的手写字计算速度改进
 * 基于深度学习的人脸识别等例子实现
 界面设计
+
+- [x] Edit By Porter, 积水成渊,蛟龙生焉。
 
 <!-- more -->
 

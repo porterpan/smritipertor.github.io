@@ -186,29 +186,31 @@ tagcloud: true
 
 # Blogroll, Link exchange | 友情链接
 friends:  
-  MOxFIVE: http://moxfive.xyz/
   盒子部落: http://scholar.hezibuluo.com/
   南瓜网: http://www.588230.com/
   皮皮虾: http://www.wenkuwenku.com/
   武侯阁(账号@我): http://www.wuhouge.com/
-  看么电影: http://0e2.cn/
-  搜你妹视频解析: http://www.sonimei.cn/
   free-ss: https://free-ss.site/
   StackOverflow: https://stackoverflow.com/  
   Web W3school: http://www.w3school.com.cn/
+  RUNOOB: http://www.runoob.com/
   Git命令: https://www.yiibai.com/git/git_checkout.html
-  路过图床: https://imgchr.com/
-  我的主页: http://porterpan.tk/
   图标素材网: https://www.easyicon.net/
   paper Weekly: http://www.paperweekly.site/rank
   arXiv.org: https://arxiv.org/
   小木虫: http://muchong.com/bbs/
   image-net-ilsvrc: http://image-net.org/
-
+#  看么电影: http://0e2.cn/
+#  吉吉追影: https://www.jijizy.com/
+  搜你妹视频解析: http://www.sonimei.cn/
+#  29影院: https://www.29yy.tv/
+#  6V电影网: http://www.hao6v.com/
+#  AG美剧: https://agmj.ag/
+  
 #friends: false
 
 #是否开启“关于我”。
-aboutme: "自信、乐观、帅气、阳光；专注于深度学习、机器学习、视觉图像处理、嵌入式软、硬件。"
+aboutme: "不要怂，干就是了，力量可能跟不上，气势上一定要跟上；专注于深度学习、机器学习、视觉图像处理、嵌入式软/硬件。"
 #aboutme: false
 
 # Open link in a new tab | 是否在新窗口打开链接

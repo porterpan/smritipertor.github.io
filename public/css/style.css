@@ -1257,7 +1257,7 @@ color
   margin: 30px;
   margin-bottom: 5px;
   position: relative;
-  background: rgba(179,225,153,0.75);
+  background: rgba(179,225,153,0.85);
   -webkit-transition: all 0.2s ease-in;
 }
 .article.show {
