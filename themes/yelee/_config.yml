@@ -31,7 +31,7 @@ favicon: /favicon.png
 root_url: 
 
 # Year of Site Creation | 网站成立年份
-since: 2017
+since: 2018
 
 # Social info. Bar | 社交信息展示
 ## Keep "mailto:" in Email | 设置 Email 时保留 "mailto:"
@@ -190,7 +190,7 @@ friends:
   南瓜网: http://www.588230.com/
   皮皮虾: http://www.wenkuwenku.com/
   武侯阁(账号@我): http://www.wuhouge.com/
-  free-ss: https://free-ss.site/
+#  free-ss: https://free-ss.site/
   StackOverflow: https://stackoverflow.com/  
   Web W3school: http://www.w3school.com.cn/
   RUNOOB: http://www.runoob.com/
@@ -202,7 +202,7 @@ friends:
   image-net-ilsvrc: http://image-net.org/
 #  看么电影: http://0e2.cn/
 #  吉吉追影: https://www.jijizy.com/
-  搜你妹视频解析: http://www.sonimei.cn/
+#  搜你妹视频解析: http://www.sonimei.cn/
 #  29影院: https://www.29yy.tv/
 #  6V电影网: http://www.hao6v.com/
 #  AG美剧: https://agmj.ag/
@@ -242,7 +242,7 @@ ie_updater:
 
 # Tab Title Change | 标签页标题切换
 tab_title_change: 
-  on: true
+  on: false
   left_tab_title: 'blog上见~ '
   return_tab_title: '欢迎~ '
 
@@ -282,11 +282,11 @@ baidu_site:
 google_site: 
 
 # Fill in Google Analytics tracking ID, #e.g. UA-XXXXX-X
-google_analytics: 
+google_analytics: UA-132871432-1
 
 # 百度统计 http://sitecenter.baidu.com/sc-web/
 # 查看代码，填入 //hm.baidu.com/hm.js? 之后的内容
-baidu_tongji: d038bb824742b75a947afac92c8e6c17
+baidu_tongji: d71616702a6acb700ae00e15c0b9551b
 
 # 不蒜子网站计数设置
 # after-footer.ejs文件中修改卜算子网址

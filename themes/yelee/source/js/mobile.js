@@ -97,14 +97,14 @@ define([], function(){
         //点击展示和隐藏
 	var touchIfShowFlag=false;
         ctn.addEventListener("touchend", function(){
-	    show();
-	    /*if(touchIfShowFlag==false){
+	    //show();
+	    if(touchIfShowFlag==false){
 		touchIfShowFlag=true;
 		show();
 		}else if(touchIfShowFlag==true){
 			touchIfShowFlag=false;
 			hide();
-		}*/
+		}
         }, false);
 
 /*
@@ -180,6 +180,16 @@ define([], function(){
 
 //这个是弹窗弹出的部件div
  //这部分注释掉了，禁止点击浮动窗的非插连接部分自动隐藏，只开启滑动页面后自动影藏浮窗。
+	/*$(".slider-trigger").click(function(){            
+	    if(touchIfShowFlag==false){
+		show();
+		touchIfShowFlag=true;
+		}
+	    else if(touchIfShowFlag==true){
+		touchIfShowFlag=false;
+		hide();
+		}
+        });*/
 	$(".viewer-box-l").click(function(){
             hide();
 		touchIfShowFlag=false;
