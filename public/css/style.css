@@ -273,6 +273,9 @@ a {
   #container .mid-col {
     left: 0;
   }
+  #container #header {
+    background: #fff;
+  }
   #container #header .header-nav {
     position: relative;
   }
@@ -288,6 +291,9 @@ a {
   }
   #container .header-author.fixed a {
     color: #fff;
+  }
+  #container .overlay {
+    background: #fff;
   }
   #container .overlay .slider-trigger {
     position: absolute;
@@ -316,7 +322,7 @@ a {
   #container .article-header {
     border-left: none;
     padding: 0;
-    border-bottom: 1px dotted #ddd;
+    border-bottom: 1px dotted #00f;
   }
   #container .article-header h1 {
     margin-bottom: 2px;
@@ -455,7 +461,7 @@ a {
     padding: 0.2em 0.4em;
     border-radius: 6px;
     border-style: outset;
-    background: rgba(255,255,255,0.7);
+    background: #fff;
     font-size: 1em;
     font-weight: bold;
     color: #808080;
@@ -481,7 +487,7 @@ a {
     padding: 10px;
     padding-left: 0;
     border-radius: 2.8%;
-    background: none;
+    background: #fff;
     font-size: 1em;
     line-height: 1.25em;
   }
@@ -499,7 +505,7 @@ a {
     margin: 0;
     padding: 0.5em;
     border-radius: 5px;
-    background: rgba(255,255,255,0.85);
+    background: #fff;
   }
   #container .toc-article ol ol {
     padding: 0.1em 0;
@@ -527,8 +533,8 @@ a {
     padding: 0.2em 0.4em;
     border-radius: 6px;
     border-style: outset;
-    opacity: 0.9;
-    background: rgba(255,255,255,0.8);
+    opacity: 1;
+    background: #fff;
     font-weight: bold;
     color: #808080;
   }

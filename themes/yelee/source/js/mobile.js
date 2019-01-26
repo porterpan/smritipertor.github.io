@@ -97,14 +97,14 @@ define([], function(){
         //点击展示和隐藏
 	var touchIfShowFlag=false;
         ctn.addEventListener("touchend", function(){
-	    //show();
-	    if(touchIfShowFlag==false){
+	    show();
+	    /*if(touchIfShowFlag==false){
 		touchIfShowFlag=true;
 		show();
 		}else if(touchIfShowFlag==true){
 			touchIfShowFlag=false;
 			hide();
-		}
+		}*/
         }, false);
 
 /*

@@ -68,7 +68,7 @@ subnav:
   #Twitter: "#"
   #LinkedIn: "#"
   #QQ: "#"
-  微信: "http://note.youdao.com/noteshare?id=0e1026c4540d1606e784d8e8d9fb8344"
+  微信: "./about/contactme.html"
   #PayPal: "#"
   #StackOverflow: "#"
   #CodePen: ""
@@ -189,7 +189,7 @@ friends:
   盒子部落: http://scholar.hezibuluo.com/
   南瓜网: http://www.588230.com/
   皮皮虾: http://www.wenkuwenku.com/
-  武侯阁(账号@我): http://www.wuhouge.com/
+  武侯阁: http://www.wuhouge.com/
 #  free-ss: https://free-ss.site/
   StackOverflow: https://stackoverflow.com/  
   Web W3school: http://www.w3school.com.cn/
@@ -201,6 +201,7 @@ friends:
   小木虫: http://muchong.com/bbs/
   image-net-ilsvrc: http://image-net.org/
 #  看么电影: http://0e2.cn/
+#  皮皮DVD: http://pipidvd.com
 #  吉吉追影: https://www.jijizy.com/
 #  搜你妹视频解析: http://www.sonimei.cn/
 #  29影院: https://www.29yy.tv/
