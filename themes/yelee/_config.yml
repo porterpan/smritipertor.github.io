@@ -81,6 +81,7 @@ subnav:
   #TiddlyWiki: ""
   #Tumblr: ""
   #_500px: ""
+  WebNavigation: "http://www.porterpan.tk/navs/"
 
 # >>> Conments 评论系统 <<<
 # Chose ONE as your comment system and keep others disable.
@@ -299,7 +300,10 @@ baidu_site:
 google_site: 
 
 # Fill in Google Analytics tracking ID, #e.g. UA-XXXXX-X
-google_analytics: UA-132871432-1
+# blogs.porterpan.top
+google_analytics: UA-132871432-3
+# blog.
+#google_analytics: UA-132871432-1
 
 # 百度统计 http://sitecenter.baidu.com/sc-web/
 # 查看代码，填入 //hm.baidu.com/hm.js? 之后的内容
