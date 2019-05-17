@@ -124,8 +124,8 @@ master pdf 破解版下载链接: [https://pan.baidu.com/s/1iGH2394KU7nG_lde7hRy
 
 
 ```markdown
-+ 写
-+ 的
++ 1.写
++ 2.的
 + 的
 + 对对对
 + 的
@@ -133,16 +133,16 @@ master pdf 破解版下载链接: [https://pan.baidu.com/s/1iGH2394KU7nG_lde7hRy
 
 >>>> 效果
 
-+ 写
-+ 的
++ 1.写
++ 2.的
 + 的
 + 对对对
 + 的
 
 ```markdown
 破解步骤
-- [1.] 直接安装exe 
-- [2.] 将[破解替换文件](/appendix/Crack/)文件家中的两个x86/x64根据你自己电脑是64位还是32位选择性复制到你的安装目录中(windows桌面快捷键右键软件安装位置)
+- 1. 直接安装exe 
+- 2. 将[破解替换文件](/appendix/Crack/)文件家中的两个x86/x64根据你自己电脑是64位还是32位选择性复制到你的安装目录中(windows桌面快捷键右键软件安装位置)
 - [3.] 运行激活软件keygreen.exe产生激活码
 - [4.] 运行master pdf ，将ID复制出来填写到kegreen.exe后回车，keygreen 将产生激活码，切换到master pdf 填写激活码
 - [5.] 破解成功
@@ -151,8 +151,8 @@ master pdf 破解版下载链接: [https://pan.baidu.com/s/1iGH2394KU7nG_lde7hRy
 >>>> 效果
 
 破解步骤
-- [1.] 直接安装exe 
-- [2.] 将[破解替换文件](/appendix/Crack/)文件家中的两个x86/x64根据你自己电脑是64位还是32位选择性复制到你的安装目录中(windows桌面快捷键右键软件安装位置)
+- 1. 直接安装exe 
+- 2. 将[破解替换文件](/appendix/Crack/)文件家中的两个x86/x64根据你自己电脑是64位还是32位选择性复制到你的安装目录中(windows桌面快捷键右键软件安装位置)
 - [3.] 运行激活软件keygreen.exe产生激活码
 - [4.] 运行master pdf ，将ID复制出来填写到kegreen.exe后回车，keygreen 将产生激活码，切换到master pdf 填写激活码
 - [5.] 破解成功

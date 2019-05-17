@@ -1427,6 +1427,16 @@ color
 .article-entry li strong {
   color: #708090;
 }
+.article-entry li p {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+.article-entry li:before {
+  border: 2px solid #bdfb00;
+  border-radius: 50%;
+  background: #5ff707;
+}
 .article-entry .caption {
   display: block;
   font-size: 0.8em;
@@ -1508,9 +1518,9 @@ color
   height: 0.4em;
   margin-right: 0.5em;
   margin-bottom: 0.11em;
-  border: 1px solid #d3d3d3;
+  border: 2px solid #bdfb00;
   border-radius: 50%;
-  background: #d3d3d3;
+  background: #5ff707;
 }
 .article-entry h1 {
   margin-top: 30px;
