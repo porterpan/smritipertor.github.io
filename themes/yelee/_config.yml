@@ -6,12 +6,13 @@ Yelee: "3.5"
 # Header | 主菜单
 ## About Page: `hexo new page about`
 ## Tags Cloud Page: `hexo new page tags`
+## http://www.porterpan.tk/myResume/
 menu:
   主页: /
   所有文章: /archives/
   随笔: /diary/
   标签云: /tags/
-  关于我: http://www.porterpan.tk/myResume/
+  关于我: ./myResume/
 
 # Link to your avatar | 填写头像地址
 avatar: /img/myportrait1.gif
@@ -81,7 +82,7 @@ subnav:
   #TiddlyWiki: ""
   #Tumblr: ""
   #_500px: ""
-  WebNavigation: "http://www.porterpan.tk/navs/"
+  WebNavigation: "./navs/index.html"
 
 # >>> Conments 评论系统 <<<
 # Chose ONE as your comment system and keep others disable.

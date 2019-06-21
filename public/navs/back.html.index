@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Porter-网址导航页</title>
+	<meta name="description" content="娱乐导航-学术导航 · 网址导航">
+	<meta name="keywords" content="娱乐导航-学术导航 · 网址导航">
+<!-- 	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="apple-touch-startup-image" href="startup.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="touch-icon-iphone-retina.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="touch-icon-ipad.png">
+	<link rel="apple-touch-icon-precomposed " sizes="144x144" href="iTunesArtwork@2x.png"> -->
+	<link rel="stylesheet" href="css/base1.css">
+	<link rel="stylesheet" href="css/home1.css">
+
+</head>
+<body data-spy="scroll" data-target=".bd-sidebar">
+<div class="bd-pageheader">
+	<div class="container">
+		<h1>Porter-网址导航页</h1>
+		<p class="lead">PORTER - WEB SITE NAVIGATION
+		</p>
+	</div>
+</div>
+<article class="container bd-main">
+	<div class="row p-relative">
+		<div class="col-md-2 col-md-push-1 hidden-xs hidden-sm">
+			<div class="bd-sidebar" data-spy="affix" data-offset-top="220">
+				<ul class="nav">
+					<li>
+						<a class="h4" href="#f1">前端开发</a>
+						<ul class="nav">
+							<li>
+								<a href="#one">前端框架</a>
+							</li>
+							<li>
+								<a href="#f101">技术社区</a>
+							</li>
+							<li>
+								<a href="#f102">设计团队</a>
+							</li>
+							<li>
+								<a href="#f103">网站模板</a>
+							</li>
+							<li>
+								<a href="#f104">网页特效</a>
+							</li>
+							<li>
+								<a href="#f105">图库灵感</a>
+							</li>
+							<li>
+								<a href="#f106">图标素材</a>
+							</li>
+							<li>
+								<a href="#f113">字体网站</a>
+							</li>
+							<li>
+								<a href="#f107">网站画廊</a>
+							</li>
+							<li>
+								<a href="#f108">设计学习</a>
+							</li>
+							<li>
+								<a href="#f109">前端工具</a>
+							</li>
+							<li>
+								<a href="#f111">前端CDN</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="h4" href="#f2">编程软件</a>
+						<ul class="nav">
+							<li>
+								<a href="#f201">HTML</a>
+							</li>
+							<li>
+								<a href="#f202">CSS</a>
+							</li>
+							<li>
+								<a href="#f203">Javascript</a>
+							</li>
+
+							<li>
+								<a href="#f205">JS框架</a>
+							</li>
+							<li>
+								<a href="#f206">编程语言</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 aui-fr-info">
+			<div class="bd-content">
+				<h1 class="content-item-title" id="f1">
+					前端开发
+					<p>web前端开发常用的网站，AUI素材网整理供大家参考 谢谢！</p>
+				</h1>
+				<div class="content-item noInfo" id="one">
+					<h1>前端框架</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://jui.org/">
+							<img class="ico" src="images/icon/jui.png"/>
+							<span class="text">DWZ jui</span>
+							<p class="info">DWZ富客户端框架</p>
+						</a>
+						<a target="_blank" href="http://www.ydui.org/">
+							<img class="ico" src="images/icon/yd.ico"/>
+							<span class="text">YDUI Touch</span>
+							<p class="info">一只注重审美，且性能高效的移动端&微信UI。</p>
+						</a>
+						<a target="_blank" href="http://www.bootcss.com/">
+							<img class="ico" src="images/icon/bootcss.png"/>
+							<span class="text">Bootstrap</span>
+							<p class="info">是Twitter推出的一个用于前端开发的开源工具包</p>
+						</a>
+						<a target="_blank" href="http://framework7.taobao.org/" style="margin-right:0;" >
+							<img class="ico" src="images/icon/framework7.png"/>
+							<span class="text">Framework7</span>
+							<p class="info">特色的HTML框架，可以创建精美的iOS应用</p>
+						</a>
+						<a target="_blank" href="http://m.sui.taobao.org/">
+							<img class="ico" src="images/icon/apple-touch-icon-114x114.png"/>
+							<span class="text">SUI Mobile</span>
+							<p class="info">是一套基于 Framework7 开发的UI库。它非常轻量</p>
+						</a>
+						<a target="_blank" href="https://weui.io/">
+							<img class="ico" src="images/icon/weui.png"/>
+							<span class="text">WeUI</span>
+							<p class="info">是一套同微信原生视觉体验一致的基础样式库，由微信官</p>
+						</a>
+						<a target="_blank" href="http://frozenui.github.io/">
+							<img class="ico" src="images/icon/frozenui.png"/>
+							<span class="text">Frozen UI</span>
+							<p class="info">移动框架 重磅出击,简单易用，轻量快捷，为移动端服务的前端框架</p>
+						</a>
+						<a target="_blank" href="http://amazeui.org/"  style="margin-right:0;">
+							<img class="ico" src="images/icon/amazeui.png"/>
+							<span class="text">amazeui</span>
+							<p class="info">中国首个开源 HTML5 跨屏前端框架</p>
+						</a>
+						<a target="_blank" href="http://www.web2014.cn">
+							<img class="ico" src="images/icon/mini.png"/>
+							<span class="text">miniMobile</span>
+							<p class="info">用最少的codding写出最灵活的代码。</p>
+						</a>
+						<a target="_blank" href="http://www.auicss.com/" style="margin-right:0;">
+							<img class="ico" src="images/icon/auicss.png"/>
+							<span class="text">AUI</span>
+							<p class="info">靠谱的跨平台移动前端框架</p>
+						</a>
+					</div>
+				</div>
+				
+				<div class="content-item" id="f101">
+					<h1>技术社区</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="https://www.zhihu.com/">
+							<img class="ico" src="images/icon/zhihu.png"/>
+							<span class="text">知乎</span>
+							<p class="info">知乎- 与世界分享你的知识、经验和见解</p>
+						</a>
+						<a target="_blank" href="https://segmentfault.com/">
+							<img class="ico" src="images/icon/segmentfault.ico"/>
+							<span class="text">SegmentFault</span>
+							<p class="info">中国领先的开发者技术社区，类似stackoverflow</p>
+						</a>
+						<a target="_blank" href="http://www.csdn.net/">
+							<img class="ico" src="images/icon/csdn.ico"/>
+							<span class="text">CSDN</span>
+							<p class="info">中国最大的IT社区和服务平台</p>
+						</a>
+						<a target="_blank" href="http://www.oschina.net/" style="margin-right:0;">
+							<img class="ico" src="images/icon/oschina.ico"/>
+							<span class="text">开源中国</span>
+							<p class="info">目前中国最大的开源技术社区</p>
+						</a>
+						<a target="_blank" href="https://www.nowcoder.com">
+							<img class="ico" src="images/icon/nowcoder.ico"/>
+							<span class="text">牛客网</span>
+							<p class="info">专业IT笔试面试备考平台,最全C++JAVA前端求职题库,全面提升IT编程能力</p>
+						</a>
+						<a target="_blank" href="http://www.jiangweishan.com/">
+							<img class="ico" src="images/icon/web.ico"/>
+							<span class="text">WEB前端之家</span>
+							<p class="info">Web前端之家为大家提供一个沟通的平台，提供最全的前端信息，虽然不是最好，但是力争做得最好</p>
+						</a>
+						<a class="link-new" target="_blank" href="https://developers.google.cn/">
+							<img class="ico" src="images/icon/google-developers.ico"/>
+							<span class="text">Google Developers</span>
+							<p class="info">探索 Google API 和 SDK，包括文档、示例代码和支持资源。</p>
+						</a>
+						<a target="_blank" href="https://github.com/" style="margin-right:0;">
+							<img class="ico" src="images/icon/github.ico"/>
+							<span class="text">Github</span>
+							<p class="info">分布式的版本控制系统，开源协作社区。</p>
+						</a>
+					</div>
+				</div>
+				<div class="content-item noInfo" id="f102">
+					<h1>设计团队</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://jdc.jd.com/">
+							<img class="ico" src="images/icon/jdc.png"/>
+							<span class="text">京东JDC</span>
+							<p class="info">京东设计中心</p>
+						</a>
+						<a target="_blank" href="http://isux.tencent.com/">
+							<img class="ico" src="images/icon/tencent-isux.ico"/>
+							<span class="text">腾讯ISUX</span>
+							<p class="info">腾讯 ISUX 是腾讯集团核心、全球最具规模的UX设计团队。</p>
+						</a>
+						<a target="_blank" href="http://cdc.tencent.com/">
+							<img class="ico" src="images/icon/tencent-cdc.ico"/>
+							<span class="text">腾讯游戏CDC</span>
+							<p class="info">腾讯 ISUX 是腾讯集团核心、全球最具规模的UX设计团队。</p>
+						</a>
+						<a target="_blank" href="http://tgideas.qq.com/"  style="margin-right:0;">
+							<img class="ico" src="images/icon/tencent-tgideas.ico"/>
+							<span class="text">腾讯游戏TGideas</span>
+							<p class="info">腾讯 ISUX 是腾讯集团核心、全球最具规模的UX设计团队。</p>
+						</a>
+						<a target="_blank" href="http://mxd.tencent.com/">
+							<img class="ico" src="images/icon/tencent-mxd.ico"/>
+							<span class="text">腾讯MXD</span>
+							<p class="info">腾讯 ISUX 是腾讯集团核心、全球最具规模的UX设计团队。</p>
+						</a>
+						<a target="_blank" href="http://uxc.baidu.com/">
+							<img class="ico" src="images/icon/baidu-uxc.ico"/>
+							<span class="text">百度UXC</span>
+							<p class="info">腾讯 ISUX 是腾讯集团核心、全球最具规模的UX设计团队。</p>
+						</a>
+						<a target="_blank" href="http://www.aliued.cn/">
+							<img class="ico" src="images/icon/alibaba.ico"/>
+							<span class="text">阿里巴巴UED</span>
+							<p class="info">腾讯 ISUX 是腾讯集团核心、全球最具规模的UX设计团队。</p>
+						</a>
+						<a target="_blank" href="http://mux.alimama.com/" style="margin-right:0;">
+							<img class="ico" src="images/icon/alimama.ico"/>
+							<span class="text">阿里妈妈MUX</span>
+							<p class="info">腾讯 ISUX 是腾讯集团核心、全球最具规模的UX设计团队。</p>
+						</a>
+						<a target="_blank" href="http://uedc.163.com/">
+							<img class="ico" src="images/icon/163-uedc.ico"/>
+							<span class="text">网易UEDC</span>
+							<p class="info">腾讯 ISUX 是腾讯集团核心、全球最具规模的UX设计团队。</p>
+						</a>
+						<a target="_blank" href="http://uxc.360.cn/">
+							<img class="ico" src="images/icon/360-uxc.ico"/>
+							<span class="text">360UXC</span>
+							<p class="info">腾讯 ISUX 是腾讯集团核心、全球最具规模的UX设计团队。</p>
+						</a>
+						<a target="_blank" href="http://vc.changyou.com/">
+							<img class="ico" src="images/icon/changyou.ico"/>
+							<span class="text">搜狐畅游VC</span>
+							<p class="info">腾讯 ISUX 是腾讯集团核心、全球最具规模的UX设计团队。</p>
+						</a>
+						<a target="_blank" href="http://uxren.cn/" style="margin-right:0">
+							<img class="ico" src="images/icon/uxren.jpg"/>
+							<span class="text">UXRen</span>
+							<p class="info">用户体验人的专业社区,专注，分享和成长！</p>
+						</a>
+					</div>
+				</div>
+				<div class="content-item" id="f103">
+					<h1>网站模板</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" class="link-hot" href="http://www.a-ui.cn">
+							<img class="ico" src="images/icon/AUI-logo.png"/>
+							<span class="text">AUI素材网</span>
+							<p class="info">是一家在线下载源文件的模板基地</p>
+						</a>
+
+						<a target="_blank" href="http://www.17sucai.com/">
+							<img class="ico" src="images/icon/17sucai.ico"/>
+							<span class="text">17素材</span>
+							<p class="info">提供优质的图片素材和代码素材</p>
+						</a>
+						<a target="_blank" href="http://www.templatemonster.com/">
+							<img class="ico" src="images/icon/templatemonster.ico"/>
+							<span class="text">TemplateMonster</span>
+							<p class="info">全球最大的模板供应商，美国怪兽模板网站产品</p>
+						</a>
+						<a target="_blank" href="https://templated.co/" style="margin-right:0">
+							<img class="ico" src="images/icon/templated.ico"/>
+							<span class="text">templated</span>
+							<p class="info">分享下载免费HTML5网站模板</p>
+						</a>
+					</div>
+				</div>
+				<div class="content-item" id="f104">
+					<h1>网页特效</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://www.htmleaf.com/">
+							<img class="ico" src="images/icon/htmleaf.ico"/>
+							<span class="text">jQuery之家</span>
+							<p class="info">自由分享jQuery、html5、css3的插件库</p>
+						</a>
+						<a target="_blank" href="http://www.jq22.com/">
+							<img class="ico" src="images/icon/jq22.ico"/>
+							<span class="text">jQuery插件库</span>
+							<p class="info">收集jQuery插件、提供详细使用方法,下载需积分</p>
+						</a>
+						<a target="_blank" href="http://www.jqueryfuns.com/" title="Bootstrap后台模板,管理模板,响应式模板,手机模板,jquery特效,jquery - jQueryfuns">
+							<img class="ico" src="images/icon/jqueryfuns.png"/>
+							<span class="text">jQueryfuns</span>
+							<p class="info">Bootstrap后台模板,管理模板,响应式模板,手机模板,jquery特效,jquery - jQueryfuns</p>
+						</a>
+						<a target="_blank" href="http://www.5iweb.com.cn/" title="网页特效库,css3动画,banner特效" style="margin-right:0;">
+							<img class="ico" src="images/icon/51web.png"/>
+							<span class="text">51web网页特效库</span>
+							<p class="info">网页特效库,css3动画,banner特效s</p>
+						</a>
+					</div>
+				</div>
+				<div class="content-item" id="f105">
+					<h1>图库灵感</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://huaban.com/">
+							<img class="ico" src="images/icon/huaban.ico"/>
+							<span class="text">花瓣</span>
+							<p class="info">寻找灵感的天堂,保存有用的素材</p>
+						</a>
+						<a target="_blank" href="http://www.zcool.com.cn/">
+							<img class="ico" src="images/icon/zcool.png"/>
+							<span class="text">站酷</span>
+							<p class="info">中国人气设计师互动平台，2006年8月创立于北京</p>
+						</a>
+						<a target="_blank" href="http://ibaotu.com/">
+							<img class="ico" src="images/icon/ibaotu.png"/>
+							<span class="text">包图网</span>
+							<p class="info">专注于提供网页素材下载</p>
+						</a>
+						<a target="_blank" href="http://hellorf.com/" style="margin-right:0;">
+							<img class="ico" src="images/icon/hellofr.ico"/>
+							<span class="text">站酷海洛</span>
+							<p class="info">高端视觉内容版权服务商,站酷旗下品牌</p>
+						</a>
+						<a target="_blank" href="http://www.shijue.me/">
+							<img class="ico" src="images/icon/icon-shijue.png"/>
+							<span class="text">视觉ME设计社区</span>
+							<p class="info">视觉中国设计师社区是一个致力于设计作品分享、发现、售卖的专业平台。</p>
+						</a>
+						<a target="_blank" href="http://www.yestone.com/">
+							<img class="ico" src="images/icon/yestone.ico"/>
+							<span class="text">Yestone正版图库</span>
+							<p class="info">高品质的版权图片及商业正版图片素材提供商</p>
+						</a>
+						<a target="_blank" href="http://699pic.com/">
+							<img class="ico" src="images/icon/699pic.ico"/>
+							<span class="text">摄图网</span>
+							<p class="info">专注于免费摄影图，为中小企业，自媒体，设计师，运营等提供优质的服务！，商业图片素材供应商</p>
+						</a>
+						<a target="_blank" href="http://www.123rf.com.cn/" style="margin-right:0;">
+							<img class="ico" src="images/icon/123rf.ico"/>
+							<span class="text">123RF</span>
+							<p class="info">正版创意图片素材服务，商业图片素材供应商</p>
+						</a>
+						<a target="_blank" href="http://www.nipic.com/">
+							<img class="ico" src="images/icon/nipic.ico"/>
+							<span class="text">昵图网</span>
+							<p class="info">昵图网是一个图片分享交流平台，网站以摄影、设计、</p>
+						</a>
+						<a target="_blank" href="https://www.pinterest.com" title="采用的是瀑布流的形式展现图片内容，无需用户翻页，">
+							<img class="ico" src="images/icon/pinterest.ico"/>
+							<span class="text">Pinterest</span>
+							<p class="info">采用的是瀑布流的形式展现图片内容，无需用户翻页，</p>
+						</a>
+						<a target="_blank" href="http://www.gaopinimages.com/" title="Gaopin Images 高品（北京）图像有限公司，高端图像资源交易分享平台">
+							<img class="ico" src="images/icon/gaop.ico"/>
+							<span class="text">Gaopin</span>
+							<p class="info">高端图像资源交易分享平台</p>
+						</a>
+						<a target="_blank" href="http://www.58pic.com/" title="千图网_专注免费设计素材下载的网站_免费设计图片素材中国" style="margin-right:0;">
+							<img class="ico" src="images/icon/58pic.png"/>
+							<span class="text">千图网</span>
+							<p class="info">千图网_专注免费设计素材下载的网站_免费设计图片素材中国</p>
+						</a>
+					</div>
+				</div>
+				<div class="content-item" id="f106">
+					<h1>图标素材</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://www.iconfont.cn/">
+							<img class="ico" src="images/icon/iconfont.ico"/>
+							<span class="text">iconfont</span>
+							<p class="info">阿里巴巴矢量图标库，提供web字体格式的图标下载</p>
+						</a>
+						<a target="_blank" href="http://www.easyicon.net/">
+							<img class="ico" src="images/icon/easyicon.ico"/>
+							<span class="text">easyicon</span>
+							<p class="info">超过五十万个各种格式的图标搜索、下载服务。</p>
+						</a>
+						<a target="_blank" href="http://www.lanrentuku.com/">
+							<img class="ico" src="images/icon/lanrentuku.ico"/>
+							<span class="text">懒人图库</span>
+							<p class="info">提供网页素材，PNG图标，矢量图素材下载</p>
+						</a>
+						<a target="_blank" href="http://www.uisdc.com/category/uiicon/icons" style="margin-right:0;">
+							<img class="ico" src="images/icon/uisdc.ico"/>
+							<span class="text">优设图标</span>
+							<p class="info">博客形式的图标资源汇总，UI设计教程</p>
+						</a>
+						<a target="_blank" href="http://sucai.zcool.com.cn/search.do?firstCate=2">
+							<img class="ico" src="images/icon/zcool.ico"/>
+							<span class="text">站酷素材</span>
+							<div class="info">站酷用户分享的图标素材库
+							</div>
+						</a>
+						<a target="_blank" href="http://fontawesome.io/icons/">
+							<img class="ico" src="images/icon/fontawesome.ico"/>
+							<span class="text">Font Awesome Icon</span>
+							<div class="info">Font Awesome, the iconic font and CSS framework
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="content-item" id="f113">
+					<h1>字体网站</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://ziti.cndesign.com/">
+							<img class="ico" src="images/icon/icon-cdn.png"/>
+							<span class="text">中国设计网</span>
+							<p class="info">造字工房-是中国设计领域重要的媒体资讯平台</p>
+						</a>
+						<a target="_blank" href="http://fontcdn.org/">
+							<img class="ico" src="images/icon/font-favicon.ico"/>
+							<span class="text">fontcdn</span>
+							<p class="info">fontcdn.org</p>
+						</a>
+						<a target="_blank" href="http://www.makefont.com/">
+							<img class="ico" src="images/icon/zaozi.ico"/>
+							<span class="text">造字工房</span>
+							<p class="info">造字工房-让字更有吸引力</p>
+						</a>
+						<a target="_blank" href="http://www.hellofont.cn/" style="margin-right:0;">
+							<img class="ico" src="images/icon/ziyou.ico"/>
+							<span class="text">字由</span>
+							<p class="info">加入字由，和靠谱的小伙伴一起奋斗成长</p>
+						</a>
+						<a target="_blank" href="https://fonts2u.com/">
+							<img class="ico" src="images/icon/fonts2u.png"/>
+							<span class="text">fonts2u</span>
+							<p class="info">字体资源搜索以及下载</p>
+						</a>
+					</div>
+				</div>
+				<div class="content-item" id="f107">
+					<h1>网站画廊</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://muuuuu.org/">
+							<img class="ico" src="images/icon/muuuuu.ico"/>
+							<span class="text">muuuuu.org</span>
+							<p class="info">日本高质量网页设计画廊·网址收集</p>
+						</a>
+						<a target="_blank" href="http://bm.straightline.jp/">
+							<img class="ico" src="images/icon/straightline.ico"/>
+							<span class="text">straightline</span>
+							<p class="info">日本网站索引，收集Web设计的参考榜样的网站</p>
+						</a>
+						<a target="_blank" href="http://www.csswinner.com/">
+							<img class="ico" src="images/icon/csswinner.ico"/>
+							<span class="text">CSS Winner</span>
+							<p class="info">为网站评分，展示和奖励每日最佳网站</p>
+						</a>
+						<a target="_blank" href="http://reeoo.com/" style="margin-right:0;">
+							<img class="ico" src="images/icon/reeoo.ico"/>
+							<span class="text">reeoo</span>
+							<p class="info">web design inspiration and website gallery</p>
+						</a>
+						<a target="_blank" href="https://www.siteinspire.com/">
+							<img class="ico" src="images/icon/siteinspire.png"/>
+							<span class="text">siteInspire</span>
+							<p class="info">CSS画廊和最佳网页设计灵感的展示</p>
+						</a>
+					</div>
+				</div>
+				<div class="content-item" id="f108">
+					<h1>设计学习</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://www.uisdc.com/">
+							<img class="ico" src="images/icon/uisdc.ico"/>
+							<span class="text">优设网</span>
+							<div class="info">良好职业交流氛围的网页设计行业联盟
+							</div>
+						</a>
+						<a target="_blank" href="http://www.zcool.com.cn/">
+							<img class="ico" src="images/icon/zcool.ico"/>
+							<span class="text">站酷</span>
+							<div class="info">中国人气设计师互动平台
+							</div>
+						</a>
+						<a target="_blank" href="http://www.ui.cn/">
+							<img class="ico" src="images/icon/ui.ico"/>
+							<span class="text">UI中国</span>
+							<div class="info">前身为IconFans，专业界面交互设计平台</div>
+						</a>
+						<a target="_blank" href="http://www.wkun.com/" style="margin-right:0;">
+							<img class="ico" src="images/icon/wkun.ico"/>
+							<span class="text">WKUN.COM</span>
+							<div class="info">WKUN.COM 是设计师王坤的个人网站</div>
+						</a>
+						<a target="_blank" href="https://dribbble.com/">
+							<img class="ico" src="images/icon/dribbble.ico"/>
+							<span class="text">Dribbble</span>
+							<div class="info">Show and tell for designers
+							</div>
+						</a>
+						<a target="_blank" href="https://www.behance.net/">
+							<img class="ico" src="images/icon/behance.ico"/>
+							<span class="text">behance</span>
+							<div class="info">展示和发现创意作品
+							</div>
+						</a>
+						<a target="_blank" href="http://www.mobile-patterns.com/">
+							<img class="ico" src="images/icon/mobile-patterns.ico"/>
+							<span class="text">mobile-patterns</span>
+							<div class="info">A library of iOS and Android screenshots for designers and developers to reference.
+							</div>
+						</a>
+						<a target="_blank" href="http://www.photoshoplady.com/" style="margin-right:0;">
+							<img class="ico" src="images/icon/photoshoplady.ico"/>
+							<span class="text">photoshoplady</span>
+							<div class="info">Photoshop Lady - : Best Photoshop Tutorials Around the World
+							</div>
+						</a>
+						<a target="_blank" href="http://cn.vectorhq.com/">
+							<img class="ico" src="images/icon/vectorhq.ico"/>
+							<span class="text">vectorhq</span>
+							<div class="info">免费矢量和PSD图片 527242张图片一网打尽！ - VectorHQ.com
+							</div>
+						</a>
+						<a target="_blank" href="http://design.tutsplus.com/">
+							<img class="ico" src="images/icon/tutsplus.ico"/>
+							<span class="text">PSD Tuts+</span>
+							<div class="info">Graphic Design &Illustration Tutorials by Envato Tuts+
+							</div>
+						</a>
+						<a target="_blank" href="http://cn.365psd.com/">
+							<img class="ico" src="images/icon/365psd.ico"/>
+							<span class="text">365psd</span>
+							<div class="info">每天下载一个矢量图和PSD素材！
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="content-item" id="f109">
+					<h1>前端工具</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="https://color.adobe.com/">
+							<img class="ico" src="images/icon/adobe-color.ico"/>
+							<span class="text">Adobe Color CC</span>
+							<div class="info">Adobe官方 配色网站
+							</div>
+						</a>
+						<a target="_blank" href="http://mydevice.io/devices/">
+							<img class="ico" src="images/icon/mydevice.ico"/>
+							<span class="text">设备尺寸参考</span>
+							<div class="info">移动设备尺寸一览表
+							</div>
+						</a>
+						<a target="_blank" href="http://chrome-extension-downloader.com/">
+							<span class="text">Chrome插件离线包</span>
+							<div class="info">插件的id，可在github中查找
+							</div>
+						</a>
+						<a target="_blank" href="http://www.bejson.com/" style="margin-right:0;">
+							<img class="ico" src="images/icon/bejson.ico"/>
+							<span class="text">在线JSON工具</span>
+							<div class="info">JSON 校验,格式化,编码,解密等
+							</div>
+						</a>
+						<a target="_blank" href="https://ant.design/docs/spec/colors-cn">
+							<img class="ico" src="images/icon/antd.png"/>
+							<span class="text">ant-desgin 色彩</span>
+							<div class="info">根据基本色衍生10种渐变色
+							</div>
+						</a>
+						<a target="_blank" href="http://www.jetbrains.com/products.html">
+							<img class="ico" src="images/icon/webstorm.jpg"/>
+							<span class="text">webstorm</span>
+							<div class="info">是jetbrains公司旗下一款JavaScript 开发工具</div>
+						</a>
+						<a target="_blank" href="http://www.sublimetext.com/">
+							<img class="ico" src="images/icon/sublime.png"/>
+							<span class="text">sublime</span>
+							<div class="info">是一个代码编辑器（Sublime Text 2是收费软</div>
+						</a>
+						<a target="_blank" href="http://www.dcloud.io/" style="margin-right:0;">
+							<img class="ico" src="images/icon/dcloud.jpg"/>
+							<span class="text">Hbuilder</span>
+							<div class="info">是DCloud（数字天堂）推出的一款支持</div>
+						</a>
+					</div>
+				</div>
+				<div class="content-item" id="f111">
+					<h1>前端CDN</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://www.bootcdn.cn/">
+							<img class="ico" src="images/icon/bootcdn.ico"/>
+							<span class="text">bootcdn</span>
+							<p class="info">Bootstrap 中文网和又拍云共同支持并维护的前端开源项目免费 CDN 服务</p>
+						</a>
+						<a target="_blank" href="http://cdn.code.baidu.com/">
+							<img class="ico" src="images/icon/baidu.ico"/>
+							<span class="text">百度静态资源公共库</span>
+							<p class="info">在Github上接受提交请求，同时实时同步国外如CDNJS上优秀的开源库。</p>
+						</a>
+						<a target="_blank" href="https://staticfile.org/">
+							<img class="ico" src="images/icon/staticfile.png"/>
+							<span class="text">Staticfile CDN</span>
+							<p class="info">由七牛云提供，掘金支持</p>
+						</a>
+						<a target="_blank" href="https://cdnjs.com/" style="margin-right:0">
+							<img class="ico" src="images/icon/cdnjs.ico"/>
+							<span class="text">cdnjs</span>
+							<p class="info">The best FOSS CDN for web related libraries to speed up your websites!</p>
+						</a>
+					</div>
+				</div>
+				<h1 class="content-item-title" id="f2">
+					编程软件
+					<p>Web前端开发，需要掌握或了解的语言编程软件</p>
+				</h1>
+				<div class="content-item noInfo" id="f201">
+					<h1>HTML</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://www.w3school.com.cn/html/index.asp">
+							<img class="ico" src="images/icon/cdnjs.ico"/>
+							<span class="text">w3school</span>
+							<p class="info">HTML 教程</p>
+						</a>
+						<a target="_blank" href="http://www.runoob.com/html/html-tutorial.html">
+							<img class="ico" src="images/icon/runoob.ico"/>
+							<span class="text">html菜鸟教程</span>
+							<p class="info">菜鸟教程提供了最全的基础编程技术教程。</p>
+						</a>
+						<a target="_blank" href="https://www.w3.org/TR/html5/">
+							<img class="ico" src="images/icon/w3.png"/>
+							<span class="text">HTML5</span>
+							<p class="info">HTML5</p>
+						</a>
+						<a target="_blank" href="http://www.51html5.com/" style="margin-right:0;">
+							<img class="ico" src="images/icon/51html5.ico"/>
+							<span class="text">HTML5技术网</span>
+							<p class="info">是HTML5相关的技术分享网站，网站涵盖了html5的各种信息，包括html5教程、html5网站示例、html5开发工具以及其它html5相关的各种开发技术文章。</p>
+						</a>
+					</div>
+				</div>
+				<div class="content-item noInfo" id="f202">
+					<h1>CSS</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://www.w3cplus.com/CSS3">
+							<img class="ico" src="images/icon/w3cplus.ico"/>
+							<span class="text">w3cplus</span>
+							<p class="info">入门到精通教程</p>
+						</a>
+					</div>
+				</div>
+				<div class="content-item noInfo" id="f203">
+					<h1>Javascript</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://www.w3school.com.cn/b.asp">
+							<img class="ico" src="images/icon/cdnjs.ico"/>
+							<span class="text">js教程</span>
+							<p class="info">浏览器脚本教程</p>
+						</a>
+						<a target="_blank" href="http://www.itxueyuan.org/">
+							<img class="ico" src="images/icon/itxueyuan.png"/>
+							<span class="text">javascript中文网</span>
+							<p class="info">JavaScript中文网：JavaScript教程，JS教程，Web前端工程师！</p>
+						</a>
+					</div>
+				</div>
+				<div class="content-item" id="f205">
+					<h1>JS框架</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="https://angular.cn/">
+							<img class="ico" src="images/icon/angular2.ico"/>
+							<span class="text">Angular2</span>
+							<div class="info">google出品的js前端框架
+							</div>
+						</a>
+						<a target="_blank" href="https://facebook.github.io/react/">
+							<img class="ico" src="images/icon/react.png"/>
+							<span class="text">React</span>
+							<div class="info">Facebook出品的跨终端js框架
+							</div>
+						</a>
+						<a target="_blank" href="http://cn.vuejs.org/">
+							<img class="ico" src="images/icon/vuejs.png"/>
+							<span class="text">Vuejs</span>
+							<div class="info">轻量高效的前端组件化方案
+							</div>
+						</a>
+						<a target="_blank" href="http://hiloteam.github.io/index.html" style="margin-right:0;">
+							<img class="ico" src="images/icon/hilo.png"/>
+							<span class="text">Hilo</span>
+							<div class="info">双十一H5互动游戏解决方案
+							</div>
+						</a>
+						<a target="_blank" href="http://ionicframework.com/">
+							<img class="ico" src="images/icon/ionic2.ico"/>
+							<span class="text">ionic2</span>
+							<div class="info">基于angular2的Native框架
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="content-item noInfo" id="f206">
+					<h1>编程语言</h1>
+					<div class="content-list clearfix">
+						<a target="_blank" href="http://www.php.net/">
+							<img class="ico" src="images/icon/php.ico"/>
+							<span class="text">PHP</span>
+							<p class="info">我的第一段 PHP 脚本</p>
+						</a>
+						<a target="_blank" href="http://www.phpchina.com/">
+							<img class="ico" src="images/icon/phpchina.png"/>
+							<span class="text">PHPChina</span>
+							<p class="info">PHP China-最棒的PHP中文社区</p>
+						</a>
+						<a target="_blank" href="http://www.php.cn/">
+							<img class="ico" src="images/icon/phpchina1.png"/>
+							<span class="text">PHP中文网</span>
+							<p class="info">php中文网-教程,手册,视频,mysql,免费php在线学习平台</p>
+						</a>
+						<a target="_blank" href="http://www.php100.com/" style="margin-right:0;">
+							<img class="ico" src="images/icon/php100.png"/>
+							<span class="text">PHP100</span>
+							<p class="info">PHP100中文网 - 中国第一档PHP资源分享门户 </p>
+						</a>
+
+						<!--<a target="_blank" href="https://nodejs.org/en/">NodeJs官网</a>-->
+						<!--<a target="_blank" href="http://www.expressjs.com.cn/">Express</a>-->
+						<!--<a target="_blank" href="http://sailsjs.org/">sailsjs</a>-->
+						<!--<a target="_blank" href="http://www.php.net/">PHP官网</a>-->
+						<!--<a target="_blank" href="https://laravel.com/">Laravel</a>-->
+						<!--<a target="_blank" href="http://www.yiiframework.com/">Yii</a>-->
+						<!--<a target="_blank" href="http://codeigniter.org.cn/">CodeIgniter</a>-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</article>
+
+<footer class="bd-footer">
+	<div class="container" style="float:right; text-align:right;">
+		Copyright © 2017 <a href="http://www.a-ui.cn/">www.a-ui.cn</a> All rights reserved.
+		<div class="census">
+			<!-- <script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1262996536'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1262996536%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+			</script> -->
+		</div>
+	</div>
+	<div style="clear: both"></div>
+</footer>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

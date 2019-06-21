@@ -1389,7 +1389,7 @@ color
 .article-entry blockquote {
   padding: 0.4em 20px;
   margin: 0.5em auto;
-  border-left: 4px solid rgba(147,181,224,0.4);
+  border-left: 4px solid rgba(35,199,87,0.56);
   background: rgba(255,255,255,0.4);
   -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.1);

@@ -1,16 +1,18 @@
 ---
-title: 机器学习-深度学习顶级会议
+title: 机器学习-深度学习顶级会议罗列
 categories:
     summary
 tags: [工具,安利]
-date: 2019-5-12 8:14:03
+date: 2019-5-10 7:14:03
 ---
 
 <center> Porter Pan </center>
 
 ## 摘要
 
+本文主要罗列出，机器学习-深度学习领域比较知名的学术期刊组织，在学习机器学习相关的技术中，可以前往这些个机构，检索最近最新的研究状况，有针对性的就前沿技术进行挖掘性研究，并针对现有问题，做自己独到的方案。
 
+- [x] Edit By Porter, 学海无涯，苦作舟
 
 <!-- more -->
 
@@ -36,19 +38,47 @@ The International Conference on Learning Representations (ICLR) is a machine lea
 
 是人工智能和机器学习领域最重要的盛会。每年，来自计算机科学领域的各路专家和业界人士都会共聚一堂，共同讨论和分享有关人工智能的前沿想法。而作为大会学术内容最重要的部分，会议论文是众人关注的焦点。
 
-## AAAI:AAAI Conference on Artificial Intelligence
+## AAAI:
 
-## IJCAI:International Joint Conferences on AI
+### AI Conference on Artificial Intelligence
 
-## ICRA:International Conference on Robotics and Automation
 
-## IROS:International Conference on Intelligent Robots and Systems
 
-## AAMAS:International Conference on Autonomous Agents and Multiagent Systems
+## IJCAI:
 
-## RSS:Robotics: Science and Systems
+### International Joint Conferences on AI
 
-## ICCV:International Conference on Computer Vision
+
+
+## ICRA:
+
+### International Conference on Robotics and Automation
+
+
+
+## IROS:
+
+### International Conference on Intelligent Robots and Systems
+
+
+
+## AAMAS:
+
+### International Conference on Autonomous Agents and Multiagent Systems
+
+
+
+## RSS:
+
+### Robotics: Science and Systems
+
+
+
+## ICCV:
+
+### International Conference on Computer Vision
+
+
 
 ## CVPR
 
@@ -62,7 +92,9 @@ CVPR是IEEE Conference on Computer Vision and Pattern Recognition的缩写，即
 
 > 引用来自百度百科
 
-## ECCV:European Conference on Computer Vision
+## ECCV:
+
+### European Conference on Computer Vision
 
 
 
