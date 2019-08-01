@@ -117,7 +117,13 @@ youyan:
   # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看
   # 友言服务在 Web 环境下运行，普通本地环境无法查看，请部署后在线上测试。
 
-
+#5、Gitment
+gitment_on: true # 是否开启gitment
+gitment_owner: porterpan #你的 GitHub ID
+gitment_repo: 'porterpan.github.io' #存储评论的 repo
+gitment_oauth:
+  client_id: '9461105c752e5503b4de'           #client ID
+  client_secret: 'f2c5ffeac82d7dcdad2e06aceed9320bff0694dc' #client secret
 # >>> Style Customisation 样式自定义 <<<
 
 # Background | 背景
