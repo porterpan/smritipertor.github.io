@@ -1,5 +1,6 @@
 ---
 title: web中插入视频和音乐播放
+urlname: musicplug
 categories:
     web
 tags: [网页嵌入,音视频嵌入]

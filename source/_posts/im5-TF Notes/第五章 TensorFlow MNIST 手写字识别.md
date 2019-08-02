@@ -1,5 +1,6 @@
 ---
 title: 第五章 TensorFlow MNIST 手写字识别笔记
+urlname: tfshouxiezi
 categories:      
     Machine Learning      
 tags: [Deep Learning,TensorFlow]

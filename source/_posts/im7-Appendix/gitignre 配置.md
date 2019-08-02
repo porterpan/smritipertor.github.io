@@ -1,5 +1,6 @@
 ---
 title: Git中忽略提交项
+urlname: gitIgnore
 date: 2018-12-16 17:22:27
 categories:     
     skill   

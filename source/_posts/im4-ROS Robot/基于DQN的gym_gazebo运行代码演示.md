@@ -1,5 +1,6 @@
 ---
 title: 基于DQN的gym_gazebo运行代码演示
+urlname: DQNgym
 categories:      
     Machine Learning    
 tags: [gym-gazebo,Machine Learning,Algorithm]

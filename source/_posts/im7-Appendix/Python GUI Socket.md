@@ -1,5 +1,6 @@
 ---
 title: python Tkinter 界面实现套接字（socket) 通信
+urlname: pyqttkinter
 categories:     
     summary    
 tags: [日记,总结,GUI]

@@ -1,5 +1,6 @@
 ---
 title: Module篇使用__future__
+urlname: python_future
 categories:      
     Python      
 tags: [Module,__future__]

@@ -1,5 +1,6 @@
 ---
 title: ubuntu18 正确 安装ShadowSocket
+urlname: fanqiangss
 date: 2018-11-10 19:26:15
 categories:     
     summary

@@ -1,5 +1,6 @@
 ---
 title: 跨平台好用且小巧的pdf阅读器
+urlname: linuxPDF
 categories:     
     summary
 tags: [工具,安利]

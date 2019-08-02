@@ -1,5 +1,6 @@
 ---
 title: 解决Chrome67版本以后不能离线安装插件的情况
+urlname: installplugbychrome
 categories:     
     summary    
 tags: [工具,总结]

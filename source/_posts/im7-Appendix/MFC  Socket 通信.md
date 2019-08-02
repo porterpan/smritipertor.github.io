@@ -1,5 +1,6 @@
 ---
 title: C++ MFC 界面实现套接字（socket) 通信
+urlname: cplusMFC
 categories:
     skill
 tags: [C++,Socket,GUI]

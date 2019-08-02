@@ -1,5 +1,6 @@
 ---
 title: ubuntu 中安装sublime_text3
+urlname: sublime_text3
 categories:     
     summary    
 tags: [工具,sublime-text]

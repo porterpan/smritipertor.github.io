@@ -1,5 +1,6 @@
 ---
 title: gym 运行常见错误及解决办法
+urlname: gymError
 categories:      
     gym    
 tags: [gym,Deep Learning,Algorithm]

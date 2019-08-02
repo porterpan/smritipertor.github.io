@@ -1,5 +1,6 @@
 ---
 title: python之tkinter入坑Pack
+urlname: tkinternote
 date: 2018-11-11 16:43:36
 categories:     
     summary    

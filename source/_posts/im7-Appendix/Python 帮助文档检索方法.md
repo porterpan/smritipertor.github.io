@@ -1,5 +1,6 @@
 ---
 title: Python 帮助文档检索方法
+urlname: pythonHelp
 categories:      
     Python      
 tags: [Module]

@@ -1,5 +1,6 @@
 ---
 title: Hello World
+urlname: helloindex
 categories:      
     summary    
 tags: [Note,总结]

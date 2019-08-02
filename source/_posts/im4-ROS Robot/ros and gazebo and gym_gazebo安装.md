@@ -1,5 +1,6 @@
 ---
 title: ros and gazebo and gym_gazebo安装
+urlname: ros&gazeboInstall
 categories:      
     ROS    
 tags: [ROS,Deep Learning,Algorithm]

@@ -1,5 +1,6 @@
 ---
 title: 简单的方法，获取在线付费设计log的方法
+urlname: freelog
 categories:     
     summary
 tags: [工具,安利]

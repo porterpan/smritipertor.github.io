@@ -1,5 +1,6 @@
 ---
 title: 古诗词验证码使用百度api自动识别
+urlname: gushiciyanzheng
 categories:
     爬虫
 tags: [验证码,古诗词识别]

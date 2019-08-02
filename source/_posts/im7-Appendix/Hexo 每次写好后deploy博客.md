@@ -1,5 +1,6 @@
 ---
 title: Hexo 每次写好后deploy博客
+urlname: hexoDeploy
 categories:     
     summary
 tags: [Hexo,Blogs]

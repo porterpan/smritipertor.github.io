@@ -1,5 +1,6 @@
 ---
 title: vultr+freenom实现主机域名的绑定
+urlname: vultrFreenom
 categories:     
     summary    
 tags: [网站,总结]

@@ -1,5 +1,6 @@
 ---
 title: STM32串口通信配置（USART1+USART2+USART3+UART4）
+urlname: stm32chuankou
 date: 2018-11-11 17:22:27
 categories:     
     skill   

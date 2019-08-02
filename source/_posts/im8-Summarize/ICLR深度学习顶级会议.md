@@ -1,5 +1,6 @@
 ---
 title: 机器学习-深度学习顶级会议罗列
+urlname: ml&dlcomference
 categories:
     summary
 tags: [工具,安利]

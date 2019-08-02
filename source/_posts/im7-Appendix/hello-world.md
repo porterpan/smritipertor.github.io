@@ -1,5 +1,6 @@
 ---
 title: Hello World
+urlname: hexoHello
 categories:     
     summary    
 tags: [日记,总结]

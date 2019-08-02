@@ -1,5 +1,6 @@
 ---
 title: 第七章 TensorFlow 卷积神经网络
+urlname: tfCNN7
 categories:      
     Machine Learning      
 tags: [Deep Learning,TensorFlow]

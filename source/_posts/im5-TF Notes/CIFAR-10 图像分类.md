@@ -1,5 +1,6 @@
 ---
 title: CIFAR-10 图像分类Notes
+urlname: cifar10notes
 categories:      
     Deep Learning      
 tags: [Deep Learning,Tensorflow]

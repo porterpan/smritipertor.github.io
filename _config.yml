@@ -13,11 +13,12 @@ timezone: Asia/Chongqing
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://blog.porterpan.top
+url: https://blogs.porterpan.top
 root: /
 # permalink: :year/:month/:day/:title/
-permalink: :title/
-permalink_defaults:
+# 设置网页显示的地址后缀为文章中自定义的urlname,需要在文章开头加入 urlname: 标签
+permalink: /:urlname/
+permalink_defaults: 
 
 # Directory
 source_dir: source

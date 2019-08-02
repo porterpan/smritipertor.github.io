@@ -1,5 +1,6 @@
 ---
 title: 图书馆占座小工具使用手册
+urlname: liberarytool
 categories:     
     Library Project    
 tags: [Library Project,Pythton,qt5]

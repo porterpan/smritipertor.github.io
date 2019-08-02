@@ -1,5 +1,6 @@
 ---
 title: TensorFlow的相关学习笔记 part1
+urlname: tfnotesp1
 categories:      
     Deep Learning      
 tags: [Deep Learning,PyTorch]

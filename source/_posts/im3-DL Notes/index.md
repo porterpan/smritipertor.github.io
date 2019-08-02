@@ -1,5 +1,6 @@
 ---
 title: 第三章 深度学习框架学习
+urlname: DLindex
 categories:      
     summary    
 tags: [System Conf]

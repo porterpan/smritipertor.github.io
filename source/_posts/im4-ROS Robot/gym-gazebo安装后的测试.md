@@ -1,5 +1,6 @@
 ---
 title: gym-gazebo安装后的测试
+urlname: gym-gazeboInstall
 categories:      
     Machine Learning    
 tags: [gym-gazebo,Machine Learning,Algorithm]

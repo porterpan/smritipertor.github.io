@@ -1,5 +1,6 @@
 ---
 title: PDF在线预览嵌入到文章中的模板
+urlname: pdfqianruyulan
 categories:      
     Deep Learning      
 tags: [Deep Learning,Tensorflow]

@@ -1,5 +1,6 @@
 ---
 title: git 推送新的文章到github其他分支上
+urlname: gitpush
 date: 2018-11-10 19:42:28
 categories:
     summary
