@@ -434,33 +434,16 @@
 
 
     
-        <section id="comments">
-    <style> aside.comment-bar { margin: auto 30px; }</style>
-    <div id="disqus_thread"></div>
-    <script>
-        var disqus_config = function(){
-            this.page.url = 'https://blogs.porterpan.top/categories/index.html';
-            this.page.identifier = 'categories/index.html';
-        };
-        var loadComment = function(){
-            var d = document, s = d.createElement('script');
-            s.src = '//porter-1.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        }
-    </script>
-    
-    <script> loadComment(); </script>
-
-</section>
-
-
-    
         <div id="gitment-ctn"></div> 
 <!--汉化-->
-<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
 
+<link rel="stylesheet" href="https://porterpan.github.io/gitment/link_src/gitment.css">
+<script src="https://porterpan.github.io/gitment/link_src/gitment.js"></script>
+
+<!--
+<link rel="stylesheet" href="gitment/gitment.css">
+<script src="gitment/gitment.js"></script>
+-->
 <!--原型-->
 <!--
 <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
@@ -478,6 +461,7 @@ var gitment = new Gitment({
 })
 gitment.render('gitment-ctn')
 </script>
+
     
 
 

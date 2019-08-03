@@ -97,7 +97,7 @@ show_count: true
 ## Add comment count after article title
 
 disqus: 
-  on: true
+  #on: true
   shortname: porter-1
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
   # It is unnecessary to enable disqus here if 
