@@ -86,3 +86,31 @@ deploy:
   repository: https://github.com/porterpan/porterpan.github.io.git
 #  repository: https://git.dev.tencent.com/porterpan/porterpan.git
   branch: master
+
+# 网页压缩，去掉空格，提升响应速度
+# hexo-neat https://github.com/rozbo/hexo-neat
+# 博文压缩
+neat_enable: true
+# 压缩html
+neat_html:
+  enable: true
+  exclude:
+    - '**/index.h'  
+# 压缩css  
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+    - '**/*cntl.css'
+# 压缩js
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/*.cntl.js'
+    - '**/jquery.fancybox.pack.js'
+    - '**/index.js'  
+    - '**/love.js'
