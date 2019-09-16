@@ -23,20 +23,20 @@
 <meta property="og:site_name" content="Porter-聚水渊">
 <meta property="og:description" content="摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍马尔科夫相关实际应用搞得入门例子，很简单，但是能说明马尔科夫的原理相关。   Edit By Porter, 积水成渊,蛟龙生焉。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://blogs.porterpan.top/maerkefuyuce/image2/markovC_shiLi_1_1.png">
-<meta property="og:image" content="https://blogs.porterpan.top/maerkefuyuce/image2/MarkovSZ_1.2.1.png">
-<meta property="og:image" content="https://blogs.porterpan.top/maerkefuyuce/image2/MarkovSZ_1.2.2.png">
-<meta property="og:image" content="https://blogs.porterpan.top/maerkefuyuce/image2/MarkovSZ_1.2.3.png">
-<meta property="og:image" content="https://blogs.porterpan.top/maerkefuyuce/image2/MarkovSZ_1.2.4.png">
-<meta property="og:image" content="https://blogs.porterpan.top/maerkefuyuce/image2/MarkovSZ_1.2.5.png">
-<meta property="og:image" content="https://blogs.porterpan.top/maerkefuyuce/image2/markovC_K_part1.png">
-<meta property="og:image" content="https://blogs.porterpan.top/maerkefuyuce/image2/markovC_K_part2.png">
-<meta property="og:image" content="https://blogs.porterpan.top/maerkefuyuce/image2/markovC_K_part3.png">
-<meta property="og:updated_time" content="2019-08-31T03:22:53.502Z">
+<meta property="og:image" content="https://blogs.porterpan.top/image2/markovC_shiLi_1_1.png">
+<meta property="og:image" content="https://blogs.porterpan.top/image2/MarkovSZ_1.2.1.png">
+<meta property="og:image" content="https://blogs.porterpan.top/image2/MarkovSZ_1.2.2.png">
+<meta property="og:image" content="https://blogs.porterpan.top/image2/MarkovSZ_1.2.3.png">
+<meta property="og:image" content="https://blogs.porterpan.top/image2/MarkovSZ_1.2.4.png">
+<meta property="og:image" content="https://blogs.porterpan.top/image2/MarkovSZ_1.2.5.png">
+<meta property="og:image" content="https://blogs.porterpan.top/image2/markovC_K_part1.png">
+<meta property="og:image" content="https://blogs.porterpan.top/image2/markovC_K_part2.png">
+<meta property="og:image" content="https://blogs.porterpan.top/image2/markovC_K_part3.png">
+<meta property="og:updated_time" content="2019-09-16T12:43:30.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2.1.1 马尔科夫简单模型预测实战笔记">
 <meta name="twitter:description" content="摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍马尔科夫相关实际应用搞得入门例子，很简单，但是能说明马尔科夫的原理相关。   Edit By Porter, 积水成渊,蛟龙生焉。">
-<meta name="twitter:image" content="https://blogs.porterpan.top/maerkefuyuce/image2/markovC_shiLi_1_1.png">
+<meta name="twitter:image" content="https://blogs.porterpan.top/image2/markovC_shiLi_1_1.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -393,10 +393,9 @@
           
         <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍马尔科夫相关实际应用搞得入门例子，很简单，但是能说明马尔科夫的原理相关。</p>
 <ul>
-<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
+<li style="list-style: none"><input type="checkbox" checked> Edit By Porter, 积水成渊,蛟龙生焉。</li>
 </ul>
 <a id="more"></a>
-
 <p>文章同步于: <a href="https://porter.gitbook.io/" target="_blank" rel="noopener">我的gitbook</a></p>
 <h1 id="马尔科夫简单模型预测实战笔记"><a href="#马尔科夫简单模型预测实战笔记" class="headerlink" title="马尔科夫简单模型预测实战笔记"></a>马尔科夫简单模型预测实战笔记</h1><h2 id="一、基于马尔可夫链的公交停靠站乘客数预测"><a href="#一、基于马尔可夫链的公交停靠站乘客数预测" class="headerlink" title="一、基于马尔可夫链的公交停靠站乘客数预测"></a>一、基于马尔可夫链的公交停靠站乘客数预测</h2><h3 id="1-1-题设"><a href="#1-1-题设" class="headerlink" title="1.1 题设"></a>1.1 题设</h3><ul>
 <li><p>假设站点乘客数的状态具有马尔可夫性，当某一时刻有公交车停靠时， 会有一些乘客上车， 则下一时刻车辆到达时停靠站的乘客数与这一时刻剩余的乘客相关， 这一特征符合了马尔可夫链的马尔可夫性，同时在任意时刻的候车乘客只与上一时刻的乘客数相关， 而与候车时间无关。—-满足马尔科夫。</p>
@@ -407,7 +406,7 @@
 <blockquote>
 <p>以该停靠站点的候车乘客数为统计对象， 按照离散时间， 在状态转移中将以时间间隔为五分钟而对停靠站点的乘客数进行计数。以工作日某一天的上午8∶ 00 ～ 10∶ 00 的两小时为统计的时间段， 其中第一组数据为时刻 8∶05 时的乘客数， 可得到 24 组数据。如下图所示：</p>
 </blockquote>
-<p><img src="./image2/markovC_shiLi_1_1.png" alt="24组数据8-10点"></p>
+<p><img src="/image2/markovC_shiLi_1_1.png" alt="24组数据8-10点"></p>
 <p>图1-1 8-10点的24组数据</p>
 <p>由表 1 可知， 该站点的乘客数区间为［12， 27］，为保证预测的准确性， 根据建模步骤可将站点的乘客数分为 3 种状态， 即状态空间为( E1， E2， E3 ) ， 其中 E1 表示乘客数为 11 ～ 16， E2 表示乘客数为 17 ～22， E3 表示乘客数为 23 ～ 28， 因此有乘客数状态空间的频数分布， 如表 2 所示。</p>
 <ul>
@@ -417,205 +416,214 @@
 <table>
 <thead>
 <tr>
-<th align="left">时间点</th>
-<th align="left">乘客人数</th>
-<th align="center">时间表</th>
-<th align="center">乘客人数</th>
-<th align="right">时间表</th>
-<th align="right">乘客人数</th>
-<th align="center">时间表</th>
-<th align="center">乘客人数</th>
+<th style="text-align:left">时间点</th>
+<th style="text-align:left">乘客人数</th>
+<th style="text-align:center">时间表</th>
+<th style="text-align:center">乘客人数</th>
+<th style="text-align:right">时间表</th>
+<th style="text-align:right">乘客人数</th>
+<th style="text-align:center">时间表</th>
+<th style="text-align:center">乘客人数</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">1</td>
-<td align="left">E1</td>
-<td align="center">7</td>
-<td align="center">E2</td>
-<td align="right">13</td>
-<td align="right">E1</td>
-<td align="center">9</td>
-<td align="center">E2</td>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">E1</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">E2</td>
+<td style="text-align:right">13</td>
+<td style="text-align:right">E1</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">E2</td>
 </tr>
 <tr>
-<td align="left">2</td>
-<td align="left">E1</td>
-<td align="center">8</td>
-<td align="center">E3</td>
-<td align="right">14</td>
-<td align="right">E2</td>
-<td align="center">20</td>
-<td align="center">E1</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">E1</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">E3</td>
+<td style="text-align:right">14</td>
+<td style="text-align:right">E2</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">E1</td>
 </tr>
 <tr>
-<td align="left">3</td>
-<td align="left">E2</td>
-<td align="center">9</td>
-<td align="center">E2</td>
-<td align="right">15</td>
-<td align="right">E2</td>
-<td align="center">21</td>
-<td align="center">E1</td>
+<td style="text-align:left">3</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">E2</td>
+<td style="text-align:right">15</td>
+<td style="text-align:right">E2</td>
+<td style="text-align:center">21</td>
+<td style="text-align:center">E1</td>
 </tr>
 <tr>
-<td align="left">4</td>
-<td align="left">E2</td>
-<td align="center">10</td>
-<td align="center">E2</td>
-<td align="right">16</td>
-<td align="right">E3</td>
-<td align="center">22</td>
-<td align="center">E1</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">E2</td>
+<td style="text-align:right">16</td>
+<td style="text-align:right">E3</td>
+<td style="text-align:center">22</td>
+<td style="text-align:center">E1</td>
 </tr>
 <tr>
-<td align="left">5</td>
-<td align="left">E2</td>
-<td align="center">11</td>
-<td align="center">E1</td>
-<td align="right">17</td>
-<td align="right">E3</td>
-<td align="center">22</td>
-<td align="center">E1</td>
+<td style="text-align:left">5</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">E1</td>
+<td style="text-align:right">17</td>
+<td style="text-align:right">E3</td>
+<td style="text-align:center">22</td>
+<td style="text-align:center">E1</td>
 </tr>
 <tr>
-<td align="left">6</td>
-<td align="left">E2</td>
-<td align="center">12</td>
-<td align="center">E2</td>
-<td align="right">18</td>
-<td align="right">E2</td>
-<td align="center">24</td>
-<td align="center">E1</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">E2</td>
+<td style="text-align:right">18</td>
+<td style="text-align:right">E2</td>
+<td style="text-align:center">24</td>
+<td style="text-align:center">E1</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>于是可以得到状态转移频次表如下表所示：</p>
 <p>表三</p>
 <table>
 <thead>
 <tr>
-<th align="left">单位(人)</th>
-<th align="center">E1</th>
-<th align="center">E2</th>
-<th align="center">E3</th>
+<th style="text-align:left">单位(人)</th>
+<th style="text-align:center">E1</th>
+<th style="text-align:center">E2</th>
+<th style="text-align:center">E3</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">E1</td>
-<td align="center">5</td>
-<td align="center">3</td>
-<td align="center">0</td>
+<tbody>
+<tr>
+<td style="text-align:left">E1</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
-<td align="left">E2</td>
-<td align="center">3</td>
-<td align="center">7</td>
-<td align="center">2</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">2</td>
 </tr>
 <tr>
-<td align="left">E3</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">1</td>
+<td style="text-align:left">E3</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 id="1-2-计算模型"><a href="#1-2-计算模型" class="headerlink" title="1.2 计算模型"></a>1.2 计算模型</h3><p>根据马尔可夫变量的特征， 结合变量状态转移概率矩阵， 对站点乘客数的预测步骤如下:</p>
 <p>统计时需注意: 引起乘客数状态变化的转入包括下车后仍留在站点候车的乘客; 引起乘客数状态变化的转出则包括经过停靠车辆后上车的乘客， 则有表 1。</p>
 <p>由表二可统计得到如下信息：</p>
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center">E1</th>
-<th align="center">E2</th>
-<th align="center">E3</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">E1</th>
+<th style="text-align:center">E2</th>
+<th style="text-align:center">E3</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">当前统计总数(人)</td>
-<td align="center">8</td>
-<td align="center">12</td>
-<td align="center">3</td>
+<tbody>
+<tr>
+<td style="text-align:center">当前统计总数(人)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">3</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>由此可得到表三对应的转移概率矩阵，如下</p>
 <table>
 <thead>
 <tr>
-<th align="center">转移概率</th>
-<th align="center">E1</th>
-<th align="center">E2</th>
-<th align="center">E3</th>
+<th style="text-align:center">转移概率</th>
+<th style="text-align:center">E1</th>
+<th style="text-align:center">E2</th>
+<th style="text-align:center">E3</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">E1</td>
-<td align="center">5/8</td>
-<td align="center">3/8</td>
-<td align="center">0/8</td>
+<tbody>
+<tr>
+<td style="text-align:center">E1</td>
+<td style="text-align:center">5/8</td>
+<td style="text-align:center">3/8</td>
+<td style="text-align:center">0/8</td>
 </tr>
 <tr>
-<td align="center">E2</td>
-<td align="center">3/12</td>
-<td align="center">7/12</td>
-<td align="center">2/12</td>
+<td style="text-align:center">E2</td>
+<td style="text-align:center">3/12</td>
+<td style="text-align:center">7/12</td>
+<td style="text-align:center">2/12</td>
 </tr>
 <tr>
-<td align="center">E3</td>
-<td align="center">0/3</td>
-<td align="center">2/3</td>
-<td align="center">1/3</td>
+<td style="text-align:center">E3</td>
+<td style="text-align:center">0/3</td>
+<td style="text-align:center">2/3</td>
+<td style="text-align:center">1/3</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>即：</p>
 <table>
 <thead>
 <tr>
-<th align="center">转移概率</th>
-<th align="center">E1</th>
-<th align="center">E2</th>
-<th align="center">E3</th>
+<th style="text-align:center">转移概率</th>
+<th style="text-align:center">E1</th>
+<th style="text-align:center">E2</th>
+<th style="text-align:center">E3</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">E1</td>
-<td align="center">0.625</td>
-<td align="center">0.375</td>
-<td align="center">0</td>
+<tbody>
+<tr>
+<td style="text-align:center">E1</td>
+<td style="text-align:center">0.625</td>
+<td style="text-align:center">0.375</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
-<td align="center">E2</td>
-<td align="center">0.25</td>
-<td align="center">0.58</td>
-<td align="center">0.17</td>
+<td style="text-align:center">E2</td>
+<td style="text-align:center">0.25</td>
+<td style="text-align:center">0.58</td>
+<td style="text-align:center">0.17</td>
 </tr>
 <tr>
-<td align="center">E3</td>
-<td align="center">0</td>
-<td align="center">0.67</td>
-<td align="center">0.33</td>
+<td style="text-align:center">E3</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0.67</td>
+<td style="text-align:center">0.33</td>
 </tr>
-</tbody></table>
-<p><img src="./image2/MarkovSZ_1.2.1.png" alt="转移概率矩阵"></p>
+</tbody>
+</table>
+<p><img src="/image2/MarkovSZ_1.2.1.png" alt="转移概率矩阵"></p>
 <ul>
 <li>设初始时刻的状态分布为10点的时刻。由于10点出行人数是14人，在E1(11~16)之间，故设出事时刻的概率分布为:</li>
 </ul>
 <p>N(0)=(1, 0, 0)</p>
 <p>由N(1)=N(0).*P(1)=(0.625, 0.375, 0)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">markov</span><span class="params">()</span>:</span> </span><br><span class="line">    init_array = np.array([<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>]) </span><br><span class="line">    transfer_matrix = np.array([[<span class="number">0.625</span>, <span class="number">0.375</span>, <span class="number">0</span>], </span><br><span class="line">                                [<span class="number">0.25</span>, <span class="number">0.58</span>, <span class="number">0.17</span>], </span><br><span class="line">                                [<span class="number">0</span>, <span class="number">0.67</span>, <span class="number">0.33</span>]]) </span><br><span class="line">    restmp = init_array </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">25</span>): </span><br><span class="line">        res = np.dot(restmp, transfer_matrix) </span><br><span class="line">        print(<span class="string">'N('</span>,i+<span class="number">1</span>,<span class="string">')'</span>, <span class="string">"\t"</span>, res ) </span><br><span class="line">        restmp = res </span><br><span class="line">  </span><br><span class="line">markov()</span><br></pre></td></tr></table></figure>
-
-<p><img src="./image2/MarkovSZ_1.2.2.png" alt="代码运行结果"></p>
+<p><img src="/image2/MarkovSZ_1.2.2.png" alt="代码运行结果"></p>
 <blockquote>
 <p>N(0), 代表10：00的乘客数。N(1)代表10:05分的乘客数.N(2)代表10:10分的乘客数，以此类推。</p>
 </blockquote>
 <ul>
-<li>取上面设定的状态范围（11<del>16）， （17-22）， （18</del>28），分别对上面的取值区间做中值得到13.5， 19.5， 25.5； </li>
+<li>取上面设定的状态范围（11~16）， （17-22）， （18~28），分别对上面的取值区间做中值得到13.5， 19.5， 25.5； </li>
 </ul>
 <ul>
 <li>设 E1=13.5, E2=19.5, E3=25.5.</li>
 </ul>
 <p>由10:05分的站点乘客数量状态分布，N(1)=[0.625, 0.375, 0],和E=[13.5, 19.5, 25.5]可求得10:05的期望值Ex</p>
 <p>$$<br>E_{x}=\sum_{i=1}^{3} (N(1,i)*E(i)) = 0.625\times 13.5 + 0.375\times19.5 + 0\times25.5 = 15.75<br>$$</p>
-<p><img src="./image2/MarkovSZ_1.2.3.png" alt="Ex的期望值"></p>
+<p><img src="/image2/MarkovSZ_1.2.3.png" alt="Ex的期望值"></p>
 <blockquote>
 <p>在概率论和统计学中，数学期望(mean)（或均值，亦简称期望）是试验中每次可能结果的概率乘以其结果的总和，是最基本的数学特征之一。它反映随机变量平均取值的大小。</p>
 </blockquote>
@@ -625,184 +633,186 @@
 <ul>
 <li>推荐下<a href="https://www.codecogs.com/latex/eqneditor.php" target="_blank" rel="noopener">在线Latex公式编辑网站</a></li>
 </ul>
-<p><img src="./image2/MarkovSZ_1.2.4.png" alt="10:05时刻人数统计的期望值"></p>
+<p><img src="/image2/MarkovSZ_1.2.4.png" alt="10:05时刻人数统计的期望值"></p>
 <p>10:15时刻，10:20时刻，10:25时刻，……计算方法一次类推，于是可得到整个时间段站台候车人数的预测表，如下表：</p>
 <table>
 <thead>
 <tr>
-<th align="left">时刻</th>
-<th align="left">状态</th>
-<th align="left">转移率</th>
-<th align="left">站台乘客数预测值</th>
-<th align="left">站台人数实际值</th>
+<th style="text-align:left">时刻</th>
+<th style="text-align:left">状态</th>
+<th style="text-align:left">转移率</th>
+<th style="text-align:left">站台乘客数预测值</th>
+<th style="text-align:left">站台人数实际值</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"></td>
-<td align="left">E1</td>
-<td align="left">0.625</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">E1</td>
+<td style="text-align:left">0.625</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">10:05</td>
-<td align="left">E2</td>
-<td align="left">0.375</td>
-<td align="left">15.75</td>
-<td align="left">14</td>
+<td style="text-align:left">10:05</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:left">0.375</td>
+<td style="text-align:left">15.75</td>
+<td style="text-align:left">14</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E3</td>
-<td align="left">0</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E1</td>
-<td align="left">0.484375</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E1</td>
+<td style="text-align:left">0.484375</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">10:10</td>
-<td align="left">E2</td>
-<td align="left">0.50358792</td>
-<td align="left">16.7503125</td>
-<td align="left">16</td>
+<td style="text-align:left">10:10</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:left">0.50358792</td>
+<td style="text-align:left">16.7503125</td>
+<td style="text-align:left">16</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E3</td>
-<td align="left">0.09785625</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">0.09785625</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E1</td>
-<td align="left">0.38142461</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E1</td>
+<td style="text-align:left">0.38142461</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">10:15</td>
-<td align="left">E2</td>
-<td align="left">0.50358792</td>
-<td align="left">17.90137716</td>
-<td align="left">17</td>
+<td style="text-align:left">10:15</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:left">0.50358792</td>
+<td style="text-align:left">17.90137716</td>
+<td style="text-align:left">17</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E3</td>
-<td align="left">0.11498747</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">0.11498747</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E1</td>
-<td align="left">0.36428736</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E1</td>
+<td style="text-align:left">0.36428736</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">10:20</td>
-<td align="left">E2</td>
-<td align="left">0.51215683</td>
-<td align="left">18.0556107</td>
-<td align="left">18</td>
+<td style="text-align:left">10:20</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:left">0.51215683</td>
+<td style="text-align:left">18.0556107</td>
+<td style="text-align:left">18</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E3</td>
-<td align="left">0.12355581</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">0.12355581</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E1</td>
-<td align="left">0.35571881</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E1</td>
+<td style="text-align:left">0.35571881</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">10:25</td>
-<td align="left">E2</td>
-<td align="left">0.51644111</td>
-<td align="left">18.13272762</td>
-<td align="left">18</td>
+<td style="text-align:left">10:25</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:left">0.51644111</td>
+<td style="text-align:left">18.13272762</td>
+<td style="text-align:left">18</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E3</td>
-<td align="left">0.12784008</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">0.12784008</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E1</td>
-<td align="left">0.35143453</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E1</td>
+<td style="text-align:left">0.35143453</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">10:30</td>
-<td align="left">E2</td>
-<td align="left">0.51858325</td>
-<td align="left">18.17128614</td>
-<td align="left">18</td>
+<td style="text-align:left">10:30</td>
+<td style="text-align:left">E2</td>
+<td style="text-align:left">0.51858325</td>
+<td style="text-align:left">18.17128614</td>
+<td style="text-align:left">18</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">E3</td>
-<td align="left">0.12998222</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">E3</td>
+<td style="text-align:left">0.12998222</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
 <li>以上的基于马尔科夫的模型预测和实际值的趋势图如下图所示：</li>
 </ul>
-<p><img src="./image2/MarkovSZ_1.2.5.png" alt="Markov预测结果和实际结果对比"></p>
+<p><img src="/image2/MarkovSZ_1.2.5.png" alt="Markov预测结果和实际结果对比"></p>
 <p>图像在线生成：<a href="http://charts.udpwork.com/" target="_blank" rel="noopener">推荐下在线绘图做表的网站</a></p>
 <blockquote>
 <p>预测结果表明在马尔可夫链理论下的预测会受到时间长短的影响， 在短时间内的统计， 预测结果与实际值间的误差较为明显， 当统计量足够多时， 预测的趋势会更加符合实际情况。</p>
@@ -810,9 +820,9 @@
 <ul>
 <li><a href="https://blog.csdn.net/zhujialiang18/article/details/80745878" target="_blank" rel="noopener">C-K方程( Chapman- Kolmogorov方程)-马尔可夫链定义如下:</a></li>
 </ul>
-<p><img src="./image2/markovC_K_part1.png" alt="C-K方程"></p>
-<p><img src="./image2/markovC_K_part2.png" alt="C-K方程"></p>
-<p><img src="./image2/markovC_K_part3.png" alt="C-K方程"></p>
+<p><img src="/image2/markovC_K_part1.png" alt="C-K方程"></p>
+<p><img src="/image2/markovC_K_part2.png" alt="C-K方程"></p>
+<p><img src="/image2/markovC_K_part3.png" alt="C-K方程"></p>
 <h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><p>[1]刘哲华.基于马尔可夫链的公交停靠站乘客数预测[J].黑龙江交通科技,2018,41(11):155-157.</p>
 <h2 id="二、最佳经营策略应用"><a href="#二、最佳经营策略应用" class="headerlink" title="二、最佳经营策略应用"></a>二、最佳经营策略应用</h2>
       
@@ -825,7 +835,7 @@
         <p><span>本文标题:</span><a href="/maerkefuyuce/">2.1.1 马尔科夫简单模型预测实战笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Porter Pan</a></p>
         <p><span>发布时间:</span>2019-01-02, 22:55:03</p>
-        <p><span>最后更新:</span>2019-08-31, 11:22:53</p>
+        <p><span>最后更新:</span>2019-09-16, 20:43:30</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/maerkefuyuce/" title="2.1.1 马尔科夫简单模型预测实战笔记">https://blogs.porterpan.top/maerkefuyuce/</a>
             <span class="copy-path" data-clipboard-text="原文: https://blogs.porterpan.top/maerkefuyuce/　　作者: Porter Pan" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -848,8 +858,8 @@
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/freelog/">
-                    简单的方法，获取在线付费设计log的方法
+                <a href="/webdessignnotes/">
+                    网页设计基础笔记
                 </a>
             </div>
         
@@ -954,13 +964,13 @@ gitment.render('gitment-ctn')
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/freelog/" title="下一篇: 简单的方法，获取在线付费设计log的方法">
+            <a href="/webdessignnotes/" title="下一篇: 网页设计基础笔记">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/undefined/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/filetosendanyway/">方便的在线高速文件共享</a></li><li class="post-list-item"><a class="post-list-link" href="/anacondaError/">anaconda运行出错现象及解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/argparsenotes/">argparse模块使用学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/htmlyasuo/">hexo-neat网页代码压缩去空格</a></li><li class="post-list-item"><a class="post-list-link" href="/bolgwriteformat/">基于本修改过主题的blog写作格式</a></li><li class="post-list-item"><a class="post-list-link" href="/zjtdbs/">字节跳动笔试-算法岗（2019/07/31）</a></li><li class="post-list-item"><a class="post-list-link" href="/hexoYeleeUrl/">hexo Yelee网址修改为简短的英文</a></li><li class="post-list-item"><a class="post-list-link" href="/hexoFitment/">hexo添加Gitment评论功能</a></li><li class="post-list-item"><a class="post-list-link" href="/jupyterGrammer/">jupyter notebook 使用</a></li><li class="post-list-item"><a class="post-list-link" href="/cifar10notes/">CIFAR-10 图像分类Notes</a></li><li class="post-list-item"><a class="post-list-link" href="/pdfqianruyulan/">PDF在线预览嵌入到文章中的模板</a></li><li class="post-list-item"><a class="post-list-link" href="/gushiciyanzheng/">古诗词验证码使用百度api自动识别</a></li><li class="post-list-item"><a class="post-list-link" href="/hexoloadlocalimage/">hexo加载本地图片的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/kmeans/">2.14 kmeans算法</a></li><li class="post-list-item"><a class="post-list-link" href="/GBDT/">2.15 机器学习算法GBDT</a></li><li class="post-list-item"><a class="post-list-link" href="/dockerCommand/">1.20 docker 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/dockerConf/">docker 配置权限问题</a></li><li class="post-list-item"><a class="post-list-link" href="/tfCNN7/">第七章 TensorFlow 卷积神经网络</a></li><li class="post-list-item"><a class="post-list-link" href="/tfshouxiezi/">第五章 TensorFlow MNIST 手写字识别笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/tfyouhua4/">第四章个人笔记-神经网络优化笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/linuxPDF/">跨平台好用且小巧的pdf阅读器</a></li><li class="post-list-item"><a class="post-list-link" href="/musicplug/">web中插入视频和音乐播放</a></li><li class="post-list-item"><a class="post-list-link" href="/tfnotesp1/">TensorFlow的相关学习笔记 part1</a></li><li class="post-list-item"><a class="post-list-link" href="/ml&dlcomference/">机器学习-深度学习顶级会议罗列</a></li><li class="post-list-item"><a class="post-list-link" href="/installopencvs/">1.18 ubuntu下安装OpenCV 3.4.3</a></li><li class="post-list-item"><a class="post-list-link" href="/gymGazabeInstall/">1.19 gym_gazabe安装配置</a></li><li class="post-list-item"><a class="post-list-link" href="/installopencv/">1.18 ubuntu下安装OpenCV 3.4.3</a></li><li class="post-list-item"><a class="post-list-link" href="/DQNgym/">基于DQN的gym_gazebo运行代码演示</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntuinstallGym/">ubuntu16 安装gym-gazebo</a></li><li class="post-list-item"><a class="post-list-link" href="/gym-gazeboInstall/">gym-gazebo安装后的测试</a></li><li class="post-list-item"><a class="post-list-link" href="/gymError/">gym 运行常见错误及解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/ros&gazeboInstall/">ros and gazebo and gym_gazebo安装</a></li><li class="post-list-item"><a class="post-list-link" href="/liberarytool/">图书馆占座小工具使用手册</a></li><li class="post-list-item"><a class="post-list-link" href="/linuxyoudaodict/">1.17 ubuntu下安装有道词典</a></li><li class="post-list-item"><a class="post-list-link" href="/goldendictsetting/">1.15 ubuntu下goldendict有道爬虫小程序</a></li><li class="post-list-item"><a class="post-list-link" href="/inputU18/">1.16 ubuntu18升级后部分应用不能中文输入的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/vsftpdconf/">1.12 vsftpd 文件配置</a></li><li class="post-list-item"><a class="post-list-link" href="/peektool/">1.14 ubuntu16_18安装peek工具录制gif</a></li><li class="post-list-item"><a class="post-list-link" href="/sublimeIntro/">1.11 sublime text3插件介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/mysqlnotes/">1.13 mysql 笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/pythonHelp/">Python 帮助文档检索方法</a></li><li class="post-list-item"><a class="post-list-link" href="/python_future/">Module篇使用__future__</a></li><li class="post-list-item"><a class="post-list-link" href="/tiduxiajiang/">2.5 梯度下降和最小二乘法</a></li><li class="post-list-item"><a class="post-list-link" href="/decisiontree/">2.4  Decision tree</a></li><li class="post-list-item"><a class="post-list-link" href="/webcustomization/">1.10 hexo网页定制</a></li><li class="post-list-item"><a class="post-list-link" href="/hexolocalimage/">1.9 hexo 实现本地图片加载</a></li><li class="post-list-item"><a class="post-list-link" href="/LRN/">2.13 局部响应归一化</a></li><li class="post-list-item"><a class="post-list-link" href="/logisticRe/">2.12 logistic regression</a></li><li class="post-list-item"><a class="post-list-link" href="/jidasiranguji/">2.11 极大似然估计</a></li><li class="post-list-item"><a class="post-list-link" href="/rosSimulink/">ROS室内仿真环境</a></li><li class="post-list-item"><a class="post-list-link" href="/pusubeiyesi/">朴素贝叶斯法</a></li><li class="post-list-item"><a class="post-list-link" href="/shenjingwanguo/">2.7 神经网络浅学笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/xianxinghuigui23/">2.3 线性回归</a></li><li class="post-list-item"><a class="post-list-link" href="/zuidashangmoxing/">2.1.2 最大熵模型</a></li><li class="post-list-item"><a class="post-list-link" href="/diguiyudiedai/">2.6 递归算法与迭代算法</a></li><li class="post-list-item"><a class="post-list-link" href="/PrioritizedEP/">Prioritized Experience Replay</a></li><li class="post-list-item"><a class="post-list-link" href="/yingmaerkefu/">2.1.3 隐马尔科夫HMM</a></li><li class="post-list-item"><a class="post-list-link" href="/kjinglin/">K近邻算法</a></li><li class="post-list-item"><a class="post-list-link" href="/maerkefu21/">2.1 马尔科夫链</a></li><li class="post-list-item"><a class="post-list-link" href="/maerkefuyuce/">2.1.1 马尔科夫简单模型预测实战笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/freelog/">简单的方法，获取在线付费设计log的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/webdessignnotes/">网页设计基础笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/gitIgnore/">Git中忽略提交项</a></li><li class="post-list-item"><a class="post-list-link" href="/matplotlibF/">3.3 matplotlib函数</a></li><li class="post-list-item"><a class="post-list-link" href="/usefullwebsite/">值得收藏的网站</a></li><li class="post-list-item"><a class="post-list-link" href="/stm32chuankou/">STM32串口通信配置（USART1+USART2+USART3+UART4）</a></li><li class="post-list-item"><a class="post-list-link" href="/stm32fuwei/">STM32复位及通过函数判断是何种条件出发的复位</a></li><li class="post-list-item"><a class="post-list-link" href="/tkinternote/">python之tkinter入坑Pack</a></li><li class="post-list-item"><a class="post-list-link" href="/tooold/">故事1：老者病危，不思乡</a></li><li class="post-list-item"><a class="post-list-link" href="/cplusMFC/">C++ MFC 界面实现套接字（socket) 通信</a></li><li class="post-list-item"><a class="post-list-link" href="/vultrFreenom/">vultr+freenom实现主机域名的绑定</a></li><li class="post-list-item"><a class="post-list-link" href="/numpyFunc/">3.4 numpy函数</a></li><li class="post-list-item"><a class="post-list-link" href="/DLindex/">第三章 深度学习框架学习</a></li><li class="post-list-item"><a class="post-list-link" href="/pytorchNotes/">3.1 PyTorch 学习</a></li><li class="post-list-item"><a class="post-list-link" href="/hexoHello/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/hexoDeploy/">Hexo 每次写好后deploy博客</a></li><li class="post-list-item"><a class="post-list-link" href="/installplugbychrome/">解决Chrome67版本以后不能离线安装插件的情况</a></li><li class="post-list-item"><a class="post-list-link" href="/sublime_text3/">ubuntu 中安装sublime_text3</a></li><li class="post-list-item"><a class="post-list-link" href="/im1Idex/">index</a></li><li class="post-list-item"><a class="post-list-link" href="/helloindex/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/thefirstarticle/">第一篇博文</a></li><li class="post-list-item"><a class="post-list-link" href="/gitpush/">git 推送新的文章到github其他分支上</a></li><li class="post-list-item"><a class="post-list-link" href="/searchskill/">搜索技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/fanqiangss/">ubuntu18 正确 安装ShadowSocket</a></li><li class="post-list-item"><a class="post-list-link" href="/pyqttkinter/">python Tkinter 界面实现套接字（socket) 通信</a></li><li class="post-list-item"><a class="post-list-link" href="/DLenviremment/">1.8 深度学习环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/gitbookplugset/">1.7 gitbook 插件等相关设置</a></li><li class="post-list-item"><a class="post-list-link" href="/doubleSysRepair/">1.6 win10+ubuntu双系统修复ubuntu启动引导</a></li><li class="post-list-item"><a class="post-list-link" href="/pytorchMNIST/">3.1.2 Pytorch 之MNIST手写字识别分类.md</a></li><li class="post-list-item"><a class="post-list-link" href="/tfMNIST/">3.2.1 tensorflow之MNIST</a></li><li class="post-list-item"><a class="post-list-link" href="/tfComFunction/">3.2 tensorflow1.x常用函数使用</a></li><li class="post-list-item"><a class="post-list-link" href="/linuxcommontool/">1.5 Ubuntu下常用工具软件配置安装</a></li><li class="post-list-item"><a class="post-list-link" href="/latexnotes/">1.4 Latex 排版使用笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/gitcommand/">1.3 Ubuntu18 git命令使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/installgitbook/">1.2 Ubuntu18安装Gitbook</a></li><li class="post-list-item"><a class="post-list-link" href="/youdaoconf/">1.1 Ubuntu18下有道词典的配置</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/filetosendanyway/">方便的在线高速文件共享</a></li><li class="post-list-item"><a class="post-list-link" href="/anacondaError/">anaconda运行出错现象及解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/argparsenotes/">argparse模块使用学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/htmlyasuo/">hexo-neat网页代码压缩去空格</a></li><li class="post-list-item"><a class="post-list-link" href="/bolgwriteformat/">基于本修改过主题的blog写作格式</a></li><li class="post-list-item"><a class="post-list-link" href="/zjtdbs/">字节跳动笔试-算法岗（2019/07/31）</a></li><li class="post-list-item"><a class="post-list-link" href="/hexoFitment/">hexo添加Gitment评论功能</a></li><li class="post-list-item"><a class="post-list-link" href="/hexoYeleeUrl/">hexo Yelee网址修改为简短的英文</a></li><li class="post-list-item"><a class="post-list-link" href="/jupyterGrammer/">jupyter notebook 使用</a></li><li class="post-list-item"><a class="post-list-link" href="/cifar10notes/">CIFAR-10 图像分类Notes</a></li><li class="post-list-item"><a class="post-list-link" href="/pdfqianruyulan/">PDF在线预览嵌入到文章中的模板</a></li><li class="post-list-item"><a class="post-list-link" href="/gushiciyanzheng/">古诗词验证码使用百度api自动识别</a></li><li class="post-list-item"><a class="post-list-link" href="/hexoloadlocalimage/">hexo加载本地图片的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/kmeans/">2.14 kmeans算法</a></li><li class="post-list-item"><a class="post-list-link" href="/dockerConf/">docker 配置权限问题</a></li><li class="post-list-item"><a class="post-list-link" href="/dockerCommand/">1.20 docker 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/GBDT/">2.15 机器学习算法GBDT</a></li><li class="post-list-item"><a class="post-list-link" href="/tfCNN7/">第七章 TensorFlow 卷积神经网络</a></li><li class="post-list-item"><a class="post-list-link" href="/tfshouxiezi/">第五章 TensorFlow MNIST 手写字识别笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/tfyouhua4/">第四章个人笔记-神经网络优化笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/linuxPDF/">跨平台好用且小巧的pdf阅读器</a></li><li class="post-list-item"><a class="post-list-link" href="/musicplug/">web中插入视频和音乐播放</a></li><li class="post-list-item"><a class="post-list-link" href="/tfnotesp1/">TensorFlow的相关学习笔记 part1</a></li><li class="post-list-item"><a class="post-list-link" href="/ml&dlcomference/">机器学习-深度学习顶级会议罗列</a></li><li class="post-list-item"><a class="post-list-link" href="/gymGazabeInstall/">1.19 gym_gazabe安装配置</a></li><li class="post-list-item"><a class="post-list-link" href="/installopencv/">1.18 ubuntu下安装OpenCV 3.4.3</a></li><li class="post-list-item"><a class="post-list-link" href="/installopencvs/">1.18 ubuntu下安装OpenCV 3.4.3</a></li><li class="post-list-item"><a class="post-list-link" href="/DQNgym/">基于DQN的gym_gazebo运行代码演示</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntuinstallGym/">ubuntu16 安装gym-gazebo</a></li><li class="post-list-item"><a class="post-list-link" href="/gym-gazeboInstall/">gym-gazebo安装后的测试</a></li><li class="post-list-item"><a class="post-list-link" href="/ros&gazeboInstall/">ros and gazebo and gym_gazebo安装</a></li><li class="post-list-item"><a class="post-list-link" href="/gymError/">gym 运行常见错误及解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/liberarytool/">图书馆占座小工具使用手册</a></li><li class="post-list-item"><a class="post-list-link" href="/linuxyoudaodict/">1.17 ubuntu下安装有道词典</a></li><li class="post-list-item"><a class="post-list-link" href="/goldendictsetting/">1.15 ubuntu下goldendict有道爬虫小程序</a></li><li class="post-list-item"><a class="post-list-link" href="/inputU18/">1.16 ubuntu18升级后部分应用不能中文输入的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/vsftpdconf/">1.12 vsftpd 文件配置</a></li><li class="post-list-item"><a class="post-list-link" href="/peektool/">1.14 ubuntu16_18安装peek工具录制gif</a></li><li class="post-list-item"><a class="post-list-link" href="/sublimeIntro/">1.11 sublime text3插件介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/mysqlnotes/">1.13 mysql 笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/pythonHelp/">Python 帮助文档检索方法</a></li><li class="post-list-item"><a class="post-list-link" href="/python_future/">Module篇使用__future__</a></li><li class="post-list-item"><a class="post-list-link" href="/tiduxiajiang/">2.5 梯度下降和最小二乘法</a></li><li class="post-list-item"><a class="post-list-link" href="/decisiontree/">2.4  Decision tree</a></li><li class="post-list-item"><a class="post-list-link" href="/webcustomization/">1.10 hexo网页定制</a></li><li class="post-list-item"><a class="post-list-link" href="/hexolocalimage/">1.9 hexo 实现本地图片加载</a></li><li class="post-list-item"><a class="post-list-link" href="/LRN/">2.13 局部响应归一化</a></li><li class="post-list-item"><a class="post-list-link" href="/logisticRe/">2.12 logistic regression</a></li><li class="post-list-item"><a class="post-list-link" href="/pusubeiyesi/">朴素贝叶斯法</a></li><li class="post-list-item"><a class="post-list-link" href="/jidasiranguji/">2.11 极大似然估计</a></li><li class="post-list-item"><a class="post-list-link" href="/rosSimulink/">ROS室内仿真环境</a></li><li class="post-list-item"><a class="post-list-link" href="/xianxinghuigui23/">2.3 线性回归</a></li><li class="post-list-item"><a class="post-list-link" href="/zuidashangmoxing/">2.1.2 最大熵模型</a></li><li class="post-list-item"><a class="post-list-link" href="/yingmaerkefu/">2.1.3 隐马尔科夫HMM</a></li><li class="post-list-item"><a class="post-list-link" href="/PrioritizedEP/">Prioritized Experience Replay</a></li><li class="post-list-item"><a class="post-list-link" href="/kjinglin/">K近邻算法</a></li><li class="post-list-item"><a class="post-list-link" href="/diguiyudiedai/">2.6 递归算法与迭代算法</a></li><li class="post-list-item"><a class="post-list-link" href="/shenjingwanguo/">2.7 神经网络浅学笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/maerkefu21/">2.1 马尔科夫链</a></li><li class="post-list-item"><a class="post-list-link" href="/maerkefuyuce/">2.1.1 马尔科夫简单模型预测实战笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/webdessignnotes/">网页设计基础笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/freelog/">简单的方法，获取在线付费设计log的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/gitIgnore/">Git中忽略提交项</a></li><li class="post-list-item"><a class="post-list-link" href="/matplotlibF/">3.3 matplotlib函数</a></li><li class="post-list-item"><a class="post-list-link" href="/usefullwebsite/">值得收藏的网站</a></li><li class="post-list-item"><a class="post-list-link" href="/stm32chuankou/">STM32串口通信配置（USART1+USART2+USART3+UART4）</a></li><li class="post-list-item"><a class="post-list-link" href="/stm32fuwei/">STM32复位及通过函数判断是何种条件出发的复位</a></li><li class="post-list-item"><a class="post-list-link" href="/tkinternote/">python之tkinter入坑Pack</a></li><li class="post-list-item"><a class="post-list-link" href="/tooold/">故事1：老者病危，不思乡</a></li><li class="post-list-item"><a class="post-list-link" href="/cplusMFC/">C++ MFC 界面实现套接字（socket) 通信</a></li><li class="post-list-item"><a class="post-list-link" href="/thefirstarticle/">第一篇博文</a></li><li class="post-list-item"><a class="post-list-link" href="/hexoHello/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/vultrFreenom/">vultr+freenom实现主机域名的绑定</a></li><li class="post-list-item"><a class="post-list-link" href="/installplugbychrome/">解决Chrome67版本以后不能离线安装插件的情况</a></li><li class="post-list-item"><a class="post-list-link" href="/sublime_text3/">ubuntu 中安装sublime_text3</a></li><li class="post-list-item"><a class="post-list-link" href="/im1Idex/">index</a></li><li class="post-list-item"><a class="post-list-link" href="/numpyFunc/">3.4 numpy函数</a></li><li class="post-list-item"><a class="post-list-link" href="/hexoDeploy/">Hexo 每次写好后deploy博客</a></li><li class="post-list-item"><a class="post-list-link" href="/helloindex/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/DLindex/">第三章 深度学习框架学习</a></li><li class="post-list-item"><a class="post-list-link" href="/pytorchNotes/">3.1 PyTorch 学习</a></li><li class="post-list-item"><a class="post-list-link" href="/gitpush/">git 推送新的文章到github其他分支上</a></li><li class="post-list-item"><a class="post-list-link" href="/searchskill/">搜索技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/fanqiangss/">ubuntu18 正确 安装ShadowSocket</a></li><li class="post-list-item"><a class="post-list-link" href="/pyqttkinter/">python Tkinter 界面实现套接字（socket) 通信</a></li><li class="post-list-item"><a class="post-list-link" href="/DLenviremment/">1.8 深度学习环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/gitbookplugset/">1.7 gitbook 插件等相关设置</a></li><li class="post-list-item"><a class="post-list-link" href="/doubleSysRepair/">1.6 win10+ubuntu双系统修复ubuntu启动引导</a></li><li class="post-list-item"><a class="post-list-link" href="/tfMNIST/">3.2.1 tensorflow之MNIST</a></li><li class="post-list-item"><a class="post-list-link" href="/pytorchMNIST/">3.1.2 Pytorch 之MNIST手写字识别分类.md</a></li><li class="post-list-item"><a class="post-list-link" href="/tfComFunction/">3.2 tensorflow1.x常用函数使用</a></li><li class="post-list-item"><a class="post-list-link" href="/linuxcommontool/">1.5 Ubuntu下常用工具软件配置安装</a></li><li class="post-list-item"><a class="post-list-link" href="/latexnotes/">1.4 Latex 排版使用笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/gitcommand/">1.3 Ubuntu18 git命令使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/installgitbook/">1.2 Ubuntu18安装Gitbook</a></li><li class="post-list-item"><a class="post-list-link" href="/youdaoconf/">1.1 Ubuntu18下有道词典的配置</a></li></ul>
 
 
 

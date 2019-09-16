@@ -343,74 +343,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-im3-深度学习实战-3-2-1-tensorflow之MNIST" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/tfMNIST/" class="article-date">
-      <time datetime="2018-07-14T14:55:03.000Z" itemprop="datePublished">2018-07-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/tfMNIST/">3.2.1 tensorflow之MNIST</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本文记录tensorflow的学习入门过程，主要是MNIST在tensorflow中完成的整个过程进行笔记的记录。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/MNIST/">MNIST</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/tfMNIST/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-im3-深度学习实战-3-2-tensorflow1-x常用函数使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -443,7 +375,8 @@
               <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本文记录tensorflow的学习入门过程，主要是tensorflow中的常用函数的介绍。</p>
 <p>Tensorflow的设计理念称之为计算流图，在编写程序时，首先构筑整个系统的graph，代码并不会直接生效，这一点和python的其他数值计算库（如Numpy等）不同，graph为静态的，类似于docker中的镜像。</p>
 <p>然后，在实际的运行时，启动一个session，程序才会真正的运行。这样做的好处就是：避免反复地切换底层程序实际运行的上下文，tensorflow帮你优化整个系统的代码。我们知道，很多python程序的底层为C语言或者其他语言，执行一行脚本，就要切换一次，是有成本的，tensorflow通过计算流图的方式，帮你优化整个session需要执行的代码，还是很有优势的。</p>
-<pre><code>所以placeholder()函数是在神经网络构建graph的时候在模型中的占位，此时并没有把要输入的数据传入模型，它只会分配必要的内存。等建立session，在会话中，运行模型的时候通过feed_dict()函数向占位符喂入数据。</code></pre><hr>
+<pre><code>所以placeholder()函数是在神经网络构建graph的时候在模型中的占位，此时并没有把要输入的数据传入模型，它只会分配必要的内存。等建立session，在会话中，运行模型的时候通过feed_dict()函数向占位符喂入数据。
+</code></pre><hr>
 <p>作者：清晨的光明<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/kdongyi/article/details/82343712" target="_blank" rel="noopener">https://blog.csdn.net/kdongyi/article/details/82343712</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
           
       
@@ -514,7 +447,7 @@
           
               <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本文记录了Ubuntu下常用工具软件配置、安装，包括高速下载的工具安装使用，具体安装和介绍见文章内容所述。</p>
 <ul>
-<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
+<li style="list-style: none"><input type="checkbox" checked> Edit By Porter, 积水成渊,蛟龙生焉。</li>
 </ul>
           
       
@@ -585,7 +518,7 @@
           
               <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本文记录了Latex排版相关的语法句法使用，是对latex学习中的一种总结，笔记，具体笔记见文中内容所描述。</p>
 <ul>
-<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
+<li style="list-style: none"><input type="checkbox" checked> Edit By Porter, 积水成渊,蛟龙生焉。</li>
 </ul>
           
       
@@ -656,7 +589,7 @@
           
               <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本文记录了 Ubuntu18 git命令使用总结，主要包括git的指令使用帮助，本文不是指导如何调试代码和修复代码，具体内容见文中内容所示。</p>
 <ul>
-<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
+<li style="list-style: none"><input type="checkbox" checked> Edit By Porter, 积水成渊,蛟龙生焉。</li>
 </ul>
           
       
@@ -727,7 +660,7 @@
           
               <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本文记录了 Ubuntu18安装Gitbook的相关步骤，和某些关键的终点输入指令，本文不是指导如何调试代码和修复代码，本文给出了一种安装的方法，具体修复方法见文中内容所示。</p>
 <ul>
-<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
+<li style="list-style: none"><input type="checkbox" checked> Edit By Porter, 积水成渊,蛟龙生焉。</li>
 </ul>
           
       
@@ -798,7 +731,7 @@
           
               <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本文记录了ubuntu 17+，Debian 等新版本的linux系统中有道词典不能安装的问题修复，由于官方提供的deb安装文件，可以解包调试，会发现Qt5版本低的原因导致的出错，本文不是指导如何调试代码和修复代码，本文给出了一种修复的方法，具体修复方法见文中内容所示。</p>
 <ul>
-<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
+<li style="list-style: none"><input type="checkbox" checked> Edit By Porter, 积水成渊,蛟龙生焉。</li>
 </ul>
           
       
