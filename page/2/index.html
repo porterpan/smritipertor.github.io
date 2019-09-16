@@ -652,6 +652,84 @@
 
 
   
+    <article id="post-im1-第一部分linux笔记-1-21-docker-配置权限问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/dockerConf/" class="article-date">
+      <time datetime="2019-06-16T09:55:03.000Z" itemprop="datePublished">2019-06-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/dockerConf/">docker 配置权限问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><div align="center"><br><br><img src="/image1/docker01.png" alt="docker"><br><br></div>
+
+<p>本文主要介绍Docker 安装结束后的全权限配置问题</p>
+<ul>
+<li>一、解决终端运行每次需要运行root权限问题</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">porter@porter-Aspire:~$ docker images </span><br><span class="line">Got permission denied <span class="keyword">while</span> trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%<span class="number">2</span>Fvar%<span class="number">2</span>Frun%<span class="number">2</span>Fdocker.sock/v1<span class="number">.39</span>/images/json: dial unix /var/run/docker.sock: connect: permission denied</span><br></pre></td></tr></table></figure>
+<ul>
+<li>二、解决Pycharm中导入docker时提示权限问题</li>
+</ul>
+<p><img src="/image1/docker_configure_root.png" alt="docker权限配置问题"></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/summary/">summary</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/dockerConf/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-im1-第一部分linux笔记-1-20-docker-基础" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -777,84 +855,6 @@
       
         <p class="article-more-link">
           <a href="/GBDT/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-im1-第一部分linux笔记-1-21-docker-配置权限问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/dockerConf/" class="article-date">
-      <time datetime="2019-06-16T09:55:03.000Z" itemprop="datePublished">2019-06-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/dockerConf/">docker 配置权限问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><div align="center"><br><br><img src="/image1/docker01.png" alt="docker"><br><br></div>
-
-<p>本文主要介绍Docker 安装结束后的全权限配置问题</p>
-<ul>
-<li>一、解决终端运行每次需要运行root权限问题</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">porter@porter-Aspire:~$ docker images </span><br><span class="line">Got permission denied <span class="keyword">while</span> trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%<span class="number">2</span>Fvar%<span class="number">2</span>Frun%<span class="number">2</span>Fdocker.sock/v1<span class="number">.39</span>/images/json: dial unix /var/run/docker.sock: connect: permission denied</span><br></pre></td></tr></table></figure>
-<ul>
-<li>二、解决Pycharm中导入docker时提示权限问题</li>
-</ul>
-<p><img src="/image1/docker_configure_root.png" alt="docker权限配置问题"></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/summary/">summary</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/dockerConf/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
