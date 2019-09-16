@@ -49,18 +49,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[hexo Yelee网址修改为简短的英文]]></title>
-    <url>%2F%2FhexoYeleeUrl%2F</url>
-    <content type="text"><![CDATA[摘要hexoYelee将以前时间或者文件夹的中文命名修改为简短的英文 -[x] 第一步、修改_config.yml文件内容-[x] 第二步、为每篇文章添加urlname属性 第一步、修改_config.yml文件内容 permalink: /:urlname/ 1234# permalink: :year/:month/:day/:title/# 设置网页显示的地址后缀为文章中自定义的urlname,需要在文章开头加入 urlname: 标签permalink: /:urlname/permalink_defaults: 将permalink:设置为 /:urlname/ 第二步、为每篇文章添加urlname属性 urlname: hexoYeleeUrl 具体内容如下 12345678---title: hexo Yelee网址修改为简短的英文urlname: hexoYeleeUrlcategories: hexotags: [url,英文网址]date: 2019-7-28 22:55:07--- 编译执行以下代码，本地查看效果 1hexo clean &amp;&amp; hexo g &amp;&amp; hexo s ok改名成功]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>url</tag>
-        <tag>英文网址</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[hexo添加Gitment评论功能]]></title>
     <url>%2F%2FhexoFitment%2F</url>
     <content type="text"><![CDATA[摘要 修改代码 添加gitment 设置githubOAuth 初始化评论 常见问题 修改代码我们要加入gitment评论功能，需要修改yelee 该脚本的路径为： 1GitHub_Projects/porterpan.github.io/themes/yelee/layout/_partial/article.ejs 这个文件中需要修改的地方为原该脚本的82行 123456789101112131415161718192021222324&lt;% if (!index &amp;&amp; post.comments)&#123; %&gt; &lt;% if (theme.duoshuo.on) &#123; %&gt; &lt;%- partial('comments/duoshuo', &#123; key: post.path, title: post.title, url: config.url+url_for(post.path), &#125;) %&gt; &lt;% &#125; else if (theme.youyan.on) &#123; %&gt; &lt;%- partial('comments/youyan') %&gt; &lt;% &#125; else if (theme.disqus.on) &#123; %&gt; &lt;%- partial('comments/disqus', &#123; shortname: theme.disqus.shortname &#125;) %&gt; &lt;% &#125; else if (config.disqus_shortname) &#123; %&gt; &lt;%- partial('comments/disqus', &#123; shortname: config.disqus_shortname &#125;) %&gt; &lt;% &#125; if (theme.gitment_on) &#123; %&gt; &lt;%- partial('comments/gitment', &#123; key: post.slug, title: post.title, url: config.url+url_for(post.path) &#125;) %&gt; &lt;% &#125; %&gt; 也就是添加的 1234567if (theme.gitment_on) &#123; %&gt; &lt;%- partial('comments/gitment', &#123; key: post.slug, title: post.title, url: config.url+url_for(post.path) &#125;) %&gt; &lt;% &#125; %&gt; 这句判断。 添加gitment然后去下载itment.ejs 将gitment.ejs放到该路径中即可： 1GitHub_Projects/porterpan.github.io/themes/yelee/layout/_partial/comments/gitment.ejs gitment.ejs 文件内容为 123456789101112131415161718192021222324252627&lt;div id="gitment-ctn"&gt;&lt;/div&gt; &lt;!--汉化--&gt;&lt;link rel="stylesheet" href="https://porterpan.github.io/gitment/link_src/gitment.css"&gt;&lt;script src="https://porterpan.github.io/gitment/link_src/gitment.js"&gt;&lt;/script&gt;&lt;!--&lt;link rel="stylesheet" href="gitment/gitment.css"&gt;&lt;script src="gitment/gitment.js"&gt;&lt;/script&gt;--&gt;&lt;!--原型--&gt;&lt;!--&lt;link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css"&gt;&lt;script src="//imsun.github.io/gitment/dist/gitment.browser.js"&gt;&lt;/script&gt;--&gt;&lt;script&gt;var gitment = new Gitment(&#123; id: "&lt;%=url%&gt;", owner: '&lt;%=theme.gitment_owner%&gt;', repo: '&lt;%=theme.gitment_repo%&gt;', oauth: &#123; client_id: '&lt;%=theme.gitment_oauth.client_id%&gt;', client_secret: '&lt;%=theme.gitment_oauth.client_secret%&gt;', &#125;,&#125;)gitment.render('gitment-ctn')&lt;/script&gt; 设置githubOAuthgithub 网页的OAuth的配置如下图 之后我们应该把本地的地址改为你仓库的地址 根目录的_config.yml配置如下 初始化评论提示未初始化 1Error: Comments Not Initialized 解决办法：直接登录你的github,进入存放评论的仓库，选择Issue菜单，新建一条评论即可，如下图 或者直接在页面登录你的github账号进行初始化 常见问题配置成功后的效果 注意 如果你的网页后缀字符长度超过50个字符，就会提示未初始化，或者初始化不成功，如下图，后缀超过了50个 解决办法 将你的网址缩短，具体怎么缩短，看我这篇文章如何把博客文章缩短，取消之前的带中文路径办法 更加详细的办法，直接看我这个第50次提交版本的源代码，研究下]]></content>
@@ -70,6 +58,18 @@
       <tags>
         <tag>评论插件</tag>
         <tag>Gitment</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo Yelee网址修改为简短的英文]]></title>
+    <url>%2F%2FhexoYeleeUrl%2F</url>
+    <content type="text"><![CDATA[摘要hexoYelee将以前时间或者文件夹的中文命名修改为简短的英文 -[x] 第一步、修改_config.yml文件内容-[x] 第二步、为每篇文章添加urlname属性 第一步、修改_config.yml文件内容 permalink: /:urlname/ 1234# permalink: :year/:month/:day/:title/# 设置网页显示的地址后缀为文章中自定义的urlname,需要在文章开头加入 urlname: 标签permalink: /:urlname/permalink_defaults: 将permalink:设置为 /:urlname/ 第二步、为每篇文章添加urlname属性 urlname: hexoYeleeUrl 具体内容如下 12345678---title: hexo Yelee网址修改为简短的英文urlname: hexoYeleeUrlcategories: hexotags: [url,英文网址]date: 2019-7-28 22:55:07--- 编译执行以下代码，本地查看效果 1hexo clean &amp;&amp; hexo g &amp;&amp; hexo s ok改名成功]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>url</tag>
+        <tag>英文网址</tag>
       </tags>
   </entry>
   <entry>
@@ -84,9 +84,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PDF在线预览嵌入到文章中的模板]]></title>
-    <url>%2F%2Fpdfqianruyulan%2F</url>
-    <content type="text"><![CDATA[摘要本节主要记录CIFAR-10 图像分类的相关学习笔记，该项目实战代码主要包括，2层卷积层，3层全连接层。 内容包括如下： 需要用到的python基础语法 TensorFlow样本读取机制 TensorFlow代码实现10类图像分类的相关函数和实现过程 提示本部分是一个PDF手稿，暂时未整理排版，只能在电脑端预览本部分的PDF笔记,手机上的PDF笔记将不会显示出来。 Edit By Porter, 积水成渊,蛟龙生焉。 开始放入在线预览PDF PDF在线预览代码截止 以下为正常显示的内容，上方的空白div不可删除 123&lt;div id="pdf1-view1" class=" pdfobject-container" style="height:400px"&gt;&lt;embed class="pdfobject" src="/TensorFlow-index/CIFAR-10 - Colaboratory.pdf#navpanes=1&amp;amp;view=FitH&amp;amp;pagemode=thumbs&amp;amp;page=3" type="application/pdf" style="overflow: auto; width: 100%; height: 180%;" internalinstanceid="29"&gt;&lt;/div&gt;]]></content>
+    <title><![CDATA[CIFAR-10 图像分类Notes]]></title>
+    <url>%2F%2Fcifar10notes%2F</url>
+    <content type="text"><![CDATA[摘要CIFAR-10 图像分类PDF笔记本节主要记录CIFAR-10 图像分类的相关学习笔记，该项目实战代码主要包括，2层卷积层，3层全连接层。 内容包括如下： 需要用到的python基础语法 TensorFlow样本读取机制 TensorFlow代码实现10类图像分类的相关函数和实现过程 提示本部分是一个PDF手稿，暂时未整理排版，只能在电脑端预览本部分的PDF笔记,手机上的PDF笔记将不会显示出来。 Edit By Porter, 积水成渊,蛟龙生焉。 以下为截取我部分PDF笔记中的内容 二、TensorFlow读取机制图解 假设我们的硬盘中有一个图片数据集0001.jpg，0002.jpg，0003.jpg……我们只需要把它们读取到内存中，然后提供给GPU或是CPU进行计算就可以了。这听起来很容易，但事实远没有那么简单。事实上，我们必须要把数据先读入后才能进行计算，假设读入用时0.1s，计算用时0.9s，那么就意味着每过1s，GPU都会有0.1s无事可做，这就大大降低了运算的效率。 如何解决这个问题？方法就是将读入数据和计算分别放在两个线程中，将数据读入内存的一个队列，如下图所示： TensorFlow使用文件名队列+内存队列双队列的形式读入文件，可以很好地管理epoch。下面我们用图片的形式来说明这个机制的运行方式。如下图，还是以数据集A.jpg, B.jpg, C.jpg为例，假定我们要跑一个epoch，那么我们就在文件名队列中把A、B、C各放入一次，并在之后标注队列结束。 对于文件名队列，我们使用tf.train.string_input_producer函数。这个函数需要传入一个文件名list，系统会自动将它转为一个文件名队列。 num_epochs：它就是我们上文中提到的epoch数 shuffle：是指在一个epoch内文件的顺序是否被打乱。 12345678910tf.train.string_input_producer( string_tensor, num_epochs=None, shuffle=True, seed=None, capacity=32, shared_name=None, name=None, cancel_op=None) 2.1 tf.WholeFileReader()读取队列目录中的所有文件，并把文件 全部内容 提取出key和value返回。 通常该函数一般用在一个文件就是一个图片的情况下。 读取的代码如下 12345678910111213# 输入文件列表filename = ['A.jpg', 'B.jpg', 'C.jpg']# 创建文件队列filename_queue = tf.train.string_input_producer(filename, shuffle=False, num_epochs=5)# 创建reader对象reader = tf.WholeFileReader()# 从队列中读取key和value值key, value = reader.read(filename_queue)# 初始化变量tf.local_variables_initializer().run()# 入栈线程启动threads = tf.train.start_queue_runners(sess=sess) 如果要使用,请在队列(Queue)中的排列文件名.Read的输出将是一个文件名(key)和该文件的内容(value). 2.2 tf.FixedLengthRecordReader()固定长度记录一个或多个二进制文件，送入队列中。 tf.FixedLengthRecordReader( record_bytes, header_bytes=None, footer_bytes=None, hop_bytes=None, name=None, encoding=None) record_bytes: 整形数，输出的Record中每个文件的长度 1234567891011121314label_bytes = 1 # 2 for CIFAR-100result.height = 32result.width = 32result.depth = 3image_bytes = result.height * result.width * result.depth# Every record consists of a label followed by the image, with a# fixed number of bytes for each.record_bytes = label_bytes + image_bytes# Read a record, getting filenames from the filename_queue. No# header or footer in the CIFAR-10 format, so we leave header_bytes# and footer_bytes at their default of 0.reader = tf.FixedLengthRecordReader(record_bytes=record_bytes)result.key, value = reader.read(filename_queue)]]></content>
       <categories>
         <category>Deep Learning</category>
       </categories>
@@ -96,9 +96,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[CIFAR-10 图像分类Notes]]></title>
-    <url>%2F%2Fcifar10notes%2F</url>
-    <content type="text"><![CDATA[摘要CIFAR-10 图像分类PDF笔记本节主要记录CIFAR-10 图像分类的相关学习笔记，该项目实战代码主要包括，2层卷积层，3层全连接层。 内容包括如下： 需要用到的python基础语法 TensorFlow样本读取机制 TensorFlow代码实现10类图像分类的相关函数和实现过程 提示本部分是一个PDF手稿，暂时未整理排版，只能在电脑端预览本部分的PDF笔记,手机上的PDF笔记将不会显示出来。 Edit By Porter, 积水成渊,蛟龙生焉。 以下为截取我部分PDF笔记中的内容 二、TensorFlow读取机制图解 假设我们的硬盘中有一个图片数据集0001.jpg，0002.jpg，0003.jpg……我们只需要把它们读取到内存中，然后提供给GPU或是CPU进行计算就可以了。这听起来很容易，但事实远没有那么简单。事实上，我们必须要把数据先读入后才能进行计算，假设读入用时0.1s，计算用时0.9s，那么就意味着每过1s，GPU都会有0.1s无事可做，这就大大降低了运算的效率。 如何解决这个问题？方法就是将读入数据和计算分别放在两个线程中，将数据读入内存的一个队列，如下图所示： TensorFlow使用文件名队列+内存队列双队列的形式读入文件，可以很好地管理epoch。下面我们用图片的形式来说明这个机制的运行方式。如下图，还是以数据集A.jpg, B.jpg, C.jpg为例，假定我们要跑一个epoch，那么我们就在文件名队列中把A、B、C各放入一次，并在之后标注队列结束。 对于文件名队列，我们使用tf.train.string_input_producer函数。这个函数需要传入一个文件名list，系统会自动将它转为一个文件名队列。 num_epochs：它就是我们上文中提到的epoch数 shuffle：是指在一个epoch内文件的顺序是否被打乱。 12345678910tf.train.string_input_producer( string_tensor, num_epochs=None, shuffle=True, seed=None, capacity=32, shared_name=None, name=None, cancel_op=None) 2.1 tf.WholeFileReader()读取队列目录中的所有文件，并把文件 全部内容 提取出key和value返回。 通常该函数一般用在一个文件就是一个图片的情况下。 读取的代码如下 12345678910111213# 输入文件列表filename = ['A.jpg', 'B.jpg', 'C.jpg']# 创建文件队列filename_queue = tf.train.string_input_producer(filename, shuffle=False, num_epochs=5)# 创建reader对象reader = tf.WholeFileReader()# 从队列中读取key和value值key, value = reader.read(filename_queue)# 初始化变量tf.local_variables_initializer().run()# 入栈线程启动threads = tf.train.start_queue_runners(sess=sess) 如果要使用,请在队列(Queue)中的排列文件名.Read的输出将是一个文件名(key)和该文件的内容(value). 2.2 tf.FixedLengthRecordReader()固定长度记录一个或多个二进制文件，送入队列中。 tf.FixedLengthRecordReader( record_bytes, header_bytes=None, footer_bytes=None, hop_bytes=None, name=None, encoding=None) record_bytes: 整形数，输出的Record中每个文件的长度 1234567891011121314label_bytes = 1 # 2 for CIFAR-100result.height = 32result.width = 32result.depth = 3image_bytes = result.height * result.width * result.depth# Every record consists of a label followed by the image, with a# fixed number of bytes for each.record_bytes = label_bytes + image_bytes# Read a record, getting filenames from the filename_queue. No# header or footer in the CIFAR-10 format, so we leave header_bytes# and footer_bytes at their default of 0.reader = tf.FixedLengthRecordReader(record_bytes=record_bytes)result.key, value = reader.read(filename_queue)]]></content>
+    <title><![CDATA[PDF在线预览嵌入到文章中的模板]]></title>
+    <url>%2F%2Fpdfqianruyulan%2F</url>
+    <content type="text"><![CDATA[摘要本节主要记录CIFAR-10 图像分类的相关学习笔记，该项目实战代码主要包括，2层卷积层，3层全连接层。 内容包括如下： 需要用到的python基础语法 TensorFlow样本读取机制 TensorFlow代码实现10类图像分类的相关函数和实现过程 提示本部分是一个PDF手稿，暂时未整理排版，只能在电脑端预览本部分的PDF笔记,手机上的PDF笔记将不会显示出来。 Edit By Porter, 积水成渊,蛟龙生焉。 开始放入在线预览PDF PDF在线预览代码截止 以下为正常显示的内容，上方的空白div不可删除 123&lt;div id="pdf1-view1" class=" pdfobject-container" style="height:400px"&gt;&lt;embed class="pdfobject" src="/TensorFlow-index/CIFAR-10 - Colaboratory.pdf#navpanes=1&amp;amp;view=FitH&amp;amp;pagemode=thumbs&amp;amp;page=3" type="application/pdf" style="overflow: auto; width: 100%; height: 180%;" internalinstanceid="29"&gt;&lt;/div&gt;]]></content>
       <categories>
         <category>Deep Learning</category>
       </categories>
@@ -145,9 +145,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[docker 配置权限问题]]></title>
-    <url>%2F%2FdockerConf%2F</url>
-    <content type="text"><![CDATA[摘要 本文主要介绍Docker 安装结束后的全权限配置问题 一、解决终端运行每次需要运行root权限问题 12porter@porter-Aspire:~$ docker images Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.39/images/json: dial unix /var/run/docker.sock: connect: permission denied 二、解决Pycharm中导入docker时提示权限问题 一、问题分析以上两种问题的出现，都是因为没把当前的用户组加到 /var/run/docker.sock 执行组中去 解决办法步骤一、检查docker.sock 的用户权限情况12ls -l /var/run/docker.socksrw-rw---- 1 root docker 0 Aug 23 09:40 /var/run/docker.sock 步骤二、将当前用户组添加到docker的组中12sudo gpasswd -a $&#123;USER&#125; dockercat /etc/group | grep ^docker 步骤三、重启docker1sudo service docker restart 步骤四、更新docker的用户和组1newgrp docker #更新用户组 步骤五、终端测试可以发现可以不用root权限就可以操作docker相关的命令了 1docker ps #测试docker命令是否可以使用sudo正常使用 二、 问题分析导致问题二中的pycharm出问题的原因是因为file的读写权限的问题，我们只需要改下，出问题的文件的读写权限就可以了 问题的现象如下图 问题的解决方法如下 1sudo chmod a+rw /var/run/docker.sock 然后再重新+一个Docker 看下效果如下]]></content>
+    <title><![CDATA[2.15 机器学习算法GBDT]]></title>
+    <url>%2F%2FGBDT%2F</url>
+    <content type="text"><![CDATA[摘要 Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。 容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。]]></content>
       <categories>
         <category>summary</category>
       </categories>
@@ -156,9 +156,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[2.15 机器学习算法GBDT]]></title>
-    <url>%2F%2FGBDT%2F</url>
-    <content type="text"><![CDATA[摘要 Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。 容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。]]></content>
+    <title><![CDATA[docker 配置权限问题]]></title>
+    <url>%2F%2FdockerConf%2F</url>
+    <content type="text"><![CDATA[摘要 本文主要介绍Docker 安装结束后的全权限配置问题 一、解决终端运行每次需要运行root权限问题 12porter@porter-Aspire:~$ docker images Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.39/images/json: dial unix /var/run/docker.sock: connect: permission denied 二、解决Pycharm中导入docker时提示权限问题 一、问题分析以上两种问题的出现，都是因为没把当前的用户组加到 /var/run/docker.sock 执行组中去 解决办法步骤一、检查docker.sock 的用户权限情况12ls -l /var/run/docker.socksrw-rw---- 1 root docker 0 Aug 23 09:40 /var/run/docker.sock 步骤二、将当前用户组添加到docker的组中12sudo gpasswd -a $&#123;USER&#125; dockercat /etc/group | grep ^docker 步骤三、重启docker1sudo service docker restart 步骤四、更新docker的用户和组1newgrp docker #更新用户组 步骤五、终端测试可以发现可以不用root权限就可以操作docker相关的命令了 1docker ps #测试docker命令是否可以使用sudo正常使用 二、 问题分析导致问题二中的pycharm出问题的原因是因为file的读写权限的问题，我们只需要改下，出问题的文件的读写权限就可以了 问题的现象如下图 问题的解决方法如下 1sudo chmod a+rw /var/run/docker.sock 然后再重新+一个Docker 看下效果如下]]></content>
       <categories>
         <category>summary</category>
       </categories>
@@ -262,6 +262,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[1.18 ubuntu下安装OpenCV 3.4.3]]></title>
+    <url>%2F%2Finstallopencv%2F</url>
+    <content type="text"><![CDATA[摘要解决ubuntu 中安装opencv遇到的各种水土不服 下载 安装 ##下载OpenCV 源码 安装依赖包1234567sudo apt-get install build-essentialsudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-devsudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff5-dev libdc1394-22-dev sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev liblapacke-devsudo apt-get install libxvidcore-dev libx264-dev sudo apt-get install libatlas-base-dev gfortran sudo apt-get install ffmpeg 作者：BlainWu来源：CSDN原文：https://blog.csdn.net/qq_22945165/article/details/84312374版权声明：本文为博主原创文章，转载请附上博文链接！ 下载、安装从第三方源中下载（解决官方github下载网速过慢的问题）123https://ftp.osuosl.org/pub/blfs/conglomeration/opencv/opencv-3.4.3.zip（https://ftp.osuosl.org/pub/blfs/conglomeration/opencv/opencv_contrib-3.4.3.tar.gz）#目前这个control不用下载，以后需要可以下载安装 解压 12cd /你的解压路径/opencv/mkdir ./build cmake 12cd buildcmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local .. make 1make -j4 安装 1sudo make install 编译中会出现的问题 ippicv_2017u3_lnx_intel64_general_20180518.tgz下载失败 进入opencv解压的文件路径中 —&gt; 找到你的解压路径/opencv-3.4.3/3rdparty/ippicv/ippicv.cmake的文件。 编辑文件：ippicv.cmake 编辑ippicv.cmake内容,替换如下的内容 123456ocv_download(FILENAME $&#123;OPENCV_ICV_NAME&#125; HASH $&#123;OPENCV_ICV_HASH&#125; URL "$&#123;OPENCV_IPPICV_URL&#125;" "$ENV&#123;OPENCV_IPPICV_URL&#125;" "file:///home/blain/Downloads/"# “file:///home/blain/Downloads/“# 这个为你手动下载的文件所在的路径 需手动下载的包的地址如下，自己手动下载，建议存放在opencv解压后的文件夹中方便管理1https://ftp.osuosl.org/pub/blfs/conglomeration/opencv/ippicv_2017u3_lnx_intel64_general_20180518.tgz 我的下载存放地址就是 home/blain/Downloads 。 修改完成，重新cmake 即可]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[1.19 gym_gazabe安装配置]]></title>
     <url>%2F%2FgymGazabeInstall%2F</url>
     <content type="text"><![CDATA[摘要本文主要记录gym_gazebo安装的过程，想想每次安装都要一堆的百度，过程很痛苦，所以直接记录下我成功安装的过程，方便后面安装的参考。 具体内容如下： 摘要 解决ubuntu 中安装 gym_gazabe 遇到的各种水土不服 Basic requirements: ROS Kinetic dependencies Install Sophus Gazebo gym Dependencies and libraries Agent dependencies Run the environment with a sample agent 解决ubuntu 中安装 gym_gazabe 遇到的各种水土不服Basic requirements: ROS Kinetic (/rosversion: 1.12.7) Gazebo 8.1.1 Python 3.5.2 OpenCV3, installed from sources for Python 3 (git clone https://github.com/Itseez/opencv.git) OpenAI gym 这部分的安装请自行百度, 但是这部分的内容也要安装上，不然安装gym_gazebo会出错的。 ROS Kinetic dependencies12345678910111213141516171819202122232425262728sudo pip3 install rospkg catkin_pkgsudo apt-get install python3-pyqt4sudo apt-get install \cmake gcc g++ qt4-qmake libqt4-dev \libusb-dev libftdi-dev \python3-defusedxml python3-vcstool \libbluetooth-dev libspnav-dev \pyqt4-dev-tools libcwiid-dev \ros-kinetic-octomap-msgs \ros-kinetic-joy \ros-kinetic-geodesy \ros-kinetic-octomap-ros \ros-kinetic-control-toolbox \ros-kinetic-pluginlib \ros-kinetic-trajectory-msgs \ros-kinetic-control-msgs \ros-kinetic-std-srvs \ros-kinetic-nodelet \ros-kinetic-urdf \ros-kinetic-rviz \ros-kinetic-kdl-conversions \ros-kinetic-eigen-conversions \ros-kinetic-tf2-sensor-msgs \ros-kinetic-pcl-ros \ros-kinetic-navigation \ros-kinetic-ar-track-alvar-msgs Install Sophus123456789cdgit clone https://github.com/stonier/sophus -b release/0.9.1-kineticcd sophusmkdir buildcd buildcmake ..makesudo make installecho "## Sophus installed ##\n" Gazebo gym1234cd git clone https://github.com/erlerobot/gym-gazebocd gym-gazebosudo pip3 install -e . Dependencies and libraries1234567891011sudo pip3 install h5pysudo apt-get install python3-skimage# install Theanocd ~/git clone git://github.com/Theano/Theano.gitcd Theano/sudo python3 setup.py develop#install Kerassudo pip3 install keras Agent dependencies 这部分的安装可以参考我的github 仓库(gazebo.repos 已经修改过,并且在ubuntu16上正确编译安装通过，可以直接clone下来安装,我只修改了gazebo.repos,设置/usr/local/python3.5环境): 这部分的安装需要注意请尽量用”/usr/local/bin/python3.5”如果用anaconda的python环境下安装，会出现Cmake 报错,如果你有解决的办法可以忽略提示 切换python 环境，只需要执行如下命令： 1234vim ~/.bashrc# 修改弹出的文本，将export anaconda这行注释掉，如下所示# added by Anaconda3 4.2.0 installer#export PATH="/home/porter/anaconda3/bin:$PATH" 效果如下： 安装前需要配置下Agent 的gazebo.repos123cd ~/gym-gazebo/gym_gazebo/envs/installation/cp ./gazebo.repos ./gazebo.repos.bakgedit ~/gym-gazebo/gym_gazebo/envs/installation/gazebo.repos gazebo.repos 内容如下 主要修改一些github 仓库对应版本release的分支问题, 解决安装时的错误， 修改后的内容如下： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168repositories:# ardupilot_sitl_gazebo_plugin:# type: git# url: https://github.com/erlerobot/ardupilot_sitl_gazebo_plugin## version: master ar_track_alvar: type: git url: https://github.com/ros-perception/ar_track_alvar.git version: kinetic-devel mav_comm: type: git url: https://github.com/ethz-asl/mav_comm.git version: master# ar_track_alvar:# type: git# url: https://github.com/sniekum/ar_track_alvar# version: indigo-devel# ar_track_alvar_msgs:# type: git# url: https://github.com/sniekum/ar_track_alvar_msgs# version: indigo-devel catkin_simple: type: git url: https://github.com/catkin/catkin_simple.git version: master control_toolbox: type: git url: https://github.com/ros-controls/control_toolbox.git version: indigo-devel# drcsim:# type: hg# url: https://bitbucket.org/osrf/drcsim# version: default ecl_core: type: git url: https://github.com/stonier/ecl_core version: release/0.61-indigo-kinetic ecl_lite: type: git url: https://github.com/stonier/ecl_lite version: release/0.61-indigo-kinetic ecl_navigation: type: git url: https://github.com/stonier/ecl_navigation version: devel ecl_tools: type: git url: https://github.com/stonier/ecl_tools version: release/0.61-indigo-kinetic driver_base: type: git url: https://github.com/ros-drivers/driver_common.git version: indigo-devel gazebo_ros_pkgs: type: git url: https://github.com/ros-simulation/gazebo_ros_pkgs version: indigo-devel# glog_catkin:# type: git# url: https://github.com/ethz-asl/glog_catkin.git# version: master hector_gazebo: type: git url: https://github.com/tu-darmstadt-ros-pkg/hector_gazebo/ version: indigo-devel image_common: type: git url: https://github.com/ros-perception/image_common.git version: hydro-devel joystick_drivers: type: git url: https://github.com/ros-drivers/joystick_drivers.git version: master kobuki: type: git url: https://github.com/yujinrobot/kobuki version: indigo kobuki_core: type: git url: https://github.com/yujinrobot/kobuki_core version: indigo kobuki_desktop: type: git url: https://github.com/erlerobot/kobuki_desktop version: indigo kobuki_msgs: type: git url: https://github.com/yujinrobot/kobuki_msgs version: indigo# mavros:# type: git# url: https://github.com/erlerobot/mavros.git# version: gazebo_udp# mav_comm:# type: git# url: https://github.com/PX4/mav_comm.git# version: master navigation: type: git url: https://github.com/ros-planning/navigation version: indigo-devel# osrf-common:# type: hg# url: https://bitbucket.org/osrf/osrf-common# version: default pcl_ros: type: git url: https://github.com/ros-perception/perception_pcl.git version: indigo-devel# python_qt_binding:# type: git# url: https://github.com/ros-visualization/python_qt_binding# version: kinetic-devel# qt_gui_core:# type: git# url: https://github.com/ros-visualization/qt_gui_core# version: groovy-devel realtime_tools: type: git url: https://github.com/ros-controls/realtime_tools version: indigo-devel ros_control: type: git url: https://github.com/ros-controls/ros_control version: indigo-devel roslint: type: git url: https://github.com/ros/roslint version: master# rqt:# type: git# url: https://github.com/ros-visualization/rqt# version: groovy-devel# rqt_common_plugins:# type: git# url: https://github.com/ros-visualization/rqt_common_plugins# version: master# rqt_robot_plugins:# type: git# url: https://github.com/ros-visualization/rqt_robot_plugins# version: master turtlebot: type: git url: https://github.com/turtlebot/turtlebot version: indigo turtlebot_create: type: git url: https://github.com/turtlebot/turtlebot_create version: indigo turtlebot_simulator: type: git url: https://github.com/turtlebot/turtlebot_simulator version: indigo xacro: type: git url: https://github.com/ros/xacro version: indigo-devel yocs_msgs: type: git url: https://github.com/yujinrobot/yocs_msgs version: release/0.6-kinetic yujin_ocs: type: git url: https://github.com/yujinrobot/yujin_ocs version: kinetic 具体的修改地方建议，通过code compare 工具查看，这里推荐一个好用而代码比较工具：Meld Diff 比较好用。 接下来执行如下Agent dependences 12cd gym_gazebo/envs/installationbash setup_kinetic.bash Run the environment with a sample agent12cd gym_gazebo/examples/scripts_turtlebotpython circuit2_turtlebot_lidar_qlearn.py]]></content>
@@ -274,17 +285,6 @@
   </entry>
   <entry>
     <title><![CDATA[1.18 ubuntu下安装OpenCV 3.4.3]]></title>
-    <url>%2F%2Finstallopencv%2F</url>
-    <content type="text"><![CDATA[摘要解决ubuntu 中安装opencv遇到的各种水土不服 下载 安装 ##下载OpenCV 源码 安装依赖包1234567sudo apt-get install build-essentialsudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-devsudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff5-dev libdc1394-22-dev sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev liblapacke-devsudo apt-get install libxvidcore-dev libx264-dev sudo apt-get install libatlas-base-dev gfortran sudo apt-get install ffmpeg 作者：BlainWu来源：CSDN原文：https://blog.csdn.net/qq_22945165/article/details/84312374版权声明：本文为博主原创文章，转载请附上博文链接！ 下载、安装从第三方源中下载（解决官方github下载网速过慢的问题）123https://ftp.osuosl.org/pub/blfs/conglomeration/opencv/opencv-3.4.3.zip（https://ftp.osuosl.org/pub/blfs/conglomeration/opencv/opencv_contrib-3.4.3.tar.gz）#目前这个control不用下载，以后需要可以下载安装 解压 12cd /你的解压路径/opencv/mkdir ./build cmake 12cd buildcmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local .. make 1make -j4 安装 1sudo make install 编译中会出现的问题 ippicv_2017u3_lnx_intel64_general_20180518.tgz下载失败 进入opencv解压的文件路径中 —&gt; 找到你的解压路径/opencv-3.4.3/3rdparty/ippicv/ippicv.cmake的文件。 编辑文件：ippicv.cmake 编辑ippicv.cmake内容,替换如下的内容 123456ocv_download(FILENAME $&#123;OPENCV_ICV_NAME&#125; HASH $&#123;OPENCV_ICV_HASH&#125; URL "$&#123;OPENCV_IPPICV_URL&#125;" "$ENV&#123;OPENCV_IPPICV_URL&#125;" "file:///home/blain/Downloads/"# “file:///home/blain/Downloads/“# 这个为你手动下载的文件所在的路径 需手动下载的包的地址如下，自己手动下载，建议存放在opencv解压后的文件夹中方便管理1https://ftp.osuosl.org/pub/blfs/conglomeration/opencv/ippicv_2017u3_lnx_intel64_general_20180518.tgz 我的下载存放地址就是 home/blain/Downloads 。 修改完成，重新cmake 即可]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[1.18 ubuntu下安装OpenCV 3.4.3]]></title>
     <url>%2F%2Finstallopencvs%2F</url>
     <content type="text"><![CDATA[摘要解决ubuntu 中安装opencv遇到的各种水土不服 下载 安装 ##下载OpenCV 源码 安装依赖包1234567sudo apt-get install build-essentialsudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-devsudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff5-dev libdc1394-22-dev sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev liblapacke-devsudo apt-get install libxvidcore-dev libx264-dev sudo apt-get install libatlas-base-dev gfortran sudo apt-get install ffmpeg 作者：BlainWu来源：CSDN原文：https://blog.csdn.net/qq_22945165/article/details/84312374版权声明：本文为博主原创文章，转载请附上博文链接！ 下载、安装从第三方源中下载（解决官方github下载网速过慢的问题）123https://ftp.osuosl.org/pub/blfs/conglomeration/opencv/opencv-3.4.3.zip（https://ftp.osuosl.org/pub/blfs/conglomeration/opencv/opencv_contrib-3.4.3.tar.gz）#目前这个control不用下载，以后需要可以下载安装 解压 12cd /你的解压路径/opencv/mkdir ./build cmake 12cd buildcmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local .. make 1make -j4 安装 1sudo make install 编译中会出现的问题 ippicv_2017u3_lnx_intel64_general_20180518.tgz下载失败 进入opencv解压的文件路径中 —&gt; 找到你的解压路径/opencv-3.4.3/3rdparty/ippicv/ippicv.cmake的文件。 编辑文件：ippicv.cmake 编辑ippicv.cmake内容,替换如下的内容 123456ocv_download(FILENAME $&#123;OPENCV_ICV_NAME&#125; HASH $&#123;OPENCV_ICV_HASH&#125; URL "$&#123;OPENCV_IPPICV_URL&#125;" "$ENV&#123;OPENCV_IPPICV_URL&#125;" "file:///home/blain/Downloads/"# “file:///home/blain/Downloads/“# 这个为你手动下载的文件所在的路径 需手动下载的包的地址如下，自己手动下载，建议存放在opencv解压后的文件夹中方便管理1https://ftp.osuosl.org/pub/blfs/conglomeration/opencv/ippicv_2017u3_lnx_intel64_general_20180518.tgz 我的下载存放地址就是 home/blain/Downloads 。 修改完成，重新cmake 即可]]></content>
       <categories>
@@ -292,19 +292,6 @@
       </categories>
       <tags>
         <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[gym-gazebo安装后的测试]]></title>
-    <url>%2F%2Fgym-gazeboInstall%2F</url>
-    <content type="text"><![CDATA[目录本节会安装以下内容 目录 第一步：bash turtlebot_setup.bash Running an environment Run any of the examples available in examples/. E.g.: 第二步：source setup_turtlebot.bash source 进行expert操作 第三步：eg export ROS_MASTER_URI=http://localhost:12795 第二步和第三步操作方法的截图 第四步：gzclient 五 最终效果 Display reward plot Killing background processes Edit By Porter, 积水成渊,蛟龙生焉。 第一步：bash turtlebot_setup.bashRunning an environmentLoad the environment variables corresponding to the robot you want to launch. E.g. to load the Turtlebot:12cd gym_gazebo/envs/installationbash turtlebot_setup.bash Note: all the setup scripts are available in gym_gazebo/envs/installation Run any of the examples available in examples/. E.g.:12cd examples/turtlebotpython3 circuit2_turtlebot_lidar_qlearn.py 第二步：source setup_turtlebot.bash 我的source bash文件是setup.bash不是setup_turtlebot.bash，所以我的是source setup.bash source12cd /home/porter/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/develsource setup.bash 进行expert操作首先第一步：bash turtlebot_setup.bash过后，终端会有如下的提示 得到有用的终端输出信息12345678910111213porter@porter-Aspire:~/gym-gazebo/examples/turtlebot$ python3 circuit2_turtlebot_lidar_qlearn.pyROS_MASTER_URI=http://localhost:12795GAZEBO_MASTER_URI=http://localhost:12796Gazebo launched!Unable to register with master node [http://localhost:12795]: master may not be running yet. Will keep trying.... logging to /home/porter/.ros/log/ab3f7618-6fea-11e9-a24a-f0761cd1b3e0/roslaunch-porter-Aspire-11818.logChecking log directory for disk usage. This may take awhile.Press Ctrl-C to interruptDone checking log file disk usage. Usage is &lt;1GB.started roslaunch server http://porter-Aspire:33631/ 第三步：eg export ROS_MASTER_URI=http://localhost:1279512export ROS_MASTER_URI=http://localhost:12795 # 和上面的端口号一致export GAZEBO_MASTER_URI=http://localhost:12796 # 和上面的端口号一致 第二步和第三步操作方法的截图 第四步：gzclient执行如下命令打开gazebo1gzclient 五 最终效果 Display reward plotDisplay a graph showing the current reward history by running the following script: 123cd /home/porter/gym-gazebo/cd examples/utilitiespython3 display_plot.py HINT: use –help flag for more options. Killing background processesSometimes, after ending or killing the simulation gzserver and rosmaster stay on the background, make sure you end them before starting new tests. We recommend creating an alias to kill those processes. 1echo "alias killgazebogym='killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient'" &gt;&gt; ~/.bashrc 参考来源：https://github.com/erlerobot/gym-gazebo/tree/master#installation]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-        <tag>gym-gazebo</tag>
-        <tag>Machine Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -324,6 +311,19 @@
     <title><![CDATA[基于DQN的gym_gazebo运行代码演示]]></title>
     <url>%2F%2FDQNgym%2F</url>
     <content type="text"><![CDATA[基于DQN的gym_gazebo运行代码演示 基于DQN的gym_gazebo运行代码演示 下载算法包 运行脚本 终端效果 export 端口环境添加 运行ＧＵＩ效果 Edit By Porter, 积水成渊,蛟龙生焉。 下载算法包12git clone https://github.com/ipa-bfb-sc/CSN-RLcd ./CSN-RL 运行脚本12cd ~/文档/GitHub_Projects/CSN-RLqqq/DQNpython3 ./DQN_CirTurtleBot.py ## 终端效果 12345678910111213141516171819porter@porter-Aspire:~/文档/GitHub_Projects/CSN-RLqqq/DQN$ python3 ./DQN_CDQN_CartPole.py DQN_CirTurtleBot.py porter@porter-Aspire:~/文档/GitHub_Projects/CSN-RLqqq/DQN$ python3 ./DQN_CirTurtleBot.py Using TensorFlow backend.ROS_MASTER_URI=http://localhost:12935GAZEBO_MASTER_URI=http://localhost:12936Gazebo launched!Unable to register with master node [http://localhost:12935]: master may not be running yet. Will keep trying.... logging to /home/porter/.ros/log/9b695694-7000-11e9-a24a-f0761cd1b3e0/roslaunch-porter-Aspire-32299.logChecking log directory for disk usage. This may take awhile.Press Ctrl-C to interruptDone checking log file disk usage. Usage is &lt;1GB.started roslaunch server http://porter-Aspire:36739/SUMMARY======== export 端口环境添加此时不会出gazebo，要查看实时的效果，运行如下命令 123porter@porter-Aspire:~$ export ROS_MASTER_URI=http://localhost:12935porter@porter-Aspire:~$ export GAZEBO_MASTER_URI=http://localhost:12936porter@porter-Aspire:~$ gzclient 如果不成功，执行 12345porter@porter-Aspire:~$ cd /home/porter/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/develporter@porter-Aspire:~/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/devel$ source setup.bashporter@porter-Aspire:~$ export ROS_MASTER_URI=http://localhost:12935porter@porter-Aspire:~$ export GAZEBO_MASTER_URI=http://localhost:12936porter@porter-Aspire:~$ gzclient 运行ＧＵＩ效果]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>gym-gazebo</tag>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[gym-gazebo安装后的测试]]></title>
+    <url>%2F%2Fgym-gazeboInstall%2F</url>
+    <content type="text"><![CDATA[目录本节会安装以下内容 目录 第一步：bash turtlebot_setup.bash Running an environment Run any of the examples available in examples/. E.g.: 第二步：source setup_turtlebot.bash source 进行expert操作 第三步：eg export ROS_MASTER_URI=http://localhost:12795 第二步和第三步操作方法的截图 第四步：gzclient 五 最终效果 Display reward plot Killing background processes Edit By Porter, 积水成渊,蛟龙生焉。 第一步：bash turtlebot_setup.bashRunning an environmentLoad the environment variables corresponding to the robot you want to launch. E.g. to load the Turtlebot:12cd gym_gazebo/envs/installationbash turtlebot_setup.bash Note: all the setup scripts are available in gym_gazebo/envs/installation Run any of the examples available in examples/. E.g.:12cd examples/turtlebotpython3 circuit2_turtlebot_lidar_qlearn.py 第二步：source setup_turtlebot.bash 我的source bash文件是setup.bash不是setup_turtlebot.bash，所以我的是source setup.bash source12cd /home/porter/gym-gazebo/gym_gazebo/envs/installation/catkin_ws/develsource setup.bash 进行expert操作首先第一步：bash turtlebot_setup.bash过后，终端会有如下的提示 得到有用的终端输出信息12345678910111213porter@porter-Aspire:~/gym-gazebo/examples/turtlebot$ python3 circuit2_turtlebot_lidar_qlearn.pyROS_MASTER_URI=http://localhost:12795GAZEBO_MASTER_URI=http://localhost:12796Gazebo launched!Unable to register with master node [http://localhost:12795]: master may not be running yet. Will keep trying.... logging to /home/porter/.ros/log/ab3f7618-6fea-11e9-a24a-f0761cd1b3e0/roslaunch-porter-Aspire-11818.logChecking log directory for disk usage. This may take awhile.Press Ctrl-C to interruptDone checking log file disk usage. Usage is &lt;1GB.started roslaunch server http://porter-Aspire:33631/ 第三步：eg export ROS_MASTER_URI=http://localhost:1279512export ROS_MASTER_URI=http://localhost:12795 # 和上面的端口号一致export GAZEBO_MASTER_URI=http://localhost:12796 # 和上面的端口号一致 第二步和第三步操作方法的截图 第四步：gzclient执行如下命令打开gazebo1gzclient 五 最终效果 Display reward plotDisplay a graph showing the current reward history by running the following script: 123cd /home/porter/gym-gazebo/cd examples/utilitiespython3 display_plot.py HINT: use –help flag for more options. Killing background processesSometimes, after ending or killing the simulation gzserver and rosmaster stay on the background, make sure you end them before starting new tests. We recommend creating an alias to kill those processes. 1echo "alias killgazebogym='killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient'" &gt;&gt; ~/.bashrc 参考来源：https://github.com/erlerobot/gym-gazebo/tree/master#installation]]></content>
       <categories>
         <category>Machine Learning</category>
       </categories>
@@ -384,17 +384,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[1.15 ubuntu下goldendict有道爬虫小程序]]></title>
-    <url>%2F%2Fgoldendictsetting%2F</url>
-    <content type="text"><![CDATA[摘要有道翻译 for GoldenDict 半完美取词显示插件说道linux里面好用的取词软件，不得不数goldendict很不错的，比好几年都没更新linux客户端的有道来说好用的多，毕竟ubuntu18下，有道qt已经存在不兼容，要么降qt版本，要么自己折腾对官方提供的deb安装包进行解包，然后进行修改以来环境的代码，再打包，太麻烦了，当然目前也有基于官方的有道词典打包好的支持ubuntu18系统，可以去我的github下载直接安装就好了，但是打包后我发现一个问题，OCR屏幕取词，一天下来Python和取词插件会把你电脑内存占得满满的，结果就是，你的电脑很卡，所以还是转goldendict吧。 下面高能 将解决目前goldendict的网页引入有道的查词，界面各种不整洁，不友好的解决办法。 Edit By Porter, 积水成渊,蛟龙生焉。 原理原理是爬虫的，我是基于：完了，这是真的，原作者的代码我参考，忘了转移到我的github了，如果，原作看到了，记得给我留言，我加上你的参考地址啊，尴尬了 首先效果图如下图]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>goldendict</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[1.16 ubuntu18升级后部分应用不能中文输入的问题]]></title>
     <url>%2F%2FinputU18%2F</url>
     <content type="text"><![CDATA[摘要ubuntu18升级后部分应用不能中文输入的问题作者做死尝试新的系统和新的桌面gnome结果悲剧了 问题一：我的爽系统引导失效了，重启直接进入windows不进入ubuntu的登录界面 问题二：我的输入法抽风了，我卸载安装，又卸载安装好多遍，结果还是不能用。本文我们只写如何修复部分应用可以i中文输入，然而像浏览器，啥的并不能英文输入的解决办法 Edit By Porter, 积水成渊,蛟龙生焉。 解决办法是，首先卸载ibus，然后进入系统输入法设置选择输入法为fcitx ，然后重启，开机后就正常了 12345678sudo apt-get remove ibus*sudo apt-get purge ibus*# 卸载～/.cache中的不能中文输入的软件cahe全删除掉sudo rm -rf ~/.cache/gedit/sudo rm -rf ~/.cache/webkitgtk/sudo rm -rf ~/.cache/gnome-software/............sudo rm -rf ~/.cache/google-chrome/ 去官网下载fictx安装的binary 二进制安装文件deb fcitx 12345678910sudo rm -rf ~/.cache/ibus/sudo apt-get install fcitx-binsudo apt-get install fcitx-stablesudo apt-get remove ibussudo apt-get purge ibussudo apt-get remove indicator-keyboardsudo apt-get install fcitxfcitx -r# 下载搜狗官方安装包直接安装，双击或者cd到目录后执行如下代码sudo dpkg -i sogoupinyin_2.2.0.0108_amd64.deb 比如我是x64的，我选择amd64对应的deb，下载后直接双击安装就好 fcitx_4.2.9.6-1_all.deb 建议上面的 sudo apt-get install fcitx-bin sudo apt-get install fcitx-stable 也换成直接官方下载deb包然后安装，在哪可以自己去fcitx官网找到. 最后一步重启，要重启才有用。 然后按照之前那样设置搜狗输入法。 提示，如果你本来就安装了搜狗输入法，你也不用卸载，直接忽略我上面安装搜狗的步骤就好了，效果和重装搜狗一样。笔者是捣鼓的时候，误卸载了搜狗的，所以后面重装了。]]></content>
@@ -403,6 +392,17 @@
       </categories>
       <tags>
         <tag>不能中文输入</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1.15 ubuntu下goldendict有道爬虫小程序]]></title>
+    <url>%2F%2Fgoldendictsetting%2F</url>
+    <content type="text"><![CDATA[摘要有道翻译 for GoldenDict 半完美取词显示插件说道linux里面好用的取词软件，不得不数goldendict很不错的，比好几年都没更新linux客户端的有道来说好用的多，毕竟ubuntu18下，有道qt已经存在不兼容，要么降qt版本，要么自己折腾对官方提供的deb安装包进行解包，然后进行修改以来环境的代码，再打包，太麻烦了，当然目前也有基于官方的有道词典打包好的支持ubuntu18系统，可以去我的github下载直接安装就好了，但是打包后我发现一个问题，OCR屏幕取词，一天下来Python和取词插件会把你电脑内存占得满满的，结果就是，你的电脑很卡，所以还是转goldendict吧。 下面高能 将解决目前goldendict的网页引入有道的查词，界面各种不整洁，不友好的解决办法。 Edit By Porter, 积水成渊,蛟龙生焉。 原理原理是爬虫的，我是基于：完了，这是真的，原作者的代码我参考，忘了转移到我的github了，如果，原作看到了，记得给我留言，我加上你的参考地址啊，尴尬了 首先效果图如下图]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>goldendict</tag>
       </tags>
   </entry>
   <entry>
@@ -428,17 +428,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[1.13 mysql 笔记]]></title>
-    <url>%2F%2Fmysqlnotes%2F</url>
-    <content type="text"><![CDATA[摘要本文主要记录mysql的相关文档，包括安装，配置和数据库访问相关代码 Edit By Porter, 积水成渊,蛟龙生焉。 一、下载安装mysql1.1 准备工作 MySQL8.0 For Windows zip包 -&gt; : 下载地址 [1] 解压 我的解压在了D:\program\mysql\mysql-8.0.11-winx64 [2] 配置环境变量 [3] 配置初始化的my.ini文件 我们发现解压后的目录并没有my.ini文件，没关系可以自行创建。在安装根目录下添加 my.ini（新建文本文件，将文件类型改为.ini），写入基本配置： 12345678910111213141516171819202122232425[mysqld]# 设置3306端口port=3306# 设置mysql的安装目录basedir=D:\Program Files\MySQL# 设置mysql数据库的数据的存放目录datadir=D:\Program Files\MySQL\Data# 允许最大连接数max_connections=200# 允许连接失败的次数。max_connect_errors=10# 服务端使用的字符集默认为UTF8character-set-server=utf8# 创建新表时将使用的默认存储引擎default-storage-engine=INNODB# 默认使用“mysql_native_password”插件认证#mysql_native_passworddefault_authentication_plugin=mysql_native_password[mysql]# 设置mysql客户端默认字符集default-character-set=utf8[client]# 设置mysql客户端连接服务端时默认使用的端口port=3306default-character-set=utf8 注意：其中的data目录不需要创建，下一步初始化工作中会自动创建 1.2 安装工作在安装时，必须以管理员身份运行cmd，否则在安装时会报错，会导致安装失败的情况 1.2.1 初始化数据库1CD \d D:/ 在MySQL安装目录的 bin 目录下执行命令： 1mysqld --initialize --console 执行完成后，会打印 root 用户的初始默认密码，比如： 12345D:\Program Files\mysql\bin&gt;mysqld --initialize --console2019-02-14T11:47:59.282979Z 0 [System] [MY-013169] [Server] D:\Program Files\mysql\bin\mysqld.exe (mysqld 8.0.15) initializing of server in progress as process 137522019-02-14T11:47:59.284705Z 0 [Warning] [MY-013242] [Server] --character-set-server: 'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.2019-02-14T11:48:40.707445Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: 7CwffH5&lt;(lem2019-02-14T11:49:02.894787Z 0 [System] [MY-013170] [Server] D:\Program Files\mysql\bin\mysqld.exe (mysqld 8.0.15) initializing of server has completed 注意！执行输出结果里面有一段： [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: 7CwffH5&lt;(lem,D 其中root@localhost:后面的“7CwffH5&lt;(lem,D”就是初始密码（不含首位空格）。在没有更改密码前，需要记住这个密码，后续登录需要用到。要是你手贱，关快了，或者没记住，那也没事，删掉初始化的 datadir 目录，再执行一遍初始化命令，又会重新生成的。当然，也可以使用安全工具，强制改密码，用什么方法，自己随意。 1.3 安装服务在MySQL安装目录的 bin 目录下执行命令： 1mysqld --install [服务名] 后面的服务名可以不写，默认的名字为 mysql。当然，如果你的电脑上需要安装多个MySQL服务，就可以用不同的名字区分了，比如 mysql5 和 mysql8。安装完成之后，就可以通过命令net start mysql启动MySQL的服务了。通过命令net stop mysql停止服务。通过命令sc delete MySQL/mysqld -remove卸载 MySQL 服务 1.4 更改密码下面提供两种方法修改密码，一种是GUI界面的一种是终端操作 1.4.1 GUI界面修改密码（推荐） 这里附上软件下载地址: 链接: https://pan.baidu.com/s/19mjZmCgZYaXRezxdukuG0w 提取码: m7de 复制这段内容后打开百度网盘手机App，操作更方便哦 新建的MySQL的连接 还记得刚刚让你复制的root @ localhost：后面的初始密码了吗？现在要用到它了复制粘贴上去！测试一下！ MySQL的是成功安装了也可以登录现在就是改密码的时候了写SQL改密码吗？太麻烦了太低来我有个简单的方法用Navicat的点击刚刚的连接就会提示我们输入新密码 1.4.2 终端方式修改密码终端里管理员身份运行cmd,并CD 到在MySQL安装目录的 bin 目录下执行命令： 1mysql -u root -p 这时候会提示输入密码，记住了上面第3.1步安装时的密码，填入即可登录成功，进入MySQL命令模式。 在MySQL中执行命令： 1ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;新密码&apos;; 修改密码，注意命令尾的；一定要有，这是mysql的语法 二、账号配置与使用测试2.1 数据库的创建、表单和字段配置 创建数据库：iodata 创建数据库表单：teacher ，user_info 创建数据库表单中的字段：user_id，user_pass，user_modified 等等 设置数据库表单中的主键。 1234567891011121314151617CREATE DATABASE iodata;use iodata;/*show tables;create table teacher ( code varchar(20) primary key, name varchar(20));*/CREATE TABLE user_info( ID int NOT NULL AUTO_INCREMENT,/* 设置自动加的用户ID*/ user_id VARCHAR(200) NOT NULL,/*支持中英文200个字符的用户字符串*/ user_pass VARCHAR(200) NOT NULL, user_create datetime(3) NULL DEFAULT CURRENT_TIMESTAMP(3), user_modified datetime(3) NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3), PRIMARY KEY (ID)/* 设置主键*/); 2.2 配置数据库的用户访问账号密码，权限123456use iodata;CREATE USER &apos;porter&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;shuruniziji_mima&apos;;/* 创建用户 */INSERT INTO iodata.user_info ( user_id, user_pass) VALUES ( &apos;porter&apos;, &apos;123&apos;); grant all privileges on *.* to &apos;porter&apos;@&apos;%&apos;; /* 放行用户的所有权限并允许远程网络连接 */ Python 代码来链接数据库 如下代码功能是链接数据库并从数据库中读取数据并打印出来 123456789101112131415161718192021222324# -*- coding:utf-8 -*-import pymysqlimport sysdef get_db_data(): connect = pymysql.Connect( host="210.28.33.2", port=3306, user="porter", passwd="smrit", db="iodata", charset='utf8' ) print("写入中，请等待……") cursor = connect.cursor() sql = "select * from user_info" cursor.execute(sql) number = cursor.fetchall() print(number) cursor.close() connect.close()if __name__ == "__main__": get_db_data() 三、简单的操作例程3.1 存储图片的数据库读写操作使用上面推荐的GUI数据库操作工具：Navicat Premium, 软件，在软件中执行 12use iodata;CREATE TABLE Images(Id INT PRIMARY KEY AUTO_INCREMENT, Data MEDIUMBLOB); 读取数据库中图片的Python 代码 1234567891011121314151617181920212223242526272829303132# -*- coding:utf-8 -*-import pymysqlimport matplotlib.pyplot as pltimport matplotlib.image as mpimg # mpimg 用于读取图片import sysdef get_loan_number(file): connect = pymysql.Connect( host="210.28.33.2", port=3306, user="porter", passwd="smriti", db="iodata", charset='utf8' ) print("写入中，请等待……") cursor = connect.cursor() sql = "select Data from images LIMIT 1" cursor.execute(sql) fout = open('2.jpg','wb') image_file = cursor.fetchone()[0] fout.write(image_file) fout.close() cursor.close() connect.close() print("写入完成,共写入%d条数据……" % 1)if __name__ == "__main__": # file = r"C:\Users\test\Desktop\loanNUmber.txt" file = "task1.txt" get_loan_number(file) 3.2 读取数据数据并保存在txt文件中123456789101112131415161718192021222324252627282930313233343536373839404142# -*- coding:utf-8 -*-import pymysqldef get_loan_number(file): connect = pymysql.Connect( host="106.14.221.55", port=3306, user="nadersidc", passwd="366583", db="defect_detecting", charset='utf8' ) print("写入中，请等待……") cursor = connect.cursor() # sql = "select id from application where status='SUBMITTING' and contract like 'Performance-%' and " \ # "loan_org_party='166490194444444444'" # sql = "select Element.Id,Element.FileName,DefectPosition.TopX,DefectPosition.TopY,\ # DefectPosition.Width,DefectPosition.Height from Element,DefectPosition where Element.DefectId=6 \ # and Element.ImageTypeId=2 and DefectPosition.ElementId=Element.Id" # sql = "select * from Element LIMIT 1,5" # sql = "select * from * LIMIT 1,5" # 查询数据库表中所有的表名字 # sql = "select table_name from information_schema.tables where table_schema='defect_detecting'" sql = "select * from TrainProject LIMIT 1,5" cursor.execute(sql) number = cursor.fetchall() fp = open(file, "w") loan_count = 0 for loanNumber in number: loan_count += 1 fp.write(str(loanNumber)+'\n') fp.close() cursor.close() connect.close() print("写入完成,共写入%d条数据……" % loan_count)if __name__ == "__main__": # file = r"C:\Users\test\Desktop\loanNUmber.txt" file = "task2.txt" get_loan_number(file) 3.2 读取数据数据并直接显示 涉及一个问题，就是数据库中的图片是二进制流的，如何直接从数据库中获取数据并显示]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[1.11 sublime text3插件介绍]]></title>
     <url>%2F%2FsublimeIntro%2F</url>
     <content type="text"><![CDATA[摘要Package Control 包控制安装最简单的安装方法是通过 Sublime Text 控制台。控制台可以通过 ctrl +` 快捷方式 或 View &gt; Show Console 菜单来开启/关闭。 打开后，将适用于你 Sublime Text 版本的 Python 代码粘贴到控制台中。 /Sublime Text 3 包控制安装代码/ 12345678910import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read();dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) Edit By Porter, 积水成渊,蛟龙生焉。 通过Package Control 包控制安装插件Package Control（包控制）是安装下面列出的所有插件和主题的最佳方式。继续，在包控制中安装插件。通过 Package Control（包控制）安装插件和主题很简单： 使用方法：进入命令面板（ctrl + shift+ p），然后键入 install。然后键入 remove 删除。 Emmet Emmet绝对的节省时间。您可以轻松快速地编写HTML。 BracketHighlighter 该插件提供行数列高亮的各种配对的语法符号。（愚人码头注：就是将配对的括号等显示在行数列上 Colorpicker 使用一个取色器改变颜色使用方法: ctrl + shift + c DocBlockr 一个真正简单的方式来轻松地创建许多语言包括JavaScript，PHP和CoffeeScript的文档块。只要在函数的上面输入/**，按Tab就可以了。DocBlockr会观察函数需要的变量名和类型，并创建文档块。 SidebarEnhancements 扩展文件树右键功能 CSSComb 用来给CSS属性进行排序的格式化注：因为Csscomb的快捷键是shift+ctrl+c，可能与其他快捷键冲突你可以去Preferences–&gt;插件设置–&gt;CssComb–&gt;key-Bindings-Defallut设置 ColorHighlighter 它可以展示你所选择的颜色代码（像“#FFFFFF”, “rgb(255,255,255)”, “white”）的真正颜色。同时它还包含一个颜色选择器让你可以方便地更改颜色。 使用：快捷键Windows: ctrl+shift+w Trailing spaces 功能：检测并一键去除代码中多余的空格使用：安装插件并重启，即可自动提示多余空格。一键删除多余空格：CTRL+SHITF+T（需配置）快捷键配置：在Preferences / Key Bindings – User加上代码（数组内）{ “keys”: [“ctrl+shift+t”], “command”: “delete_trailing_spaces” }, auto-save 功能：自动保存文件使用：默认是不会自动保存，按快捷键Ctrl+Shift+S开启。快捷键配置方法：首选项-快捷键设置，在数组内添加{ “keys”: [“ctrl+shift+s”], “command”: “auto_save” },如需自动启用，首选项-插件-auto-save## settings-usre粘帖一下配置{“auto_save_on_modified”: true,“auto_save_delay_in_seconds”: 10,“auto_save_all_files”: true,“auto_save_current_file”: “”,“auto_save_backup”: false,“auto_save_backup_suffix”: “autosave”} view in browser 功能：通过默认浏览器打开文件使用：快捷键配置方法：首选项-快捷键设置，在数组内添加快捷键：{ “keys”: [“f12”], “command”: “open_in_browser” }, autoprefixer 功能：CSS添加私有前缀简介：CSS还未标准化，所以要给各大浏览器一个前缀以解决兼容问题使用：快捷键配置方法：首选项-快捷键设置，在数组内添加{ “keys”: [“ctrl+shift+enter”], “command”: “autoprefixer” },快捷键：ctrl+shift+enter CSS Extended Completions 功能：关联CSS文件智能提示css文件中的类名，非常好用 JavaScript Completions 功能：支持javascript原生语法提示 jQuery 功能：jQ函数提示简介：快捷输入jQ函数，是偷懒的好方法 AutoFileName 功能：快捷输入文件名简介：自动完成文件名的输入，如图片选取使用：输入”/”即可看到相对于本项目文件夹的其他文件 HTML-CSS-JS Prettify 功能：快捷输入文件名简介: 编辑HTML, CSS, JS时，经常会出现缩进不对，代码行不对其的情况。装了这个插件之后，只要按下 Ctrl+Shift+h (Windows), Command+Shift+h (Mac), 你的文档就会被整理干净。 注: 需要配置node文件路径 HTML-CSS-JS Prettify &gt; plugin Options 问题：Ubuntu中Ctrl+Shift+P. 输入ip,提示Package Control: There are no packages available for installation. 12Package Control: Error downloading channel. URL error [Errno 65] No route to host downloading https://packagecontrol.io/channel_v3.json. 解决方法一：官方解决办法 解决办法二： 解决方法：Package Control.sublime-settings]修改方法：Preferences &gt; Package Settings &gt; Package Control &gt; Settings - User添加1234567"channels":[ "http://static.bolin.site/channel_v3.json", //"https://packagecontrol.io/channel_v3.json", //"https://web.archive.org/web/20160103232808/https://packagecontrol.io/channel_v3.json", //"https://gist.githubusercontent.com/nick1m/660ed046a096dae0b0ab/raw/e6e9e23a0bb48b44537f61025fbc359f8d586eb4/channel_v3.json"],]]></content>
@@ -447,6 +436,17 @@
       </categories>
       <tags>
         <tag>sublime test3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[1.13 mysql 笔记]]></title>
+    <url>%2F%2Fmysqlnotes%2F</url>
+    <content type="text"><![CDATA[摘要本文主要记录mysql的相关文档，包括安装，配置和数据库访问相关代码 Edit By Porter, 积水成渊,蛟龙生焉。 一、下载安装mysql1.1 准备工作 MySQL8.0 For Windows zip包 -&gt; : 下载地址 [1] 解压 我的解压在了D:\program\mysql\mysql-8.0.11-winx64 [2] 配置环境变量 [3] 配置初始化的my.ini文件 我们发现解压后的目录并没有my.ini文件，没关系可以自行创建。在安装根目录下添加 my.ini（新建文本文件，将文件类型改为.ini），写入基本配置： 12345678910111213141516171819202122232425[mysqld]# 设置3306端口port=3306# 设置mysql的安装目录basedir=D:\Program Files\MySQL# 设置mysql数据库的数据的存放目录datadir=D:\Program Files\MySQL\Data# 允许最大连接数max_connections=200# 允许连接失败的次数。max_connect_errors=10# 服务端使用的字符集默认为UTF8character-set-server=utf8# 创建新表时将使用的默认存储引擎default-storage-engine=INNODB# 默认使用“mysql_native_password”插件认证#mysql_native_passworddefault_authentication_plugin=mysql_native_password[mysql]# 设置mysql客户端默认字符集default-character-set=utf8[client]# 设置mysql客户端连接服务端时默认使用的端口port=3306default-character-set=utf8 注意：其中的data目录不需要创建，下一步初始化工作中会自动创建 1.2 安装工作在安装时，必须以管理员身份运行cmd，否则在安装时会报错，会导致安装失败的情况 1.2.1 初始化数据库1CD \d D:/ 在MySQL安装目录的 bin 目录下执行命令： 1mysqld --initialize --console 执行完成后，会打印 root 用户的初始默认密码，比如： 12345D:\Program Files\mysql\bin&gt;mysqld --initialize --console2019-02-14T11:47:59.282979Z 0 [System] [MY-013169] [Server] D:\Program Files\mysql\bin\mysqld.exe (mysqld 8.0.15) initializing of server in progress as process 137522019-02-14T11:47:59.284705Z 0 [Warning] [MY-013242] [Server] --character-set-server: 'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.2019-02-14T11:48:40.707445Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: 7CwffH5&lt;(lem2019-02-14T11:49:02.894787Z 0 [System] [MY-013170] [Server] D:\Program Files\mysql\bin\mysqld.exe (mysqld 8.0.15) initializing of server has completed 注意！执行输出结果里面有一段： [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: 7CwffH5&lt;(lem,D 其中root@localhost:后面的“7CwffH5&lt;(lem,D”就是初始密码（不含首位空格）。在没有更改密码前，需要记住这个密码，后续登录需要用到。要是你手贱，关快了，或者没记住，那也没事，删掉初始化的 datadir 目录，再执行一遍初始化命令，又会重新生成的。当然，也可以使用安全工具，强制改密码，用什么方法，自己随意。 1.3 安装服务在MySQL安装目录的 bin 目录下执行命令： 1mysqld --install [服务名] 后面的服务名可以不写，默认的名字为 mysql。当然，如果你的电脑上需要安装多个MySQL服务，就可以用不同的名字区分了，比如 mysql5 和 mysql8。安装完成之后，就可以通过命令net start mysql启动MySQL的服务了。通过命令net stop mysql停止服务。通过命令sc delete MySQL/mysqld -remove卸载 MySQL 服务 1.4 更改密码下面提供两种方法修改密码，一种是GUI界面的一种是终端操作 1.4.1 GUI界面修改密码（推荐） 这里附上软件下载地址: 链接: https://pan.baidu.com/s/19mjZmCgZYaXRezxdukuG0w 提取码: m7de 复制这段内容后打开百度网盘手机App，操作更方便哦 新建的MySQL的连接 还记得刚刚让你复制的root @ localhost：后面的初始密码了吗？现在要用到它了复制粘贴上去！测试一下！ MySQL的是成功安装了也可以登录现在就是改密码的时候了写SQL改密码吗？太麻烦了太低来我有个简单的方法用Navicat的点击刚刚的连接就会提示我们输入新密码 1.4.2 终端方式修改密码终端里管理员身份运行cmd,并CD 到在MySQL安装目录的 bin 目录下执行命令： 1mysql -u root -p 这时候会提示输入密码，记住了上面第3.1步安装时的密码，填入即可登录成功，进入MySQL命令模式。 在MySQL中执行命令： 1ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;新密码&apos;; 修改密码，注意命令尾的；一定要有，这是mysql的语法 二、账号配置与使用测试2.1 数据库的创建、表单和字段配置 创建数据库：iodata 创建数据库表单：teacher ，user_info 创建数据库表单中的字段：user_id，user_pass，user_modified 等等 设置数据库表单中的主键。 1234567891011121314151617CREATE DATABASE iodata;use iodata;/*show tables;create table teacher ( code varchar(20) primary key, name varchar(20));*/CREATE TABLE user_info( ID int NOT NULL AUTO_INCREMENT,/* 设置自动加的用户ID*/ user_id VARCHAR(200) NOT NULL,/*支持中英文200个字符的用户字符串*/ user_pass VARCHAR(200) NOT NULL, user_create datetime(3) NULL DEFAULT CURRENT_TIMESTAMP(3), user_modified datetime(3) NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3), PRIMARY KEY (ID)/* 设置主键*/); 2.2 配置数据库的用户访问账号密码，权限123456use iodata;CREATE USER &apos;porter&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;shuruniziji_mima&apos;;/* 创建用户 */INSERT INTO iodata.user_info ( user_id, user_pass) VALUES ( &apos;porter&apos;, &apos;123&apos;); grant all privileges on *.* to &apos;porter&apos;@&apos;%&apos;; /* 放行用户的所有权限并允许远程网络连接 */ Python 代码来链接数据库 如下代码功能是链接数据库并从数据库中读取数据并打印出来 123456789101112131415161718192021222324# -*- coding:utf-8 -*-import pymysqlimport sysdef get_db_data(): connect = pymysql.Connect( host="210.28.33.2", port=3306, user="porter", passwd="smrit", db="iodata", charset='utf8' ) print("写入中，请等待……") cursor = connect.cursor() sql = "select * from user_info" cursor.execute(sql) number = cursor.fetchall() print(number) cursor.close() connect.close()if __name__ == "__main__": get_db_data() 三、简单的操作例程3.1 存储图片的数据库读写操作使用上面推荐的GUI数据库操作工具：Navicat Premium, 软件，在软件中执行 12use iodata;CREATE TABLE Images(Id INT PRIMARY KEY AUTO_INCREMENT, Data MEDIUMBLOB); 读取数据库中图片的Python 代码 1234567891011121314151617181920212223242526272829303132# -*- coding:utf-8 -*-import pymysqlimport matplotlib.pyplot as pltimport matplotlib.image as mpimg # mpimg 用于读取图片import sysdef get_loan_number(file): connect = pymysql.Connect( host="210.28.33.2", port=3306, user="porter", passwd="smriti", db="iodata", charset='utf8' ) print("写入中，请等待……") cursor = connect.cursor() sql = "select Data from images LIMIT 1" cursor.execute(sql) fout = open('2.jpg','wb') image_file = cursor.fetchone()[0] fout.write(image_file) fout.close() cursor.close() connect.close() print("写入完成,共写入%d条数据……" % 1)if __name__ == "__main__": # file = r"C:\Users\test\Desktop\loanNUmber.txt" file = "task1.txt" get_loan_number(file) 3.2 读取数据数据并保存在txt文件中123456789101112131415161718192021222324252627282930313233343536373839404142# -*- coding:utf-8 -*-import pymysqldef get_loan_number(file): connect = pymysql.Connect( host="106.14.221.55", port=3306, user="nadersidc", passwd="366583", db="defect_detecting", charset='utf8' ) print("写入中，请等待……") cursor = connect.cursor() # sql = "select id from application where status='SUBMITTING' and contract like 'Performance-%' and " \ # "loan_org_party='166490194444444444'" # sql = "select Element.Id,Element.FileName,DefectPosition.TopX,DefectPosition.TopY,\ # DefectPosition.Width,DefectPosition.Height from Element,DefectPosition where Element.DefectId=6 \ # and Element.ImageTypeId=2 and DefectPosition.ElementId=Element.Id" # sql = "select * from Element LIMIT 1,5" # sql = "select * from * LIMIT 1,5" # 查询数据库表中所有的表名字 # sql = "select table_name from information_schema.tables where table_schema='defect_detecting'" sql = "select * from TrainProject LIMIT 1,5" cursor.execute(sql) number = cursor.fetchall() fp = open(file, "w") loan_count = 0 for loanNumber in number: loan_count += 1 fp.write(str(loanNumber)+'\n') fp.close() cursor.close() connect.close() print("写入完成,共写入%d条数据……" % loan_count)if __name__ == "__main__": # file = r"C:\Users\test\Desktop\loanNUmber.txt" file = "task2.txt" get_loan_number(file) 3.2 读取数据数据并直接显示 涉及一个问题，就是数据库中的图片是二进制流的，如何直接从数据库中获取数据并显示]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -473,18 +473,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[2.4 Decision tree]]></title>
-    <url>%2F%2Fdecisiontree%2F</url>
-    <content type="text"><![CDATA[摘要决策树是在已知各种情况发生的概率的基础上，通过决策树来求取净现值的期望值大于或等于零的概率，从而评价项目风险，判断其可能性的决策分析方法，是直观的运用概率分析的一种图解方法。由于决策树画成的图像就像一棵树的树干，故称决策树。在机器学习中决策树是一种预测模型，他表示对象属性和对象之间的一种映射关系。决策树是一种判断其可行性的决策分析的方法，也是一种能够直观运用概率分析的一种图解法。 Edit By Porter, 积水成渊,蛟龙生焉。 决策树是一种树形结构，其中每个内部节点表示一个属性上的测试，每个分支代表一个测试输出，每个叶节点代表一种类别。 分类树（决策树）是一种十分常用的分类方法。他是一种监管学习，所谓监管学习就是给定一堆样本，每个样本都有一组属性和一个类别，这些类别是事先确定的，那么通过学习得到一个分类器，这个分类器能够对新出现的对象给出正确的分类。这样的机器学习就被称之为监督学习。 参考自百度百科：决策树 一、组成 决策树是一种树形的结构图，在计算机预测模型中，其中每个内部节点代表一个属性上的测试，每个分支代表一个测试输出（可能的属性值），每个叶节点代表一种类别。他由分支来对该类型的对象依靠属性进行分类。当不能在进行分割或一个单独的类可以被应用于某一分支时，递归过程就完成了。 A、先画一个方框作为出发点，又称决策节点； B、从出发点向右引出若干条直线，这些直线叫做方案枝； C、在每个方案枝的末端画一个圆圈，这个圆圈称为概率分叉点，或自然状态点； D、从自然状态点引出代表各自然状态的分枝，称为概率分枝； E、如果问题只需要一级决策，则概率分枝末端画三角形，表示终点 。 二、 决策树的作用 尽可能最大化地规避项目风险。 能够直观地通过图示的方式传达信息背后的价值。 显示出项目所有可供选择的行动方案，行动方案之间的关系，行动方案的后果以及发生的概率，甚至是每种方案的损益期望值。 具体的决策树绘制方法与很多，下面给一个国内的强大绘图软件：亿方图软件绘制决策树的方法。 三、实例理解还是纯粹的理论有点不好理解，接下来进行实例，来进一步了解决策树算法。 第一个例子是引用百科的。 3.1 案例一为了适应市场的需要，某地准备扩大电视机生产。市场预测表明：产品销路好的概率为0.7；销路差的概率为0.3。 [ ] 备选方案有三个：第一个方案是建设大工厂，需要投资600万元，可使用10年；如销路好，每年可赢利200万元；如销路不好，每年会亏损40万元。 [ ] 第二个方案是建设小工厂，需投资280万元；如销路好，每年可赢利80万元；如销路不好，每年也会赢利60万元。 [ ] 第三个方案也是先建设小工厂，但是如销路好，3年后扩建，扩建需投资400万元，可使用7年，扩建后每年会赢利190万元。 根据如上绘制决策树如下图所示： 各点期望： 点②：0.7×200×10+0.3×（-40）×10-600（投资）=680（万元） 点⑤：1.0×190×7-400=930（万元） 点⑥：1.0×80×7=560（万元） 比较决策点4的情况可以看到，由于点⑤（930万元）与点⑥（560万元）相比，点⑤的期望利润值较大，因此应采用扩建的方案，而舍弃不扩建的方案。把点⑤的930万元移到点4来，可计算出点③的期望利润值。 点③：0.7×80×3+0.7×930+0.3×60×（3+7）-280 = 719（万元） 最后比较决策点1的情况。由于点③（719万元）与点②（680万元）相比，点③的期望利润值较大，因此取点③而舍点②。这样，相比之下，建设大工厂的方案不是最优方案，合理的策略应采用前3年建小工厂，如销路好，后7年进行扩建的方案。 3.2 实例学习2假设有一项工程，施工管理人员需要决定下月是否开工。如果开工后天气好，则可为国家创收4万元，若开工后天气坏，将给国家造成损失1万元，不开工则损失1000元。根据过去的统计资料，下月天气好的概率是0.3,天气坏的概率是0.7。请做出决策。现采用决策树方法进行决策。 解： 第一步：将题意表格化 自然状态 概率 行动方案 行动方案 开工 不开工 天气好 0.3 40000 -1000 天气坏 0.7 -10000 -1000 第二步：画决策树形，根据第一步所列的表格，在绘制决策树，如下图： 第三步：计算期望值 一般按反向的时间程序逐步计算，将各方案的几种可能结果的数值和它们各自的概率相乘，并汇总所得之和，其和就是该方案的期望值。 第四步：确定决策方案 在比较方案考虑的是收益值时，则取最大期望值；若考虑的是损失时，则取最小期望值。根据计算出的期望值分析，本题采取开工方案较好。 更多的可以参考这个PPT]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-        <tag>决策树</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[2.5 梯度下降和最小二乘法]]></title>
     <url>%2F%2Ftiduxiajiang%2F</url>
     <content type="text"><![CDATA[摘要本节笔记主要记录梯度下降算法和最小二乘法的相同点和不同点，为了简单的理解和推导，我们暂只讨论一元线性回归下的梯度下降算法和最小二乘。从实现++代码上的最大不同就是梯度下降采用了迭代算法—预先给一个参数设置初始值，然后通过迭代和学习率实现线性方程直线的无限靠近理想函数。最小二乘采用了高中数学求凸函数（下凹）的最小值—即求导数为零的参数方程。 Edit By Porter, 积水成渊,蛟龙生焉。 梯度下降和最小二乘发的相同点和不同点如下： 第一部分、最小二乘法1.1 狭义的最小二乘法：指的是在线性回归下采用最小二乘准则（或者说叫做最小平方），进行线性拟合参数求解的、矩阵形式的公式方法，是线性假设下的一种有闭式解的参数求解方法，最终结果为全局最优； 1.2 广义的最小二乘法：是最小二乘准则，本质上是一种evaluation rule或者说objective funcion。是一种对于偏差程度的评估准则。 梯度下降法，是假设条件更为广泛（无约束）的，一种通过迭代更新来逐步进行的参数优化方法，最终结果为局部最优； 1.3 最小二乘与极大似然的区别 二乘法：即观测值与实际数据误差平方和最小，其没有假设，几何意义上就是距离最小 最大似然估计：估计参数可能值，使样本发生概率最大 1.4 对于回归问题，两者对于最优参数的不同解法假设一元回归方程为 $$f(x_i)=\omega x_i +b$$ 实际中我们会采样得到关于[x,y]的很多样本，此时我们会通过损失函数loss，来求最优$\omega , b$的最优解。 $$loss = (\omega x + b -y)^2$$ 假设$E_(\omega, b)=loss_(\omega, b)$,于是： 为求得最优的$\omega ， b$,即求解$E_(\omega, b)=\sum_{i=1}^{m} (y_i - \omega x_i -b)^2$的最小取值下的$\omega ， b$ 最优解。 注意此时的$E_(\omega, b)$是一个凸函数，注意也就是对应国内教材下凹函数曲线。 1.5 最小二乘法的求解最优的$\omega ， b$的方法直接通过对$E_(\omega, b)$ 对$\omega ， b$ 分别求偏导，并将偏导设为0，求取凸函数取得最小值下的对应$\omega ， b$ 参数。 1.6 最小二乘法的局限性和适用场景 从上面可以看出，最小二乘法适用简洁高效，比梯度下降这样的迭代法似乎方便很多。但是这里我们就聊聊最小二乘法的局限性。 首先，最小二乘法需要计算的逆矩阵，有可能它的逆矩阵不存在，这样就没有办法直接用最小二乘法了，此时梯度下降法仍然可以使用。当然，我们可以通过对样本数据进行整理，去掉冗余特征。让的行列式不为0，然后继续使用最小二乘法。 第二，当样本特征n非常的大的时候，计算的逆矩阵是一个非常耗时的工作（nxn的矩阵求逆），甚至不可行。此时以梯度下降为代表的迭代法仍然可以使用。那这个n到底多大就不适合最小二乘法呢？如果你没有很多的分布式大数据计算资源，建议超过10000个特征就用迭代法吧。或者通过主成分分析降低特征的维度后再用最小二乘法。 第三，如果拟合函数不是线性的，这时无法使用最小二乘法，需要通过一些技巧转化为线性才能使用，此时梯度下降仍然可以用。 第四，讲一些特殊情况。当样本量m很少，小于特征数n的时候，这时拟合方程是欠定的，常用的优化方法都无法去拟合数据。当样本量m等于特征说n的时候，用方程组求解就可以了。当m大于n时，拟合方程是超定的，也就是我们常用与最小二乘法的场景了。 原文地址：http://www.cnblogs.com/pinard/p/5976811.html 第二部分、梯度下降算法2.1 梯度下降算法的求解最优的$\omega ， b$的方法同样，梯度下降算法也是要求最小损失函数 $$loss = (\omega x + b -y)^2$$ 但是方法不一样了，梯度下降算法，在上面的基础上设定一个学习率的参数，假设为:$lr$ 对于待求解的参数$\omega ， b$ 则转化为 –&gt; 求最终待求的$\omega ‘ ， b’$ 关于前一时刻的$\omega ， b$ 的函数，如下 $$\frac{\bigtriangledown loss}{\bigtriangledown \omega} = \frac{2(\omega x+b-y)*x}{N}$$ $$\frac{\bigtriangledown loss}{\bigtriangledown b} = \frac{2(\omega x+b-y)}{N}$$ 2.2 梯度下降算法的算法核心公式对于$\omega$和$b$ , 算法的核心在于如何更新这两个参数，这两个参数的更新不是能用公式可以简单的推到的，但是可以用下面的举例进行理解 $\omega$和$b$ 参数更新的理解，首先我们需要的是最小化这个loss代价函数，这个代价函数是一个下凸函数，所以我们按照凸函数的特点来理解，类似于一个山，人闭着眼往山下走小碎步(这个小碎步就是学习率乘梯度，如下公式) $$lr * \frac{\bigtriangledown loss}{\bigtriangledown \omega}$$ 我们要求解的是，找这个loss的局部最优解，由于我们是针对线性一元的，所以loss是只有一个极小值点，也就是局部解就是最优解，所以接下来理解。 人要走到山下，那么问题来了，我怎么怎么确保我们一直是朝向山谷走的呢，(比如人走在山谷的左边,应该接着忘右边走，才能到达山谷；又如，我们走超了，小碎步跨大了，跨到山谷的左边去了，我们应该要要朝山谷的左边走才能到山谷)，这里就需要个方向，这个在局部最优点的左边还是右边的方向由$\frac{\bigtriangledown loss}{\bigtriangledown \omega}$ 确定。 第三个问题是，人走小碎步时，要的方向是朝着局部最优点(山谷)走的,即loss数值(代价函数)减少的方向，所以我们要在小碎步前乘以负数，来确保，取(点，人)在(山)左边时(左边时梯度=斜率，就是loss的导数为负数,负数乘以负数，就为正数)我们要确保我们需要预测的$\omega , b$所确定的 $$f(x; \omega , b)= \omega * x+b$$ 接近原数据y,所以对于价值函数，人在左边时 $\omega$, 我们要确保人是往loss梯度下降(loss减少)的方向移动, 此时$\omega$ 就可以看作走碎步的人，方向都已确定 $$-lr * \frac{\bigtriangledown loss}{\bigtriangledown \omega}$$ ,现在就是在前一步$\omega_{0}$ 的基础上，走下一步得到 $\omega_{1}$即有 $$\omega_{1} = \omega_{0}+(-lr*\frac{\bigtriangledown loss}{\bigtriangledown \omega})$$ 进一步简化为 $$\omega ‘=\omega - lr * \frac{\bigtriangledown loss}{\bigtriangledown \omega}$$ 同理： 人，走碎步(小碎步的步长是$- lr * \frac{\bigtriangledown loss}{\bigtriangledown b}$)，上一步是b, 方向是$\frac{\bigtriangledown loss}{\bigtriangledown \omega}$ ,走到的下一步就是$b^{‘}$ ,即得到 $$b ‘=b - lr * \frac{\bigtriangledown loss}{\bigtriangledown b}$$ 根据上面的式子，假设学习率lr的初始值为0，然后通过for循环进行迭代，此时求解的关于$\omega ， b$ 的曲线会随着迭代的次数增加，一步步无限的靠近最优的解，理论上会求解到最优的$\omega ， b$ 。 这里我相信题主对梯度下降法的整体理念是认可的，只是不清楚这个更新公式的实质含义。首先这个梯度更新公式确实不是推导而是创造出来的，所以只能从概念上去理解。设想下有个函数，你的目标是：找到一个参数 使得它的值 最小。但它很复杂，你无法找到这个参数的解析解，所以你希望通过梯度下降法去猜这个参数。 问题是怎么猜？对于多数有连续性的函数来说，显然不可能把每个 都试一遍。所以只能先随机取一个 ，然后看看怎么调整它最有可能使得 变小。把这个过程重复n遍，自然最后得到的 的估值会越来越小。 作者：老董链接：https://www.zhihu.com/question/57747902/answer/240695458 来源：知乎 针对上面的一元回归梯度下降算法的代码实现，如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455import numpy as np# y = wx + bdef compute_error_for_line_given_points(b, w, points): totalError = 0 for i in range(0, len(points)): x = points[i, 0] y = points[i, 1] totalError += (y - (w * x + b)) ** 2 return totalError / float(len(points))def step_gradient(b_current, w_current, points, learningRate): b_gradient = 0 w_gradient = 0 N = float(len(points)) for i in range(0, len(points)): x = points[i, 0] y = points[i, 1] b_gradient += -(2/N) * (y - ((w_current * x) + b_current)) w_gradient += -(2/N) * x * (y - ((w_current * x) + b_current)) new_b = b_current - (learningRate * b_gradient) new_m = w_current - (learningRate * w_gradient) return [new_b, new_m]def gradient_descent_runner(points, starting_b, starting_m, learning_rate, num_iterations): b = starting_b m = starting_m for i in range(num_iterations): b, m = step_gradient(b, m, np.array(points), learning_rate) return [b, m]def run(): points = np.genfromtxt("data.csv", delimiter=",") learning_rate = 0.0001 initial_b = 0 # initial y-intercept guess initial_m = 0 # initial slope guess num_iterations = 1000 print("Starting gradient descent at b = &#123;0&#125;, m = &#123;1&#125;, error = &#123;2&#125;" .format(initial_b, initial_m, compute_error_for_line_given_points(initial_b, initial_m, points)) ) print("Running...") [b, m] = gradient_descent_runner(points, initial_b, initial_m, learning_rate, num_iterations) print("After &#123;0&#125; iterations b = &#123;1&#125;, m = &#123;2&#125;, error = &#123;3&#125;". format(num_iterations, b, m, compute_error_for_line_given_points(b, m, points)) )if __name__ == '__main__': run() 对应的数据集如下(data.csv)： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910032.502345269453031,31.7070058465699253.426804033275019,68.7775959816389161.530358025636438,62.56238229794580347.475639634786098,71.54663223356777759.813207869512318,87.23092513368739355.142188413943821,78.21151827079923252.211796692214001,79.6419730498087439.299566694317065,59.17148932186950848.10504169176825,75.33124229706305652.550014442733818,71.30087988685035345.419730144973755,55.16567714595912354.351634881228918,82.47884675749791944.164049496773352,62.00892324572582558.16847071685779,75.39287042599495756.727208057096611,81.4361921588786448.955888566093719,60.72360244067396544.687196231480904,82.89250373145371560.297326851333466,97.37989686216607845.618643772955828,48.84715331735507238.816817537445637,56.87721318626850666.189816606752601,83.87856466460276365.41605174513407,118.5912173025224947.48120860786787,57.25181946226896941.57564261748702,51.39174407983230751.84518690563943,75.38065166531235759.370822011089523,74.76556403215137457.31000343834809,95.45505292257473763.615561251453308,95.22936601755530746.737619407976972,79.05240616956558650.556760148547767,83.43207142132371252.223996085553047,63.35879031749787835.567830047746632,41.41288530370056342.436476944055642,76.61734128007404458.16454011019286,96.76956642610819957.504447615341789,74.08413011660252345.440530725319981,66.58814441422859461.89622268029126,77.76848241779302433.093831736163963,50.71958891231208436.436009511386871,62.12457081807178137.675654860850742,60.81024664990221144.555608383275356,52.68298336638778143.318282631865721,58.56982471769286750.073145632289034,82.90598148507051243.870612645218372,61.42470980433912362.997480747553091,115.2441528007952932.669043763467187,45.57058882337608540.166899008703702,54.08405479622361253.575077531673656,87.99445275811041333.864214971778239,52.72549437590042564.707138666121296,93.57611869265824138.119824026822805,80.16627544737096444.502538064645101,65.10171157056032640.599538384552318,65.56230126040037541.720676356341293,65.28088692082282351.088634678336796,73.43464154632430155.078095904923202,71.1397278586189441.377726534895203,79.10282968354985762.494697427269791,86.52053844034715349.203887540826003,84.74269780782621841.102685187349664,59.35885024862493341.182016105169822,61.68403752483362750.186389494880601,69.84760415824918352.378446219236217,86.09829120577410350.135485486286122,59.10883926769964333.644706006191782,69.8996816436276339.557901222906828,44.86249071116439856.130388816875467,85.49806777884022357.362052133238237,95.53668684646721960.269214393997906,70.25193441977158735.678093889410732,52.72173496477498831.588116998132829,50.39267013507989653.66093226167304,63.64239877565775346.682228649471917,72.24725106866236543.107820219102464,57.81251297618140270.34607561504933,104.2571015854382244.492855880854073,86.64202031882200657.50453330326841,91.48677800011013536.930076609191808,55.23166088621283655.805733357942742,79.55043667850760938.954769073377065,44.84712424246760156.901214702247074,80.20752313968276356.868900661384046,83.1427497920434634.33312470421609,55.72348926054391459.04974121466681,77.63418251167786457.788223993230673,99.05141484174826954.282328705967409,79.12064627468002751.088719898979143,69.58889785111847550.282836348230731,69.51050331149438944.211741752090113,73.68756431831728538.005488008060688,61.36690453724013132.940479942618296,67.17065576899511853.691639571070056,85.66820314500154268.76573426962166,114.8538712339139446.230966498310252,90.12357206996742368.319360818255362,97.91982103524284850.030174340312143,81.53699078301502849.239765342753763,72.11183246961566350.039575939875988,85.23200734232567348.149858891028863,66.22495788805463225.128484647772304,53.454394214850524 总结以上就是关于简单的一元回归的关于梯度下降和最小二乘的区别，对于代码中，的迭代的实现下一小节中会有详细的介绍，会通过代码来直观例说迭代算法和递归算法的差异和原理。 无聊时刻看部综艺：]]></content>
@@ -494,6 +482,18 @@
       <tags>
         <tag>Algorithm</tag>
         <tag>梯度下降和最小二乘法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2.4 Decision tree]]></title>
+    <url>%2F%2Fdecisiontree%2F</url>
+    <content type="text"><![CDATA[摘要决策树是在已知各种情况发生的概率的基础上，通过决策树来求取净现值的期望值大于或等于零的概率，从而评价项目风险，判断其可能性的决策分析方法，是直观的运用概率分析的一种图解方法。由于决策树画成的图像就像一棵树的树干，故称决策树。在机器学习中决策树是一种预测模型，他表示对象属性和对象之间的一种映射关系。决策树是一种判断其可行性的决策分析的方法，也是一种能够直观运用概率分析的一种图解法。 Edit By Porter, 积水成渊,蛟龙生焉。 决策树是一种树形结构，其中每个内部节点表示一个属性上的测试，每个分支代表一个测试输出，每个叶节点代表一种类别。 分类树（决策树）是一种十分常用的分类方法。他是一种监管学习，所谓监管学习就是给定一堆样本，每个样本都有一组属性和一个类别，这些类别是事先确定的，那么通过学习得到一个分类器，这个分类器能够对新出现的对象给出正确的分类。这样的机器学习就被称之为监督学习。 参考自百度百科：决策树 一、组成 决策树是一种树形的结构图，在计算机预测模型中，其中每个内部节点代表一个属性上的测试，每个分支代表一个测试输出（可能的属性值），每个叶节点代表一种类别。他由分支来对该类型的对象依靠属性进行分类。当不能在进行分割或一个单独的类可以被应用于某一分支时，递归过程就完成了。 A、先画一个方框作为出发点，又称决策节点； B、从出发点向右引出若干条直线，这些直线叫做方案枝； C、在每个方案枝的末端画一个圆圈，这个圆圈称为概率分叉点，或自然状态点； D、从自然状态点引出代表各自然状态的分枝，称为概率分枝； E、如果问题只需要一级决策，则概率分枝末端画三角形，表示终点 。 二、 决策树的作用 尽可能最大化地规避项目风险。 能够直观地通过图示的方式传达信息背后的价值。 显示出项目所有可供选择的行动方案，行动方案之间的关系，行动方案的后果以及发生的概率，甚至是每种方案的损益期望值。 具体的决策树绘制方法与很多，下面给一个国内的强大绘图软件：亿方图软件绘制决策树的方法。 三、实例理解还是纯粹的理论有点不好理解，接下来进行实例，来进一步了解决策树算法。 第一个例子是引用百科的。 3.1 案例一为了适应市场的需要，某地准备扩大电视机生产。市场预测表明：产品销路好的概率为0.7；销路差的概率为0.3。 [ ] 备选方案有三个：第一个方案是建设大工厂，需要投资600万元，可使用10年；如销路好，每年可赢利200万元；如销路不好，每年会亏损40万元。 [ ] 第二个方案是建设小工厂，需投资280万元；如销路好，每年可赢利80万元；如销路不好，每年也会赢利60万元。 [ ] 第三个方案也是先建设小工厂，但是如销路好，3年后扩建，扩建需投资400万元，可使用7年，扩建后每年会赢利190万元。 根据如上绘制决策树如下图所示： 各点期望： 点②：0.7×200×10+0.3×（-40）×10-600（投资）=680（万元） 点⑤：1.0×190×7-400=930（万元） 点⑥：1.0×80×7=560（万元） 比较决策点4的情况可以看到，由于点⑤（930万元）与点⑥（560万元）相比，点⑤的期望利润值较大，因此应采用扩建的方案，而舍弃不扩建的方案。把点⑤的930万元移到点4来，可计算出点③的期望利润值。 点③：0.7×80×3+0.7×930+0.3×60×（3+7）-280 = 719（万元） 最后比较决策点1的情况。由于点③（719万元）与点②（680万元）相比，点③的期望利润值较大，因此取点③而舍点②。这样，相比之下，建设大工厂的方案不是最优方案，合理的策略应采用前3年建小工厂，如销路好，后7年进行扩建的方案。 3.2 实例学习2假设有一项工程，施工管理人员需要决定下月是否开工。如果开工后天气好，则可为国家创收4万元，若开工后天气坏，将给国家造成损失1万元，不开工则损失1000元。根据过去的统计资料，下月天气好的概率是0.3,天气坏的概率是0.7。请做出决策。现采用决策树方法进行决策。 解： 第一步：将题意表格化 自然状态 概率 行动方案 行动方案 开工 不开工 天气好 0.3 40000 -1000 天气坏 0.7 -10000 -1000 第二步：画决策树形，根据第一步所列的表格，在绘制决策树，如下图： 第三步：计算期望值 一般按反向的时间程序逐步计算，将各方案的几种可能结果的数值和它们各自的概率相乘，并汇总所得之和，其和就是该方案的期望值。 第四步：确定决策方案 在比较方案考虑的是收益值时，则取最大期望值；若考虑的是损失时，则取最小期望值。根据计算出的期望值分析，本题采取开工方案较好。 更多的可以参考这个PPT]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>决策树</tag>
       </tags>
   </entry>
   <entry>
@@ -523,19 +523,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[2.13 局部响应归一化]]></title>
-    <url>%2F%2FLRN%2F</url>
-    <content type="text"><![CDATA[摘要LRN(Local Reponse Normalization, 局部响应归一化), 该层中其作用类似DROPOUT和数据增强作为relu激励之后防止数据过拟合而提出的一种处理方法。 作用： 有利于增加泛化能力 做了平滑处理 防止过拟合 LRN 层模仿生物神经系统的侧抑制机制，对局部神经元的活动创建竞争机制，使得响应比较大的值相对更大，提高模型的泛化能力。 Edit By Porter, 积水成渊,蛟龙生焉。]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>Algorithm</tag>
-        <tag>LRN</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[2.12 logistic regression]]></title>
     <url>%2F%2FlogisticRe%2F</url>
     <content type="text"><![CDATA[摘要 Edit By Porter, 积水成渊,蛟龙生焉。]]></content>
@@ -546,6 +533,19 @@
         <tag>Deep Learning</tag>
         <tag>Algorithm</tag>
         <tag>logistic regression</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2.13 局部响应归一化]]></title>
+    <url>%2F%2FLRN%2F</url>
+    <content type="text"><![CDATA[摘要LRN(Local Reponse Normalization, 局部响应归一化), 该层中其作用类似DROPOUT和数据增强作为relu激励之后防止数据过拟合而提出的一种处理方法。 作用： 有利于增加泛化能力 做了平滑处理 防止过拟合 LRN 层模仿生物神经系统的侧抑制机制，对局部神经元的活动创建竞争机制，使得响应比较大的值相对更大，提高模型的泛化能力。 Edit By Porter, 积水成渊,蛟龙生焉。]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>Algorithm</tag>
+        <tag>LRN</tag>
       </tags>
   </entry>
   <entry>
@@ -601,22 +601,35 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[2.6 递归算法与迭代算法]]></title>
-    <url>%2F%2Fdiguiyudiedai%2F</url>
-    <content type="text"><![CDATA[摘要本文主要记录迭代算法的相关笔记 Edit By Porter, 积水成渊,蛟龙生焉。 一、引入实例举个例子(引用)我想求1+2+3+4+..+100的值。 迭代的做法： 从1到100，顺着往下累加。1+2=3,3+3=6,6+4=10,10+5=15……程序表示 1234int i=1,sum=0;while(i&lt;=100)&#123; sum = sum +i; &#125; 递归的做法： 我要求1到100的累加值，如果我已经得到1到99的累加值，将这个值加上100就是1到100的累加值； 要得到1到99的累加值，如果已经得到1到98的累加值，将这个值加上99，就是1到99的累加值…… 最后我要得到1到2的累加值，我如果得到1自身累加值，再加上2即可，1自身的累加值显然就是1了。 于是现在我们得到了1到2的累加值，将这个值加3就得到了1到3的累加值，……最后直到得到1到100的累加值。 程序表示，其中函数会调用自身，这就是递归方法的典型特征 12345int GetSum(int n)&#123; if(n&lt;=0) return 0; else return n+GetSum(n-1);&#125; 上述例子中，其实递归最后得到结果也是用迭代方法完成的，只是在程序的处理上直观看不出来。 两者都能很好的完成计算任务，不同之处在于思维方式上，从而导致不同的计算方法： 迭代是正向思维，从头到尾思考问题； 递归是逆向思维，他假设我们已经得到了部分结果(假设我已经知道了1到99的累加值，把这个值加上100我们就得到了1到100的累加值了)，从尾部追溯到头部，从而让问题简化(当然这个例子中看不出来，这里只是方便理解）]]></content>
+    <title><![CDATA[K近邻算法]]></title>
+    <url>%2F%2Fkjinglin%2F</url>
+    <content type="text"><![CDATA[摘要K近邻算法(K-nearest neighbor, k-NN)是一种基本的分类与回归的方法。 k近邻算法： 输入：训练数据集 $$T={(x_{1},y_{1}), (x_{2},y_{2})…, (x_{N},y_{N})}$$ 其中 $$x_{i}\epsilon \chi \subseteq R^{n}$$ 为实例的特征向量 $$y_{i} \epsilon Y={c_{1}, c_{2}……, c_{K}, }$$ 为实例的类别,i=1,2,…,N 输出：给定实例x，要能输出新给的特征向量所属y中的类 (1). 根据给定的距离度量，在训练集T中找出与x最邻近的k个点，涵盖这k个点的x的邻域基座 $N_{k} (x)$ ; (2). 在 $N_{k} (x)$ 中根据分类决策规则（如多数表决表，对$N_{k} (x)$ 进行排序，然后取出现频率最高的第k个点的类）决定x的类别y： $$y=arg\, \max_{c_{j}}^{\ } \sum_{x_{i}\subseteq N_{k}(x)}^{\ } I(y_{i}=c_{j})$$ 其中I为指示函数，为$$y_{i}=c_{j}$$情况下, I = 1 否则I = 0 Edit By Porter, 积水成渊,蛟龙生焉。 更通俗的理解可以为如下： KNN是通过测量不同特征值之间的距离进行分类 它的思路是： 如果选择一个待分类的样本，其在特征空间中有k个最相似的样本值（即特征空间中和这个待分类的点为最邻近点集）。 这k个样本集中的绝大多数属于某一类别，则该待分类的样本也属于这个绝大多数的同一类别。 其中K通常是不大于20的整数。 KNN算法中，所选择的邻居都是已经正确分类的对象。该方法在定类决策上只依据最邻近的一个或者几个样本的类别来决定待分样本所属的类别。 例子下面通过一个简单的例子说明一下：如下图，绿色圆要被决定赋予哪个类，是红色三角形还是蓝色四方形？如下图所示 如果K=3，最小的圆, 由于红色三角形所占比例为2/3，绿色圆将被赋予红色三角形那个类。 如果K=5，虚线内，由于蓝色四方形比例为3/5，因此绿色圆被赋予蓝色四方形类。 由此也说明了KNN算法的结果很大程度取决于K的选择。 在KNN中，通过计算对象间距离来作为各个对象之间的非相似性指标，避免了对象之间的匹配问题，在这里距离一般使用欧氏距离或曼哈顿距离： 欧氏距离：$$d(x,y)=\sqrt{\sum_{k=1}^{n}(x_{k}-y_{k})^{2}}$$ 曼哈顿距离：$$d(x,y)=\sqrt{\sum_{k=1}^{n}|x_{k}-y_{k}|}$$ 同时，KNN通过依据k个对象中占优的类别进行决策，而不是单一的对象类别决策。这两点就是KNN算法的优势。 接下来对KNN算法的思想总结一下就是在训练集中数据和标签已知的情况下，输入测试数据，将测试数据的特征与训练集中对应的特征进行相互比较，找到训练集中与之最为相似的前K个数据，则该测试数据对应的类别就是K个数据中出现次数最多的那个分类，其算法的描述为： 1）计算测试数据与各个训练数据之间的距离； 2）按照距离的递增关系进行排序； 3）选取距离最小的K个点； 4）确定前K个点所在类别的出现频率； 5）返回前K个点中出现频率最高的类别作为测试数据的预测分类。 python 代码实现： 123456789101112131415161718192021222324252627282930313233343536#coding:utf-8from numpy import *import operator##给出训练数据以及对应的类别def createDataSet(): group = array([[1.0,2.0],[1.2,0.1],[0.1,1.4],[0.3,3.5]]) labels = ['A','A','B','B'] return group,labels###通过KNN进行分类def classify(input,dataSe t,label,k): dataSize = dataSet.shape[0] ####计算欧式距离 diff = tile(input,(dataSize,1)) - dataSet sqdiff = diff ** 2 squareDist = sum(sqdiff,axis = 1)###行向量分别相加，从而得到新的一个行向量 dist = squareDist ** 0.5 ##对距离进行排序 sortedDistIndex = argsort(dist)##argsort()根据元素的值从大到小对元素进行排序，返回下标 classCount=&#123;&#125; for i in range(k): voteLabel = label[sortedDistIndex[i]] ###对选取的K个样本所属的类别个数进行统计 classCount[voteLabel] = classCount.get(voteLabel,0) + 1 ###选取出现的类别次数最多的类别 maxCount = 0 for key,value in classCount.items(): if value &gt; maxCount: maxCount = value classes = key return classes 测试代码如下： 12345678910#-*-coding:utf-8 -*-import syssys.path.append("...文件路径...")import KNNfrom numpy import *dataSet,labels = KNN.createDataSet()input = array([1.1,0.3])K = 3output = KNN.classify(input,dataSet,labels,K)print("测试数据为:",input,"分类结果为：",output) 回车之后的结果为： 测试数据为： [ 1.1 0.3] 分类为： A 答案符合我们的预期，要证明算法的准确性，势必还需要通过处理复杂问题进行验证，之后另行说明。 【提示】python版本为3.7 具体的KNN视频教程地址为： 参考参考文档来源1:Yabea-博客 参考文档来源2:李航-统计学习方法]]></content>
       <categories>
         <category>Deep Learning</category>
       </categories>
       <tags>
         <tag>Deep Learning</tag>
         <tag>Algorithm</tag>
-        <tag>迭代算法</tag>
+        <tag>KNN</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Prioritized Experience Replay]]></title>
     <url>%2F%2FPrioritizedEP%2F</url>
     <content type="text"><![CDATA[摘要 创新点：在抽取经验池中过往经验样本时，采取按优先级抽取的方法 改进：同上 改进原因： 原来随机抽取经验忽略了经验之间的重要程度，实际上如人脑中一定会有更为重要的记忆 带来益处：使得算法更快收敛，效果更好 经验回放使得在线强化学习的agent能够记住和重新利用过去的经验，在以往的研究中，过去的经验（transition，经验池中的一条记录，表示为元祖形式，包含state，action，reward,discount factor,next state），只是通过均匀采样来获取。然而这种方法，只要原来有过这个经验，那么就跟别的经验以相同的概率会被再次利用，忽略了这些经验各自的重要程度。 本文我们提出了一种优先回放结构，这种方法可以使重要的经验被回放的概率大，从而使学习变得更有效率。 Edit By Porter, 积水成渊,蛟龙生焉。 论文笔记7：Prioritized Experience Replay]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>Algorithm</tag>
+        <tag>神经网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2.7 神经网络浅学笔记]]></title>
+    <url>%2F%2Fshenjingwanguo%2F</url>
+    <content type="text"><![CDATA[摘要本文主要记录神经网络相关的基础知识 Edit By Porter, 积水成渊,蛟龙生焉。 一、神经网络神经网络是一种模拟人脑的神经网络以期能够实现类人工智能的机器学习技术。 对于神经元的研究由来已久，1904年生物学家就已经知晓了神经元的组成结构。 一个神经元通常具有多个树突，主要用来接受传入信息；而轴突只有一条，轴突尾端有许多轴突末梢可以给其他多个神经元传递信息。轴突末梢跟其他神经元的树突产生连接，从而传递信号。这个连接的位置在生物学上叫做“突触”。 1.1 神经元1.1.1 让我们来看一个经典的神经网络。这是一个包含三个层次的神经网络。 红色的是输入层，绿色的是输出层，紫色的是中间层（也叫隐藏层）。 输入层有3个输入单元，隐藏层有4个单元，输出层有2个单元。 后文中，我们统一使用这种颜色来表达神经网络的结构。 1.1.2 在开始介绍前，有一些知识可以先记在心里 设计一个神经网络时，输入层与输出层的节点数往往是固定的，中间层则可以自由指定； 神经网络结构图中的拓扑与箭头代表着预测过程时数据的流向，跟训练时的数据流有一定的区别； 结构图里的关键不是圆圈（代表“神经元”），而是连接线（代表“神经元”之间的连接）。每个连接线对应一个不同的权重（其值称为权值），这是需要训练得到的。 1.1.3 神经元结构神经元模型是一个包含输入，输出与计算功能的模型。输入可以类比为神经元的树突，而输出可以类比为神经元的轴突，计算则可以类比为细胞核。 下图是一个典型的神经元模型：包含有3个输入，1个输出，以及2个计算功能。注意中间的箭头线。这些线称为“连接”。每个上有一个“权值”。 连接是神经元中最重要的东西。每一个连接上都有一个权重。 一个神经网络的训练算法就是让权重的值调整到最佳，以使得整个网络的预测效果最好。 我们使用a来表示输入，用w来表示权值。一个表示连接的有向箭头可以这样理解：在初端，传递的信号大小仍然是a，端中间有加权参数w，经过这个加权后的信号会变成aw，因此在连接的末端，信号的大小就变成了aw。 在其他绘图模型里，有向箭头可能表示的是值的不变传递。而在神经元模型里，每个有向箭头表示的是值的加权传递。 如果我们将神经元图中的所有变量用符号表示，并且写出输出的计算公式的话，就是下图。 可见z是在输入和权值的线性加权和叠加了一个函数g的值。在MP模型里，函数g是sgn函数，也就是取符号函数。这个函数当输入大于0时，输出1，否则输出0。 下面对神经元模型的图进行一些扩展。首先将sum函数与sgn函数合并到一个圆圈里，代表神经元的内部计算。其次，把输入a与输出z写到连接线的左上方，便于后面画复杂的网络。最后说明，一个神经元可以引出多个代表输出的有向箭头，但值都是一样的。 神经元可以看作一个计算与存储单元。计算是神经元对其的输入进行计算功能。存储是神经元会暂存计算结果，并传递到下一层。 当我们用“神经元”组成网络以后，描述网络中的某个“神经元”时，我们更多地会用“单元”（unit）来指代。同时由于神经网络的表现形式是一个有向图，有时也会用“节点”（node）来表达同样的意思。 1.1.4 神经元模型的使用可以这样理解 我们有一个数据，称之为样本。样本有四个属性，其中三个属性已知，一个属性未知。我们需要做的就是通过三个已知属性预测未知属性。 具体办法就是使用神经元的公式进行计算。三个已知属性的值是a1，a2，a3，未知属性的值是z。z可以通过公式计算出来。 这里，已知的属性称之为特征，未知的属性称之为目标。假设特征与目标之间确实是线性关系，并且我们已经得到表示这个关系的权值w1，w2，w3。那么，我们就可以通过神经元模型预测新样本的目标。 1.2 单层神经网络（感知器）1958年，计算科学家Rosenblatt提出了由两层神经元组成的神经网络。他给它起了一个名字–“感知器”（Perceptron） 感知器是当时首个可以学习的人工神经网络。 1.2.1 感知器模型结构在原来MP模型的“输入”位置添加神经元节点，标志其为“输入单元”。其余不变，于是我们就有了下图：从本图开始，我们将权值w1, w2, w3写到“连接线”的中间。 在“感知器”中，有两个层次。分别是输入层和输出层。输入层里的“输入单元”只负责传输数据，不做计算。输出层里的“输出单元”则需要对前面一层的输入进行计算。 我们把需要计算的层次称之为“计算层”，并把拥有一个计算层的网络称之为“单层神经网络”。有一些文献会按照网络拥有的层数来命名，例如把“感知器”称为两层神经网络。但在本文里，我们根据计算层的数量来命名。 假如我们要预测的目标不再是一个值，而是一个向量，例如[2,3]。那么可以在输出层再增加一个“输出单元”。 可以看到，z1的计算跟原先的z并没有区别。 我们已知一个神经元的输出可以向多个神经元传递，因此z2的计算公式如下图。 可以看到，z2的计算中除了三个新的权值：w4，w5，w6以外，其他与z1是一样的。整个网络的输出如下图。 目前的表达公式有一点不让人满意的就是：w4，w5，w6是后来加的，很难表现出跟原先的w1，w2，w3的关系。 因此我们改用二维的下标，用wx,y来表达一个权值。下标中的x代表后一层神经元的序号，而y代表前一层神经元的序号（序号的顺序从上到下）。 例如，w1,2代表后一层的第1个神经元与前一层的第2个神经元的连接的权值（这种标记方式参照了Andrew Ng的课件）。根据以上方法标记，我们有了下图。 如果我们仔细看输出的计算公式，会发现这两个公式就是线性代数方程组。因此可以用矩阵乘法来表达这两个公式。 例如，输入的变量是[a1，a2，a3]T（代表由a1，a2，a3组成的列向量），用向量a来表示。方程的左边是[z1，z2]T，用向量z来表示。 系数则是矩阵W（2行3列的矩阵，排列形式与公式中的一样）。 于是，输出公式可以改写成： $$g(W * a) = z;$$ 这个公式就是神经网络中从前一层计算后一层的矩阵运算。 1.2.2 效果与神经元模型不同，感知器中的权值是通过训练得到的。因此，根据以前的知识我们知道，感知器类似一个逻辑回归模型，可以做线性分类任务。 我们可以用决策分界来形象的表达分类的效果。决策分界就是在二维的数据平面中划出一条直线，当数据的维度是3维的时候，就是划出一个平面，当数据的维度是n维时，就是划出一个n-1维的超平面。 下图显示了在二维平面中划出决策分界的效果，也就是感知器的分类效果。 感知器只能做简单的线性分类任务。 1.3 两层神经网络（多层感知器）Minsky说过单层神经网络无法解决异或问题。但是当增加一个计算层以后，两层神经网络不仅可以解决异或问题，而且具有非常好的非线性分类效果。不过两层神经网络的计算是一个问题，没有一个较好的解法。 1986年，Rumelhar和Hinton等人提出了反向传播（Backpropagation，BP）算法，解决了两层神经网络所需要的复杂计算量问题，从而带动了业界使用两层神经网络研究的热潮。目前，大量的教授神经网络的教材，都是重点介绍两层（带一个隐藏层）神经网络的内容。 这时候的Hinton还很年轻，30年以后，正是他重新定义了神经网络，带来了神经网络复苏的又一春。 1.3.1 两层神经网络的结构（多层感知器）Minsky说过单层神经网络无法解决异或问题。但是当增加一个计算层以后，两层神经网络不仅可以解决异或问题，而且具有非常好的非线性分类效果。不过两层神经网络的计算是一个问题，没有一个较好的解法。 两层神经网络除了包含一个输入层，一个输出层以外，还增加了一个中间层。此时，中间层和输出层都是计算层。我们扩展上节的单层神经网络，在右边新加一个层次（只含有一个节点）。 现在，我们的权值矩阵增加到了两个，我们用上标来区分不同层次之间的变量。 例如$$a_{x} ^{(y)}$$代表第y层的第x个节点。$$z_{1},z_{2}$$变成了$$a_{1} ^{(2)} , a_{2} ^{(2)}$$。下图给出了$$a_{1} ^{(2)} , a_{2} ^{(2)}$$的计算公式。 计算最终输出z的方式是利用了中间层的$$a_{1} ^{(2)}, a_{2} ^{(2)}$$和第二个权值矩阵计算得到的，如下图。 假设我们的预测目标是一个向量，那么与前面类似，只需要在“输出层”再增加节点即可。 我们使用向量和矩阵来表示层次中的变量。$$a_{1} , a_{2} , z $$是网络中传输的向量数据。$$W^{(1)}, W^{(2)}$$是网络的矩阵参数。如下图。 使用矩阵运算来表达整个计算公式的话如下： $$g(W^{(1)} a^{(1)}) = a^{(2)}; g(W^{(2)} a^{(2)}) = z;$$ 上面写的全是权重w但还未引入偏置。下面我们接着写偏置 由此可见，使用矩阵运算来表达是很简洁的，而且也不会受到节点数增多的影响（无论有多少节点参与运算，乘法两端都只有一个变量）。因此神经网络的教程中大量使用矩阵运算来描述。 需要说明的是，至今为止，我们对神经网络的结构图的讨论中都没有提到偏置节点（bias unit）。事实上，这些节点是默认存在的。它本质上是一个只含有存储功能，且存储值永远为1的单元。在神经网络的每个层次中，除了输出层以外，都会含有这样一个偏置单元。正如线性回归模型与逻辑回归模型中的一样。 偏置单元与后一层的所有节点都有连接，我们设这些参数值为向量b，称之为偏置。如下图。 可以看出，偏置节点很好认，因为其没有输入（前一层中没有箭头指向它）。有些神经网络的结构图中会把偏置节点明显画出来，有些不会。一般情况下，我们都不会明确画出偏置节点。 在考虑了偏置以后的一个神经网络的矩阵运算如下： $$g(W^{(1)} a^{(1)}+b^{(1)}) = a^{(2)}; g(W^{(2)} a^{(2)}+b^{(1)}) = z;$$ 需要说明的是，在两层神经网络中，我们不再使用sgn函数作为函数g，而是使用平滑函数sigmoid作为函数g。我们把函数g也称作激活函数（active function）。 事实上，神经网络的本质就是通过参数与激活函数来拟合特征与目标之间的真实函数关系。初学者可能认为画神经网络的结构图是为了在程序中实现这些圆圈与线，但在一个神经网络的程序中，既没有“线”这个对象，也没有“单元”这个对象。实现一个神经网络最需要的是线性代数库。 1.4 多层神经网络（深度学习）1.4.1 多层神经网络的结构（深度学习）我们延续两层神经网络的方式来设计一个多层神经网络。 在两层神经网络的输出层后面，继续添加层次。原来的输出层变成中间层，新加的层次成为新的输出层。所以可以得到下图。 依照这样的方式不断添加，我们可以得到更多层的多层神经网络。公式推导的话其实跟两层神经网络类似，使用矩阵运算的话就仅仅是加一个公式而已。 在已知输入$$a^{(1)}$$，参数$$W^{(1)},W^{(2)},W^{(3)}$$的情况下，输出z的推导公式如下：$$g(W^{(1)} * a^{(1)}) = a^{(2)}; g(W^{(2)} * a^{(2)}) = a^{(3)}; g(W^{(3)} * a^{(3)}) = z;$$ 多层神经网络中，输出也是按照一层一层的方式来计算。从最外面的层开始，算出所有单元的值以后，再继续计算更深一层。只有当前层所有单元的值都计算完毕以后，才会算下一层。有点像计算向前不断推进的感觉。所以这个过程叫做“正向传播”。 下面讨论一下多层神经网络中的参数。 首先我们看第一张图，可以看出$$W^{(1)}$$中有6个参数，$$W^{(2)}$$中有4个参数，$$W^(3)$$中有6个参数，所以整个神经网络中的参数有16个（这里我们不考虑偏置节点，下同）。 假设我们将中间层的节点数做一下调整。第一个中间层改为3个单元，第二个中间层改为4个单元。 经过调整以后，整个网络的参数变成了33个。 虽然层数保持不变，但是第二个神经网络的参数数量却是第一个神经网络的接近两倍之多，从而带来了更好的表示（represention）能力。表示能力是多层神经网络的一个重要性质，下面会做介绍。 在参数一致的情况下，我们也可以获得一个“更深”的网络。 上图的网络中，虽然参数数量仍然是33，但却有4个中间层，是原来层数的接近两倍。这意味着一样的参数数量，可以用更深的层次去表达。 1.4.2 多层神经网络的效果（深度学习）与两层层神经网络不同。多层神经网络中的层数增加了很多。 增加更多的层次有什么好处？更深入的表示特征，以及更强的函数模拟能力。 更深入的表示特征可以这样理解，随着网络的层数增加，每一层对于前一层次的抽象表示更深入。在神经网络中，每一层神经元学习到的是前一层神经元值的更抽象的表示。例如第一个隐藏层学习到的是“边缘”的特征，第二个隐藏层学习到的是由“边缘”组成的“形状”的特征，第三个隐藏层学习到的是由“形状”组成的“图案”的特征，最后的隐藏层学习到的是由“图案”组成的“目标”的特征。通过抽取更抽象的特征来对事物进行区分，从而获得更好的区分与分类能力。 关于逐层特征学习的例子，可以参考下图。 更强的函数模拟能力是由于随着层数的增加，整个网络的参数就越多。而神经网络其实本质就是模拟特征与目标之间的真实关系函数的方法，更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。 通过研究发现，在参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。 在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。 1.4.3 多层神经网络的训练（深度学习）在单层神经网络时，我们使用的激活函数是sgn函数。到了两层神经网络时，我们使用的最多的是sigmoid函数。而到了多层神经网络时，通过一系列的研究发现，ReLU函数在训练多层神经网络时，更容易收敛，并且预测性能更好。因此，目前在深度学习中，最流行的非线性函数是ReLU函数。ReLU函数不是传统的非线性函数，而是分段线性函数。其表达式非常简单，就是y=max(x,0)。简而言之，在x大于0，输出就是输入，而在x小于0时，输出就保持为0。这种函数的设计启发来自于生物神经元对于激励的线性响应，以及当低于某个阈值后就不再响应的模拟。 在多层神经网络中，训练的主题仍然是优化和泛化。当使用足够强的计算芯片（例如GPU图形加速卡）时，梯度下降算法以及反向传播算法在多层神经网络中的训练中仍然工作的很好。目前学术界主要的研究既在于开发新的算法，也在于对这两个算法进行不断的优化，例如，增加了一种带动量因子（momentum）的梯度下降算法。 在深度学习中，泛化技术变的比以往更加的重要。这主要是因为神经网络的层数增加了，参数也增加了，表示能力大幅度增强，很容易出现过拟合现象。因此正则化技术就显得十分重要。目前，Dropout技术，以及数据扩容（Data-Augmentation）技术是目前使用的最多的正则化技术。 文章参考来源：计算机的潜意识]]></content>
       <categories>
         <category>Deep Learning</category>
       </categories>
@@ -653,41 +666,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[2.7 神经网络浅学笔记]]></title>
-    <url>%2F%2Fshenjingwanguo%2F</url>
-    <content type="text"><![CDATA[摘要本文主要记录神经网络相关的基础知识 Edit By Porter, 积水成渊,蛟龙生焉。 一、神经网络神经网络是一种模拟人脑的神经网络以期能够实现类人工智能的机器学习技术。 对于神经元的研究由来已久，1904年生物学家就已经知晓了神经元的组成结构。 一个神经元通常具有多个树突，主要用来接受传入信息；而轴突只有一条，轴突尾端有许多轴突末梢可以给其他多个神经元传递信息。轴突末梢跟其他神经元的树突产生连接，从而传递信号。这个连接的位置在生物学上叫做“突触”。 1.1 神经元1.1.1 让我们来看一个经典的神经网络。这是一个包含三个层次的神经网络。 红色的是输入层，绿色的是输出层，紫色的是中间层（也叫隐藏层）。 输入层有3个输入单元，隐藏层有4个单元，输出层有2个单元。 后文中，我们统一使用这种颜色来表达神经网络的结构。 1.1.2 在开始介绍前，有一些知识可以先记在心里 设计一个神经网络时，输入层与输出层的节点数往往是固定的，中间层则可以自由指定； 神经网络结构图中的拓扑与箭头代表着预测过程时数据的流向，跟训练时的数据流有一定的区别； 结构图里的关键不是圆圈（代表“神经元”），而是连接线（代表“神经元”之间的连接）。每个连接线对应一个不同的权重（其值称为权值），这是需要训练得到的。 1.1.3 神经元结构神经元模型是一个包含输入，输出与计算功能的模型。输入可以类比为神经元的树突，而输出可以类比为神经元的轴突，计算则可以类比为细胞核。 下图是一个典型的神经元模型：包含有3个输入，1个输出，以及2个计算功能。注意中间的箭头线。这些线称为“连接”。每个上有一个“权值”。 连接是神经元中最重要的东西。每一个连接上都有一个权重。 一个神经网络的训练算法就是让权重的值调整到最佳，以使得整个网络的预测效果最好。 我们使用a来表示输入，用w来表示权值。一个表示连接的有向箭头可以这样理解：在初端，传递的信号大小仍然是a，端中间有加权参数w，经过这个加权后的信号会变成aw，因此在连接的末端，信号的大小就变成了aw。 在其他绘图模型里，有向箭头可能表示的是值的不变传递。而在神经元模型里，每个有向箭头表示的是值的加权传递。 如果我们将神经元图中的所有变量用符号表示，并且写出输出的计算公式的话，就是下图。 可见z是在输入和权值的线性加权和叠加了一个函数g的值。在MP模型里，函数g是sgn函数，也就是取符号函数。这个函数当输入大于0时，输出1，否则输出0。 下面对神经元模型的图进行一些扩展。首先将sum函数与sgn函数合并到一个圆圈里，代表神经元的内部计算。其次，把输入a与输出z写到连接线的左上方，便于后面画复杂的网络。最后说明，一个神经元可以引出多个代表输出的有向箭头，但值都是一样的。 神经元可以看作一个计算与存储单元。计算是神经元对其的输入进行计算功能。存储是神经元会暂存计算结果，并传递到下一层。 当我们用“神经元”组成网络以后，描述网络中的某个“神经元”时，我们更多地会用“单元”（unit）来指代。同时由于神经网络的表现形式是一个有向图，有时也会用“节点”（node）来表达同样的意思。 1.1.4 神经元模型的使用可以这样理解 我们有一个数据，称之为样本。样本有四个属性，其中三个属性已知，一个属性未知。我们需要做的就是通过三个已知属性预测未知属性。 具体办法就是使用神经元的公式进行计算。三个已知属性的值是a1，a2，a3，未知属性的值是z。z可以通过公式计算出来。 这里，已知的属性称之为特征，未知的属性称之为目标。假设特征与目标之间确实是线性关系，并且我们已经得到表示这个关系的权值w1，w2，w3。那么，我们就可以通过神经元模型预测新样本的目标。 1.2 单层神经网络（感知器）1958年，计算科学家Rosenblatt提出了由两层神经元组成的神经网络。他给它起了一个名字–“感知器”（Perceptron） 感知器是当时首个可以学习的人工神经网络。 1.2.1 感知器模型结构在原来MP模型的“输入”位置添加神经元节点，标志其为“输入单元”。其余不变，于是我们就有了下图：从本图开始，我们将权值w1, w2, w3写到“连接线”的中间。 在“感知器”中，有两个层次。分别是输入层和输出层。输入层里的“输入单元”只负责传输数据，不做计算。输出层里的“输出单元”则需要对前面一层的输入进行计算。 我们把需要计算的层次称之为“计算层”，并把拥有一个计算层的网络称之为“单层神经网络”。有一些文献会按照网络拥有的层数来命名，例如把“感知器”称为两层神经网络。但在本文里，我们根据计算层的数量来命名。 假如我们要预测的目标不再是一个值，而是一个向量，例如[2,3]。那么可以在输出层再增加一个“输出单元”。 可以看到，z1的计算跟原先的z并没有区别。 我们已知一个神经元的输出可以向多个神经元传递，因此z2的计算公式如下图。 可以看到，z2的计算中除了三个新的权值：w4，w5，w6以外，其他与z1是一样的。整个网络的输出如下图。 目前的表达公式有一点不让人满意的就是：w4，w5，w6是后来加的，很难表现出跟原先的w1，w2，w3的关系。 因此我们改用二维的下标，用wx,y来表达一个权值。下标中的x代表后一层神经元的序号，而y代表前一层神经元的序号（序号的顺序从上到下）。 例如，w1,2代表后一层的第1个神经元与前一层的第2个神经元的连接的权值（这种标记方式参照了Andrew Ng的课件）。根据以上方法标记，我们有了下图。 如果我们仔细看输出的计算公式，会发现这两个公式就是线性代数方程组。因此可以用矩阵乘法来表达这两个公式。 例如，输入的变量是[a1，a2，a3]T（代表由a1，a2，a3组成的列向量），用向量a来表示。方程的左边是[z1，z2]T，用向量z来表示。 系数则是矩阵W（2行3列的矩阵，排列形式与公式中的一样）。 于是，输出公式可以改写成： $$g(W * a) = z;$$ 这个公式就是神经网络中从前一层计算后一层的矩阵运算。 1.2.2 效果与神经元模型不同，感知器中的权值是通过训练得到的。因此，根据以前的知识我们知道，感知器类似一个逻辑回归模型，可以做线性分类任务。 我们可以用决策分界来形象的表达分类的效果。决策分界就是在二维的数据平面中划出一条直线，当数据的维度是3维的时候，就是划出一个平面，当数据的维度是n维时，就是划出一个n-1维的超平面。 下图显示了在二维平面中划出决策分界的效果，也就是感知器的分类效果。 感知器只能做简单的线性分类任务。 1.3 两层神经网络（多层感知器）Minsky说过单层神经网络无法解决异或问题。但是当增加一个计算层以后，两层神经网络不仅可以解决异或问题，而且具有非常好的非线性分类效果。不过两层神经网络的计算是一个问题，没有一个较好的解法。 1986年，Rumelhar和Hinton等人提出了反向传播（Backpropagation，BP）算法，解决了两层神经网络所需要的复杂计算量问题，从而带动了业界使用两层神经网络研究的热潮。目前，大量的教授神经网络的教材，都是重点介绍两层（带一个隐藏层）神经网络的内容。 这时候的Hinton还很年轻，30年以后，正是他重新定义了神经网络，带来了神经网络复苏的又一春。 1.3.1 两层神经网络的结构（多层感知器）Minsky说过单层神经网络无法解决异或问题。但是当增加一个计算层以后，两层神经网络不仅可以解决异或问题，而且具有非常好的非线性分类效果。不过两层神经网络的计算是一个问题，没有一个较好的解法。 两层神经网络除了包含一个输入层，一个输出层以外，还增加了一个中间层。此时，中间层和输出层都是计算层。我们扩展上节的单层神经网络，在右边新加一个层次（只含有一个节点）。 现在，我们的权值矩阵增加到了两个，我们用上标来区分不同层次之间的变量。 例如$$a_{x} ^{(y)}$$代表第y层的第x个节点。$$z_{1},z_{2}$$变成了$$a_{1} ^{(2)} , a_{2} ^{(2)}$$。下图给出了$$a_{1} ^{(2)} , a_{2} ^{(2)}$$的计算公式。 计算最终输出z的方式是利用了中间层的$$a_{1} ^{(2)}, a_{2} ^{(2)}$$和第二个权值矩阵计算得到的，如下图。 假设我们的预测目标是一个向量，那么与前面类似，只需要在“输出层”再增加节点即可。 我们使用向量和矩阵来表示层次中的变量。$$a_{1} , a_{2} , z $$是网络中传输的向量数据。$$W^{(1)}, W^{(2)}$$是网络的矩阵参数。如下图。 使用矩阵运算来表达整个计算公式的话如下： $$g(W^{(1)} a^{(1)}) = a^{(2)}; g(W^{(2)} a^{(2)}) = z;$$ 上面写的全是权重w但还未引入偏置。下面我们接着写偏置 由此可见，使用矩阵运算来表达是很简洁的，而且也不会受到节点数增多的影响（无论有多少节点参与运算，乘法两端都只有一个变量）。因此神经网络的教程中大量使用矩阵运算来描述。 需要说明的是，至今为止，我们对神经网络的结构图的讨论中都没有提到偏置节点（bias unit）。事实上，这些节点是默认存在的。它本质上是一个只含有存储功能，且存储值永远为1的单元。在神经网络的每个层次中，除了输出层以外，都会含有这样一个偏置单元。正如线性回归模型与逻辑回归模型中的一样。 偏置单元与后一层的所有节点都有连接，我们设这些参数值为向量b，称之为偏置。如下图。 可以看出，偏置节点很好认，因为其没有输入（前一层中没有箭头指向它）。有些神经网络的结构图中会把偏置节点明显画出来，有些不会。一般情况下，我们都不会明确画出偏置节点。 在考虑了偏置以后的一个神经网络的矩阵运算如下： $$g(W^{(1)} a^{(1)}+b^{(1)}) = a^{(2)}; g(W^{(2)} a^{(2)}+b^{(1)}) = z;$$ 需要说明的是，在两层神经网络中，我们不再使用sgn函数作为函数g，而是使用平滑函数sigmoid作为函数g。我们把函数g也称作激活函数（active function）。 事实上，神经网络的本质就是通过参数与激活函数来拟合特征与目标之间的真实函数关系。初学者可能认为画神经网络的结构图是为了在程序中实现这些圆圈与线，但在一个神经网络的程序中，既没有“线”这个对象，也没有“单元”这个对象。实现一个神经网络最需要的是线性代数库。 1.4 多层神经网络（深度学习）1.4.1 多层神经网络的结构（深度学习）我们延续两层神经网络的方式来设计一个多层神经网络。 在两层神经网络的输出层后面，继续添加层次。原来的输出层变成中间层，新加的层次成为新的输出层。所以可以得到下图。 依照这样的方式不断添加，我们可以得到更多层的多层神经网络。公式推导的话其实跟两层神经网络类似，使用矩阵运算的话就仅仅是加一个公式而已。 在已知输入$$a^{(1)}$$，参数$$W^{(1)},W^{(2)},W^{(3)}$$的情况下，输出z的推导公式如下：$$g(W^{(1)} * a^{(1)}) = a^{(2)}; g(W^{(2)} * a^{(2)}) = a^{(3)}; g(W^{(3)} * a^{(3)}) = z;$$ 多层神经网络中，输出也是按照一层一层的方式来计算。从最外面的层开始，算出所有单元的值以后，再继续计算更深一层。只有当前层所有单元的值都计算完毕以后，才会算下一层。有点像计算向前不断推进的感觉。所以这个过程叫做“正向传播”。 下面讨论一下多层神经网络中的参数。 首先我们看第一张图，可以看出$$W^{(1)}$$中有6个参数，$$W^{(2)}$$中有4个参数，$$W^(3)$$中有6个参数，所以整个神经网络中的参数有16个（这里我们不考虑偏置节点，下同）。 假设我们将中间层的节点数做一下调整。第一个中间层改为3个单元，第二个中间层改为4个单元。 经过调整以后，整个网络的参数变成了33个。 虽然层数保持不变，但是第二个神经网络的参数数量却是第一个神经网络的接近两倍之多，从而带来了更好的表示（represention）能力。表示能力是多层神经网络的一个重要性质，下面会做介绍。 在参数一致的情况下，我们也可以获得一个“更深”的网络。 上图的网络中，虽然参数数量仍然是33，但却有4个中间层，是原来层数的接近两倍。这意味着一样的参数数量，可以用更深的层次去表达。 1.4.2 多层神经网络的效果（深度学习）与两层层神经网络不同。多层神经网络中的层数增加了很多。 增加更多的层次有什么好处？更深入的表示特征，以及更强的函数模拟能力。 更深入的表示特征可以这样理解，随着网络的层数增加，每一层对于前一层次的抽象表示更深入。在神经网络中，每一层神经元学习到的是前一层神经元值的更抽象的表示。例如第一个隐藏层学习到的是“边缘”的特征，第二个隐藏层学习到的是由“边缘”组成的“形状”的特征，第三个隐藏层学习到的是由“形状”组成的“图案”的特征，最后的隐藏层学习到的是由“图案”组成的“目标”的特征。通过抽取更抽象的特征来对事物进行区分，从而获得更好的区分与分类能力。 关于逐层特征学习的例子，可以参考下图。 更强的函数模拟能力是由于随着层数的增加，整个网络的参数就越多。而神经网络其实本质就是模拟特征与目标之间的真实关系函数的方法，更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。 通过研究发现，在参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。 在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。 1.4.3 多层神经网络的训练（深度学习）在单层神经网络时，我们使用的激活函数是sgn函数。到了两层神经网络时，我们使用的最多的是sigmoid函数。而到了多层神经网络时，通过一系列的研究发现，ReLU函数在训练多层神经网络时，更容易收敛，并且预测性能更好。因此，目前在深度学习中，最流行的非线性函数是ReLU函数。ReLU函数不是传统的非线性函数，而是分段线性函数。其表达式非常简单，就是y=max(x,0)。简而言之，在x大于0，输出就是输入，而在x小于0时，输出就保持为0。这种函数的设计启发来自于生物神经元对于激励的线性响应，以及当低于某个阈值后就不再响应的模拟。 在多层神经网络中，训练的主题仍然是优化和泛化。当使用足够强的计算芯片（例如GPU图形加速卡）时，梯度下降算法以及反向传播算法在多层神经网络中的训练中仍然工作的很好。目前学术界主要的研究既在于开发新的算法，也在于对这两个算法进行不断的优化，例如，增加了一种带动量因子（momentum）的梯度下降算法。 在深度学习中，泛化技术变的比以往更加的重要。这主要是因为神经网络的层数增加了，参数也增加了，表示能力大幅度增强，很容易出现过拟合现象。因此正则化技术就显得十分重要。目前，Dropout技术，以及数据扩容（Data-Augmentation）技术是目前使用的最多的正则化技术。 文章参考来源：计算机的潜意识]]></content>
+    <title><![CDATA[2.6 递归算法与迭代算法]]></title>
+    <url>%2F%2Fdiguiyudiedai%2F</url>
+    <content type="text"><![CDATA[摘要本文主要记录迭代算法的相关笔记 Edit By Porter, 积水成渊,蛟龙生焉。 一、引入实例举个例子(引用)我想求1+2+3+4+..+100的值。 迭代的做法： 从1到100，顺着往下累加。1+2=3,3+3=6,6+4=10,10+5=15……程序表示 1234int i=1,sum=0;while(i&lt;=100)&#123; sum = sum +i; &#125; 递归的做法： 我要求1到100的累加值，如果我已经得到1到99的累加值，将这个值加上100就是1到100的累加值； 要得到1到99的累加值，如果已经得到1到98的累加值，将这个值加上99，就是1到99的累加值…… 最后我要得到1到2的累加值，我如果得到1自身累加值，再加上2即可，1自身的累加值显然就是1了。 于是现在我们得到了1到2的累加值，将这个值加3就得到了1到3的累加值，……最后直到得到1到100的累加值。 程序表示，其中函数会调用自身，这就是递归方法的典型特征 12345int GetSum(int n)&#123; if(n&lt;=0) return 0; else return n+GetSum(n-1);&#125; 上述例子中，其实递归最后得到结果也是用迭代方法完成的，只是在程序的处理上直观看不出来。 两者都能很好的完成计算任务，不同之处在于思维方式上，从而导致不同的计算方法： 迭代是正向思维，从头到尾思考问题； 递归是逆向思维，他假设我们已经得到了部分结果(假设我已经知道了1到99的累加值，把这个值加上100我们就得到了1到100的累加值了)，从尾部追溯到头部，从而让问题简化(当然这个例子中看不出来，这里只是方便理解）]]></content>
       <categories>
         <category>Deep Learning</category>
       </categories>
       <tags>
         <tag>Deep Learning</tag>
         <tag>Algorithm</tag>
-        <tag>神经网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[K近邻算法]]></title>
-    <url>%2F%2Fkjinglin%2F</url>
-    <content type="text"><![CDATA[摘要K近邻算法(K-nearest neighbor, k-NN)是一种基本的分类与回归的方法。 k近邻算法： 输入：训练数据集 $$T={(x_{1},y_{1}), (x_{2},y_{2})…, (x_{N},y_{N})}$$ 其中 $$x_{i}\epsilon \chi \subseteq R^{n}$$ 为实例的特征向量 $$y_{i} \epsilon Y={c_{1}, c_{2}……, c_{K}, }$$ 为实例的类别,i=1,2,…,N 输出：给定实例x，要能输出新给的特征向量所属y中的类 (1). 根据给定的距离度量，在训练集T中找出与x最邻近的k个点，涵盖这k个点的x的邻域基座 $N_{k} (x)$ ; (2). 在 $N_{k} (x)$ 中根据分类决策规则（如多数表决表，对$N_{k} (x)$ 进行排序，然后取出现频率最高的第k个点的类）决定x的类别y： $$y=arg\, \max_{c_{j}}^{\ } \sum_{x_{i}\subseteq N_{k}(x)}^{\ } I(y_{i}=c_{j})$$ 其中I为指示函数，为$$y_{i}=c_{j}$$情况下, I = 1 否则I = 0 Edit By Porter, 积水成渊,蛟龙生焉。 更通俗的理解可以为如下： KNN是通过测量不同特征值之间的距离进行分类 它的思路是： 如果选择一个待分类的样本，其在特征空间中有k个最相似的样本值（即特征空间中和这个待分类的点为最邻近点集）。 这k个样本集中的绝大多数属于某一类别，则该待分类的样本也属于这个绝大多数的同一类别。 其中K通常是不大于20的整数。 KNN算法中，所选择的邻居都是已经正确分类的对象。该方法在定类决策上只依据最邻近的一个或者几个样本的类别来决定待分样本所属的类别。 例子下面通过一个简单的例子说明一下：如下图，绿色圆要被决定赋予哪个类，是红色三角形还是蓝色四方形？如下图所示 如果K=3，最小的圆, 由于红色三角形所占比例为2/3，绿色圆将被赋予红色三角形那个类。 如果K=5，虚线内，由于蓝色四方形比例为3/5，因此绿色圆被赋予蓝色四方形类。 由此也说明了KNN算法的结果很大程度取决于K的选择。 在KNN中，通过计算对象间距离来作为各个对象之间的非相似性指标，避免了对象之间的匹配问题，在这里距离一般使用欧氏距离或曼哈顿距离： 欧氏距离：$$d(x,y)=\sqrt{\sum_{k=1}^{n}(x_{k}-y_{k})^{2}}$$ 曼哈顿距离：$$d(x,y)=\sqrt{\sum_{k=1}^{n}|x_{k}-y_{k}|}$$ 同时，KNN通过依据k个对象中占优的类别进行决策，而不是单一的对象类别决策。这两点就是KNN算法的优势。 接下来对KNN算法的思想总结一下就是在训练集中数据和标签已知的情况下，输入测试数据，将测试数据的特征与训练集中对应的特征进行相互比较，找到训练集中与之最为相似的前K个数据，则该测试数据对应的类别就是K个数据中出现次数最多的那个分类，其算法的描述为： 1）计算测试数据与各个训练数据之间的距离； 2）按照距离的递增关系进行排序； 3）选取距离最小的K个点； 4）确定前K个点所在类别的出现频率； 5）返回前K个点中出现频率最高的类别作为测试数据的预测分类。 python 代码实现： 123456789101112131415161718192021222324252627282930313233343536#coding:utf-8from numpy import *import operator##给出训练数据以及对应的类别def createDataSet(): group = array([[1.0,2.0],[1.2,0.1],[0.1,1.4],[0.3,3.5]]) labels = ['A','A','B','B'] return group,labels###通过KNN进行分类def classify(input,dataSe t,label,k): dataSize = dataSet.shape[0] ####计算欧式距离 diff = tile(input,(dataSize,1)) - dataSet sqdiff = diff ** 2 squareDist = sum(sqdiff,axis = 1)###行向量分别相加，从而得到新的一个行向量 dist = squareDist ** 0.5 ##对距离进行排序 sortedDistIndex = argsort(dist)##argsort()根据元素的值从大到小对元素进行排序，返回下标 classCount=&#123;&#125; for i in range(k): voteLabel = label[sortedDistIndex[i]] ###对选取的K个样本所属的类别个数进行统计 classCount[voteLabel] = classCount.get(voteLabel,0) + 1 ###选取出现的类别次数最多的类别 maxCount = 0 for key,value in classCount.items(): if value &gt; maxCount: maxCount = value classes = key return classes 测试代码如下： 12345678910#-*-coding:utf-8 -*-import syssys.path.append("...文件路径...")import KNNfrom numpy import *dataSet,labels = KNN.createDataSet()input = array([1.1,0.3])K = 3output = KNN.classify(input,dataSet,labels,K)print("测试数据为:",input,"分类结果为：",output) 回车之后的结果为： 测试数据为： [ 1.1 0.3] 分类为： A 答案符合我们的预期，要证明算法的准确性，势必还需要通过处理复杂问题进行验证，之后另行说明。 【提示】python版本为3.7 具体的KNN视频教程地址为： 参考参考文档来源1:Yabea-博客 参考文档来源2:李航-统计学习方法]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>Algorithm</tag>
-        <tag>KNN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[2.1 马尔科夫链]]></title>
-    <url>%2F%2Fmaerkefu21%2F</url>
-    <content type="text"><![CDATA[摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍马尔科夫相关的性质和几个实例进行论述。状态空间中经过从一个状态到另一个状态的转换的随机过程，需要具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。这种特定类型的“无记忆性”称作马尔可夫性质。 Edit By Porter, 积水成渊,蛟龙生焉。 文章同步于: 我的gitbook 马尔科夫链一、常见的马尔可夫过程：(1) 独立随机过程为马尔可夫过程。 (2) 独立增量过程为马尔可夫过程：没{X(t)，t∈[0，+∞)}为一独立增量过程，且有P(X(0)=x0)=1，x0为常数，则X(t)为马尔可夫过程。 (3) 泊松过程为马尔可夫过程。 (4) 维纳过程为马尔可夫过程。 (5) 质点随机游动过程为马尔可夫过程。 二、模型的创立条件 无后效性—只与前一时刻状态相关和其他历史时刻无关。 图2-1 马尔科夫表示式 系统平稳性—平稳分布（马尔可夫链的）具有某种不变（或者说平稳）性质的概率分布。 图2-2 马尔科夫平稳分布表示式 2.1 无后效性状态空间中经过从一个状态到另一个状态的转换的随机过程。该过程要求具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。这种特定类型的“无记忆性”称作马尔可夫性质。马尔科夫链作为实际过程的统计模型具有许多应用。 在马尔可夫链的每一步，系统根据概率分布，可以从一个状态变到另一个状态，也可以保持当前状态。状态的改变叫做转移，与不同的状态改变相关的概率叫做转移概率。随机漫步就是马尔可夫链的例子。随机漫步中每一步的状态是在图形中的点，每一步可以移动到任何一个相邻的点，在这里移动到每一个点的概率都是相同的（无论之前漫步路径是如何的）。 作者：bitcarmanlee来源：CSDN原文：https://blog.csdn.net/bitcarmanlee/article/details/82819860版权声明：本文为博主原创文章，转载请附上博文链接！ 2.2 平稳分布概念 平稳分布是一种概率分布。平稳分布（马尔可夫链的）具有某种不变（或者说平稳）性质的概率分布。 图2-3 平稳分布，百度百科解释 三、马尔科夫相关的例子直接看理论是有点头痛的，但是接下来直接上例子，学习致用，在应用中学习。 3.1 马尔科夫股市模型实例假设股市三种状态：牛市（Bull market）, 熊市（Bear market）和横盘（Stagnant market），每一个状态都以一定的概率转化到下一个状态。 3.1 题设 图3-1 股市概率转移状态图 比如，牛市以0.025的概率转化到横盘的状态。这个状态概率转化图可以以矩阵的形式表示。如果我们定义矩阵阵P某一位置P(i, j)的值为P(j|i)， 即从状态i变为状态j的概率 。另外定义牛市、熊市、横盘的状态分别为0、1、2，这样我们得到了马尔科夫链模型的状态转移矩阵为： 图3-2 马尔科夫状态转移概率矩阵 当这个状态转移矩阵P确定以后，整个股市模型就已经确定！ 3.1.1 用计算结果说明马尔科夫的性质（无后效性，和系统平稳性） 步骤一、假设初始状态：t0​=[0.1,0.2,0.7]，然后算之后的状态。 步骤二、计算方法是用这个初始的状态分布概率向量(t0)点乘我们的马尔科夫状态转移概率矩阵(P)。 如图2-2 所说的，当P^n –&gt; 会趋向一个稳定的转移概率矩阵。 Python 代码验证： 1234567891011import numpy as npdef markov(): init_array = np.array([0.1, 0.2, 0.7]) transfer_matrix = np.array([[0.9, 0.075, 0.025], [0.15, 0.8, 0.05], [0.25, 0.25, 0.5]]) restmp = init_array for i in range(25): res = np.dot(restmp, transfer_matrix) print i, "\t", res restmp = res markov() 执行以上代码后，输出结果，如图所示 图3-3 马尔科夫股市代码输出 从第18次开始，状态就开始收敛至[0.624,0.312,0.0625]。最终数字上略有不同，只是计算机浮点数运算造成的罢了。 如果我们换一个初始状态t0​，比如[0.2,0.3.0.5]，继续运行上面的代码，只是将init_array变一下，最后结果为： 到第18次的时候，又收敛到了[0.624,0.312,0.0625]!这个转移矩阵就厉害了。不管我们的初始状态是什么样子的，只要状态转移矩阵不发生变化，当n→∞时，最终状态始终会收敛到一个固定值。 3.1.2 后续接着代码验证 图2-2 马尔科夫平稳分布表示式（3点）我们也看看这个状态转移矩阵P的25(本是n-&gt;∞幂次方) 幂次方有什么有意思的地方？ 12345678910def matrixpower(): transfer_matrix = np.array([[0.9, 0.075, 0.025], [0.15, 0.8, 0.05], [0.25, 0.25, 0.5]]) restmp = transfer_matrix for i in range(25): res = np.dot(restmp, transfer_matrix) print i, "\t", res restmp = res matrixpower() 执行以上代码 发现了，从第20次开始，结果开始收敛，并且每一行都为[0.625,0.312,0.0625]! 再次验证了图2.2的定理0.4.2的 3.2 马尔科夫的人类上中下阶层分布模型假设，社会学家把人按其经济状况分为3类：下层，中层，上层，我们用1,2,3表示这三个阶层。社会学家发现决定一个人的收入阶层最重要的因素就是其父母的收入阶层。如果一个人的收入属于下层类别，则它的孩子属于下层收入的概率为0.65，属于中层收入的概率为0.28，属于上层收入的概率为0.07。从父代到子代，收入阶层转移概率如下 我们用P表示这个转移矩阵，则 假设第1代人的阶层比例为 则前10代人的阶层分布如下 第二代人是第一代任PI0，点乘以P（转移概率），第三代人是第二代人点乘以P 我们可以看到，在相同的转移矩阵作用下，状态变化最终会趋于平稳。对于第n代人的阶层分布，我们有 从表达式上我们可以看到，π是一维向量，P是两维矩阵，P进行足够多次自乘后，值趋于稳定。 3.2.1 马尔科夫的人类农村转城市人口分布模型假设城市化进程中，农村人转移为城市人的概率为0.5，城市人转移为农村人的概率为0.1。 人口 农村人 城市人 农村人 0.5 0.5 城市人 0.1 0.9 假设一开始有100个农村人，0个城市人，每代转移人数矩阵如下 代数 农村人 城市人 农村人转移为城市人 城市人转移为农村人 1 100 0 50 0 2 50 50 25 5 3 30 70 15 7 4 22 78 11 8 5 19 81 10 8 6 17 83 8 8 7 17 83 8 8 可以看到，城市化进程中马尔科夫平稳状态就是农村人转移为城市人的速度等于城市人转移为农村人的速度。对于上述转移矩阵P，平稳分布为农村人17%，城市人83%。如果我们可以得到当前中国城市化转移矩阵P，我们就可以算出中国最终城市化率大概为多少（这里不考虑P的变化）。同时如果我们知道了中国城市化人口比例，我们就能知道城市化进程还可以持续多少代人。 3.3 车站候车人数预测模型具体的实例过程请移步 [2.1.1 马尔科夫简单模型预测实战笔记] 章节部分 四、总结4.1 马尔科夫的平稳随机性 非周期马氏链：马氏链转移要收敛，就一定不能是周期性的。不做特别处理，我们处理的问题基本上都是非周期性的 存在概率转移矩阵P，任意两个状态是连通的，如上，例题中的每个不同的阶层人的角色通过某种方式，他们之间是可以相互转化，前后转化的两种状态是联通的可以转化的，底层人士可以转化成中层等。 不论初始状态是什么，经过足够多次概率转移后，会存在一个稳定的状态π。概率转移矩阵自乘足够多次后，每行值相等。即 显然，由于马氏链稳定后，所有状态转移到状态j的概率之和稳定。 则π为马氏链稳定状态，并且π是方程π=πP的唯一非负解。结合上面结论，很明显。]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>马尔科夫模型实战</tag>
-        <tag>Algorithm</tag>
+        <tag>迭代算法</tag>
       </tags>
   </entry>
   <entry>
@@ -704,9 +692,21 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[网页设计基础笔记]]></title>
-    <url>%2F%2Fwebdessignnotes%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要 网页效果图设计，可以Fireworks,也可以Photoshop以及其他的平面设计软件 根据网页效果图进行切图 为什么要切图：提高网站下载速率，规律：能用CSS效果表现出来的就少用图像，也是为了提高下载速率]]></content>
+    <title><![CDATA[2.1 马尔科夫链]]></title>
+    <url>%2F%2Fmaerkefu21%2F</url>
+    <content type="text"><![CDATA[摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍马尔科夫相关的性质和几个实例进行论述。状态空间中经过从一个状态到另一个状态的转换的随机过程，需要具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。这种特定类型的“无记忆性”称作马尔可夫性质。 Edit By Porter, 积水成渊,蛟龙生焉。 文章同步于: 我的gitbook 马尔科夫链一、常见的马尔可夫过程：(1) 独立随机过程为马尔可夫过程。 (2) 独立增量过程为马尔可夫过程：没{X(t)，t∈[0，+∞)}为一独立增量过程，且有P(X(0)=x0)=1，x0为常数，则X(t)为马尔可夫过程。 (3) 泊松过程为马尔可夫过程。 (4) 维纳过程为马尔可夫过程。 (5) 质点随机游动过程为马尔可夫过程。 二、模型的创立条件 无后效性—只与前一时刻状态相关和其他历史时刻无关。 图2-1 马尔科夫表示式 系统平稳性—平稳分布（马尔可夫链的）具有某种不变（或者说平稳）性质的概率分布。 图2-2 马尔科夫平稳分布表示式 2.1 无后效性状态空间中经过从一个状态到另一个状态的转换的随机过程。该过程要求具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。这种特定类型的“无记忆性”称作马尔可夫性质。马尔科夫链作为实际过程的统计模型具有许多应用。 在马尔可夫链的每一步，系统根据概率分布，可以从一个状态变到另一个状态，也可以保持当前状态。状态的改变叫做转移，与不同的状态改变相关的概率叫做转移概率。随机漫步就是马尔可夫链的例子。随机漫步中每一步的状态是在图形中的点，每一步可以移动到任何一个相邻的点，在这里移动到每一个点的概率都是相同的（无论之前漫步路径是如何的）。 作者：bitcarmanlee来源：CSDN原文：https://blog.csdn.net/bitcarmanlee/article/details/82819860版权声明：本文为博主原创文章，转载请附上博文链接！ 2.2 平稳分布概念 平稳分布是一种概率分布。平稳分布（马尔可夫链的）具有某种不变（或者说平稳）性质的概率分布。 图2-3 平稳分布，百度百科解释 三、马尔科夫相关的例子直接看理论是有点头痛的，但是接下来直接上例子，学习致用，在应用中学习。 3.1 马尔科夫股市模型实例假设股市三种状态：牛市（Bull market）, 熊市（Bear market）和横盘（Stagnant market），每一个状态都以一定的概率转化到下一个状态。 3.1 题设 图3-1 股市概率转移状态图 比如，牛市以0.025的概率转化到横盘的状态。这个状态概率转化图可以以矩阵的形式表示。如果我们定义矩阵阵P某一位置P(i, j)的值为P(j|i)， 即从状态i变为状态j的概率 。另外定义牛市、熊市、横盘的状态分别为0、1、2，这样我们得到了马尔科夫链模型的状态转移矩阵为： 图3-2 马尔科夫状态转移概率矩阵 当这个状态转移矩阵P确定以后，整个股市模型就已经确定！ 3.1.1 用计算结果说明马尔科夫的性质（无后效性，和系统平稳性） 步骤一、假设初始状态：t0​=[0.1,0.2,0.7]，然后算之后的状态。 步骤二、计算方法是用这个初始的状态分布概率向量(t0)点乘我们的马尔科夫状态转移概率矩阵(P)。 如图2-2 所说的，当P^n –&gt; 会趋向一个稳定的转移概率矩阵。 Python 代码验证： 1234567891011import numpy as npdef markov(): init_array = np.array([0.1, 0.2, 0.7]) transfer_matrix = np.array([[0.9, 0.075, 0.025], [0.15, 0.8, 0.05], [0.25, 0.25, 0.5]]) restmp = init_array for i in range(25): res = np.dot(restmp, transfer_matrix) print i, "\t", res restmp = res markov() 执行以上代码后，输出结果，如图所示 图3-3 马尔科夫股市代码输出 从第18次开始，状态就开始收敛至[0.624,0.312,0.0625]。最终数字上略有不同，只是计算机浮点数运算造成的罢了。 如果我们换一个初始状态t0​，比如[0.2,0.3.0.5]，继续运行上面的代码，只是将init_array变一下，最后结果为： 到第18次的时候，又收敛到了[0.624,0.312,0.0625]!这个转移矩阵就厉害了。不管我们的初始状态是什么样子的，只要状态转移矩阵不发生变化，当n→∞时，最终状态始终会收敛到一个固定值。 3.1.2 后续接着代码验证 图2-2 马尔科夫平稳分布表示式（3点）我们也看看这个状态转移矩阵P的25(本是n-&gt;∞幂次方) 幂次方有什么有意思的地方？ 12345678910def matrixpower(): transfer_matrix = np.array([[0.9, 0.075, 0.025], [0.15, 0.8, 0.05], [0.25, 0.25, 0.5]]) restmp = transfer_matrix for i in range(25): res = np.dot(restmp, transfer_matrix) print i, "\t", res restmp = res matrixpower() 执行以上代码 发现了，从第20次开始，结果开始收敛，并且每一行都为[0.625,0.312,0.0625]! 再次验证了图2.2的定理0.4.2的 3.2 马尔科夫的人类上中下阶层分布模型假设，社会学家把人按其经济状况分为3类：下层，中层，上层，我们用1,2,3表示这三个阶层。社会学家发现决定一个人的收入阶层最重要的因素就是其父母的收入阶层。如果一个人的收入属于下层类别，则它的孩子属于下层收入的概率为0.65，属于中层收入的概率为0.28，属于上层收入的概率为0.07。从父代到子代，收入阶层转移概率如下 我们用P表示这个转移矩阵，则 假设第1代人的阶层比例为 则前10代人的阶层分布如下 第二代人是第一代任PI0，点乘以P（转移概率），第三代人是第二代人点乘以P 我们可以看到，在相同的转移矩阵作用下，状态变化最终会趋于平稳。对于第n代人的阶层分布，我们有 从表达式上我们可以看到，π是一维向量，P是两维矩阵，P进行足够多次自乘后，值趋于稳定。 3.2.1 马尔科夫的人类农村转城市人口分布模型假设城市化进程中，农村人转移为城市人的概率为0.5，城市人转移为农村人的概率为0.1。 人口 农村人 城市人 农村人 0.5 0.5 城市人 0.1 0.9 假设一开始有100个农村人，0个城市人，每代转移人数矩阵如下 代数 农村人 城市人 农村人转移为城市人 城市人转移为农村人 1 100 0 50 0 2 50 50 25 5 3 30 70 15 7 4 22 78 11 8 5 19 81 10 8 6 17 83 8 8 7 17 83 8 8 可以看到，城市化进程中马尔科夫平稳状态就是农村人转移为城市人的速度等于城市人转移为农村人的速度。对于上述转移矩阵P，平稳分布为农村人17%，城市人83%。如果我们可以得到当前中国城市化转移矩阵P，我们就可以算出中国最终城市化率大概为多少（这里不考虑P的变化）。同时如果我们知道了中国城市化人口比例，我们就能知道城市化进程还可以持续多少代人。 3.3 车站候车人数预测模型具体的实例过程请移步 [2.1.1 马尔科夫简单模型预测实战笔记] 章节部分 四、总结4.1 马尔科夫的平稳随机性 非周期马氏链：马氏链转移要收敛，就一定不能是周期性的。不做特别处理，我们处理的问题基本上都是非周期性的 存在概率转移矩阵P，任意两个状态是连通的，如上，例题中的每个不同的阶层人的角色通过某种方式，他们之间是可以相互转化，前后转化的两种状态是联通的可以转化的，底层人士可以转化成中层等。 不论初始状态是什么，经过足够多次概率转移后，会存在一个稳定的状态π。概率转移矩阵自乘足够多次后，每行值相等。即 显然，由于马氏链稳定后，所有状态转移到状态j的概率之和稳定。 则π为马氏链稳定状态，并且π是方程π=πP的唯一非负解。结合上面结论，很明显。]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>马尔科夫模型实战</tag>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[简单的方法，获取在线付费设计log的方法]]></title>
+    <url>%2F%2Ffreelog%2F</url>
+    <content type="text"><![CDATA[Porter Pan 摘要有时人穷则需要志坚，花别人返工心情的时间，做别人不愿做的尝试。 今天的目标对象是他：Log设计网 不是我不支持他，而是因为，太穷，没那么多钱钱，用到啥买啥，所以，看能省钱的地方就省了吧。 本文档是教如何免费获取99元套餐的log设计资源。 点击进入Log官网的个人中心 选择你目前编辑的Log 点击页面的分享 在浏览页面中鼠标右键，进入inspect界面 点击Source 查看源码 搜索关键字“jpg” 复制图片链接，下载，好了，这就是你自己的Log了 以上步骤结束，不贴图了，贴图影响不好了]]></content>
       <categories>
         <category>summary</category>
       </categories>
@@ -716,9 +716,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[简单的方法，获取在线付费设计log的方法]]></title>
-    <url>%2F%2Ffreelog%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要有时人穷则需要志坚，花别人返工心情的时间，做别人不愿做的尝试。 今天的目标对象是他：Log设计网 不是我不支持他，而是因为，太穷，没那么多钱钱，用到啥买啥，所以，看能省钱的地方就省了吧。 本文档是教如何免费获取99元套餐的log设计资源。 点击进入Log官网的个人中心 选择你目前编辑的Log 点击页面的分享 在浏览页面中鼠标右键，进入inspect界面 点击Source 查看源码 搜索关键字“jpg” 复制图片链接，下载，好了，这就是你自己的Log了 以上步骤结束，不贴图了，贴图影响不好了]]></content>
+    <title><![CDATA[网页设计基础笔记]]></title>
+    <url>%2F%2Fwebdessignnotes%2F</url>
+    <content type="text"><![CDATA[Porter Pan 摘要 网页效果图设计，可以Fireworks,也可以Photoshop以及其他的平面设计软件 根据网页效果图进行切图 为什么要切图：提高网站下载速率，规律：能用CSS效果表现出来的就少用图像，也是为了提高下载速率]]></content>
       <categories>
         <category>summary</category>
       </categories>
@@ -821,9 +821,69 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[第三章 深度学习框架学习]]></title>
-    <url>%2F%2FDLindex%2F</url>
-    <content type="text"><![CDATA[摘要Welcome to My site IODT! This is your very first visit. Check home page of book for more info. If you get any problems when reading, you can find the answer in google or you can contact me on :by @zf_pertor. Edit By Porter, 积水成渊,蛟龙生焉。]]></content>
+    <title><![CDATA[第一篇博文]]></title>
+    <url>%2F%2Fthefirstarticle%2F</url>
+    <content type="text"><![CDATA[Porter Pan 摘要欢迎来到我的博文主页，你可以进一步了解我，通过聚水渊主页 Hexo !和我的github 写作目的 为了更好的学习 每天总结 看到自己每天的进步 遇见最优秀的自己，下面是我的其他博客地址 我的博客园 我的CSDN 新浪博客 网易博客 说说我之前的英文名和现在的英文名之前我的firstname 是pertor 现在是porter，不是一个人 ？不，是一个人的，因为pertor是西班牙的名字，porter是英文名字。都是一个人。 我的网易云最后我贴下我的网易笔记]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F%2FhexoHello%2F</url>
+    <content type="text"><![CDATA[Porter Pan 摘要Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[解决Chrome67版本以后不能离线安装插件的情况]]></title>
+    <url>%2F%2Finstallplugbychrome%2F</url>
+    <content type="text"><![CDATA[Porter Pan 摘要通过本文安装方法可以快速，解决Chrome67版本以后不能离线安装插件的情况。 一般情况下，我们如果使用的Chrome版本为67以后的版本，安装离线插件会出现如下图信息 但是这样我们就真的没法安装离线插件了吗？特别是对想安装翻墙的插件 Proxy SwitchyOmega 的同学来说是一件噩梦。这篇文章讲会告诉读者，这个问题是可以解决的 解决方法如下： 首代开终端输入以下代码 /opt/google/chrome/google-chrome –enable-easy-off-store-extension-install 将会打开google Chrome 浏览器，然后进入浏览器的扩展插件工具界面，如下图所示： 此时请再次将离线下载的插件拖进去，看看是不是能够安装了。]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vultr+freenom实现主机域名的绑定]]></title>
+    <url>%2F%2FvultrFreenom%2F</url>
+    <content type="text"><![CDATA[vultr+freenom实现主机域名的绑定 摘要本文将通过实例进行演示，给大家介绍如何用免费的域名，绑定我们的云主机，只需要登录Freenom注册个账号就可以免费申请免备案域名了，心动请先不要忙行动，点击阅读更多，先看看本文的免费域名申请绑定主机的方法吧。 1、注册freenom域名 进入 freenom 网站,在界面的菜单中选择“Servers”–&gt;”Register a New Domains”，如下图所示: 可能在此之前需要先注册一个账号，具体网站的账号怎么注册，自己摸索下，并不复杂，这里我们只讲怎么注册域名并解析到你的主机。 接下来在“My Domains”页面上的输入框中输入你想注册的免费域名，并搜索下是否已经被注册了，输入框在如下图中的红框所示，例如我输入：smriti 搜索结果显示，好几个是免费的，我们只需要选择一个就行，如下截图所示： 随便选择一个，“Get it now” 即可比如我选择TK域名，然后进入我的购物车，选择免费12个月，如下图： 接下来在USE DNS处选择自己需要解析到的主机IP地址上，也就是把你的云服务器的主机地址填到下图的红框中，Hostname不要动，保持默认（ 一个是yourdot.tk,另一个是www.yourdot.tk ），如下图： 接下来点击“COntinue”即可。 注意如果你现在没有主机IP，你可以先不填，后期再填写，后期填写只需要进入“My Domains” 选择你注册的域名，点击右边的“Manage Domain”，然后选择第四个菜单，”Manage Freenom DNS”,然后添加域名解析到主机，如下图所示： 接下来就是等待，因为域名解析，不会一下子就解析成功的所以你需要等5-30分钟不等，如果一个小时后还是解析不成功，可能就是你的主机IP填写错误 重要的事情再说一遍，就是以上域名解析填写完成后，还需要进行等待，一般5-30分钟。5分钟内访问该网站可能提示解析错误，所以要等待啊。 有的需要主机上面也要填写DNS绑定域名,比如阿里云主机,但是我这是国外的主机和国外的免费域名，好像不要要云主机上面操作，直接在域名服务商网页上绑定主机IP就成功访问了。 2、主机注册 推荐好用的还便宜的云主机：vultr 、 和 搬瓦工 加入你已经购买了云虚拟主机，点击进入主机管理，如下图所示： 添加主机域名绑定 最后一步，主机中绑定域名，如下图：]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu 中安装sublime_text3]]></title>
+    <url>%2F%2Fsublime_text3%2F</url>
+    <content type="text"><![CDATA[摘要Porter PanEnter “Alt+m” will show Markdown Preview 安装 输入注册码 汉化 安装插件 中文输入bug修复 1.1 安装&emsp;&emsp;建议和我一样初学的直接安装，不要直接下载官方的离线包解压了，不然还得自己配置什么dash中显示，什么的环境配置乱七八糟的 123451、 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -2、 sudo apt-get install apt-transport-https3、 echo &quot;deb https://download.sublimetext.com/ apt/stable/&quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list4、 sudo apt-get update5、 sudo apt-get install sublime-text 1.2 输入注册码&emsp;&emsp;在输入注册码之前先更改hosts，ubuntu中hosts位于： vim /etc/hosts或者gedit /etc/hosts,然后加入如下两行 121、 127.0.0.1 www.sublimetext.com2、 127.0.0.1 license.sublimehq.com &emsp;&emsp;然后保存，此时dash中输入sublime，找到我们安装的软件，打开后在界面菜单中选择help–&gt;enter license，然后输入如下注册码12345678910111213----- BEGIN LICENSE -----sgbteamSingle User LicenseEA7E-11532598891CBB9 F1513E4F 1A3405C1 A865D53F115F202E 7B91AB2D 0D2A40ED 352B269B76E84F0B CD69BFC7 59F2DFEF E267328F215652A3 E88F9D8F 4C38E3BA 5B2DAAE4969624E7 DC9CD4D5 717FB40C 1B9738CF20B3C4F1 E917B5B3 87C38D9C ACCE7DD85F7EF854 86B9743C FADC04AA FB0DA5C0F913BE58 42FEA319 F954EFDD AE881E0B------ END LICENSE ------ 点击确定，然后就可以 enjoy it! 在这还没结束，下面开始汉化 1.3 汉化 &emsp;&emsp;打开软件，直接按下“shift+ctrl+p”在弹出的框内输入ip,然后点击”package control：install pakage”,出来后输入”Chinese​Localizations”来安装Chinese​Localizations插件，然后重启，至此汉化结束。 1.4 安装markdown插件 &emsp;&emsp;在软件界面输入“shift+ctrl+p”,然后输入“ip”，然后选择，packageinstall ，然后输入“Markdown Editing“ + ”MarkdownLivePreview”,分别安装上，然后新建md文件，在编辑界面输入“alt+m”,则进入markdown preview实时显示模式。 1.5 解决Markdown不能输入汉字的问题打开终端： 在终端中输入以下代码12git clone https://github.com/lyfeyaj/sublime-text-imfix.gitcd sublime-text-imfix &amp;&amp; ./sublime-imfix 或者直接进入github的这个仓库：直接下载这个zip包，然后解压，然后在终端中cd到这个解压后的文件夹路径中，最后是在终端中输入1./sublime-imfix 此时重启sublimetext3 然后就可以进行汉字的输入了。 参考：https://blog.csdn.net/qq_41590417/article/details/80461075 https://blog.csdn.net/woaidouya123/article/details/81476551 https://www.cnblogs.com/james-lee/p/6847906.html]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>sublime-text</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[index]]></title>
+    <url>%2F%2Fim1Idex%2F</url>
+    <content type="text"><![CDATA[摘要Welcome to My site IODT! This is your very first visit. Check home page of book for more info. If you get any problems when reading, you can find the answer in google or you can contact me on :by @zf_pertor. Edit By Porter, 积水成渊,蛟龙生焉。 文章同步于: 我的gitbook 一、 本章主要是Linux下学习环境的相关配置， 包括学习的开发工具， 也包括系统本埠支持的软件替换或者修复的解决方案。本章组织应包括如下内容： Ubuntu18下有道词典的配置 Ubuntu18 安装Gitbook 二、 优秀工具，资源2.1 LaTex 在线帮助教程]]></content>
       <categories>
         <category>summary</category>
       </categories>
@@ -844,18 +904,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ubuntu 中安装sublime_text3]]></title>
-    <url>%2F%2Fsublime_text3%2F</url>
-    <content type="text"><![CDATA[摘要Porter PanEnter “Alt+m” will show Markdown Preview 安装 输入注册码 汉化 安装插件 中文输入bug修复 1.1 安装&emsp;&emsp;建议和我一样初学的直接安装，不要直接下载官方的离线包解压了，不然还得自己配置什么dash中显示，什么的环境配置乱七八糟的 123451、 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -2、 sudo apt-get install apt-transport-https3、 echo &quot;deb https://download.sublimetext.com/ apt/stable/&quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list4、 sudo apt-get update5、 sudo apt-get install sublime-text 1.2 输入注册码&emsp;&emsp;在输入注册码之前先更改hosts，ubuntu中hosts位于： vim /etc/hosts或者gedit /etc/hosts,然后加入如下两行 121、 127.0.0.1 www.sublimetext.com2、 127.0.0.1 license.sublimehq.com &emsp;&emsp;然后保存，此时dash中输入sublime，找到我们安装的软件，打开后在界面菜单中选择help–&gt;enter license，然后输入如下注册码12345678910111213----- BEGIN LICENSE -----sgbteamSingle User LicenseEA7E-11532598891CBB9 F1513E4F 1A3405C1 A865D53F115F202E 7B91AB2D 0D2A40ED 352B269B76E84F0B CD69BFC7 59F2DFEF E267328F215652A3 E88F9D8F 4C38E3BA 5B2DAAE4969624E7 DC9CD4D5 717FB40C 1B9738CF20B3C4F1 E917B5B3 87C38D9C ACCE7DD85F7EF854 86B9743C FADC04AA FB0DA5C0F913BE58 42FEA319 F954EFDD AE881E0B------ END LICENSE ------ 点击确定，然后就可以 enjoy it! 在这还没结束，下面开始汉化 1.3 汉化 &emsp;&emsp;打开软件，直接按下“shift+ctrl+p”在弹出的框内输入ip,然后点击”package control：install pakage”,出来后输入”Chinese​Localizations”来安装Chinese​Localizations插件，然后重启，至此汉化结束。 1.4 安装markdown插件 &emsp;&emsp;在软件界面输入“shift+ctrl+p”,然后输入“ip”，然后选择，packageinstall ，然后输入“Markdown Editing“ + ”MarkdownLivePreview”,分别安装上，然后新建md文件，在编辑界面输入“alt+m”,则进入markdown preview实时显示模式。 1.5 解决Markdown不能输入汉字的问题打开终端： 在终端中输入以下代码12git clone https://github.com/lyfeyaj/sublime-text-imfix.gitcd sublime-text-imfix &amp;&amp; ./sublime-imfix 或者直接进入github的这个仓库：直接下载这个zip包，然后解压，然后在终端中cd到这个解压后的文件夹路径中，最后是在终端中输入1./sublime-imfix 此时重启sublimetext3 然后就可以进行汉字的输入了。 参考：https://blog.csdn.net/qq_41590417/article/details/80461075 https://blog.csdn.net/woaidouya123/article/details/81476551 https://www.cnblogs.com/james-lee/p/6847906.html]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>sublime-text</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo 每次写好后deploy博客]]></title>
     <url>%2F%2FhexoDeploy%2F</url>
     <content type="text"><![CDATA[Porter Pan 摘要：github page 结合Hexo-Yelee或者Next主题,搭建个人博客主页，是很不错的一个选择，个人使用情况，感觉Yelee界面布局啥的还是很不错的。 这篇文章中我将介绍每次我们写好的md博文怎么部署到github page 上去。 本文主要使用的命令行如下： 1、直接部署到网站 1hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 也可以本地部署，查看浏览效果 2、部署到本地，查看浏览效果 1hexo clean &amp;&amp; hexo g &amp;&amp; hexo s 我们每次写好的博文如何正确推送至github每次我们写好了博文后，需要上传至我们的github空间中,只需要每次将我们写好的博文放到文件路径：1D:\Github\smritipertor.github.io\source\_posts 如果之前没有安装过 hexo-deployer-git 的话，先执行： 1npm install hexo-deployer-git --save 然后执行如下命令操作： 首先在你之前建好的博文路径：比如我的是 12345hexo generatehexo s //(或者:hexo server)hexo deploy //(或者:hexo d) 说明 一般我们在站点根目录中的“_config.yml”中的文件中设定我们hexo d，的部署文件到那个ID和分支中，设置内容如下： 1234deploy: type: git repository: https://github.com/smritipertor/smritipertor.github.io.git branch: master 以上内容表示，不管我们当前工作在那个分区，只要站点根目录中的“_config.yml”中branch 分区设置好，直接 1hexo d 就可以发布了。 如果你执行：1hexo generate -d 常见错误及解决办法第一种，部署出错出现错误提示，如下：1fatal: in unpopulated submodule '.deploy_git' FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html Error: fatal: in unpopulated submodule '.deploy_git' at ChildProcess.&lt;anonymous&gt; (D:\GitWebsite\smritipertor.github.io\node_modules\hexo-util\lib\spawn.js:37:17) at ChildProcess.emit (events.js:182:13) at ChildProcess.cp.emit (D:\GitWebsite\smritipertor.github.io\node_modules\cross-spawn\lib\enoent.js:40:29) at maybeClose (internal/child_process.js:962:16) at Process.ChildProcess._handle.onexit (internal/child_process.js:251:5) 则你可以直接执行以下命令即可： 12rm -rf .deploy_githexo generate -d 即，删除地电脑本地的.deploy_git文件夹（可能是你上个版本是另一台电脑），然后再生成、部署即可。 至此你的网站上就有了网站数据]]></content>
@@ -865,30 +913,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>Blogs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[vultr+freenom实现主机域名的绑定]]></title>
-    <url>%2F%2FvultrFreenom%2F</url>
-    <content type="text"><![CDATA[vultr+freenom实现主机域名的绑定 摘要本文将通过实例进行演示，给大家介绍如何用免费的域名，绑定我们的云主机，只需要登录Freenom注册个账号就可以免费申请免备案域名了，心动请先不要忙行动，点击阅读更多，先看看本文的免费域名申请绑定主机的方法吧。 1、注册freenom域名 进入 freenom 网站,在界面的菜单中选择“Servers”–&gt;”Register a New Domains”，如下图所示: 可能在此之前需要先注册一个账号，具体网站的账号怎么注册，自己摸索下，并不复杂，这里我们只讲怎么注册域名并解析到你的主机。 接下来在“My Domains”页面上的输入框中输入你想注册的免费域名，并搜索下是否已经被注册了，输入框在如下图中的红框所示，例如我输入：smriti 搜索结果显示，好几个是免费的，我们只需要选择一个就行，如下截图所示： 随便选择一个，“Get it now” 即可比如我选择TK域名，然后进入我的购物车，选择免费12个月，如下图： 接下来在USE DNS处选择自己需要解析到的主机IP地址上，也就是把你的云服务器的主机地址填到下图的红框中，Hostname不要动，保持默认（ 一个是yourdot.tk,另一个是www.yourdot.tk ），如下图： 接下来点击“COntinue”即可。 注意如果你现在没有主机IP，你可以先不填，后期再填写，后期填写只需要进入“My Domains” 选择你注册的域名，点击右边的“Manage Domain”，然后选择第四个菜单，”Manage Freenom DNS”,然后添加域名解析到主机，如下图所示： 接下来就是等待，因为域名解析，不会一下子就解析成功的所以你需要等5-30分钟不等，如果一个小时后还是解析不成功，可能就是你的主机IP填写错误 重要的事情再说一遍，就是以上域名解析填写完成后，还需要进行等待，一般5-30分钟。5分钟内访问该网站可能提示解析错误，所以要等待啊。 有的需要主机上面也要填写DNS绑定域名,比如阿里云主机,但是我这是国外的主机和国外的免费域名，好像不要要云主机上面操作，直接在域名服务商网页上绑定主机IP就成功访问了。 2、主机注册 推荐好用的还便宜的云主机：vultr 、 和 搬瓦工 加入你已经购买了云虚拟主机，点击进入主机管理，如下图所示： 添加主机域名绑定 最后一步，主机中绑定域名，如下图：]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F%2FhexoHello%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>日记</tag>
       </tags>
   </entry>
   <entry>
@@ -904,15 +928,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[第一篇博文]]></title>
-    <url>%2F%2Fthefirstarticle%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要欢迎来到我的博文主页，你可以进一步了解我，通过聚水渊主页 Hexo !和我的github 写作目的 为了更好的学习 每天总结 看到自己每天的进步 遇见最优秀的自己，下面是我的其他博客地址 我的博客园 我的CSDN 新浪博客 网易博客 说说我之前的英文名和现在的英文名之前我的firstname 是pertor 现在是porter，不是一个人 ？不，是一个人的，因为pertor是西班牙的名字，porter是英文名字。都是一个人。 我的网易云最后我贴下我的网易笔记]]></content>
+    <title><![CDATA[第三章 深度学习框架学习]]></title>
+    <url>%2F%2FDLindex%2F</url>
+    <content type="text"><![CDATA[摘要Welcome to My site IODT! This is your very first visit. Check home page of book for more info. If you get any problems when reading, you can find the answer in google or you can contact me on :by @zf_pertor. Edit By Porter, 积水成渊,蛟龙生焉。]]></content>
       <categories>
         <category>summary</category>
       </categories>
       <tags>
-        <tag>总结</tag>
-        <tag>日记</tag>
+        <tag>System Conf</tag>
       </tags>
   </entry>
   <entry>
@@ -928,37 +951,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[index]]></title>
-    <url>%2F%2Fim1Idex%2F</url>
-    <content type="text"><![CDATA[摘要Welcome to My site IODT! This is your very first visit. Check home page of book for more info. If you get any problems when reading, you can find the answer in google or you can contact me on :by @zf_pertor. Edit By Porter, 积水成渊,蛟龙生焉。 文章同步于: 我的gitbook 一、 本章主要是Linux下学习环境的相关配置， 包括学习的开发工具， 也包括系统本埠支持的软件替换或者修复的解决方案。本章组织应包括如下内容： Ubuntu18下有道词典的配置 Ubuntu18 安装Gitbook 二、 优秀工具，资源2.1 LaTex 在线帮助教程]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>System Conf</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[解决Chrome67版本以后不能离线安装插件的情况]]></title>
-    <url>%2F%2Finstallplugbychrome%2F</url>
-    <content type="text"><![CDATA[Porter Pan 摘要通过本文安装方法可以快速，解决Chrome67版本以后不能离线安装插件的情况。 一般情况下，我们如果使用的Chrome版本为67以后的版本，安装离线插件会出现如下图信息 但是这样我们就真的没法安装离线插件了吗？特别是对想安装翻墙的插件 Proxy SwitchyOmega 的同学来说是一件噩梦。这篇文章讲会告诉读者，这个问题是可以解决的 解决方法如下： 首代开终端输入以下代码 /opt/google/chrome/google-chrome –enable-easy-off-store-extension-install 将会打开google Chrome 浏览器，然后进入浏览器的扩展插件工具界面，如下图所示： 此时请再次将离线下载的插件拖进去，看看是不是能够安装了。]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[搜索技巧]]></title>
-    <url>%2F%2Fsearchskill%2F</url>
-    <content type="text"><![CDATA[摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍百度搜索技巧和google的搜索技巧。 Edit By Porter, 积水成渊,蛟龙生焉。 关于搜索技巧 &copy;date:2017年9月1日 1 百度搜索技巧1.1 高级搜索语法 1.1 英文短语搜索（” ”） 引号中的关键词将作为一个整体在搜索结果中出现。双引号中的词语（比如”like this”） 1.2 指定网域 有一些词后面加上冒号对Google有特殊的含义。其中有一个词是“site:”。要在某个特定的域或站点中进行搜索，可以在Google搜索框“site xxxx.com”。 例如，要在Google 站点上查找新闻，可以输入：新闻site:www.google.com 1.3 查找特定文件 Google已经可以支持13种非HTML文件的搜索:PDF文件、Microsoft Office (doc, ppt, xls, rtf）、Shockwave Flash (swf)PostScript(ps)和其它类型文档。 新的文档类型只要与用户的搜索相关，就会自动显示在搜索结果中。例如，如果您只想查找PDF或Flash 文件，而不要一般网页，只需搜索 “关键词filetype:pdf” 或 “关键词filetype:swf” 就可以了。 1.4 按链接搜索 例如，“link:www.google.com”将找出所有指向Google主页的网页。不能将link:搜索与普通关键词搜索结合使用。 1.5 限定关键词只在标题中 &emsp;&emsp;例如“allintitle：中国苹果”表示“中国”和“苹果”都必须出现在标题中“intitle：中国苹果”表示“中国”必须出现在标题中，“苹果”可以出现在网页的任意位置，可以是标题也可以不是。。 1.6 限定关键词只在URL中 &emsp;&emsp;例如 “allinURL：koko com” 表示 “koko” 和 “com“ 都必须出现在URL中 “inURL：koko com” 表示 “koko” 必须出现在URL中， “com” 可以出现在网页的任意位置，可以是URL也可以不是。。 1.7 Info用来显示与某链接相关的一系列搜索提供cache、link、related和完全包含该链接的网页的功能。 1.8 Related &emsp;&emsp;用来搜索结构内容方面相似的网页例:搜索所有与中文新浪网主页相似的页面(如网易首页，搜狐首页，中华网首页等)，“related:www.sina.com.cn”。.9、Cache用来搜索GOOGLE服务器上某页面的缓存这个功能同“网页快照”，通常用于查找某些已经被删除的死链接网页，相当于使用普通搜索结果页面中的“网页快照”功能。 二、百度（baidu）搜索高级语法2.1 把搜索范围限定在网页标题中——intitle网页标题通常是对网页内容提纲挈领式的归纳。把查询内容范围限定在网页标题中，有时能获得良好的效果。使用的方式，是把查询内容中，特别关键的部分，用“intitle:”领起来。例如，找林青霞的写真，就可以这样查询：写真intitle:林青霞注意，intitle:和后面的关键词之间，不要有空格。 2.2 把搜索范围限定在特定站点中——site有时候，您如果知道某个站点中有自己需要找的东西，就可以把搜索范围限定在这个站点中，提高查询效率。使用的方式，是在查询内容的后面，加上“site:站点域名”。例如，天空网下载软件不错，就可以这样查询：msn site:skycn.com 注意，“site:”后面跟的站点域名，不要带“http://”；另外site:和站点名之间，不要带空格。 2.3 把搜索范围限定在url链接中——inurl网页url中的某些信息，常常有某种有价值的含义。于是，您如果对搜索结果的url做某种限定，就可以获得良好的效果。实现的方式，是用“inurl:”，后跟需要在url中出现的关键词。例如，找关于photoshop的使用技巧，可以这样查询：photoshop inurl:jiqiao 上面这个查询串中的“photoshop”，是可以出现在网页的任何位置，而“jiqiao”则必须出现在网页url中。注意，inurl:语法和后面所跟的关键词，不要有空格。 2.4 精确匹配——双引号和书名号 双引号和书名号如果输入的查询词很长，百度在经过分析后，给出的搜索结果中的查询词，可能是拆分的。如果您对这种情况不满意，可以尝试让百度不拆分查询词。给查询词加上双引号，就可以达到这种效果。 &emsp;&emsp;例如，搜索上海科技大学，如果不加双引号，搜索结果被拆分，效果不是很好，但加引号后，“上海科技大学”，获得的结果就全是符合要求的了。 &emsp;&emsp;书名号是百度独有的一个特殊查询语法。在其他搜索引擎中，书名号会被忽略，而在百度，中文书名号是可被查询的。 &emsp;&emsp;加上书名号的查询词，有两层特殊功能，一是书名号会出现在搜索结果中；二是被书名号扩起来的内容，不会被拆分。书名号在某些情况下特别有效果，例如，查名字很通俗和常用的那些电影或者小说。比如，查电影“手机”，如果不加书名号，很多情况下出来的是通讯工具——手机，而加上书名号后，《手机》结果就都是关于电影方面的了。 2.5 要求搜索结果中不含特定查询词&emsp;&emsp;如果您发现搜索结果中，有某一类网页是您不希望看见的，而且，这些网页都包含特定的关键词，那么用减号语法，就可以去除所有这些含有特定关键词的网页。 &emsp;&emsp;例如，搜神雕侠侣，希望是关于武侠小说方面的内容，却发现很多关于电视剧方面的网页。那么就可以这样查询：神雕侠侣-电视剧。 注意，前一个关键词，和减号之间必须有空格，否则，减号会被当成连字符处理，而失去减号语法功能。减号和后一个关键词之间，有无空格均可。 2.6 专业文档搜索&emsp;&emsp;很多有价值的资料，在互联网上并非是普通的网页，而是以Word、PowerPoint、PDF等格式存在。百度支持对Office文档（包括Word、 Excel、Powerpoint）、Adobe PDF文档、RTF文档进行了全文搜索。要搜索这类文档，很简单，在普通的查询词后面，加一个“filetype：”文档类型限定。“Filetype:”后可以跟以下文件格式：DOC、XLS、PPT、PDF、RTF、ALL。其中，ALL表示搜索所有这些文件类型。例如，查找张五常关于交易费用方面的经济学论文。“交易费用张五常filetype:doc”，点击结果标题，直接下载该文档，也可以点击标题后的“HTML版”快速查看该文档的网页格式内容。]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[git 推送新的文章到github其他分支上]]></title>
     <url>%2F%2Fgitpush%2F</url>
     <content type="text"><![CDATA[Porter Pan 摘要每次编辑博文并通过命令部署网站到github page上时，我们想每天都能将改动后的博文备份到github的一个分支上，实现本地数据同步到云仓库中。 实现本地博客云同步到github page其他分支上 实现本地博客部署到github page上的master分支上 网站部署（建议隔段时间再部署到网站上，短时间内直接部署本地，本地浏览下就好部署到网上 直接部署到github page的master上 123451 git clone -b proworking &lt;我的github网站仓库:proworking&gt;2 git pull origin proworking #从我的工作分支更新最新的博文和站点配置文件3 git checkout master #将我们的本地切换到master分支4 #此处开始加入你的博文.md到站点的：\source\_posts文件夹中5 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 部署到本地 本地部署，本地浏览效果 12341 git clone -b proworking &lt;我的github网站仓库:proworking&gt;2 git checkout master #将我们的本地切换到master分支3 #此处开始加入你的博文.md到站点的：\source\_posts文件夹中4 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 实现从github上获取我仓库中的Proworking分支数据，病拉取到我的本地 将本地的博文再重新push到我的云仓库（proworking) 123git add .git commit -m "添加了：file1.md\file2.md"git push origin HEAD:proworking #一定要添加HEAD 不然会 其他注意事项 下面贴上我遇到的问题 [1] 若果你直接输入命令：1$ git push proworking 可能会出现如下的不正常信息： 12345678Pertor@Pertor-PC MINGW64 /d/Github/smritipertor.github.io (master)$ git push proworkingfatal: 'proworking' does not appear to be a git repositoryfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists. 正确的解决办法是，命令中输入如下代码（加HEAD) 12Pertor@Pertor-PC MINGW64 /d/Github/smritipertor.github.io (master)$ git push origin HEAD:proworking 此时会输出正确的提示，具体提示信息如下： 123456789Enumerating objects: 1498, done.Counting objects: 100% (1480/1480), done.Delta compression using up to 4 threadsCompressing objects: 100% (1219/1219), done.Writing objects: 100% (1461/1461), 1.17 MiB | 390.00 KiB/s, done.Total 1461 (delta 187), reused 1300 (delta 139)remote: Resolving deltas: 100% (187/187), completed with 10 local objects.To https://github.com/smritipertor/smritipertor.github.io.git 06b21dd..1ff56b7 HEAD -&gt; proworking]]></content>
@@ -968,6 +960,14 @@
       <tags>
         <tag>git</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[搜索技巧]]></title>
+    <url>%2F%2Fsearchskill%2F</url>
+    <content type="text"><![CDATA[摘要本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍百度搜索技巧和google的搜索技巧。 Edit By Porter, 积水成渊,蛟龙生焉。 关于搜索技巧 &copy;date:2017年9月1日 1 百度搜索技巧1.1 高级搜索语法 1.1 英文短语搜索（” ”） 引号中的关键词将作为一个整体在搜索结果中出现。双引号中的词语（比如”like this”） 1.2 指定网域 有一些词后面加上冒号对Google有特殊的含义。其中有一个词是“site:”。要在某个特定的域或站点中进行搜索，可以在Google搜索框“site xxxx.com”。 例如，要在Google 站点上查找新闻，可以输入：新闻site:www.google.com 1.3 查找特定文件 Google已经可以支持13种非HTML文件的搜索:PDF文件、Microsoft Office (doc, ppt, xls, rtf）、Shockwave Flash (swf)PostScript(ps)和其它类型文档。 新的文档类型只要与用户的搜索相关，就会自动显示在搜索结果中。例如，如果您只想查找PDF或Flash 文件，而不要一般网页，只需搜索 “关键词filetype:pdf” 或 “关键词filetype:swf” 就可以了。 1.4 按链接搜索 例如，“link:www.google.com”将找出所有指向Google主页的网页。不能将link:搜索与普通关键词搜索结合使用。 1.5 限定关键词只在标题中 &emsp;&emsp;例如“allintitle：中国苹果”表示“中国”和“苹果”都必须出现在标题中“intitle：中国苹果”表示“中国”必须出现在标题中，“苹果”可以出现在网页的任意位置，可以是标题也可以不是。。 1.6 限定关键词只在URL中 &emsp;&emsp;例如 “allinURL：koko com” 表示 “koko” 和 “com“ 都必须出现在URL中 “inURL：koko com” 表示 “koko” 必须出现在URL中， “com” 可以出现在网页的任意位置，可以是URL也可以不是。。 1.7 Info用来显示与某链接相关的一系列搜索提供cache、link、related和完全包含该链接的网页的功能。 1.8 Related &emsp;&emsp;用来搜索结构内容方面相似的网页例:搜索所有与中文新浪网主页相似的页面(如网易首页，搜狐首页，中华网首页等)，“related:www.sina.com.cn”。.9、Cache用来搜索GOOGLE服务器上某页面的缓存这个功能同“网页快照”，通常用于查找某些已经被删除的死链接网页，相当于使用普通搜索结果页面中的“网页快照”功能。 二、百度（baidu）搜索高级语法2.1 把搜索范围限定在网页标题中——intitle网页标题通常是对网页内容提纲挈领式的归纳。把查询内容范围限定在网页标题中，有时能获得良好的效果。使用的方式，是把查询内容中，特别关键的部分，用“intitle:”领起来。例如，找林青霞的写真，就可以这样查询：写真intitle:林青霞注意，intitle:和后面的关键词之间，不要有空格。 2.2 把搜索范围限定在特定站点中——site有时候，您如果知道某个站点中有自己需要找的东西，就可以把搜索范围限定在这个站点中，提高查询效率。使用的方式，是在查询内容的后面，加上“site:站点域名”。例如，天空网下载软件不错，就可以这样查询：msn site:skycn.com 注意，“site:”后面跟的站点域名，不要带“http://”；另外site:和站点名之间，不要带空格。 2.3 把搜索范围限定在url链接中——inurl网页url中的某些信息，常常有某种有价值的含义。于是，您如果对搜索结果的url做某种限定，就可以获得良好的效果。实现的方式，是用“inurl:”，后跟需要在url中出现的关键词。例如，找关于photoshop的使用技巧，可以这样查询：photoshop inurl:jiqiao 上面这个查询串中的“photoshop”，是可以出现在网页的任何位置，而“jiqiao”则必须出现在网页url中。注意，inurl:语法和后面所跟的关键词，不要有空格。 2.4 精确匹配——双引号和书名号 双引号和书名号如果输入的查询词很长，百度在经过分析后，给出的搜索结果中的查询词，可能是拆分的。如果您对这种情况不满意，可以尝试让百度不拆分查询词。给查询词加上双引号，就可以达到这种效果。 &emsp;&emsp;例如，搜索上海科技大学，如果不加双引号，搜索结果被拆分，效果不是很好，但加引号后，“上海科技大学”，获得的结果就全是符合要求的了。 &emsp;&emsp;书名号是百度独有的一个特殊查询语法。在其他搜索引擎中，书名号会被忽略，而在百度，中文书名号是可被查询的。 &emsp;&emsp;加上书名号的查询词，有两层特殊功能，一是书名号会出现在搜索结果中；二是被书名号扩起来的内容，不会被拆分。书名号在某些情况下特别有效果，例如，查名字很通俗和常用的那些电影或者小说。比如，查电影“手机”，如果不加书名号，很多情况下出来的是通讯工具——手机，而加上书名号后，《手机》结果就都是关于电影方面的了。 2.5 要求搜索结果中不含特定查询词&emsp;&emsp;如果您发现搜索结果中，有某一类网页是您不希望看见的，而且，这些网页都包含特定的关键词，那么用减号语法，就可以去除所有这些含有特定关键词的网页。 &emsp;&emsp;例如，搜神雕侠侣，希望是关于武侠小说方面的内容，却发现很多关于电视剧方面的网页。那么就可以这样查询：神雕侠侣-电视剧。 注意，前一个关键词，和减号之间必须有空格，否则，减号会被当成连字符处理，而失去减号语法功能。减号和后一个关键词之间，有无空格均可。 2.6 专业文档搜索&emsp;&emsp;很多有价值的资料，在互联网上并非是普通的网页，而是以Word、PowerPoint、PDF等格式存在。百度支持对Office文档（包括Word、 Excel、Powerpoint）、Adobe PDF文档、RTF文档进行了全文搜索。要搜索这类文档，很简单，在普通的查询词后面，加一个“filetype：”文档类型限定。“Filetype:”后可以跟以下文件格式：DOC、XLS、PPT、PDF、RTF、ALL。其中，ALL表示搜索所有这些文件类型。例如，查找张五常关于交易费用方面的经济学论文。“交易费用张五常filetype:doc”，点击结果标题，直接下载该文档，也可以点击标题后的“HTML版”快速查看该文档的网页格式内容。]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[ubuntu18 正确 安装ShadowSocket]]></title>
@@ -1019,6 +1019,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[1.6 win10+ubuntu双系统修复ubuntu启动引导]]></title>
+    <url>%2F%2FdoubleSysRepair%2F</url>
+    <content type="text"><![CDATA[摘要本文记录了win10+ubuntu双系统修复ubuntu启动引导，解决最新版win10系统的UEFI快速启动带来的双系统安装启动问题（开机引导无法修复的解决方法）。 Edit By Porter, 积水成渊,蛟龙生焉。 文章同步于: 我的gitbook win10+ubuntu双系统修复ubuntu启动引导摘要我的环境是：uefi启动模式下的win10 + ubutu18.04，其中win10 安装在 128G固态硬盘上，Ubuntu18.04LTS 安装在1T 机械硬盘上，由于我已安装好的ubuntu18 没有UEFI，但是ubuntu18确实是支持UEFI的，难道我必须要重新安装下ubuntu系统吗？（我ubuntu上好不容易安装好了好多软件，此时内心是崩溃的） 一、啥都不用改的解决办法（有点不推荐） 每次打开电脑后狂按F12按键，会进入Boot引导管理，然后选择你的Ubuntu系统进入即可打开ubuntu，如果你要打开window10 你可以按下开机电源后啥都不做就能进入，或者，也是狂按F12进入Boot管理界面，选择windows。 每次开机都得这么累，所以不推荐 二、先进入Ubuntu 然后执行如下命令（就是安装Ubuntu的引导修复工具软件）1234567$ sudo su# sudo add-apt-repository ppa:yannubuntu/boot-repair# apt-get update# apt-get install boot-repair1.在dash中搜索boot-repair2.点recommand repair 之后会自动执行 执行完以上步骤后会出现如下图所示的信息： 然后重启电脑，然后狂按F2,进入BOOT设置界面，设置UEFI 和 Enable。 接下来设置个Supervisor密码，注意后期退出并保存这个boot配置时，要重新设置这个密码，新密码直接全敲回车（这样代表不设置密码，面对你以后密码忘记了）如下图： 设置密码后，下面灰色的选项就可以用了。此时进入 Select an UEFI file as trust executing ,进入的界面如下图 || || || 接下来，回到Boot设置栏，讲EFI 的Ubuntu 重新排序，排到最高优先级，我这排到了我的windows启动选项的前面的，如果你了解你的windows启动标志，直接放到windows启动选项前也就可以的。 到此设置结束，但是不要忘了，把你之前的Security选项里的密码重新清楚掉哦，就是重新设置新密码，新密码内容设置为回车就好了，下次你要使用就会直接提示你输入新密码。 接下来F10保存并退出。然后启动你的电脑，会直接进入linux的引导界面，还包括了Windows的启动界面选项，这时你想进Ubuntu还是windows都是很好选择的。]]></content>
+      <categories>
+        <category>summary</category>
+      </categories>
+      <tags>
+        <tag>System Conf</tag>
+        <tag>系统引导</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[3.2 tensorflow1.x常用函数使用]]></title>
     <url>%2F%2FtfComFunction%2F</url>
     <content type="text"><![CDATA[摘要本文记录tensorflow的学习入门过程，主要是tensorflow中的常用函数的介绍。 Tensorflow的设计理念称之为计算流图，在编写程序时，首先构筑整个系统的graph，代码并不会直接生效，这一点和python的其他数值计算库（如Numpy等）不同，graph为静态的，类似于docker中的镜像。 然后，在实际的运行时，启动一个session，程序才会真正的运行。这样做的好处就是：避免反复地切换底层程序实际运行的上下文，tensorflow帮你优化整个系统的代码。我们知道，很多python程序的底层为C语言或者其他语言，执行一行脚本，就要切换一次，是有成本的，tensorflow通过计算流图的方式，帮你优化整个session需要执行的代码，还是很有优势的。 所以placeholder()函数是在神经网络构建graph的时候在模型中的占位，此时并没有把要输入的数据传入模型，它只会分配必要的内存。等建立session，在会话中，运行模型的时候通过feed_dict()函数向占位符喂入数据。 作者：清晨的光明来源：CSDN原文：https://blog.csdn.net/kdongyi/article/details/82343712版权声明：本文为博主原创文章，转载请附上博文链接！ tf.Session()TensorFlow 运行模型 — 会话 会话拥有并管理TensrFlow程序运行的所有资源。 tf.placeholder()12345tf.placeholder( dtype, shape=None, name=None) 参数： dtype： 数据类型。常用的是tf.float32,tf.float64等数值类型 shape： 数据形状。默认是None，就是一维值，也可以是多维（比如[2,3], [None, 3]表示列是3，行不定） name： 名称 placeholder()函数是在神经网络构建graph的时候在模型中的占位，此时并没有把要输入的数据传入模型，它只会分配必要的内存。等建立session，在会话中，运行模型的时候通过feed_dict()函数向占位符喂入数据。 例子12345678910import tensorflow as tfimport numpy as np input1 = tf.placeholder(tf.float32)input2 = tf.placeholder(tf.float32) output = tf.multiply(input1, input2) with tf.Session() as sess: print sess.run(output, feed_dict = &#123;input1:[3.], input2: [4.]&#125;) tf.truncated_normaltf.greater()123def greater(x: Any, y: Any, name: Any = None) -&gt; object Returns the truth value of (x &gt; y) element-wise.NOTE: math.greater supports broadcasting. More tf.greater(x,y), 即和c语言的条件语句 x&gt;y?True:Flase;但是不用的是，这个函数返回bool值。 tf.where()1234def where(condition: Any, x: Any = None, y: Any = None, name: Any = None) -&gt; Any Return the elements, either from x or y, depending on the condition. tf.train.exponential_decay()tf.train.exponential_decay(LEARNING_RATE_BASE, global_step, LEARNING_RATE_STEP,LEARNING_RATE_DECAY, staircase=True)]]></content>
@@ -1054,18 +1066,6 @@
         <tag>Deep Learning</tag>
         <tag>MNIST</tag>
         <tag>tensorflow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[1.6 win10+ubuntu双系统修复ubuntu启动引导]]></title>
-    <url>%2F%2FdoubleSysRepair%2F</url>
-    <content type="text"><![CDATA[摘要本文记录了win10+ubuntu双系统修复ubuntu启动引导，解决最新版win10系统的UEFI快速启动带来的双系统安装启动问题（开机引导无法修复的解决方法）。 Edit By Porter, 积水成渊,蛟龙生焉。 文章同步于: 我的gitbook win10+ubuntu双系统修复ubuntu启动引导摘要我的环境是：uefi启动模式下的win10 + ubutu18.04，其中win10 安装在 128G固态硬盘上，Ubuntu18.04LTS 安装在1T 机械硬盘上，由于我已安装好的ubuntu18 没有UEFI，但是ubuntu18确实是支持UEFI的，难道我必须要重新安装下ubuntu系统吗？（我ubuntu上好不容易安装好了好多软件，此时内心是崩溃的） 一、啥都不用改的解决办法（有点不推荐） 每次打开电脑后狂按F12按键，会进入Boot引导管理，然后选择你的Ubuntu系统进入即可打开ubuntu，如果你要打开window10 你可以按下开机电源后啥都不做就能进入，或者，也是狂按F12进入Boot管理界面，选择windows。 每次开机都得这么累，所以不推荐 二、先进入Ubuntu 然后执行如下命令（就是安装Ubuntu的引导修复工具软件）1234567$ sudo su# sudo add-apt-repository ppa:yannubuntu/boot-repair# apt-get update# apt-get install boot-repair1.在dash中搜索boot-repair2.点recommand repair 之后会自动执行 执行完以上步骤后会出现如下图所示的信息： 然后重启电脑，然后狂按F2,进入BOOT设置界面，设置UEFI 和 Enable。 接下来设置个Supervisor密码，注意后期退出并保存这个boot配置时，要重新设置这个密码，新密码直接全敲回车（这样代表不设置密码，面对你以后密码忘记了）如下图： 设置密码后，下面灰色的选项就可以用了。此时进入 Select an UEFI file as trust executing ,进入的界面如下图 || || || 接下来，回到Boot设置栏，讲EFI 的Ubuntu 重新排序，排到最高优先级，我这排到了我的windows启动选项的前面的，如果你了解你的windows启动标志，直接放到windows启动选项前也就可以的。 到此设置结束，但是不要忘了，把你之前的Security选项里的密码重新清楚掉哦，就是重新设置新密码，新密码内容设置为回车就好了，下次你要使用就会直接提示你输入新密码。 接下来F10保存并退出。然后启动你的电脑，会直接进入linux的引导界面，还包括了Windows的启动界面选项，这时你想进Ubuntu还是windows都是很好选择的。]]></content>
-      <categories>
-        <category>summary</category>
-      </categories>
-      <tags>
-        <tag>System Conf</tag>
-        <tag>系统引导</tag>
       </tags>
   </entry>
   <entry>
