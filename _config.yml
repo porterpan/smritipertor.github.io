@@ -88,24 +88,23 @@ deploy:
   branch: master
 
 # 网页压缩，去掉空格，提升响应速度
-# 发现添加亚索网页我的gitment就用不了，所以我把压缩的还是去掉吧
 # hexo-neat https://github.com/rozbo/hexo-neat
 # 博文压缩
-neat_enable: false
+neat_enable: no
 # 压缩html
 neat_html:
-  enable: no
+  enable: true
   exclude:
-    - '**/index.html'  
+    - '**/index.h'  
 # 压缩css  
 neat_css:
-  enable: no
+  enable: true
   exclude:
     - '**/*.min.css'
     - '**/*cntl.css'
 # 压缩js
 neat_js:
-  enable: no
+  enable: true
   mangle: true
   output:
   compress:
