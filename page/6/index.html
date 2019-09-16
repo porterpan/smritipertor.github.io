@@ -414,10 +414,10 @@
 
 
   
-    <article id="post-im2-深度学习基础-2-11-极大似然估计" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-im2-深度学习基础-2-10-朴素贝叶斯法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/jidasiranguji/" class="article-date">
+      <a href="/pusubeiyesi/" class="article-date">
       <time datetime="2019-01-06T14:55:03.000Z" itemprop="datePublished">2019-01-06</time>
 </a>
 
@@ -433,7 +433,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/jidasiranguji/">2.11 极大似然估计</a>
+      <a class="article-title" href="/pusubeiyesi/">朴素贝叶斯法</a>
     </h1>
   
 
@@ -443,30 +443,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>极大似然估计,</p>
-<!-- TOC -->
-
+              <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>朴素贝叶斯方法是基于贝叶斯定理与条件假设的分类方法</p>
 <ul>
-<li><a href="#摘要">摘要</a><ul>
-<li><a href="#原理">原理：</a></li>
-<li><a href="#举个例子">举个例子</a></li>
-</ul>
+<li><p>[1] 特征条件独立假设，求输入/出的联合概率分布d</p>
 </li>
-<li><a href="#贝叶斯的参数估计">贝叶斯的参数估计</a><ul>
-<li><a href="#先验概率的极大似然估计">先验概率的极大似然估计</a></li>
-<li><a href="#条件概率极大似然估计">条件概率极大似然估计</a></li>
-</ul>
-</li>
-<li><a href="#参考">参考</a></li>
-</ul>
-<!-- /TOC -->
-
-<h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><ul>
-<li><p>极大似然估计是建立在极大似然原理的基础上的一个统计方法，是概率论在统计学中的应用。</p>
-</li>
-<li><p>极大似然估计提供了一种给定观察数据来评估模型参数的方法，即：“模型已定，参数未知”。</p>
-</li>
-<li><p>通过若干次试验，观察其结果，利用试验结果得到某个参数值能够使样本出现的概率为最大，则称为极大似然估计。</p>
+<li><p>[2] 利用贝叶斯定理求出最大后验概率</p>
 </li>
 <li><input checked disabled type="checkbox"> <p>Edit By Porter, 积水成渊,蛟龙生焉。</p>
 </li>
@@ -485,167 +466,12 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最大似然估计/">最大似然估计</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bayes/">Bayes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/jidasiranguji/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-im2-深度学习基础-2-6-递归算法与迭代算法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/diguiyudiedai/" class="article-date">
-      <time datetime="2019-01-04T14:55:03.000Z" itemprop="datePublished">2019-01-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/diguiyudiedai/">2.6 递归算法与迭代算法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本文主要记录迭代算法的相关笔记</p>
-<ul>
-<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/迭代算法/">迭代算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/diguiyudiedai/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-im2-深度学习基础-2-9-K近邻算法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/kjinglin/" class="article-date">
-      <time datetime="2019-01-04T14:55:03.000Z" itemprop="datePublished">2019-01-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/kjinglin/">K近邻算法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>K近邻算法(K-nearest neighbor, k-NN)是一种基本的分类与回归的方法。</p>
-<p>k近邻算法：</p>
-<p>输入：训练数据集</p>
-<p>$$T={(x_{1},y_{1}), (x_{2},y_{2})…, (x_{N},y_{N})}$$</p>
-<p>其中</p>
-<p>$$x_{i}\epsilon \chi \subseteq R^{n}$$</p>
-<p>为实例的特征向量</p>
-<p>$$y_{i} \epsilon Y={c_{1}, c_{2}……, c_{K}, }$$</p>
-<p>为实例的类别,i=1,2,…,N</p>
-<p>输出：给定实例x，要能输出新给的特征向量所属y中的类</p>
-<p>(1). 根据给定的距离度量，在训练集T中找出与x最邻近的k个点，涵盖这k个点的x的邻域基座  $N_{k} (x)$ ;</p>
-<p>(2). 在 $N_{k} (x)$ 中根据分类决策规则（如多数表决表，对$N_{k} (x)$ 进行排序，然后取出现频率最高的第k个点的类）决定x的类别y：</p>
-<p>$$<br>y=arg, \max_{c_{j}}^{\ } \sum_{x_{i}\subseteq N_{k}(x)}^{\ } I(y_{i}=c_{j})<br>$$</p>
-<p>其中I为指示函数，为$$y_{i}=c_{j}$$情况下, I = 1 否则I = 0</p>
-<ul>
-<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KNN/">KNN</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/kjinglin/#more">阅读全文 >></a>
+          <a href="/pusubeiyesi/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -735,6 +561,77 @@
 
 
   
+    <article id="post-im2-深度学习基础-2-3-线性回归" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/xianxinghuigui23/" class="article-date">
+      <time datetime="2019-01-04T14:55:03.000Z" itemprop="datePublished">2019-01-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/xianxinghuigui23/">2.3 线性回归</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍线性回归相关基础相关实际应用搞得入门例子，很简单，但是能说明线性回归相关基础的原理相关。</p>
+<ul>
+<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性回归/">线性回归</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/xianxinghuigui23/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-im2-深度学习基础-2-1-2-最大熵模型" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -788,6 +685,77 @@
       
         <p class="article-more-link">
           <a href="/zuidashangmoxing/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-im2-深度学习基础-2-6-递归算法与迭代算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/diguiyudiedai/" class="article-date">
+      <time datetime="2019-01-04T14:55:03.000Z" itemprop="datePublished">2019-01-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/diguiyudiedai/">2.6 递归算法与迭代算法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本文主要记录迭代算法的相关笔记</p>
+<ul>
+<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/迭代算法/">迭代算法</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/diguiyudiedai/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -888,77 +856,6 @@
 
 
   
-    <article id="post-im2-深度学习基础-2-3-线性回归" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/xianxinghuigui23/" class="article-date">
-      <time datetime="2019-01-04T14:55:03.000Z" itemprop="datePublished">2019-01-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/xianxinghuigui23/">2.3 线性回归</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本篇文章笔记总结来自网络和书本，引用部分都有来源，内容主要介绍线性回归相关基础相关实际应用搞得入门例子，很简单，但是能说明线性回归相关基础的原理相关。</p>
-<ul>
-<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性回归/">线性回归</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/xianxinghuigui23/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-im2-深度学习基础-2-1-3-隐马尔科夫HMM" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1012,6 +909,90 @@
       
         <p class="article-more-link">
           <a href="/yingmaerkefu/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-im2-深度学习基础-2-9-K近邻算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/kjinglin/" class="article-date">
+      <time datetime="2019-01-04T14:55:03.000Z" itemprop="datePublished">2019-01-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/kjinglin/">K近邻算法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>K近邻算法(K-nearest neighbor, k-NN)是一种基本的分类与回归的方法。</p>
+<p>k近邻算法：</p>
+<p>输入：训练数据集</p>
+<p>$$T={(x_{1},y_{1}), (x_{2},y_{2})…, (x_{N},y_{N})}$$</p>
+<p>其中</p>
+<p>$$x_{i}\epsilon \chi \subseteq R^{n}$$</p>
+<p>为实例的特征向量</p>
+<p>$$y_{i} \epsilon Y={c_{1}, c_{2}……, c_{K}, }$$</p>
+<p>为实例的类别,i=1,2,…,N</p>
+<p>输出：给定实例x，要能输出新给的特征向量所属y中的类</p>
+<p>(1). 根据给定的距离度量，在训练集T中找出与x最邻近的k个点，涵盖这k个点的x的邻域基座  $N_{k} (x)$ ;</p>
+<p>(2). 在 $N_{k} (x)$ 中根据分类决策规则（如多数表决表，对$N_{k} (x)$ 进行排序，然后取出现频率最高的第k个点的类）决定x的类别y：</p>
+<p>$$<br>y=arg, \max_{c_{j}}^{\ } \sum_{x_{i}\subseteq N_{k}(x)}^{\ } I(y_{i}=c_{j})<br>$$</p>
+<p>其中I为指示函数，为$$y_{i}=c_{j}$$情况下, I = 1 否则I = 0</p>
+<ul>
+<li><input checked disabled type="checkbox"> Edit By Porter, 积水成渊,蛟龙生焉。</li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KNN/">KNN</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/kjinglin/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
