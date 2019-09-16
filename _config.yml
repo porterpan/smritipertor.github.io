@@ -94,18 +94,18 @@ deploy:
 neat_enable: false
 # 压缩html
 neat_html:
-  enable: true
+  enable: no
   exclude:
     - '**/index.html'  
 # 压缩css  
 neat_css:
-  enable: true
+  enable: no
   exclude:
     - '**/*.min.css'
     - '**/*cntl.css'
 # 压缩js
 neat_js:
-  enable: true
+  enable: no
   mangle: true
   output:
   compress:
