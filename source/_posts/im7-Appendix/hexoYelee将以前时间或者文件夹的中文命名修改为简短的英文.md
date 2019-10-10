@@ -25,7 +25,7 @@ hexoYelee将以前时间或者文件夹的中文命名修改为简短的英文
 # permalink: :year/:month/:day/:title/
 # 设置网页显示的地址后缀为文章中自定义的urlname,需要在文章开头加入 urlname: 标签
 permalink: /:urlname/
-permalink_defaults: 
+permalink_defaults: blogs.porterpan.top/
 ```
 
 将permalink:设置为 /:urlname/
