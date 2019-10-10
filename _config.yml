@@ -90,7 +90,7 @@ deploy:
 # 网页压缩，去掉空格，提升响应速度
 # hexo-neat https://github.com/rozbo/hexo-neat
 # 博文压缩
-neat_enable: no
+neat_enable: true
 # 压缩html
 neat_html:
   enable: true

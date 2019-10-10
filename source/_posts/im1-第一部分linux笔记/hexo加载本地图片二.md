@@ -15,3 +15,9 @@ date: 2019-7-10 22:55:03
 - [x] Edit By Porter, 积水成渊,蛟龙生焉。
 
 <!-- more -->
+
+插入本地图片格式
+
+```python
+![xxxx](./image/xxxxx.png)
+```
