@@ -37,7 +37,7 @@ date: 2019-9-27 14:57:00
 
 语音合成的效果，随机演示效果声音如下：
 
-<audio controls="controls">  <source src="./image6/output.mp3" type="audio/mp3" />  </audio>
+<audio controls="controls">  <source src="../image6/output.mp3" type="audio/mp3" />  </audio>
 
 ## 代码讲解
 
